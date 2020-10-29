@@ -1,0 +1,126 @@
+include ../../control-elements/buttons/btn-main
+include ../../control-elements/inputs/input-main
+include ../../control-elements/checkbox/checkbox
+include ../../control-elements/radio-button/radio-button
+include ../../breadcrumbs/breadcrumbs
+
+block reg-private
+    section.section
+        div.section__wrapper
+            +breadcrumbs('Регистрация')
+            form.reg-private
+                div.reg-private__block
+                    h1.reg-private__block-heading  Регистрация
+                    div.reg-private__block-radio
+                        div.reg-private__block-radio-button
+                            +radio-btn('Юридическое лицо', 'radio-company', 'customer',
+                                'private', ['radio-label', 'radio-input'])
+                        div.reg-private__block-radio-button
+                            +radio-btn('Индивидуальный предприниматель', 'radio-private', 'customer', 'private',
+                                ['radio-label', 'radio-input'])
+                        div.reg-private__block-radio-button
+                            +radio-btn('Я частный покупатель', 'radio-buyer', 'customer', 'buyer',
+                                ['radio-label', 'radio-input'])
+                    div.reg-private__form
+                        div.reg-private__form-flex
+                            div.reg-private__form-flex-item
+                                div.reg-private__form-flex-item--title   ИНН
+                                div.reg-private__form-flex-item--input
+                                    +input-main()
+                        div.reg-private__form-flex
+                        div.reg-private__form-flex
+                div.reg-private__block
+                    div.reg-private__form
+                        div.reg-private__form-flex
+                            div.reg-private__form-flex-item
+                                h3.reg-private__form-flex-item--heading   Юридический адрес
+                                div.reg-private__form-flex-item--title   Населенный пункт
+                                div.reg-private__form-flex-item--input
+                                    +input-main()
+                            div.reg-private__form-flex-item
+                                div.reg-private__form-flex-item--title   Улица
+                                div.reg-private__form-flex-item--input
+                                    +input-main()
+                            div.reg-private__form-flex-item
+                                div.reg-private__form-flex-item-flex
+                                    div.reg-private__form-flex-item--input_small
+                                        div.reg-private__form-flex-item--title   Дом, стр./корп.
+                                        +input-main()
+                                    div.reg-private__form-flex-item--input_small
+                                        div.reg-private__form-flex-item--title    офис/кв.
+                                        +input-main()
+                                    div.reg-private__form-flex-item--input_small
+                                        div.reg-private__form-flex-item--title   Индекс
+                                        +input-main(placeholder='000000')
+                        div.reg-private__form-flex
+                            div.reg-private__form-flex-item
+                                h3.reg-private__form-flex-item--heading   Фактический адрес
+                                div.reg-private__form-flex-item--title   Населенный пункт
+                                div.reg-private__form-flex-item--input
+                                    +input-main()
+                            div.reg-private__form-flex-item
+                                div.reg-private__form-flex-item--title   Улица
+                                div.reg-private__form-flex-item--input
+                                    +input-main()
+                            div.reg-private__form-flex-item
+                                div.reg-private__form-flex-item-flex
+                                    div.reg-private__form-flex-item--input_small
+                                        div.reg-private__form-flex-item--title   Дом, стр./корп.
+                                        +input-main()
+                                    div.reg-private__form-flex-item--input_small
+                                        div.reg-private__form-flex-item--title    офис/кв.
+                                        +input-main()
+                                    div.reg-private__form-flex-item--input_small
+                                        div.reg-private__form-flex-item--title   Индекс
+                                        +input-main(placeholder='000000')
+                        div.reg-private__form-flex
+                            div.reg-private__form-flex-item
+                                h3.reg-private__form-flex-item--heading   Адрес доставки
+                                div.reg-private__form-flex-item--title   Населенный пункт
+                                div.reg-private__form-flex-item--input
+                                    +input-main()
+                            div.reg-private__form-flex-item
+                                div.reg-private__form-flex-item--title   Улица
+                                div.reg-private__form-flex-item--input
+                                    +input-main()
+                            div.reg-private__form-flex-item-flex
+                                div.reg-private__form-flex-item--input_small
+                                    div.reg-private__form-flex-item--title   Дом, стр./корп.
+                                    +input-main()
+                                div.reg-private__form-flex-item--input_small
+                                    div.reg-private__form-flex-item--title    офис/кв.
+                                    +input-main()
+                                div.reg-private__form-flex-item--input_small
+                                    div.reg-private__form-flex-item--title   Индекс
+                                    +input-main(placeholder='000000')
+                div.reg-private__block
+                    div.reg-private__form
+                        div.reg-private__form-flex
+                            div.reg-private__form-flex-item
+                                div.reg-private__form-flex-item--title   ФИО
+                                div.reg-private__form-flex-item--input
+                                    +input-main()
+                            div.reg-private__form-flex-item
+                                div.reg-private__form-flex-item--title   Телефон
+                                div.reg-private__form-flex-item--input
+                                    +input-main(type='tel')
+                        div.reg-private__form-flex
+                            div.reg-private__form-flex-item.reg-private__form-flex-item-modify
+                                div.reg-private__form-flex-item--title   Факс
+                                div.reg-private__form-flex-item--input
+                                    +input-main(type='tel')
+                            div.reg-private__form-flex-item
+                                div.reg-private__form-flex-item--title   E-mail
+                                div.reg-private__form-flex-item--input
+                                    +input-main(type='email')
+                        div.reg-private__form-flex.reg-private__form-flex-modify
+                            div.reg-private__form-flex-item
+                                div.reg-private__form-flex-item--title   Пароль
+                                div.reg-private__form-flex-item--input
+                                    +input-main(type='password')
+                            div.reg-private__form-flex-item
+                                div.reg-private__form-flex-item--title   Повторите пароль
+                                div.reg-private__form-flex-item--input
+                                    +input-main(type='password')
+                div.reg-private__button
+                    +btn-main(class='btn--other btn--blue')    Подтвердить регистрацию

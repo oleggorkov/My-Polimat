@@ -1,0 +1,200 @@
+.area {
+  width: auto;
+  height: auto;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  resize: none;
+
+  outline: none;
+  border: none;
+  cursor: default;
+
+  transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+  @include above($desktop) {
+    &:hover{
+      cursor: auto;
+      border: 0.2rem solid $main-color-blue;
+    }
+  }
+
+  &--default {
+    width: 100%;
+    height: auto;
+
+    min-height: 7.6rem;
+
+    border: 0.2rem solid $main-gray-color;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    padding: 1rem 1.5rem;
+    background: transparent;
+    z-index: 1;
+
+    border-radius: 0.5rem;
+  }
+
+  &--blue{
+    @include above($desktop){
+      &:hover {
+        border: 0.2rem solid $main-color-blue;
+        transition: border ease 0.25s;
+      }
+    }
+  }
+
+  &--green {
+    padding-right: 3rem;
+    border: 0.2rem solid $helper-color-green;
+  }
+
+  &--red {
+    border: 0.2rem solid $main-color-red;
+    padding-right: 3rem;
+  }
+}
+.textarea {
+  width: auto;
+  height: auto;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  cursor: auto;
+  transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+  &::placeholder{
+    color: $helper-color-gray;
+  }
+
+  @include above($desktop) {
+    &:hover {
+      border: 0.2rem solid $main-color-blue;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    margin-bottom: 0.2rem;
+    &--error {
+      &:after, &:before {
+        content: '';
+        top: 1rem;
+        right: 2rem;
+        width: 0.2rem;
+        height: 1.8rem;
+        position: absolute;
+        background-color: $main-color-red;
+      }
+
+      &:after {
+        transform: rotate(45deg);
+      }
+
+      &:before {
+        transform: rotate(135deg);
+      }
+    }
+
+    & > .suggestions-suggestions{
+      border: 0.2rem solid blue;
+      border-top: 0.1rem solid blue;
+      border-radius: 0.3rem 0.3rem 0.4rem 0.4rem;
+    }
+
+    & > .suggestions-addon{
+      width: 4rem!important;
+    }
+  }
+
+  &__error-message {
+    display: none;
+    color: $main-color-red;
+  }
+
+  &__wrapper--error > .textarea__error-message {
+    position: absolute;
+    display: block;
+    font-size: 0.8rem;
+    line-height: 0.9rem;
+    color: $main-color-red;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__wrapper--error > .textarea--error,
+  &__wrapper--error > .textarea--error:hover,
+  &__wrapper--error > .textarea--error:focus{
+    border: 0.2rem solid $main-color-red;
+    padding-right: 3rem;
+  }
+
+  .textarea__valid-ico {
+    display: none;
+  }
+
+  &__wrapper--valid > .textarea__valid-ico {
+    position: absolute;
+    display: block;
+    border-bottom: 0.2rem solid $helper-color-green;
+    border-right: 0.2rem solid $helper-color-green;
+    transform: rotate(50deg);
+    top: 1rem;
+    right: 1.6rem;
+    width: 0.8rem;
+    height: 1.4rem;
+  }
+  &__wrapper--valid > .textarea--valid,
+  &__wrapper--valid > .textarea--valid:hover,
+  &__wrapper--valid > .textarea--valid:focus{
+    border: 0.2rem solid $helper-color-green;
+    padding-right: 3rem;
+  }
+
+  &--default {
+    width: 100%;
+    height: 5.4rem;
+    resize: none;
+
+    border: 0.2rem solid $main-gray-color;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: black;
+    background: transparent;
+    z-index: 1;
+    margin-bottom: 1.3rem;
+    border-radius: 0.5rem;
+    min-height: 4.4rem;
+    font-style: normal;
+    font-weight: normal;
+    padding: 1rem 1.5rem;
+    &:hover, &:focus {
+      transition: border ease 0.25s;
+      border: 0.2rem solid $main-color-blue;
+    }
+
+    @include above($phone) {
+      height: 4.4rem;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #808080;
+    @include above($tablet){
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+  }
+  &__label-text{
+    padding-bottom: 0.7rem;
+  }
+
+}

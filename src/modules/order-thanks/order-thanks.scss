@@ -1,0 +1,42 @@
+@include above($small-phone) {
+  .order-thanks {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    @include above($desktop) {
+      padding-top: 9rem;
+    }
+  }
+
+  .order-thanks__number {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.6rem;
+    line-height: 4.2rem;
+    text-align: center;
+    color: $main-color-blue;
+  }
+
+  .order-thanks__text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 2.1rem;
+  }
+
+  .order-thanks__button {
+    width: 100%;
+  }
+}
+
+@include above($tablet) {
+
+  .order-thanks__button {
+    width: 26rem;
+  }
+}

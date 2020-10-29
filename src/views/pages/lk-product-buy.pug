@@ -1,0 +1,20 @@
+extends ../layouts/default
+include ../../modules/lk-block/lk-block
+include ../../modules/breadcrumbs/breadcrumbs
+include ../../modules/cart/cart
+include ../../modules/control-elements/buttons/btn-main
+include ../../modules/to-top/to-top-btn
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Личный кабинет', 'Купленные товары')
+            +lk-block(6)
+                .lk-block__title Купленные товары
+                div.catalogue-content__wrapper
+                    - for (let x = 0; x < 8; x++)
+                    +cart
+                div.catalogue-content__more.catalogue-content__more--active
+                    p.catalogue-content__more-text Секундочку, загружается...
+                    +btn-main(theme='blue', class='btn--default find-new-lazy-img-js') Ещё товары
+                    +btn-to-top('catalogue-content__more-to-top')

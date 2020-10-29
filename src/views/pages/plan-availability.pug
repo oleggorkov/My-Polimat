@@ -1,0 +1,398 @@
+extends ../layouts/default
+include ../../modules/helper-mixins/main-caption
+include ../../modules/lk-discounts/lk-discounts
+include ../../modules/specification-cursors/specification-cursors
+include ../../modules/lk-discounts/lk-discounts
+include ../../modules/plan-availability/plan-availability
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.plan-availability.section
+        .section__wrapper
+            +breadcrumbs('Плановое наличие')
+            +h1caption('plan-availability', 'Плановое наличие календарных блоков на складе')
+            .plan-availability__legends
+                .plan-availability__legends-title Условные обозначения
+                +legends-items(
+                    {status: 'Да', desc: 'всегда на складе', color: 'blue'},
+                    {status: 'Сезон', desc: 'могут закончиться в конце сезона', color: 'yellow'},
+                    {status: 'VIP', desc: 'ограниченная серия', color: 'red'},
+                    {status: '+', desc: 'только под заказ по договорным ценам', color: 'gray'}
+                )
+                .plan-availability__table-wrapper.carts-slider
+                    .swiper-container.slider
+                        .swiper-wrapper.slider-wrapper.plan-availability__table
+                            .swiper-slide.slide.plan-availability__slider-column.plan-availability__slider-column--with-title
+                                +table-title-area('Размер блока', 'Тип календаря')
+                                .plan-availability__item-title КМД классические мелованные дизайнерские
+                                +table-items--text('Голубой', 'Серый', 'Бежевый', 'Зеленый', 'Бежево-голубой', 'Розовый', 'Белый')
+                                .plan-availability__item-title КМД металлик классические мелованные дизайнерские металлик
+                                +table-items--text('Серебрянный', 'Золотой', 'Синий металлик', 'Зеленый металлик')
+                                .plan-availability__item-title БМД  болд мелованные дизайнерские
+                                +table-items--text('Голубой', 'Серый', 'Бежевый', 'Зеленый')
+                                .plan-availability__item-title БМД металлик  болд мелованные дизайнерские металлик
+                                +table-items--text('Серебряный', 'Золотой', 'Синий металлик', 'Зеленый металлик')
+                                .plan-availability__item-title ЕМД  европа мелованные дизайнерские
+                                +table-items--text('Голубой', 'Серый', 'Бежевый', 'Зеленый')
+                                .plan-availability__item-title КОД  классические офсетные дизайнерские
+                                +table-items--text('Голубой', 'Серый', 'Бежевый', 'Зеленый')
+                                .plan-availability__item-title ТРИКОЛОР
+                                +table-items--text('Триколор')
+                                .plan-availability__item-title БОС  болд офсетные стандартные
+                                +table-items--text('Голубой', 'Серый', 'Шоколадный', 'Зеленый')
+                                .plan-availability__item-title КОС  классические офсетные ствндартны
+                                +table-items--text('Голубой', 'Серый')
+
+                                .plan-availability__item-title НКО  неоклассические офсетные
+                                +table-items--text('Голубой', 'Серый', 'Бежевый', 'Зеленый', 'Белый')
+                                .plan-availability__item-title 3 В ОДНОМ
+                                +table-items--text('Голубой', 'Серый', 'Бежевый', 'Зеленый')
+                                .plan-availability__item-title ДОМИКИ КМД
+                                +table-items--text('Голубой', 'Серый', 'Бежевый', 'Зеленый')
+                                .plan-availability__item-title ДОМИКИ 3 В ОДНОМ
+                                +table-items--text('Голубой', 'Серый', 'Бежевый', 'Зеленый')
+
+
+
+
+                            .swiper-slide.slide.plan-availability__slider-column.plan-availability__slider-column--2x
+                                +table-title-area--2x('МИНИ', '3 сп', '1 сп')
+                                +table-items--block(
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'сезон', color1: 'yellow', text2: 'сезон', color2: 'yellow'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: 'сезон', color1: 'yellow', text2: 'сезон', color2: 'yellow'})
+                                +table-items--block(
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'сезон', color1: 'yellow', text2: 'сезон', color2: 'yellow'})
+                                +table-items--block(
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'сезон', color1: 'yellow', text2: 'сезон', color2: 'yellow'},
+                                    {text1: 'сезон', color1: 'yellow', text2: 'сезон', color2: 'yellow'})
+                                +table-items--block(
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'})
+                                +table-items--block(
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'сезон', color1: 'yellow', text2: 'сезон', color2: 'yellow'},
+                                    {text1: 'сезон', color1: 'yellow', text2: 'сезон', color2: 'yellow'})
+                                +table-items--block(
+                                    {text1: 'сезон', color1: 'yellow', text2: 'сезон', color2: 'yellow'},
+                                    {text1: 'сезон', color1: 'yellow', text2: 'сезон', color2: 'yellow'},
+                                    {text1: 'сезон', color1: 'yellow', text2: 'сезон', color2: 'yellow'},
+                                    {text1: 'сезон', color1: 'yellow', text2: 'сезон', color2: 'yellow'})
+                                +table-items--block(
+                                    {text1: 'сезон', color1: 'yellow', text2: 'сезон', color2: 'yellow'})
+                                +table-items--block(
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'})
+                                +table-items--block(
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'})
+                                +table-items--block(
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'сезон', color1: 'yellow', text2: 'сезон', color2: 'yellow'},
+                                    {text1: 'сезон', color1: 'yellow', text2: 'сезон', color2: 'yellow'},
+                                    {text1: 'сезон', color1: 'yellow', text2: 'сезон', color2: 'yellow'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray', text2: 'сезон', color2: 'yellow'},
+                                    {text1: '+', color1: 'gray', text2: 'сезон', color2: 'yellow'},
+                                    {text1: '+', color1: 'gray', text2: 'VIP', color2: 'red'},
+                                    {text1: '+', color1: 'gray', text2: 'VIP', color2: 'red'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'})
+
+
+
+
+
+                            .swiper-slide.slide.plan-availability__slider-column.plan-availability__slider-column--2x
+                                +table-title-area--2x('МИДИ', '3 сп', '1 сп')
+                                +table-items--block(
+                                    {text1: 'да', color1: 'blue', text2: 'да', color2: 'blue'},
+                                    {text1: 'Сезон', color1: 'yellow', text2: '+', color2: 'gray'},
+                                    {text1: 'Сезон', color1: 'yellow', text2: '+', color2: 'gray'},
+                                    {text1: 'Сезон', color1: 'yellow', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'})
+                                +table-items--block(
+                                    {text1: 'да', color1: 'blue', text2: '+', color2: 'gray'},
+                                    {text1: 'да', color1: 'blue', text2: '+', color2: 'gray'},
+                                    {text1: 'Сезон', color1: 'yellow', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'})
+                                +table-items--block(
+                                    {text1: 'да', color1: 'blue', text2: '+', color2: 'gray'},
+                                    {text1: 'Сезон', color1: 'yellow', text2: '+', color2: 'gray'},
+                                    {text1: 'Сезон', color1: 'yellow', text2: '+', color2: 'gray'},
+                                    {text1: 'Сезон', color1: 'yellow', text2: '+', color2: 'gray'})
+                                +table-items--block(
+                                    {text1: 'да', color1: 'blue', text2: '+', color2: 'gray'},
+                                    {text1: 'да', color1: 'blue', text2: '+', color2: 'gray'},
+                                    {text1: 'Сезон', color1: 'yellow', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'})
+                                +table-items--block(
+                                    {text1: 'VIP', color1: 'red', text2: '+', color2: 'gray'})
+                                +table-items--block(
+                                    {text1: 'сезон', color1: 'yellow', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'})
+                                +table-items--block(
+                                    {text1: 'VIP', color1: 'red', text2: '+', color2: 'gray'},
+                                    {text1: 'VIP', color1: 'red', text2: '+', color2: 'gray'})
+                                +table-items--block(
+                                    {text1: 'VIP', color1: 'red', text2: '+', color2: 'gray'},
+                                    {text1: 'Сезон', color1: 'yellow', text2: '+', color2: 'gray'},
+                                    {text1: 'VIP', color1: 'red', text2: '+', color2: 'gray'},
+                                    {text1: 'VIP', color1: 'red', text2: '+', color2: 'gray'},
+                                    {text1: 'Сезон', color1: 'yellow', text2: '+', color2: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray', text2: 'да', color2: 'blue'},
+                                    {text1: '+', color1: 'gray', text2: 'да', color2: 'blue'},
+                                    {text1: '+', color1: 'gray', text2: 'Сезон', color2: 'yellow'},
+                                    {text1: '+', color1: 'gray', text2: 'Сезон', color2: 'yellow'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'},
+                                    {text1: '+', color1: 'gray', text2: '+', color2: 'gray'})
+
+                            .swiper-slide.slide.plan-availability__slider-column
+                                +table-title-area('МАКСИ', '3 сп', 'center')
+                                +table-items--block(
+                                    {text1: 'Сезон', color1: 'yellow'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: 'VIP', color1: 'red'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: 'Сезон', color1: 'yellow'},
+                                    {text1: 'Сезон', color1: 'yellow'},
+                                    {text1: 'Сезон', color1: 'yellow'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: 'Сезон', color1: 'yellow'},
+                                    {text1: 'Сезон', color1: 'yellow'},
+                                    {text1: 'VIP', color1: 'red'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: 'VIP', color1: 'red'},
+                                    {text1: 'VIP', color1: 'red'},
+                                    {text1: 'VIP', color1: 'red'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+
+                            .swiper-slide.slide.plan-availability__slider-column
+                                +table-title-area('АНГСТРЕМ', '1 сп', 'center')
+                                +table-items--block(
+                                    {text1: 'Да', color1: 'blue'},
+                                    {text1: 'Сезон', color1: 'yellow'},
+                                    {text1: 'Сезон', color1: 'yellow'},
+                                    {text1: 'Сезон', color1: 'yellow'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: 'Сезон', color1: 'yellow'},
+                                    {text1: 'Сезон', color1: 'yellow'},
+                                    {text1: 'Сезон', color1: 'yellow'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+
+                            .swiper-slide.slide.plan-availability__slider-column
+                                +table-title-area('МИКРО', '1 сп', 'center')
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'},
+                                    {text1: '+', color1: 'gray'})
+                                +table-items--block(
+                                    {text1: 'Сезон', color1: 'yellow'},
+                                    {text1: 'VIP', color1: 'red'},
+                                    {text1: 'VIP', color1: 'red'},
+                                    {text1: 'VIP', color1: 'red'})
+                                +table-items--block(
+                                    {text1: 'Да', color1: 'blue'},
+                                    {text1: 'Да', color1: 'blue'},
+                                    {text1: 'Сезон', color1: 'yellow'},
+                                    {text1: 'Сезон', color1: 'yellow'})
+
+                    +table-cart-navigation(true)
+

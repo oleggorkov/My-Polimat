@@ -1,0 +1,28 @@
+
+include ../helper-mixins/svg-mix
+mixin catalogue-head(active)
+    div.catalogue__head
+        h1.catalogue__head-title.title-main Календарные блоки
+        div.catalogue-sort
+            .catalogue-sort__wrapper
+                p.catalogue-sort-title Сортировка
+                button(type='button').catalogue-sort-btn По цене
+                    +svg-mix('arrow-long')
+                button(type='button').catalogue-sort-btn.catalogue-sort-btn--active-color.catalogue-sort-btn--active-arrow По наличию
+                    +svg-mix('arrow-long')
+                button(type='button').catalogue-sort-btn По популярности
+                    +svg-mix('arrow-long')
+            .catalogue-sort__wrapper--display
+                a(href='catalogue2.html' class=active == 'in-line' ? 'catalogue-sort__btn-display--active' : '').catalogue-sort__btn-display.catalogue-sort__btn-display--line
+                    .catalogue-sort__btn-display-block
+                    .catalogue-sort__btn-display-block
+                a(href='catalogue.html' class=active == 'block' ? 'catalogue-sort__btn-display--active' : '').catalogue-sort__btn-display.catalogue-sort__btn-display--tile
+                    .btn-display.catalogue-sort__btn-display-wrapper
+                        .catalogue-sort__btn-display-block.catalogue-sort__btn-display-block--tile
+                        .catalogue-sort__btn-display-block.catalogue-sort__btn-display-block--tile
+                    .btn-display.catalogue-sort__btn-display-wrapper
+                        .catalogue-sort__btn-display-block.catalogue-sort__btn-display-block--tile
+                        .catalogue-sort__btn-display-block.catalogue-sort__btn-display-block--tile
+        div.catalogue__head-options-mobile
+            button(type='button').sort-menu__toggles Сортировка
+            button(type='button').filter-menu__toggles  Фильтр

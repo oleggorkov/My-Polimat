@@ -1,0 +1,59 @@
+include ../control-elements/buttons/btn-main
+include ../control-elements/inputs/input-main
+
+block lk-data
+    div.lk-data-block
+        form.lk-data(method='post' id='lk-data')
+            h1.lk-data__heading Мои данные
+            div.lk-data__input
+                div.lk-data__input-title    Телефон
+                +input-main-handler(mask='+7 (###) ### ## ##' id="lk-data__input-phone"
+                    class="inp inp--default inp--error inp--valid lk-data__input-phone lk-data__input-phone-js"
+                    placeholder='+7 000 000 00 00' data-require data-require-length=18)
+            div.lk-data__input
+                div.lk-data__input-title    E-mail
+                +input-main-handler(id="lk-data__input-email" placeholder='ivanovivanivanovich@gmail.com' data-require data-email)
+            div.lk-data__button
+                +btn-main(class='btn--other btn--blue-invert btn-form-submit'
+                    id='lk-company__save-company' name='lk-company__save-buyer')    Сохранить
+            a(href="password-rename.html").lk-data__link Сменить пароль
+        div.lk-data__orders
+            h2.lk-data__orders-heading Данные о заказах
+            div.lk-data__orders-block
+                div.lk-data__orders-block-item
+                    div.lk-data__orders-block-item-credit Мой кредитный лимит составляет
+                    span 0,00 &#8381
+                div.lk-data__orders-block-item
+                    div.lk-data__orders-block-item-sum Суммарный использованный лимит
+                    span 0,00 &#8381
+                div.lk-data__orders-block-item
+                    div.lk-data__orders-block-item-balance Неиспользованный остаток лимита отсрочки
+                    span 0,00 &#8381
+                div.lk-data__orders-block-item
+                    div.lk-data__orders-block-item-payment Моя отсрочка платежа составляет
+                    span 0 дней
+                div.lk-data__orders-block-item
+                    div.lk-data__orders-block-item-shipment Наличие права отрузки без предоплаты
+                    span Нет
+        div.lk-data__manager
+            h2.lk-data__manager-heading Ваш персональный менеджер
+            div.lk-data__manager-block
+                div.lk-data__manager-block-item
+                    div.lk-data__manager-block-item-name Шингарева Елена Анатольевна
+                div.lk-data__manager-block-item
+                    div.lk-data__manager-block-item-mail E-mail:
+                    span elena@polimat.ru
+                div.lk-data__manager-block-item
+                    div.lk-data__manager-block-item-icq ICQ:
+                    span 215989618
+                div.lk-data__manager-block-item
+                    div.lk-data__manager-block-item-skype Skype:
+                    span e.shingareva
+                div.lk-data__manager-block-item
+                    div.lk-data__manager-block-item-mobile Мобильный телефон:
+                    span (965) 160-89-79
+                div.lk-data__manager-block-item
+                    div.lk-data__manager-block-item-mobile-in Внутренний телефон:
+                    span 160
+
+

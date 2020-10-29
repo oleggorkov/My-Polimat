@@ -1,0 +1,11 @@
+extends ../layouts/default
+include ../../modules/lk-block/lk-block
+include ../../modules/info-payment-delivery-block/info-payment-delivery-block
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Информация', 'Доставка и оплата')
+            +info-block(1)
+                +info-payment-delivery-block

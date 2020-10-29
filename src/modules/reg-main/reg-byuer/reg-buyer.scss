@@ -1,0 +1,237 @@
+@include above($small-phone) {
+
+  .reg-buyer {
+    width: 100%;
+    padding-top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+
+  .reg-buyer__block:not(:nth-of-type(3)) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reg-buyer__block:not(:first-of-type) {
+    margin-top: 3.4rem;
+  }
+
+  .reg-buyer__block-heading {
+    margin-bottom: 2.2rem;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    color: #000000;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .reg-buyer__block-radio {
+    margin-bottom: 3.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reg-buyer__block-radio-button {
+    height: 2.8rem;
+  }
+
+  .reg-buyer__block-radio-button:not(:last-of-type) {
+    margin-bottom: 1.9rem;
+  }
+
+  .reg-buyer__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reg-buyer__form {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reg-buyer__form-flex:first-of-type {
+    margin-bottom: 0.7rem;
+  }
+
+  .reg-buyer__form-flex:last-of-type {
+    margin-top: 0.7rem;
+  }
+
+  .reg-buyer__form-flex-item:not(:last-of-type) {
+    margin-bottom: 0.7rem;
+  }
+
+  .reg-buyer__form-flex-item--title {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #808080;
+    margin-bottom: 1.3rem;
+  }
+
+  .reg-buyer__form-flex-item--heading {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #000000;
+    margin-bottom: 3rem;
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  .reg-buyer-flex__item-heading--check {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #000000;
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  .reg-buyer__form-flex-item-flex {
+    display: flex;
+  }
+
+  .reg-buyer__form-flex-item--input_small {
+    flex: 1;
+  }
+
+  .reg-buyer__form-flex-item--input_small:not(:last-of-type) {
+    margin-right: 0.2rem;
+  }
+
+  .reg-buyer-flex__item-block {
+    display: flex;
+  }
+
+  .reg-buyer__button {
+    width: 100%;
+    align-self: flex-end;
+    margin-top: 2.1rem;
+  }
+}
+
+@include above($tablet) {
+
+  .reg-buyer__block-radio {
+    margin-bottom: 0;
+    flex-direction: row;
+  }
+
+  .reg-buyer__block-radio-button {
+    width: 100%;
+  }
+
+  .reg-buyer__block-radio-button:nth-of-type(2) {
+    margin-right: 11rem;
+  }
+
+  .reg-buyer__block-radio-button:not(:last-of-type) {
+    margin-bottom: 2.9rem;
+  }
+
+  .reg-buyer__block-heading {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+  }
+
+  .reg-buyer__form {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .reg-buyer__form-flex {
+    width: 35.4rem;
+    flex: none;
+  }
+
+  .reg-buyer__form-flex:last-of-type {
+    margin-top: 2.3rem;
+  }
+
+  .reg-buyer__form-flex:first-of-type {
+    margin-right: 2rem;
+    margin-top: 4.4rem;
+  }
+
+  .buyer-form-flex__empty {
+    display: none;
+  }
+
+  .reg-buyer__form-flex:first-of-type {
+    margin-bottom: 0;
+  }
+
+  .reg-buyer__block:not(:first-of-type) {
+    margin-top: 2.8rem;
+  }
+
+  .reg-buyer__button {
+    width: auto;
+    margin-top: 2.1rem;
+  }
+
+  .reg-buyer__form-flex-item--input_small:not(:last-of-type) {
+    margin-right: 0.9rem;
+  }
+}
+
+@include above($tablet-landscape) {
+
+  .reg-buyer__form-flex {
+     width: 28rem;
+   }
+
+  .reg-buyer__form {
+    justify-content: space-between;
+  }
+
+  .buyer-form-flex__empty {
+    display: flex;
+  }
+
+  .reg-buyer__form-flex:last-of-type {
+    margin-top: 4.4rem;
+  }
+
+  .reg-buyer__form-flex:not(:last-of-type) {
+    margin-right: 0;
+  }
+}
+
+@include above($desktop) {
+
+  .reg-buyer__form-flex-item--title {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .reg-buyer__form-flex-item--input_small:not(:last-of-type) {
+    margin-right: 1.9rem;
+  }
+
+  .reg-buyer__form-flex-item--heading {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .reg-buyer-flex__item-heading--check {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #000000;
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  .reg-buyer__form-flex {
+    width: 34.3rem;
+  }
+}
+
+@include above($mid-desktop) {
+
+  .reg-buyer__form-flex {
+    width: 35.5rem;
+  }
+}
+

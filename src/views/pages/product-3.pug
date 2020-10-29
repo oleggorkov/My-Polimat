@@ -1,0 +1,94 @@
+extends ../layouts/default
+include ../../modules/carts-block/carts-block
+include ../../modules/product-photo-swiper/product-photo-swiper
+include ../../modules/product-settings/product-settings
+include ../../modules/product-price/product-price
+include ../../modules/product-tabs/product-tabs
+include ../../modules/reviews/reviews
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Карточка товара')
+            .product-block
+                .product-block__back
+                    a(href='javascript:void(0);')
+                        +svg-mix('arrow-long')
+                        span Вернуться к каталогу
+                +product-photo-swiper.product-block__swiper(type = 3)
+                +product-settings.product-block__settings(type = 3)
+                +product-price(type = 3)
+                +product-subscribe
+
+            .product-block__tabs
+                .product-block__tabs-btns
+                    +tab-btn(1).active Характеристики
+                    +tab-btn(2) Описание
+                    +tab-btn(3) Дополнительная информация
+                    +tab-btn(4) Вопрос-ответ
+                    +tab-btn(5) Отзывы
+                    button(v-scroll-to="'.product-analog'") Аналоги
+                .product-block__tabs-contents
+                    +tab-content(1).product-block__tab-content.js-product-accordion.active
+                        .product-block__tab-title.js-product-accordion-header Характеристики
+                        +product-specifications(
+                            [
+                                {title: 'Год', data: '2020'},
+                                {title: 'Поля', data: 'Широкие'},
+                                {title: 'Вид', data: 'Мини'},
+                                {title: 'Бумага', data: 'Мелованная'},
+                                {title: 'Шрифт', data: 'Болд'},
+                                {title: 'Объем в упаковке', data: '0.006 м3'},
+                                {title: 'Вес в упаковке, кг', data: '7.62'},
+                                {title: 'Кратность упаковки', data: '50+2'}
+                            ]
+                        )
+
+                    +tab-content(2).product-block__tab-content.js-product-accordion
+                        .product-block__tab-title.js-product-accordion-header Описание
+                        .product-block__accordion-content.js-product-accordion-content
+                            .product-block__accordion-content-wrapper
+                                +product-description(3, '',
+                                    'Гарантия качества',
+                                    'Dictum-Wire – металлическая пружина высокого качества (типа Wire-O). Dictum-Wire - пружина для переплета из исходной проволоки премиального качества.',
+                                    'Как ВСЕ продукты, которыми торгует компания ПОЛИМАТ, протестирована на всех популярных типах оборудования для переплета на пружину и показала отличные характеристики.',
+                                    'Может использоваться на всех видах автоматических аппаратов',
+                                    'Пластична, постоянной геометрии, с покрытием высокого качества (без заломов и задиров). Пружина Dictum-Wire может использоваться на всех видах автоматических аппаратов для брошюровки.'
+                                )
+                                +product-description(3, 'mobile',
+                                    'Гарантия качества',
+                                    'Dictum-Wire ',
+                                    'Как ВСЕ продукты, которыми торгует компания ПОЛИМАТ',
+                                    'Может использоваться на всех видах автоматических аппаратов',
+                                    'Пластична, постоянной геометрии, (Пружина Dictum-Wire) '
+                                )
+
+                    +tab-content(3).product-block__tab-content.js-product-accordion
+                        .product-block__tab-title.js-product-accordion-header Доп. информация
+                        +product-specifications(
+                            [
+                                {href: '#', data: 'Типы, размеры блоков'},
+                                {href: '#', data: 'Ваши текущие цены на блоки'},
+                                {href: 'lk-discounts.html', data: 'Скидки'},
+                                {href: '#', data: 'Скачать каталог'},
+                                {href: '#', data: 'Общий прайс лист'},
+                                {href: '#', data: 'Скачать все дизайны 2020'}
+                            ],
+                            'href'
+                        )
+                        
+                    .product-block__tab-content.tab-content.js-product-accordion(data-tab="4")
+                        .product-block__tab-title.js-product-accordion-header Вопрос-ответ
+                        .product-block__accordion-content.js-product-accordion-content
+                            .product-block__accordion-content-wrapper
+                                a.product-block__link(href="#") Перейти в раздел “вопрос - ответ”
+
+                    +tab-content(5).product-block__tab-content.js-product-accordion
+                        .product-block__tab-title.product-block__reviews-tab-title.js-product-accordion-header Отзывы
+                        .product-block__accordion-content.js-product-accordion-content
+                            .product-block__accordion-content-wrapper
+                                +review-add
+            
+    +carts-block('Аналоги', true).product-analog.js-product-accordion
+

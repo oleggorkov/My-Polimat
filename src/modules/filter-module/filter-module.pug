@@ -1,0 +1,219 @@
+include ../helper-mixins/svg-mix
+include ../control-elements/buttons/btn-main
+mixin find-show-btn(quan)
+    div.filter-module__show-quan-found
+        p.filter-module__show-quan-found-text Найдено:&nbsp
+            span #{quan}
+        a.filter-module__show-quan-found-show Показать
+mixin list-button(title)
+    button(type='button').filter-module__toggle= title
+        span
+            +svg-mix('arrow-small')
+
+mixin input-checkbox-filter--default(value, name, counter, id, classes)
+    div.input-checkbox-filter.input-checkbox-filter--default
+        input(type='checkbox' value=value id=id)
+        label(for=id)
+            p.input-checkbox-filter--default-name= name
+            div.input-checkbox-filter--default-state
+                p.input-checkbox-filter--default-counter= counter
+                p.input-checkbox-filter--default-clear
+                    span
+                    span
+mixin filter-type-species(name, speciesName, ico, type)
+    div.input-checkbox-filter.input-checkbox-filter--type
+        input(type='checkbox' value=type id= name + '-' + type)
+        label(for= name + '-' + type)
+            p.input-checkbox-filter--type-name #{speciesName}
+            div.input-checkbox-filter--type-case
+                +svg-mix(ico)
+mixin filter-type-color(name, colorName, type, title)
+    div.input-checkbox-filter.input-checkbox-filter--color
+        input(type='checkbox' value=type id= name + '-' + type)
+        label(for= name + '-' + type)
+            div(class='input-checkbox-filter--color-' + colorName title=title)
+
+mixin filter-module-checkbox(text, id)
+    div.filter-module__checkbox
+        input(type='checkbox' id=id).filter-module__checkbox-input
+        label(for=id).filter-module__checkbox-label= text
+
+mixin filter-module(name, type)
+    form(action='#' method='post').filter-module
+        ul.filter-module__list
+            li
+                +list-button('Цена')
+                div.filter-module__wrapper
+                    +find-show-btn(1)
+                    div.filter-module__inner-wrapper.filter-module__inner-js.filter-module__inner--range-slider
+                        div.filter-module__row.filter-module__price-inputs
+                            the-mask(v-model="RangeSliderData.value[0]" data-value='250' :mask="'###'")
+                            the-mask(v-model="RangeSliderData.value[1]" data-value='400' :mask="'###'")
+
+                        vue-slider(v-model="RangeSliderData.value" :ref='"filter"' :tooltip='"none"' :min='RangeSliderData.min' :max='RangeSliderData.max' @drag-end='ChangePriceRange()')
+            li
+                +list-button('Год')
+                div.filter-module__wrapper
+                    +find-show-btn(11)
+                    .filter-module__inner-wrapper.filter-module__inner-js
+                        div.filter-module__inner
+                            +input-checkbox-filter--default('2020', '2020', '32', name + '-' +  'year-1', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('2019', '2019', '21', name + '-' +  'year-2', ['btn', 'btn--small', 'btn--blue-invert'])
+            li
+                +list-button('Вид')
+                div.filter-module__wrapper
+                    +find-show-btn(11)
+                    .filter-module__inner-wrapper.filter-module__inner-js
+                        div.filter-module__inner.filter-module__inner--type
+                            +filter-type-species(name, 'Трио 1-сп', 'filter-module__type-1', 'type1')
+                            +filter-type-species(name, 'Трио 3-сп', 'filter-module__type-2', 'type2')
+                            +filter-type-species(name, 'Quattro', 'filter-module__type-3', 'type3')
+                            +filter-type-species(name, '«3 в 1»', 'filter-module__type-4', 'type4')
+            li
+                +list-button('Размер')
+                div.filter-module__block
+                    +filter-module-checkbox('Несколько условий', 'filter-module-several' + '-' + type)
+                    +filter-module-checkbox('Все', 'filter-module-all' + '-' + type)
+                div.filter-module__wrapper
+                    +find-show-btn(11)
+                    .filter-module__inner-wrapper.filter-module__inner-js
+                        div.filter-module__inner
+                            +input-checkbox-filter--default('домики', 'домики', '32', name + '-' +  'size-1', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('домики мини', 'домики мини', '21', name + '-' +  'size-2', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('3 в одном миди', '3 в одном миди', '21', name + '-' +  'size-3', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('3 в одном мини', '3 в одном мини', '21', name + '-' +  'size-4', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('мини', 'мини', '21', name + '-' +  'size-5', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('миди', 'миди', '21', name + '-' +  'size-6', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('4-й блочный', '4-й блочный', '21', name + '-' +  'size-7', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('ангстрем', 'ангстрем', '21', name + '-' +  'size-8', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('макси', 'макси', '21', name + '-' +  'size-9', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('микро', 'микро', '21', name + '-' +  'size-10', ['btn', 'btn--small', 'btn--blue-invert'])
+            li
+                +list-button('Цвет')
+                div.filter-module__wrapper
+                    +find-show-btn(12)
+                    .filter-module__inner-wrapper.filter-module__inner-js
+                        div.filter-module__inner
+                            +filter-type-color(name, 'white', 'color-1', 'белый')
+                            +filter-type-color(name, 'blue', 'color-2', 'синий')
+                            +filter-type-color(name, 'gray', 'color-3', 'серый')
+                            +filter-type-color(name, 'orange', 'color-4', 'оранжевый')
+                            +filter-type-color(name, 'green', 'color-5', 'зелёный')
+                            +filter-type-color(name, 'yellow', 'color-6', 'жёлтый')
+                            +filter-type-color(name, 'green-two', 'color-7', 'бирюзовый')
+                            +filter-type-color(name, 'purple', 'color-8', 'пурпурный')
+                            +filter-type-color(name, 'pink', 'color-9', 'розовый')
+                            +filter-type-color(name, 'red', 'color-10', 'красный')
+            li
+                +list-button('Цветовая гамма')
+                div.filter-module__wrapper
+                    +find-show-btn(14)
+                    .filter-module__inner-wrapper.filter-module__inner-js
+                        div.filter-module__inner
+                            +filter-type-color(name, 'white', 'gamma-1', 'белый')
+                            +filter-type-color(name, 'blue', 'gamma-2', 'синий')
+                            +filter-type-color(name, 'gray', 'gamma-3', 'серый')
+                            +filter-type-color(name, 'orange', 'gamma-4', 'оранжевый')
+                            +filter-type-color(name, 'green', 'gamma-5', 'зелёный')
+                            +filter-type-color(name, 'yellow', 'gamma-6', 'жёлтый')
+                            +filter-type-color(name, 'green-two', 'gamma-7', 'бирюзовый')
+                            +filter-type-color(name, 'purple', 'gamma-8', 'пурпурный')
+                            +filter-type-color(name, 'pink', 'gamma-9', 'розовый')
+                            +filter-type-color(name, 'red', 'gamma-10', 'красный')
+            li
+                +list-button('Серия')
+                div.filter-module__block.filter-module__block-series
+                    +filter-module-checkbox('Несколько условий', 'filter-module-several-series' + '-' + type)
+                div.filter-module__wrapper
+                    +find-show-btn(24)
+                    .filter-module__inner-wrapper.filter-module__inner-js
+                        div.filter-module__inner
+                            +input-checkbox-filter--default('Европа металлик', 'Европа металлик', '24', name + '-' +  'series-1', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('Классика s-металлик', 'Классика s-металлик', '15', name + '-' +  'series-2', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('3 в одном мелованные', '3 в одном мелованные', '32', name + '-' +  'series-3', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('VERDANA 2+0 офсетные', 'VERDANA 2+0 офсетные', '28', name + '-' +  'series-4', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('ЕВРОПА арктик', 'ЕВРОПА арктик', '', name + '-' +  'series-5', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('VERDANA 3+0 офсетные', 'VERDANA 3+0 офсетные', '28', name + '-' +  'series-6', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('ЕВРОПА арт', 'ЕВРОПА арт', '24', name + '-' +  'series-7', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('БОЛД 3+0 офсетные', 'БОЛД 3+0 офсетные', '24', name + '-' +  'series-8', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('БОЛД 2+0 офсетные', 'БОЛД 2+0 офсетные', '22', name + '-' +  'series-9', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('КЛАССИКА s-металлик', 'КЛАССИКА s-металлик', '20', name + '-' +  'series-10', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('КЛАССИКА мелованные', 'КЛАССИКА мелованные', '17', name + '-' +  'series-11', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('Европа металлик', 'Европа металлик', '24', name + '-' + 'series-12', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('Классика s-металлик', 'Классика s-металлик', '15', name + '-' + 'series-13', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('3 в одном мелованные', '3 в одном мелованные', '32', name + '-' + 'series-14', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('VERDANA 2+0 офсетные', 'VERDANA 2+0 офсетные', '28', name + '-' + 'series-15', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('ЕВРОПА арктик', 'ЕВРОПА арктик', '', name + '-' + 'series-16', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('VERDANA 3+0 офсетные', 'VERDANA 3+0 офсетные', '28', name + '-' + 'series-17', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('ЕВРОПА арт', 'ЕВРОПА арт', '24', name + '-' + 'series-18', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('БОЛД 3+0 офсетные', 'БОЛД 3+0 офсетные', '24', name + '-' + 'series-19', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('БОЛД 2+0 офсетные', 'БОЛД 2+0 офсетные', '22', name + '-' + 'series-20', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('КЛАССИКА s-металлик', 'КЛАССИКА s-металлик', '20', name + '-' + 'series-21', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('КЛАССИКА мелованные', 'КЛАССИКА мелованные', '17', name + '-' + 'series-22', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('КЛАССИКА мелованные', 'КЛАССИКА мелованные', '17', name + '-' + 'series-23', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('КЛАССИКА мелованные', 'КЛАССИКА мелованные', '17', name + '-' + 'series-24', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('БОЛД 3+0 офсетные', 'БОЛД 3+0 офсетные', '24', name + '-' +  'series-25', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('БОЛД 2+0 офсетные', 'БОЛД 2+0 офсетные', '22', name + '-' +  'series-26', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('КЛАССИКА s-металлик', 'КЛАССИКА s-металлик', '20', name + '-' +  'series-27', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('КЛАССИКА мелованные', 'КЛАССИКА мелованные', '17', name + '-' +  'series-28', ['btn', 'btn--small', 'btn--blue-invert'])
+            li
+                +list-button('Кол-во спиралей')
+                div.filter-module__wrapper
+                    +find-show-btn(34)
+                    .filter-module__inner-wrapper.filter-module__inner-js
+                        div.filter-module__inner
+                            +input-checkbox-filter--default('1', '1', '14', name + '-' +  'spirals-1', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('2', '2', '21', name + '-' +  'spirals-2', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('3', '3', '21', name + '-' +  'spirals-3', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('4', '4', '21', name + '-' +  'spirals-4', ['btn', 'btn--small', 'btn--blue-invert'])
+            li
+
+                +list-button('Бумага')
+                div.filter-module__wrapper
+                    +find-show-btn(44)
+                    .filter-module__inner-wrapper.filter-module__inner-js
+                        div.filter-module__inner
+                            +input-checkbox-filter--default('Офсетная 80 г/м2', 'Офсетная 80 г/м2', '32', name + '-' +  'paper-1', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('Мелованная 90 г/м2', 'Мелованная 90 г/м2', '21', name + '-' +  'paper-2', ['btn', 'btn--small', 'btn--blue-invert'])
+            li
+                +list-button('Шрифт')
+                div.filter-module__wrapper
+                    +find-show-btn(55)
+                    .filter-module__inner-wrapper.filter-module__inner-js
+                        div.filter-module__inner
+                            +input-checkbox-filter--default('Клас', 'Клас', '32', name + '-' +  'font-1', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('Европа', 'Европа', '32', name + '-' +  'font-2', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('Болд', 'Болд', '32', name + '-' +  'font-3', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('Rodchenko', 'Rodchenko', '32', name + '-' +  'font-4', ['btn', 'btn--small', 'btn--blue-invert'])
+            li
+                +list-button('Красные выходные')
+                div.filter-module__wrapper
+                    +find-show-btn(66)
+                    .filter-module__inner-wrapper.filter-module__inner-js
+                        div.filter-module__inner
+                            +input-checkbox-filter--default('Только воскресенья', 'Только воскресенья', '32', name + '-' +  'shares-1', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('Субботы и воскресенья', 'Субботы и воскресенья', '32', name + '-' +  'shares-2', ['btn', 'btn--small', 'btn--blue-invert'])
+            li
+                +list-button('Количество крючков (петель) пружины ')
+                div.filter-module__wrapper
+                    +find-show-btn(77)
+                    .filter-module__inner-wrapper.filter-module__inner-js
+                        div.filter-module__inner
+                            +input-checkbox-filter--default('87.000 кр', '87.000 кр', '10', name + '-' +  'loops-numb-1', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('89.000 кр', '89.000 кр', '5', name + '-' +  'loops-numb-2', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('32.000 кр', '32.000 кр', '15', name + '-' +  'loops-numb-3', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('21.000 кр', '21.000 кр', '9', name + '-' +  'loops-numb-4', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('25.000 кр', '25.000 кр', '8', name + '-' +  'loops-numb-5', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('60.000 кр', '60.000 кр', '16', name + '-' +  'loops-numb-6', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('42.000 кр', '42.000 кр', '15', name + '-' +  'loops-numb-7', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('62.000 кр', '62.000 кр', '1', name + '-' +  'loops-numb-8', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('92.000 кр', '92.000 кр', '1', name + '-' +  'loops-numb-9', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('46.000 кр', '46.000 кр', '1', name + '-' +  'loops-numb-10', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('20.000 кр', '20.000 кр', '9', name + '-' +  'loops-numb-11', ['btn', 'btn--small', 'btn--blue-invert'])
+                            +input-checkbox-filter--default('24.000 кр', '24.000 кр', '2', name + '-' +  'loops-numb-12', ['btn', 'btn--small', 'btn--blue-invert'])
+
+
+
+        div.filter-module__buttons
+            +btn-main(theme='blue-invert', class='btn--default') Показать
+            +btn-main(theme='gray', class='btn--default') Сбросить фильтры

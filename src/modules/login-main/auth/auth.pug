@@ -1,0 +1,18 @@
+include ../../control-elements/buttons/btn-main
+include ../../control-elements/inputs/input-main
+include ../../breadcrumbs/breadcrumbs
+
+block auth
+    section.section.auth
+        div.section__wrapper
+            +breadcrumbs('Авторизация')
+            form.auth-form
+                h1.auth-form__heading Авторизоваться
+                div.auth-form__input
+                    +input-main(type='email', placeholder='Ваш e-mail')
+                div.auth-form__input
+                    +input-main(type='password', placeholder='Пароль')
+                div.auth-form__button
+                    +btn-main(class='btn--other btn--blue-invert')    Личный кабинет
+                a(href="password-rename.html").auth-form__link Забыли пароль
+                a(href="reg-main.html").auth-form__link Регистрация

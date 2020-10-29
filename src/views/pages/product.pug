@@ -1,0 +1,106 @@
+extends ../layouts/default
+include ../../modules/carts-block/carts-block
+include ../../modules/product-photo-swiper/product-photo-swiper
+include ../../modules/product-settings/product-settings
+include ../../modules/product-price/product-price
+include ../../modules/product-tabs/product-tabs
+include ../../modules/reviews/reviews
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Карточка товара')
+            .product-block
+                .product-block__back
+                    a(href='javascript:void(0);')
+                        +svg-mix('arrow-long')
+                        span Вернуться к каталогу
+                +product-photo-swiper.product-block__swiper(type = 1)
+                +product-settings.product-block__settings(type = 1)
+                +product-price(type = 1)
+                +product-subscribe
+
+            .product-block__tabs
+                .product-block__tabs-btns
+                    +tab-btn(1).active Характеристики
+                    +tab-btn(2) Описание
+                    +tab-btn(3) Дополнительная информация
+                    +tab-btn(4) Вопрос-ответ
+                    +tab-btn(5) Отзывы
+                    button(v-scroll-to="'.product-analog'") Аналоги
+                .product-block__tabs-contents
+                    +tab-content(1).product-block__tab-content.js-product-accordion.active
+                        .product-block__tab-title.js-product-accordion-header Характеристики
+                        +product-specifications(
+                            [
+                                {title: 'Количество в упаковке', data: '50 компл'},
+                                {title: 'Плановое наличие на складе', data: 'Нет гарантий в декабре'},
+                                {title: 'Размер', data: 'миди'},
+                                {title: 'Серия', data: 'VERDANA 3+0 офсетные'},
+                                {title: 'Цвет', data: 'черный металлик'},
+                                {title: 'Высота упаковки, м', data: '0,07'},
+                                {title: 'Длина упаковки, м', data: '0,49'},
+                                {title: 'Ширина упаковки, м', data: '0,335'},
+                                {title: 'Тип бумаги', data: 'офсетная 80 г/м2'},
+                                {title: 'Количество бесплатных в упаковке', data: '2'},
+                                {title: 'Разме блока', data: 'миди 1-сп (1 х 335*490)'},
+                                {title: 'Объем в упаковке', data: '0.006 м3'},
+                                {title: 'Вес в упаковке, кг', data: '7.62'},
+                                {title: 'Кратность упаковки', data: '50+2'}
+                            ]
+                        )
+
+                    +tab-content(2).product-block__tab-content.js-product-accordion
+                        .product-block__tab-title.js-product-accordion-header Описание
+                        .product-block__accordion-content.js-product-accordion-content
+                            .product-block__accordion-content-wrapper
+                                +product-description(2, '',
+                                    {
+                                        src: 'img/product/kursor-rezinka.png',
+                                        text: 'Крючки – оптимальное сочетания цены и качества:\n' +
+                                            'Надежное крепление на резинке и на ленте. 2 штуки, тип – «с загибами». Материал – жесткий пластик.'
+                                    },
+                                    {
+                                        src: 'img/product/alfa-kruchki.png',
+                                        text: 'Резинка – хватает на весь срок службы календаря:\n' +
+                                            'Многолетняя практика показала, что используемая нами резинка «с запасом» работает весь срок ' +
+                                            'службы календаря. Высокое содержание натурального каучука, прочная, эластичная.'
+                                    }
+                                )
+                                +product-description(3, 'mobile',
+                                    'Крючки – оптимальное сочетания цены и качества',
+                                    'Надежное крепление на резинке и на ленте.',
+                                    'Резинка – хватает на весь срок службы календаря',
+                                    'Высокое содержание натурального каучука, прочная, эластичная.'
+                                )
+
+                    +tab-content(3).product-block__tab-content.js-product-accordion
+                        .product-block__tab-title.js-product-accordion-header Доп. информация
+                        +product-specifications(
+                            [
+                                {href: '#', data: 'Типы, размеры блоков'},
+                                {href: '#', data: 'Ваши текущие цены на блоки'},
+                                {href: 'lk-discounts.html', data: 'Скидки'},
+                                {href: '#', data: 'Скачать каталог'},
+                                {href: '#', data: 'Общий прайс лист'},
+                                {href: '#', data: 'Скачать все дизайны 2020'}
+                            ],
+                            'href'
+                        )
+                    
+                    .product-block__tab-content.tab-content.js-product-accordion(data-tab="4")
+                        .product-block__tab-title.js-product-accordion-header Вопрос-ответ
+                        .product-block__accordion-content.js-product-accordion-content
+                            .product-block__accordion-content-wrapper
+                                a.product-block__link(href="#") Перейти в раздел “вопрос - ответ”
+
+                    +tab-content(5).product-block__tab-content.js-product-accordion
+                        .product-block__tab-title.product-block__reviews-tab-title.js-product-accordion-header Отзывы
+                        .product-block__accordion-content.js-product-accordion-content
+                            .product-block__accordion-content-wrapper
+                                +review-add
+            
+    +carts-block('Аналоги', true).product-analog.js-product-accordion
+    +carts-block('С этим товаром покупают')
+

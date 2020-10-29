@@ -1,0 +1,58 @@
+.requisites {
+    width: 100%;
+    //padding-top: 1.6rem;
+
+    @include above($desktop) {
+        //padding-top: 2.7rem;
+    }
+
+    &__title {
+        margin-bottom: 1.6rem;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        line-height: 160%;
+    }
+
+    &__download{
+        margin-top: 2.5rem;
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            color: $main-color-blue;
+            text-decoration: underline;
+    
+            @include above($desktop) {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            svg{
+                height: 1.6rem;
+                width: 1.6rem;
+                margin-right: 1rem;
+                fill: $main-color-blue;
+            }
+        }
+
+    }
+
+    &__btn {
+        width: 100% !important;
+        margin-top: 1.6rem;
+        font-weight: 500;
+        font-size: 1.4rem;
+        padding: 1.2rem;
+        line-height: 1.6rem;
+        border-width: 0.2rem !important;
+        border-radius: 0.5rem;
+        @include above($tablet) {
+            width: 20.5rem !important;
+        }
+    }
+}

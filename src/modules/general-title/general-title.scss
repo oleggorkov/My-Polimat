@@ -1,0 +1,84 @@
+.general-title{
+  background-color: #F3F5FF;
+  border-radius: 0.5rem;
+  margin-top: 2.1rem;
+  width: 100%;
+  &__wrapper{
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include above($tablet){
+      margin: 2.8rem 4.7rem 2.2rem;
+      flex-direction: row;
+      align-items: center;
+    }
+
+  }
+
+  h1{
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: #343136;
+    font-weight: normal;
+    box-sizing: border-box;
+    @include above($tablet){
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+    }
+    @include above($big-desktop){
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+    }
+
+  }
+  &__video{
+    border: 0.2rem solid $main-color-blue;
+    border-radius: 0.5rem;
+    width: 22rem;
+    min-width: 22rem;
+    height: 6.4rem;
+    padding: 1rem 1.6rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 1.6rem;
+    @include above($tablet){
+      margin-top: 0;
+      width: 28.5rem;
+      min-width: 28.5rem;
+      height: 8.9rem;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+      margin-left: 3rem;
+      padding-left: 3.1rem;
+    }
+    @include above($tablet-landscape){
+      min-width: 28.5rem;
+    }
+  }
+  &__video-ico{
+    min-width: 3.2rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-right: 1rem;
+    @include above($tablet){
+      margin-right: 2.1rem;
+      width: 4rem;
+      min-width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  &__video-text{
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+
+    color: $main-color-blue;
+    @include above($tablet){
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+    }
+  }
+
+}

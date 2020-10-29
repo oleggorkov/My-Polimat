@@ -1,0 +1,78 @@
+@include above($small-phone) {
+  .reg-main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .reg-main-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3.4rem;
+    align-items: center;
+  }
+
+  .reg-main-form__heading {
+    font-size: 2rem;
+    line-height: 2.3rem;
+    color: #000000;
+    margin-bottom: 2.2rem;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .reg-main-form__input {
+    width: 100%;
+    margin-bottom: 0.7rem;
+  }
+
+  .reg-main-form__checkbox {
+    margin-bottom: 3.1rem;
+    width: 100%;
+    height: 2.4rem;
+  }
+
+  .reg-main-form__button {
+    width: 22.2rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .reg-main-form__link {
+    cursor: default;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: $main-color-blue;
+    text-decoration-line: underline;
+    transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+    @include above($desktop) {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .reg-main-form__link:first-of-type {
+    margin-bottom: 0.7rem;
+  }
+}
+
+@include above($phone) {
+  .reg-main-form {
+    width: 34rem;
+  }
+}
+
+@include above($tablet-landscape) {
+  .reg-main-form__heading {
+    font-size: 2.6rem;
+    line-height: 3rem;
+  }
+}
+
+

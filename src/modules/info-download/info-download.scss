@@ -1,0 +1,60 @@
+.download{
+  @include above($desktop){
+    display: flex;
+    flex-direction: row;
+  }
+  &__block-wrapper:first-child{
+    margin-right: 6rem;
+    @include above($tablet){
+      margin-top: 0;
+    }
+  }
+  &__caption{
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    margin-bottom: 0.9rem;
+    margin-top: 1.5rem;
+    &:first-child{
+      margin-top: 0;
+    }
+    @include above($tablet){
+      font-size: 2rem;
+    }
+  }
+  &__content{
+    &-wrapper{
+      display: flex;
+      flex-direction: column;
+    }
+    &-item-ico{
+      margin-right: 0.6rem;
+      margin-top: 0.2rem;
+      width: 1.8rem;
+      height: 1.8rem;
+      fill: $main-color-blue
+    }
+    &-item-link{
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: flex-start;
+    }
+    &-item-text{
+      line-height: 1.6;
+      color: $main-color-blue;
+      text-decoration: underline;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+    &-caption{
+      margin: 1.2rem 0;
+    }
+    &-block{
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+      @include above($tablet){
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

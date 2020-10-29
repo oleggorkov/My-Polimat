@@ -1,0 +1,311 @@
+.type-calendar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &-block {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-of-type) {
+      margin-bottom: 2.4rem;
+      border-bottom: 0.3rem solid $main-gray-color;
+      padding-bottom: 2.4rem;
+    }
+
+    &__heading {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 2rem;
+      line-height: 2.3rem;
+      color: #000000;
+      margin-bottom: 1.2rem;
+
+      @include above($tablet) {
+        padding-top: 0.8rem;
+      }
+
+      @include above($tablet-landscape) {
+        font-size: 2.6rem;
+        line-height: 3rem;
+        padding-top: 2.4rem;
+      }
+    }
+
+    &:first-of-type {
+      & .type-calendar-block__flex {
+        display: flex;
+        flex-direction: column;
+
+        @include above($tablet-landscape) {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        @include above($big-desktop) {
+          justify-content: normal;
+        }
+
+        &-item {
+          &-image {
+            width: 28rem;
+            margin-bottom: 1.5rem;
+
+            @include above($tablet) {
+              width: 64rem;
+            }
+
+            @include above($tablet-landscape) {
+              width: 59.7rem;
+            }
+
+            @include above($desktop) {
+              width: 64.1rem;
+            }
+
+            @include above($big-desktop) {
+              margin-right: 11.1rem;
+            }
+
+            & img {
+              width: 100%;
+            }
+          }
+
+          &:last-of-type {
+            display: grid;
+            grid-template-columns: 4fr 1fr 1fr 1fr;
+            grid-template-rows: 2.4rem 4rem 2.4rem 4rem 2.4rem 4rem 2.4rem;
+            align-items: center;
+
+            @include above($tablet) {
+              width: 50%;
+            }
+
+            @include above($tablet-landscape) {
+              width: 28.1rem;
+              grid-template-columns: 3fr 1fr 1fr 1fr;
+            }
+
+            @include above($tablet-landscape) {
+              width: 37.9rem;
+            }
+
+            @include above($big-desktop) {
+              width: 35.3rem;
+            }
+          }
+
+          &-el {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.2rem;
+            line-height: 1.4rem;
+            color: #000000;
+            text-align: center;
+
+            @include above($tablet) {
+              font-size: 1.4rem;
+              line-height: 1.6rem;
+            }
+
+            &:not(:nth-of-type(n+5)) {
+              background: $helper-color-gray;
+              height: 2.4rem;
+              line-height: 2.4rem;
+            }
+
+            &:nth-of-type(9),
+            &:nth-of-type(10),
+            &:nth-of-type(11),
+            &:nth-of-type(12),
+            &:nth-of-type(17),
+            &:nth-of-type(18),
+            &:nth-of-type(19),
+            &:nth-of-type(20),
+            &:nth-of-type(25),
+            &:nth-of-type(26),
+            &:nth-of-type(27),
+            &:nth-of-type(28),
+            &:nth-of-type(33),
+            &:nth-of-type(34),
+            &:nth-of-type(35),
+            &:nth-of-type(36) {
+              background-color: $main-gray-color;
+              height: 2.4rem;
+              line-height: 2.4rem;
+            }
+
+            &:nth-of-type(4n+1) {
+              text-align: left;
+              padding-left: 1.2rem;
+              display: flex;
+              justify-content: space-between;
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-of-type(2) {
+      & .type-calendar-block__flex {
+        display: flex;
+        flex-direction: column;
+
+        @include above($tablet-landscape) {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        @include above($big-desktop) {
+          justify-content: normal;
+        }
+
+        &-item {
+          &-image {
+            width: 28rem;
+            margin-bottom: 1.5rem;
+
+            @include above($tablet) {
+              width: 41.2rem;
+            }
+
+            @include above($tablet-landscape) {
+              width: 38.4rem;
+            }
+
+            @include above($desktop) {
+              width: 41.2rem;
+            }
+
+            @include above($big-desktop) {
+              margin-right: 34rem;
+            }
+
+            & img {
+              width: 100%;
+            }
+          }
+
+          &:last-of-type {
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr;
+            grid-template-rows: 2.4rem 4rem 2.4rem 4rem 2.4rem 4rem;
+            align-items: center;
+
+            @include above($tablet) {
+              width: 50%;
+            }
+
+            @include above($tablet-landscape) {
+              width: 28.1rem;
+            }
+
+            @include above($tablet-landscape) {
+              width: 37.9rem;
+            }
+
+            @include above($big-desktop) {
+              width: 35.3rem;
+            }
+          }
+
+          &-el {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.2rem;
+            line-height: 1.4rem;
+            color: #000000;
+            text-align: center;
+
+            @include above($tablet) {
+              font-size: 1.4rem;
+              line-height: 1.6rem;
+            }
+
+            &:not(:nth-of-type(n+4)) {
+              background: $helper-color-gray;
+              height: 2.4rem;
+              line-height: 2.4rem;
+            }
+
+            &:nth-of-type(3n+1) {
+              text-align: left;
+              padding-left: 1.2rem;
+              display: flex;
+              justify-content: space-between;
+            }
+
+            &:nth-of-type(7),
+            &:nth-of-type(8),
+            &:nth-of-type(9),
+            &:nth-of-type(13),
+            &:nth-of-type(14),
+            &:nth-of-type(15) {
+              background-color: $main-gray-color;
+              height: 2.4rem;
+              line-height: 2.4rem;
+            }
+          }
+        }
+      }
+    }
+
+    &:last-of-type {
+      & .type-calendar-block__flex {
+        display: flex;
+        flex-direction: column;
+
+        &-item {
+          &-image {
+            width: 28rem;
+            margin-bottom: 1.5rem;
+
+            @include above($tablet) {
+              width: 72.7rem;
+            }
+
+            @include above($tablet-landscape) {
+              width: 86rem;
+            }
+
+            @include above($desktop) {
+              margin-right: 94.6rem;
+            }
+
+            & img {
+              width: 100%;
+            }
+          }
+        }
+
+        &-text {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 1.4rem;
+          line-height: 1.6rem;
+          color: $helper-color-gray;
+          text-align: left;
+          padding-bottom: 0.8rem;
+
+          @include above($tablet) {
+            padding-bottom: 2.4rem;
+            width: 60.7rem;
+          }
+
+          @include above($tablet-landscape) {
+            padding-bottom: 3.2rem;
+          }
+
+          @include above($mid-desktop) {
+            padding-bottom: 4rem;
+          }
+
+          @include above($big-desktop) {
+            padding-bottom: 5rem;
+          }
+        }
+      }
+    }
+  }
+}

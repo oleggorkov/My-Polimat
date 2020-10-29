@@ -1,0 +1,33 @@
+.social-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-buttons__item {
+  display: block;
+  font-family: Open Sans, sans-serif;
+  font-style: normal;
+  width: 4.8rem;
+  height: 4rem;
+  background: #BEBEBE;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1.8rem;
+  letter-spacing: 0.05rem;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 4rem;
+  text-decoration: none;
+  transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+}
+
+@include above($desktop) {
+  .social-buttons__item:hover {
+    cursor: pointer;
+  }
+}
+
+.social-buttons__item:not(:last-of-type) {
+  margin-right: 2.2rem;
+}

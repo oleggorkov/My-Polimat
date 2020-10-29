@@ -1,0 +1,184 @@
+include ../control-elements/buttons/btn-main
+include ../control-elements/inputs/input-main
+include ../control-elements/radio-button/radio-button
+
+block lk-new
+    form.lk-new(method='post' id='lk-new-payer')
+        div.lk-new__block
+            div.lk-new__block-flex
+                picture(v-image-lazy-load)
+                    source(type='image/webp' data-srcset='img/lk-image/arrow-left.webp')
+                    img(data-src='img/lk-image/arrow-left.png')
+                a(href="#").lk-company__block-link Вернуться к списку
+            h1.lk-new__block-heading  Новый плательщик
+            div.lk-new__block-radio
+                div.lk-new__block-radio--button
+                    +radio-btn('Юридическое лицо', 'radio-company', 'customer',
+                        'company', ['radio-label', 'radio-input'])
+                div.lk-new__block-radio--button
+                    +radio-btn('Индивидуальный предприниматель', 'radio-private', 'customer', 'private',
+                        ['radio-label', 'radio-input'])
+                div.lk-new__block-radio--button
+                    +radio-btn('Физическое лицо', 'radio-buyer', 'customer', 'buyer',
+                        ['radio-label', 'radio-input'])
+            div.lk-new__form
+                div.lk-new__form-flex
+                    div.lk-new__form-flex-item
+                        div.lk-new__form-flex-item--title   ИНН
+                        div.lk-new__form-flex-item--input
+                            +input-main-handler(placeholder='6449013711 ' class='lk-new__inp lk-new__inp-inn'
+                                name='lk-new__inp-inn' id='lk-new__inp-inn'
+                                data-require data-require-length=12 mask="############")
+                    div.lk-new__form-flex-item
+                        div.lk-new__form-flex-item--title   Полное название компании
+                        div.lk-new__form-flex-item--input
+                            +input-main-handler(placeholder='OOO Название компании' class='lk-new__inp lk-new__inp-full-name'
+                                name='lk-new__inp-full-name' id='lk-new__inp-full-name' data-require data-require-length=5)
+
+                div.lk-new__form-flex--100
+                    div.lk-new__form-flex-item
+                        div.lk-new__form-flex-item--title   ФИО
+                        div.lk-new__form-flex-item--input
+                            +input-main-handler(placeholder='Иванов Иван Иванович' class='lk-new__inp lk-new__inp-fio'
+                                name='lk-new__inp-fio' id='lk-new__inp-fio' data-require data-require-length=3)
+                    div.lk-new__form-flex-item
+                        div.lk-new__form-flex-item--title   Номер расчетного счета
+                        div.lk-new__form-flex-item--input
+                            +input-main-handler(placeholder='12345678901234567890' class='lk-new__inp lk-new__inp-bank-account-number'
+                                name='lk-new__inp-bank-account-number' id='lk-new__inp-bank-account-number'
+                                data-require data-require-length=20 mask="####################")
+
+
+                div.lk-new__form-flex
+                    div.lk-new__form-flex-item
+                        div.lk-new__form-flex-item--title   БИК банка
+                        div.lk-new__form-flex-item--input
+                            +input-main-handler(placeholder='044540132' class='lk-new__inp lk-new__inp-bik'
+                                name='lk-new__inp-bik' id='lk-new__inp-bik' data-require data-require-length=9 mask="#########")
+                    div.lk-new__form-flex-item
+                        div.lk-new__form-flex-item--title   КПП
+                        div.lk-new__form-flex-item--input
+                            +input-main-handler(placeholder='644901001' class='lk-new__inp lk-new__inp-kpp'
+                                name='lk-new__inp-kpp' id='lk-new__inp-kpp' data-require data-require-length=9 mask="#########")
+        div.lk-new__block
+            div.lk-new__form
+                div.lk-new__form-flex
+                    div.lk-new__form-flex-item--block
+                        div.lk-new__form-flex-item
+                            h3.lk-new__form-flex-item--heading   Юридический адрес
+                            div.lk-new__form-flex-item--title   Населенный пункт
+                            div.lk-new__form-flex-item--input
+                                +input-main-handler(placeholder='Москва' class='lk-new__inp lk-new__inp-legal-locality'
+                                    name='lk-new__inp-legal-locality' id='lk-new__inp-legal-locality' data-require)
+                        div.lk-new__form-flex-item
+                            div.lk-new__form-flex-item--title   Улица
+                            div.lk-new__form-flex-item--input
+                                +input-main-handler(placeholder='Ленина' class='lk-new__inp lk-new__inp-legal-street'
+                                    name='lk-new__inp-legal-street' id='lk-new__inp-legal-street' data-require)
+                    div.lk-new__form-flex-item
+                        div.lk-new__form-flex-item--flex
+                            div.lk-new__form-flex-item--input_small
+                                div.lk-new__form-flex-item--title
+                                    div Дом,стр./
+                                    div корп.
+                                +input-main-handler--off-varning(placeholder='100' class='lk-new__inp lk-new__inp-legal-building'
+                                    name='lk-new__inp-legal-building' id='lk-new__inp-legal-building' data-require mask='XXXXXXX')
+                            div.lk-new__form-flex-item--input_small
+                                div.lk-new__form-flex-item--title
+                                    div офис/
+                                    div кв.
+                                +input-main-handler--off-varning(placeholder='100' class='lk-new__inp lk-new__inp-legal-flat'
+                                    name='lk-new__inp-legal-flat' id='lk-new__inp-legal-flat' data-require mask='XXXXXXX')
+                            div.lk-new__form-flex-item--input_small
+                                div.lk-new__form-flex-item--title   Индекс
+                                +input-main-handler--off-varning(placeholder='000000' class='lk-new__inp lk-new__inp-legal-postcode'
+                                    name='lk-new__inp-legal-postcode' id='lk-new__inp-legal-postcode'
+                                    mask="######" data-require data-require-length=6)
+                div.lk-new__form-flex.lk-new__form-flex--actual-address.lk-new__form-flex--actual-address-js
+                    div.lk-new__form-flex-item--block
+                        div.lk-new__form-flex-item
+                            div.lk-new__form-flex-item-check
+                                h3.lk-new__form-flex-item--heading-check   Фактический адрес
+                                div.lk-new__form-checkbox
+                                    input(id='lk-new__form-equal-legal-address' type='checkbox').lk-new__form-checkbox-input
+                                    label(for='lk-new__form-equal-legal-address').lk-new__form-checkbox-label   Совпадает с юридическим
+                            div.lk-new__form-flex-item--title   Населенный пункт
+                            div.lk-new__form-flex-item--input
+                                +input-main-handler(placeholder='Москва' class='lk-new__inp lk-new__inp-actual-locality'
+                                    name='lk-new__inp-actual-locality' id='lk-new__inp-actual-locality'
+                                    data-require data-require-length=3)
+                        div.lk-new__form-flex-item
+                            div.lk-new__form-flex-item--title   Улица
+                            div.lk-new__form-flex-item--input
+                                +input-main-handler(placeholder='Ленина' class='lk-new__inp lk-new__inp-actual-street'
+                                    name='lk-new__inp-actual-street' id='lk-new__inp-actual-street'
+                                    data-require data-require-length=3)
+                    div.lk-new__form-flex-item
+                        div.lk-new__form-flex-item--flex
+                            div.lk-new__form-flex-item--input_small
+                                div.lk-new__form-flex-item--title
+                                    div Дом,стр./
+                                    div корп.
+                                +input-main-handler--off-varning(placeholder='100' class='lk-new__inp lk-new__inp-actual-building'
+                                    name='lk-new__inp-actual-building' id='lk-new__inp-actual-building' data-require mask='XXXXXXX')
+                            div.lk-new__form-flex-item--input_small
+                                div.lk-new__form-flex-item--title
+                                    div офис/
+                                    div кв.
+                                +input-main-handler--off-varning(placeholder='100' class='lk-new__inp lk-new__inp-actual-flat'
+                                    name='lk-new__inp-actual-flat' id='lk-new__inp-actual-flat' data-require mask='XXXXXXX')
+                            div.lk-new__form-flex-item--input_small
+                                div.lk-new__form-flex-item--title   Индекс
+                                +input-main-handler--off-varning(placeholder='000000' class='lk-new__inp lk-new__inp-actual-postcode'
+                                    name='lk-new__inp-actual-postcode' id='lk-new__inp-actual-postcode'
+                                    mask="######" data-require data-require-length=6)
+                div.lk-new__form-flex
+                    div.lk-new__form-flex-item--block
+                        div.lk-new__form-flex-item
+                            h3.lk-new__form-flex-item--heading   Адрес доставки
+                            div.lk-new__form-flex-item--title   Населенный пункт
+                            div.lk-new__form-flex-item--input
+                                +input-main-handler(placeholder='Москва' class='lk-new__inp lk-new__inp-delivery-locality'
+                                    name='lk-new__inp-delivery-locality' id='lk-new__inp-delivery-locality')
+                        div.lk-new__form-flex-item
+                            div.lk-new__form-flex-item--title   Улица
+                            div.lk-new__form-flex-item--input
+                                +input-main-handler(placeholder='Ленина' class='lk-new__inp lk-new__inp-delivery-street'
+                                    name='lk-new__inp-delivery-street' id='lk-new__inp-delivery-street')
+                    div.lk-new__flex-item-flex
+                        div.lk-new__form-flex-item--flex
+                            div.lk-new__form-flex-item--input_small
+                                div.lk-new__form-flex-item--title
+                                    div Дом,стр./
+                                    div корп.
+                                +input-main-handler--off-varning(placeholder='100' class='lk-new__inp lk-new__inp-delivery-building'
+                                    name='lk-new__inp-delivery-building' id='lk-new__inp-delivery-building' mask='XXXXXXX')
+                            div.lk-new__form-flex-item--input_small
+                                div.lk-new__form-flex-item--title
+                                    div офис/
+                                    div кв.
+                                +input-main-handler--off-varning(placeholder='100' class='lk-new__inp lk-new__inp-delivery-flat'
+                                    name='lk-new__inp-delivery-flat' id='lk-new__inp-delivery-flat' mask='XXXXXXX')
+                            div.lk-new__form-flex-item--input_small
+                                div.lk-new__form-flex-item--title   Индекс
+                                +input-main-handler--off-varning(placeholder='000000' class='lk-new__inp lk-new__inp-delivery-postcode'
+                                    name='lk-new__inp-delivery-postcode' id='lk-new__inp-delivery-postcode'
+                                    mask="######")
+        div.lk-new__block
+            div.lk-new__form
+                div.lk-new__form-flex
+                    div.lk-new__form-flex-item
+                        div.lk-new__form-flex-item--title   Телефон
+                        div.lk-cnew__form-flex-item--input
+                            +input-main-handler(mask='+7 (###) ### ## ##' id="lk-new__input-phone" name='lk-new__input-phone'
+                                class="inp inp--default inp--error inp--valid lk-new__input-phone lk-new__input-phone-js"
+                                placeholder='Ваш телефон' data-require data-require-length=18)
+                    div.lk-new__form-flex-item
+                        div.lk-new__form-flex-item--title   E-mail
+                        div.lk-new__form-flex-item--input
+                            +input-main-handler(placeholder = 'Ваш e-mail' name='lk-new-input__email' data-require data-email)
+        div.lk-new__flex
+            div.lk-new__flex-button
+                div.lk-new__flex-button-empty
+                +btn-main(class='btn--other btn--blue-invert btn-form-submit'
+                    id='lk-new__save-new' name='lk-new__save-buyer')    Сохранить плательщика

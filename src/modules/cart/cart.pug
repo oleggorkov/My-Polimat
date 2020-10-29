@@ -1,0 +1,108 @@
+include ../control-elements/buttons/btn-main
+include ../helper-mixins/svg-mix
+mixin cart-stock-ico(share, text)
+    div.cart__share(class='cart__share--' + share)
+        | #{text}
+mixin cart-helper-info(okay, hourglass, padlock)
+    div.cart__helper-info
+        div.cart__helper-info-item
+            +svg-mix('okay')
+            .cart__helper-info-item-wrapper
+                span.cart__helper-info-item-text Свободно
+                span.cart__helper-info-item-number #{okay}
+        div.cart__helper-info-item
+            +svg-mix('hourglass')
+            .cart__helper-info-item-wrapper
+                span.cart__helper-info-item-text Ожидаем
+                span.cart__helper-info-item-number #{hourglass}
+        div.cart__helper-info-item
+            +svg-mix('padlock')
+            .cart__helper-info-item-wrapper
+                span.cart__helper-info-item-text В резерве
+                span.cart__helper-info-item-number #{padlock}
+mixin cart-options(horizontal)
+    div.cart__options(class=horizontal ? 'cart__options--horizontal': '')
+        button(type='button' title='В избранное' class='cart__options-btn cart__options-btn--favorites')
+            +svg-mix('heart-painted', 'cart__options-svg--heart')
+        button(type='button' title='В сравнение' class='cart__options-btn cart__options-btn--compare')
+            +svg-mix('graph-painted', 'cart__options-svg--graph')
+        button(type='button' title='Увеличить' class='cart__options-btn cart__options-btn--zoom-in')
+            +svg-mix('search')
+        button(type='button' title='Аналоги' class='cart__options-btn cart__options-btn--analogue')
+            +svg-mix('copy2')
+mixin cart-title(boldTitle, title, color)
+    a(href='product.html').cart__title.cart__text-title
+        span.cart__text-title.cart__text-title--bold #{boldTitle}
+        span.cart__text-title #{title}
+        br
+        span.cart__text-title #{color}
+mixin cart-image(src, alt)
+    a(href='product.html').cart__image.cart__image--desktop
+        picture(v-image-lazy-load)
+            source(type='image/webp' data-srcset=src + '.webp')
+            img(data-src=src + '.png' alt=alt)
+mixin cart-image--mobile(src, alt)
+    picture(v-image-lazy-load)
+        source(type='image/webp' data-srcset=src + '.webp')
+        img(data-src=src + '.png' alt='cart-image')
+mixin cart-price(minPrice, maxPrice)
+    div.cart__price
+        | #{minPrice} - #{maxPrice}* ₽
+        span
+            | * цена за 1 компл., зависит от оборота
+mixin cart-phisical-characteristic
+    .cart__row
+        .cart__characteristic.cart__characteristic--color
+            .cart__characteristic-sub-title Цвет
+            .cart__characteristic-flex
+                .cart__characteristic-color.cart__characteristic-color--red
+                .cart__characteristic-text Красный
+        .cart__characteristic
+            .cart__characteristic-sub-title Серия
+            .cart__characteristic-text Альфа
+    .cart__row
+        .cart__characteristic
+            .cart__characteristic-sub-title Размер
+            .cart__characteristic-text мини 290-330
+        .cart__characteristic
+            .cart__characteristic-sub-title Кол-во в упаковке
+            .cart__characteristic-text 100 шт+1 бесплатно
+mixin cart
+    if attributes.inLine !== 'in-line'
+        div(class='cart')
+            div.cart__wrapper
+                div.cart__inner.cart__image.cart__image--mobile
+                    div.cart__case
+                        picture(v-image-lazy-load)
+                            source(type='image/webp' data-srcset='img/cart-image/cart-image.webp')
+                            img(data-src='img/cart-image/cart-image.png' alt='cart-image')
+                div.cart__inner
+                    div.cart__case
+                        +cart-stock-ico('green', 'Весна')
+                        +cart-options
+                        +cart-title('2020 - ЕВРОПА металлик мини', '1-сп (1 х 297*445)', 'серебристо-белый')
+                        +cart-image('img/cart-image/cart-image', 'cart-image')
+                        +cart-price('28,80', '29,80')
+                        +btn-main(theme='lightblue', class='btn--default cart__btn-buy-it') Перейти к покупке
+            div.cart__wrapper
+                div.cart__inner
+                    div.cart__case
+                        +cart-helper-info('много', '20.12.2019', '550')
+    else
+        div(class='cart cart--in-line')
+            .cart__wrapper
+                .cart__inner
+                    .cart__case.cart__case--main-info-wrapper
+                        +cart-image('img/cart-image/cart-image-cursor', 'cart-image')
+                        .cart__case-wrapper.cart__options-wrapper
+                            +cart-options(1)
+                            +cart-title('Курсор ', '340-380 синий АЛЬФА (уп.100шт.)')
+                    .cart__case.cart__case--phisical-characteristic-wrapper
+                        +cart-phisical-characteristic
+                    .cart__case.cart__case--price.cart__column
+                        +cart-price('28,80', '29,80')
+                        .cart__button
+                            +btn-main(theme='lightblue', class='btn--default cart__btn-buy-it') Перейти к покупке
+                    .cart__case.cart__case--helper-info
+                        +cart-helper-info('много', '20.12.2019', '550')
+

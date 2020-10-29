@@ -1,0 +1,20 @@
+mixin specification-spring-column(...ceils)
+    .specification-spring__table-column
+        +specification-column-inner(ceils)
+mixin specification-spring-column--with-title(...ceils)
+    .specification-spring__table-column.specification-spring__table-column--with-caption
+        +specification-column-inner(ceils)
+mixin specification-column-inner(ceils)
+    each item in ceils
+        if item.caption == 'isEmpty'
+            .specification-spring__table-cell--caption-empty
+        else if item.caption
+            .specification-spring__table-cell--caption #{item.caption}
+        if item.title == 'isEmpty'
+            .specification-spring__table-cell.specification-spring__table-cell--empty
+        else if item.title
+            .specification-spring__table-cell.specification-spring__table-cell--title #{item.title}
+        if item.text == 'isEmpty'
+            .specification-spring__table-cell.specification-spring__table-cell--empty
+        else if item.text
+            .specification-spring__table-cell #{item.text}

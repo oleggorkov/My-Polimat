@@ -1,0 +1,13 @@
+extends ../layouts/default
+include ../../modules/control-elements/buttons/btn-main
+include ../../modules/basket/basket
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.basket-empty.section
+        .section__wrapper
+            +breadcrumbs('Корзина пуста')
+            h1.title-main.basket__caption Корзина
+            .basket-empty__wrapper
+                .basket-empty__text.reg-ok__text Ваша корзина пуста
+                +btn-main(class= "btn btn--default btn--blue-invert basket__btn--empty") Перейти к покупкам

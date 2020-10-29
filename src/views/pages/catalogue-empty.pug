@@ -1,0 +1,18 @@
+extends ../layouts/default
+include ../../modules/breadcrumbs/breadcrumbs
+
+block helper-blocks
+    include ../../modules/filter-menu/filter-menu
+    include ../../modules/catalogue__sort-menu/catalogue__sort-menu
+
+block content
+    section.section.catalogue
+        div.section__wrapper
+            +breadcrumbs('Каталог', 'Товары не найдены')
+            include ../../modules/catalogue-head/catalogue-head-empty
+            div.catalogue__inner
+                include ../../modules/catalogue-aside/catalogue-aside
+                .catalogue__empty
+                    p 
+                        b Товары не найдены
+                    p Попробуйте выбрать другие характеристики.

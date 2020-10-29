@@ -1,0 +1,11 @@
+extends ../layouts/default
+include ../../modules/lk-block/lk-block
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Личный кабинет', 'Связаться с нами')
+            +lk-block(4)
+                include ../../modules/lk-check/lk-check
+    

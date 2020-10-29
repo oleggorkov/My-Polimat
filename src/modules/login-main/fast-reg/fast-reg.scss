@@ -1,0 +1,95 @@
+@include above($small-phone) {
+  .fast-reg {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fast-reg-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3.4rem;
+    align-items: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .fast-reg-form__heading {
+    font-size: 2rem;
+    line-height: 2.3rem;
+    color: #000000;
+    margin-bottom: 2.2rem;
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  .fast-reg-form__flex {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .fast-reg-form__flex_input {
+    width: 100%;
+    margin-bottom: 0.7rem;
+  }
+
+  .fast-reg-form__button {
+    width: 100%;
+    margin-bottom: 2.2rem;
+    margin-top: 3rem;
+  }
+
+  .fast-reg-form__link {
+    cursor: default;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: $main-color-blue;
+    text-decoration-line: underline;
+    transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+    @include above($desktop) {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .fast-reg-form__link:first-of-type {
+    margin-bottom: 0.7rem;
+  }
+
+  .fast-reg-form__link:last-of-type {
+    margin-bottom: 4rem;
+  }
+}
+
+@include above($tablet) {
+  .fast-reg-form {
+    width: 53.4rem;
+  }
+  .fast-reg-form__flex_input {
+    width: calc(50% - (3.2rem / 2));
+  }
+  .fast-reg-form__flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: row;
+  }
+  .fast-reg-form__button {
+    width: 62%;
+  }
+}
+
+@include above($tablet-landscape) {
+  .fast-reg-form__heading {
+    font-size: 2.6rem;
+    line-height: 3rem;
+  }
+}

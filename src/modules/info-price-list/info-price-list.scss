@@ -1,0 +1,16 @@
+.info-pricelist{
+  width: 100%;
+
+  &__title {
+    display: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    color: $main-black-color;
+
+    @include above($tablet) {
+      display: flex;
+    }
+  }
+}

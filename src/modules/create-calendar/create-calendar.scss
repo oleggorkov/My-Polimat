@@ -1,0 +1,130 @@
+.new-calendar {
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 3.1rem;
+
+  &__title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    color: #000000;
+    margin-bottom: 1.3rem;
+    text-align: left;
+
+    @include above($tablet) {
+      font-size: 2.6rem;
+      line-height: 3rem;
+      margin-bottom: 2.3rem;
+      margin-top: 1.3rem;
+    }
+
+    @include above($tablet-landscape) {
+      font-size: 2.6rem;
+      line-height: 3rem;
+      margin-bottom: 2.3rem;
+      margin-top: 2.3rem;
+    }
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+
+    &-flex {
+      flex: 1;
+
+      img {
+        margin-left: 4.3rem;
+        width: 100%;
+
+        @include above($tablet) {
+          width: 67.78%;
+        }
+      }
+
+      &:first-child {
+        flex: 0.52;
+      }
+
+      &:last-child {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-settings {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  & .product-settings__option-name {
+    margin-right: 9.3rem;
+    min-width: 7rem;
+
+    &--modify {
+      align-self: flex-start;
+    }
+  }
+
+  & .product-settings__options {
+    margin-top: 2rem;
+  }
+
+  & .product-settings__options--modify {
+    margin-top: 2.5rem;
+  }
+
+  & .product-settings__option-name--modify {
+    margin-right: 9.3rem;
+    min-width: 7rem;
+  }
+
+  & .product-settings__option-radios {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  & .product-settings__option-block {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    svg {
+      width: 4.7rem;
+      fill: #E2E2E2;
+      height: 10.2rem;
+
+      @include above($desktop) {
+        &:hover {
+          fill: $main-color-blue;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &:last-of-type {
+        svg {
+          height: 5rem;
+        }
+      }
+
+      &-title {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        color: #000000;
+        margin-bottom: 1.1rem;
+      }
+    }
+  }
+}

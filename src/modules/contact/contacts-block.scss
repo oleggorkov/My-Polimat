@@ -1,0 +1,87 @@
+.contacts-block {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 5rem;
+
+    &__title {
+        margin-bottom: 1.7rem;
+        font-size: 2rem;
+        line-height: 2.3rem;
+        @include above($tablet) {
+            margin-top: 1.1rem;
+        }
+        @include above($tablet-landscape) {
+            font-size: 2.6rem;
+            line-height: 3rem;
+        }
+        @include above($desktop) {
+            margin-top: 2.7rem;
+            margin-bottom: 2.7rem;
+        }
+    }
+
+    &__details {
+        @include above($mid-desktop){
+            flex: 0 0 33.333%;
+        }
+
+        @include above($big-desktop){
+            flex: 0 0 25%;
+        }
+    }
+
+    &__managers {
+        margin-top: 1.9rem;
+        
+        @include above($tablet) {
+            margin-top: 2.7rem;
+        }
+
+        @include above($desktop) {
+            margin-top: 3.9rem;
+        }
+
+        @include above($mid-desktop){
+            margin-top: 0;
+            flex: 0 0 66.666%;
+            padding-left: 1rem;
+        }
+
+        @include above($big-desktop){
+            flex: 0 0 75%;
+        }
+    }
+
+    &__map{
+        margin-top: 2.1rem;
+
+        @include above($tablet) {
+            margin-top: 3.5rem;
+        }
+
+        @include above($desktop) {
+            margin-top: 5.3rem;
+        }
+
+        @include above($mid-desktop){
+            flex: 0 0 58.333%;
+            padding-right: 1rem;
+        }
+    }
+
+    &__callback{
+        margin-top: 2.9rem;
+        
+        @include above($mid-desktop){
+            flex: 0 0 41.666%;
+            padding-left: 1rem;
+            margin-top: 5.3rem;
+        }
+
+        @include above($big-desktop){
+            margin-left: auto;
+            flex: 0 0 33.333%;
+        }
+    }
+
+}

@@ -1,0 +1,124 @@
+.contacts-details {
+    font-size: 1.4rem;
+    line-height: 100%;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    a {
+        color: $main-color-blue;
+        text-decoration: underline;
+
+        @include above($desktop) {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    .contacts-details__link{
+        text-decoration: none;
+        color: #000000;
+        &:hover{
+            color: $main-color-blue;
+        }
+    }
+    &__requisites {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        @include above($tablet) {
+            margin-top: 1.6rem;
+        }
+
+        @include above($big-desktop) {
+            margin-top: 1rem;
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__text {
+        margin-bottom: 0.4rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__info {
+        width: 100%;
+        @include above($tablet) {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding-right: 1rem;
+        }
+
+        @include above($desktop) {
+            padding-right: 9.5rem;
+        }
+
+        @include above($mid-desktop) {
+            padding-right: 0;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+    &__work {
+        width: 100%;
+        margin-top: 1.3rem;
+        @include above($tablet) {
+            margin-top: 0;
+        }
+
+        @include above($tablet) {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding-left: 8.3rem;
+        }
+
+        @include above($desktop) {
+            padding-left: 1rem;
+        }
+
+        @include above($mid-desktop) {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-top: 3.4rem;
+            padding-left: 0;
+        }
+        
+        @include above($big-desktop) {
+            margin-top: 4rem;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2.1rem;
+        margin-bottom: 2rem;
+    }
+
+    &__schedule {
+        line-height: 211.69%;
+        display: flex;
+        
+        span {
+            &:first-child {
+                flex: 0 0 4.6rem;
+            }
+            &:last-child {
+                margin-left: 8rem;
+                position: relative;
+
+                &:before {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    width: 8rem;
+                    height: 0.2rem;
+                    bottom: 1rem;
+                    left: -8rem;
+                    background: $main-gray-color;
+                }
+            }
+        }
+    }
+}

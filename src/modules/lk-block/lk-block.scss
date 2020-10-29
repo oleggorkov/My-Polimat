@@ -1,0 +1,67 @@
+.lk-block {
+    padding-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @include above($tablet){
+        padding-top: 1rem;
+    }
+    @include above($tablet-landscape){
+        padding-top: 2rem;
+    }
+
+    &__title {
+        font-size: 2rem;
+        line-height: 2.3rem;
+        margin-bottom: 0.5rem;
+        text-align: left;
+        @include above($tablet){
+            margin-bottom: 2.4rem;
+            text-align: left;
+        }
+        &--mobile-none {
+            display: none;
+
+            @include above($tablet){
+                display: block;
+            }
+        }
+    }
+
+    &__menu {
+        width: 100%;
+        padding-bottom: 1.6rem;
+        @include above($tablet){
+            padding-right: 1rem;
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        @include above($mid-desktop){
+            flex: 0 0 16.666%;
+            max-width: 16.666%;
+        }
+
+    }
+    &__content {
+        width: 100%;
+
+        .title-main{
+            @include above($tablet-landscape){
+                margin-top: 0;
+            }
+        }
+        @include above($tablet){
+            padding-left: 1rem;
+            padding-top: 0;
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+
+        @include above($mid-desktop){
+            flex: 0 0 83.333%;
+            max-width: 83.333%;
+        }
+    }
+}

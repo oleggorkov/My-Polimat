@@ -1,0 +1,12 @@
+extends ../../views/layouts/default
+include ../../modules/lk-block/lk-block
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Информация', 'Праздники')
+            +info-block(6)
+                .info-holiday
+                    .info-holiday__block-wrapper
+                        h1.lk-block__title Праздники

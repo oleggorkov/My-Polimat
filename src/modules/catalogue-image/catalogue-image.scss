@@ -1,0 +1,19 @@
+.catalogue-image {
+  display: block;
+  width: auto;
+  height: auto;
+  text-decoration: none;
+
+  & picture {
+    width: 100%;
+    height: auto;
+
+    & img {
+      width: 100%;
+      height: auto;
+      @include above($desktop){
+        object-fit: contain;
+      }
+    }
+  }
+}

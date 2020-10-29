@@ -1,0 +1,87 @@
+.radio-input {
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+
+  }
+
+.radio-label {
+
+  cursor: pointer;
+
+  transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: #000000;
+  position: absolute;
+  padding-left: 3.6rem;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background: white;
+    border: 0.2rem solid $main-gray-color;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0.2rem;
+  }
+
+  @include above($desktop) {
+    &:hover:before {
+      border: 0.2rem solid $main-color-blue;
+      cursor: pointer;
+      background: white;
+      transition: border ease 0.25s;
+    }
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 1.4rem;
+    height: 1.4rem;
+    background: $main-color-blue;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    top: 0.45rem;
+    left: 0.7rem;
+    opacity: 0;
+  }
+
+  &--red {
+    &:after {
+      content: "";
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      background: white;
+      border: 0.2rem solid $main-color-red;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 2;
+      top: 0.6rem;
+      left: 0.8rem;
+      opacity: 0;
+    }
+  }
+}
+
+.radio-input:checked + .radio-label:after {
+  opacity: 1;
+}
+
+.radio-input:checked + .radio-label:before {
+  border: 0.2rem solid $main-gray-color;
+}
+
+.radio-input:checked + .radio-label {
+    color: #808080;
+}

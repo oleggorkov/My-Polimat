@@ -1,0 +1,16 @@
+include ../../modules/helper-mixins/main-caption
+include ../control-elements/buttons/btn-main
+include ../to-top/to-top-btn
+include ../cart/cart
+
+block catalogue-favorites
+    div.catalogue-favorites
+        +h1caption('catalogue-favorites', 'Избранное')
+        block catalogue-content
+            div.catalogue-favorites__content
+                - for (let x = 0; x < 16; x++)
+                    +cart
+                div.catalogue-content__more.catalogue-content__more--active
+                    p.catalogue-content__more-text Секундочку, загружается...
+                    +btn-main(theme='blue', class='btn--default') Ещё товары
+                    +btn-to-top('catalogue-content__more-to-top')

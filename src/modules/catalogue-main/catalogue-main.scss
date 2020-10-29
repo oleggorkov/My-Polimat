@@ -1,0 +1,22 @@
+.catalogue{
+  flex-grow: 1;
+
+  &__inner{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+  }
+
+  &__empty{
+    border-top: 0.2rem solid #F0F0F0;
+    width: 100%;
+    margin-right: auto;
+    padding: 3.7rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+}

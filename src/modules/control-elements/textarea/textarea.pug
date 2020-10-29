@@ -1,0 +1,18 @@
+mixin textarea
+    label.textarea__label
+        .textarea__label-text #{attributes.label}
+        div(class=attributes.state ? 'textarea__wrapper textarea__wrapper--' + attributes.state : 'textarea__wrapper textarea__wrapper--default')
+            textarea.textarea.textarea--default.textarea--error.textarea--valid(placeholder=attributes.placeholder class=attributes.class
+                type=attributes.type name=attributes.name required=attributes.required )
+            p.textarea__error-message Пожалуйста, заполните поле
+            p.textarea__valid-ico
+mixin textarea-handler
+    label.textarea__label
+        if block
+            block
+        else
+            .inp__label-text
+        div(class='inp__wrapper inp__wrapper--default')
+            textarea(class='textarea textarea--default inp--error inp--valid')&attributes(attributes)
+            p.inp__error-message Пожалуйста, заполните поле
+            p.inp__valid-ico

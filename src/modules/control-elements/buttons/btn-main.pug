@@ -1,0 +1,5 @@
+mixin btn-main
+    - var mainMod = attributes.theme ? attributes.theme : 'default'
+
+    button(type = attributes.type ? attributes.type : 'button' id=attributes.id name=attributes.name class = attributes.class ? `btn btn--${mainMod} ` + attributes.class  : `btn btn--${mainMod}`)
+        block

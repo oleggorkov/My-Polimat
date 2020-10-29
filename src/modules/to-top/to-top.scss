@@ -1,0 +1,33 @@
+.to-top{
+  margin-top: 1.6rem;
+
+  &__wrapper{
+    align-items: flex-end!important;
+  }
+
+  &__button{
+    width: 5.5rem;
+    height: 5.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    border: 0.1rem solid $helper-color-gray;
+    border-radius: 50%;
+
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: $helper-color-gray;
+
+    transition: color ease 0.25s, border ease 0.25s;
+
+    @include above($desktop){
+      &:hover, &:focus{
+        border: 0.1rem solid $main-color-blue;
+        color: $main-color-blue;
+      }
+    }
+  }
+}

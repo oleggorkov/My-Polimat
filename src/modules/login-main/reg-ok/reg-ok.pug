@@ -1,0 +1,12 @@
+include ../../breadcrumbs/breadcrumbs
+
+block .reg-ok
+        section.section.reg-ok
+            div.section__wrapper
+                +breadcrumbs('Спасибо за регистрацию')
+                div.reg-ok__img
+                    picture(v-image-lazy-load)
+                        source(type='image/webp' data-srcset='img/login-image/thanks.webp')
+                        img(data-src='img/login-image/thanks.png')
+                div.reg-ok__text    Спасибо за регистрацию!
+                a(href="#").reg-ok__button  Перейти в каталог

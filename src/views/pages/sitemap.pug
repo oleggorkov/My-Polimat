@@ -1,0 +1,107 @@
+extends ../layouts/default
+include ../../modules/sitemap/sitemap
+include ../../modules/helper-mixins/main-caption
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.sitemap.section
+        .section__wrapper
+            +breadcrumbs('Карта сайта')
+            +h1caption('sitemap', 'Карта сайта')
+            ol.sitemap__list.sitemap__list--main
+                +list-item({href: 'index.html', text: 'Главная'})
+                li.sitemap__list-item
+                    ol.sitemap__list
+                        +list-item({href: 'catalogue.html', text: 'Каталог'})
+                        ol.sitemap__list
+                            +lists(
+                                {href: '#', text: 'Бумага для печати (17)'},
+                                {href: '#', text: 'Офисная бумага (1)'},
+                                {href: '#', text: 'Ручки для пакетов (31)'},
+                                {href: '#', text: 'Пленка для ламинирования (роль) (149)'},
+                                {href: '#', text: 'Бобина с проволокой 2:1 (39)'},
+                                {href: '#', text: 'Бобина с проволокой 3:1 (205)'},
+                                {href: '#', text: 'Проволока в нарезке (147)'},
+                                {href: '#', text: 'Нарезка 2:1 (30)'},
+                                {href: '#', text: 'Цифровая бумага (23)'},
+                                {href: '#', text: 'Коробка для календарей (3)'},
+                                {href: '#', text: 'Часовые механизмы (26)'},
+                                {href: '#', text: 'Ригель (111)'},
+                                {href: '#', text: 'Пластиковая пружина (86)'},
+                                {href: '#', text: 'Пакетник (пакетная пленка для ламинирования) (71)'},
+                                {href: '#', text: 'Пикколо (71)'},
+                                {href: '#', text: 'Обложки пластик (40)'},
+                                {href: '#', text: 'Курсоры (78)'},
+                                {href: '#', text: 'Обложки картон (31)'},
+                                {href: '#', text: 'Ножки для воблеров (2)'},
+                                {href: '#', text: 'Ручки шариковые (150)'},
+                                {href: '#', text: 'ПОРТОБЕЛЛО Ручки (106)'},
+                                {href: '#', text: 'СЕНАТОР Ручки (44)'},
+                                {href: '#', text: 'Блок календарный (627)'},
+                                {href: '#', text: 'Блок календарный 2020 (344)'},
+                                {href: '#', text: 'Блок календарный 2021 (283)'},
+                                {href: '#', text: 'Оборудование (125)'},
+                                {href: '#', text: 'Скобы (9)'},
+                                {href: '#', text: 'Зап.части к оборудованию (52)'},
+                                {href: '#', text: 'Переплетчик на металлическую пружину (28)'},
+                                {href: '#', text: 'Переплетчик на плаcтиковую пружину (16)'},
+                                {href: '#', text: 'Аппараты для установки пикколо и люверсов (13)'},
+                                {href: '#', text: 'Обрезчики углов (7)'},
+                                {href: '#', text: 'Блоки для ежедневников (37)'},
+                                {href: '#', text: 'Блоки для ежедневников 2020 (19)'},
+                                {href: '#', text: 'Блоки для ежедневников 2021 (18)'},
+                                {href: '#', text: 'Комплектующие (380)'},
+                                {href: '#', text: 'все для ежедневников (380)'},
+                                {href: '#', text: 'Обложки (380)'}
+                            )
+                        +list-item({href: 'info-about.html', text: 'Информация'})
+                        ol.sitemap__list
+                            +lists(
+                                {href: 'info-about.html', text: 'О компании'},
+                                {href: 'info-about.html', text: 'Оплата и доставка'},
+                                {href: 'info-questions.html', text: 'Вопросы и ответы'},
+                                {href: 'info-dealers.html', text: 'Дилеры'},
+                                {href: 'info-price-list.html', text: 'Прайс-лист'},
+                                {href: 'info-download.html', text: 'Скачать'}
+                            )
+                        +list-item({href: 'lk.html', text: 'Личный кабинет'})
+                        ol.sitemap__list
+                            +lists(
+                                {href: 'lk.html', text: 'Мои заказы'},
+                                {href: 'lk-data.html', text: 'Личные данные'},
+                                {href: 'lk-discounts.html', text: 'Скидки'},
+                                {href: 'lk-payer.html', text: 'Плательщики'},
+                                {href: 'lk-check.html', text: 'Связаться с нами'},
+                                {href: 'lk-subscribe.html', text: 'Подписки'}
+                            )
+                        +list-item({href: 'contact.html', text: 'Контакты'})
+                        ol.sitemap__list
+                            +lists(
+                                {href: 'lk.html', text: 'Как добраться'},
+                                {href: 'lk-data.html', text: 'Реквизиты ООО «Все для календарей»'},
+                                {href: 'lk-discounts.html', text: 'Реквизиты ИП Зарецкий А.В.'}
+                            )
+                        +lists(
+                            {href: 'search.html', text: 'Поиск'},
+                            {href: 'holiday.html', text: 'Праздники'},
+                            {href: '#', text: 'Вы смотрели'},
+                            {href: 'catalogue-favorites.html', text: 'Избранное'},
+                            {href: 'comparing.html', text: 'Сравнить'},
+                            {href: 'basket.html', text: 'Корзина'},
+                            {href: 'auth.html', text: 'Войти'},
+                            {href: 'catalog/blok_kalendarnyy/', text: 'Блоки для календарей'},
+                            {href: 'catalog/kursory/', text: 'Курсоры'},
+                            {href: 'catalog/komplektuyushchie/', text: 'Комплектующие для календарей'},
+                            {href: 'catalog/komplektuyushchie/vse_dlya_ezhednevnikov/', text: 'Для ежедневников'},
+                            {href: 'catalog/komplektuyushchie/vse_dlya_ezhednevnikov/', text: 'Расходные материалы'},
+                            {href: 'catalog/oborudovanie/', text: 'Оборудование'},
+                            {href: '#', text: 'Менеджер меню'}
+                        )
+
+
+
+
+
+
+
+

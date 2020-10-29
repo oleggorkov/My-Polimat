@@ -1,0 +1,13 @@
+include ../../control-elements/buttons/btn-main
+include ../../breadcrumbs/breadcrumbs
+
+block .reg-error
+    section.section.reg-error
+            div.section__wrapper
+                +breadcrumbs('Спасибо за регистрацию')
+                div.reg-error__img
+                    picture(v-image-lazy-load)
+                        source(type='image/webp' data-srcset='img/login-image/trouble.webp')
+                        img(data-src='img/login-image/trouble.png')
+                div.reg-error__text    Спасибо за регистрацию!
+                a(href="#").reg-error__button  Перейти в каталог

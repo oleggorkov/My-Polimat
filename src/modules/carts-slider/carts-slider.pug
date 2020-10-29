@@ -1,0 +1,19 @@
+include ../helper-mixins/svg-mix
+include ../cart/cart
+block carts-slider
+    div.carts-slider
+        div.swiper-container.slider
+            div.swiper-wrapper
+                - var gallery = 0
+                while gallery < 5
+                    - gallery++
+                    div.swiper-slide.slider-slide
+                        +cart
+        div.carts-slider__navigation
+            button(type='button')
+                +svg-mix('arrow-long')
+            div.carts-slider__navigation-progress-bar
+                span
+            button(type='button')
+                +svg-mix('arrow-long')
+

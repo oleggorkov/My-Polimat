@@ -1,0 +1,82 @@
+extends ../layouts/default
+include ../../modules/basket/basket
+include ../../modules/control-elements/buttons/btn-main
+include ../../modules/order/order
+include ../../modules/control-elements/textarea/textarea
+include ../../modules/control-elements/select/select
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.order.section
+        .section__wrapper.order__sectiont-wrapper
+            +breadcrumbs('Оформление заказа')
+            h1.title-main.order__caption Оформление заказа
+            form.order__form
+                .order__payer-wrapper
+                    h3.order__title Выберите плательщика
+                    .order__payer
+                        +input-radio-item--bordered("payer-ooo", "payer", "payer-ooo", "ООО Компания",
+                            "ИНН 6449013711 / КПП 644901001", 'checked')
+                        +input-radio-item--bordered("payer-ip", "payer", "payer-ip", "ИП Иванов",
+                            "ИНН 6449013711")
+                        a(href='lk-payer.html' class='order__payer-add')
+                            div.order__payer-add-mark
+                .order__delivery-wrapper
+                    h3.order__title.order__title.order__title.order__title--delivery Выберите службу доставки
+                    .order__delivery.order__input-radio-item
+                        +input-radio-item('self-pickup', 'delivery', 'self-pickup', 'Самовывоз')
+                        +input-radio-item('courier', 'delivery', 'courier', 'Курьер по Москве', true)
+                        +input-radio-item('on-auto', 'delivery', 'on-auto', 'Автотранспортом по Москве в пределах МКАД')
+                        +input-radio-item('transport-terminal', 'delivery', 'transport-terminal',
+                            'Доставка до терминала транспортной компании (ТК) в Москве (по России) с выбором ТК')
+                        +input-radio-item('sdek', 'delivery', 'sdek', 'СДЭК')
+                        +order-transport
+                +input-delivery-address("Москва, Севастопольский проспект, д.56/40, стр. 1")
+                +input-delivery-mail("example@email.com")
+            p.order__passport-data Нам понадобятся ваши паспортные данные при выборе доставки “Доставка до терминала
+                |транспортной компании (ТК) в Москве (по России) с выбором ТК.&nbsp
+                a(href='lk-new.html' class='order__passport-data--link') Пожалуйста, заполните паспортные данные.
+            h2.title-main.order__product-caption Ваши товары
+            +basket-provider('ООО Всё для календарей')
+            +basket-header('descriptions',{
+                'product': 'Товар',
+                'weight': 'Вес',
+                'count': 'Количество',
+                'price': 'Цена',
+                'sum': 'Сумма',
+                'delete': 'Удалить'}
+            )
+            +basket-item(
+                'img/basket/cart-img1.png',
+                '1 000 шт',
+                '2020- ЕВРОПА металлик',
+                ' мини 1-сп (1 х 297*445)  серебристо-белый',
+                2
+            )
+            +basket-item(
+                'img/basket/cart-img2.png',
+                '9 000 шт',
+                '',
+                'Классика А5, 2+2, недатированный, форзац, белый, уголок',
+                5.25
+            )
+            +basket-header('descriptions basket__total-weight-area',{
+                'product': '',
+                'weight basket__total-weight': '7.25 кг',
+                'count': '',
+                'price': '',
+                'sum': '',
+                'delete': ''
+            }
+            )
+            .order__form-submit-area
+                .order__comment-wrapper
+                    p.order__comment-caption Комментарий к заказу
+                    +textarea(cols='1' rows='3' placeholder='' name='comment').order__comment
+                .order__price-submit-text
+                    p.order__text-price-about-company Счет будет выставлен от
+                        span.order__text-price-about-company-text  ООО Всё для календарей
+
+                    +basket-total-price-with-nds('1 018 000', "Итого:", "с НДС")
+                    +btn-main(theme='blue-invert' class='btn btn--width100 basket__btn btn--other btn--height4rem order__submit-btn') Сформировать счёт
+

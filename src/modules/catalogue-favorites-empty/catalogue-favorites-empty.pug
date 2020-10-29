@@ -1,0 +1,8 @@
+include ../../modules/helper-mixins/main-caption
+
+block catalogue-favorites-empty
+    section.section
+        div.section__wrapper.catalogue-favorites-empty
+            +breadcrumbs('Избранное')
+            +h1caption('catalogue-favorites', 'Избранное')
+            div.catalogue-favorites-empty__text Список избранного пуст. Добавьте товары.

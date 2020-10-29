@@ -1,0 +1,564 @@
+.catalogue-content{
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+  margin-top: 0.6rem;
+
+  @include above($tablet){
+    margin-top: 2.7rem;
+  }
+  @include above($mid-desktop) {
+    width: 74%;
+    margin-top: 0;
+  }
+  @include above($big-desktop) {
+    width: 100%;
+  }
+
+  & .cart {
+    border-bottom: 0.2rem solid $main-gray-color;
+  }
+
+  & .carts-slider .slider-slide {
+
+    max-width: 27.9rem;
+    @include above($phone) {
+      max-width: 33.5rem;
+    }
+
+    @include above($mobile) {
+      max-width: 27.5rem;
+    }
+
+    @include above($tablet) {
+      max-width: 20.6rem;
+    }
+
+    @include above($tablet-landscape) {
+      max-width: 25rem;
+    }
+
+    @include above($desktop) {
+      max-width: 32rem;
+    }
+
+    @include above($mid-desktop) {
+      max-width: 25.7rem;
+    }
+    @include above($big-desktop) {
+      max-width: 28.1rem;
+    }
+  }
+
+  & .carts-slider {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    @include above($tablet) {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.3rem;
+    margin-bottom: 1rem;
+
+    @include above($tablet) {
+      margin-bottom: 2.9rem;
+    }
+
+    & .catalogue-image {
+
+      width: 27.9rem;
+
+      @include above($phone) {
+        width: 33.5rem;
+      }
+
+      @include above($mobile) {
+        width: 27.5rem;
+      }
+
+      @include above($tablet) {
+        width: 20.6rem;
+      }
+
+      @include above($tablet-landscape) {
+        width: 25rem;
+      }
+
+      @include above($desktop) {
+        width: 32rem;
+        height: 23.5rem;
+      }
+
+      @include above($mid-desktop) {
+        width: 25.7rem;
+        height: auto;
+      }
+      @include above($big-desktop) {
+        width: 28.1rem;
+      }
+      &:not(:last-of-type) {
+        margin-right: 2.1rem;
+      }
+    }
+  }
+
+  & .swiper-slide {
+    width: auto;
+    margin-right: 1.4rem;
+    @include above($big-desktop) {
+      margin-right: 0;
+    }
+  }
+
+  & .carts-slider__navigation {
+    display: flex;
+    width: 50%;
+
+    &:last-of-type {
+      transform: rotate(180deg);
+      justify-content: flex-end;
+      @include above($tablet) {
+        justify-content: normal;
+        transform: rotate(0deg);
+      }
+    }
+
+    &:first-of-type {
+      order: 2;
+      justify-content: flex-end;
+      @include above($tablet) {
+        order: 0;
+        justify-content: normal;
+      }
+    }
+
+    @include above($tablet) {
+      width: auto;
+
+      &:first-of-type button svg {
+        transform: rotate(0deg);
+      }
+    }
+
+    @include above($big-desktop) {
+      display: none;
+    }
+  }
+
+
+  & .carts-slider .slider:after {
+    display: none;
+  }
+
+  & .carts-slider .slider:before {
+    display: none;
+  }
+
+  & .carts-slider {
+    @include above($tablet) {
+      flex-direction: row;
+    }
+  }
+
+  & .swiper-container {
+    margin-right: 0;
+    margin-left: 0;
+
+    @include above($tablet) {
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
+    @include above($big-desktop) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  & .swiper-wrapper {
+    justify-content: space-between;
+  }
+
+  &__wrapper{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &--in-line{
+      display: block;
+      @include above($tablet-landscape){
+        margin-top: 2.9rem;
+        border: 0.2rem solid #F0F0F0;
+        border-bottom: none;
+      }
+      @include above($mid-desktop){
+        margin-top: 0;
+      }
+
+      & .cart {
+        border-bottom: none;
+      }
+    }
+    .cart{
+
+      &:nth-of-type(2n) {
+        @include above($tablet) {
+          border-left: none;
+        }
+
+        @include above($tablet-landscape) {
+          border-left: 0.2rem solid $main-gray-color;
+        }
+      }
+
+      &:nth-of-type(n+3) {
+        @include above($tablet) {
+          border-top: none;
+        }
+        @include above($tablet-landscape) {
+          border-top: 0.2rem solid $main-gray-color;
+        }
+      }
+      &:nth-of-type(n+4) {
+        @include above($tablet-landscape) {
+          border-top: none;
+        }
+        @include above($big-desktop) {
+          border-top: 0.2rem solid $main-gray-color;
+        }
+      }
+      &:nth-of-type(3n) {
+        @include above($tablet-landscape) {
+          border-left: none;
+        }
+        @include above($big-desktop) {
+          border-left: 0.2rem solid $main-gray-color;
+        }
+      }
+      &:nth-of-type(3n-1) {
+        @include above($tablet-landscape) {
+          border-left: none;
+        }
+        @include above($big-desktop) {
+          border-left: 0.2rem solid $main-gray-color;
+        }
+      }
+      &:nth-of-type(n+5) {
+        @include above($big-desktop) {
+          border-top: none;
+        }
+      }
+      &:nth-of-type(4n-2) {
+        @include above($big-desktop) {
+          border-left: none;
+        }
+      }
+      &:nth-of-type(4n-1) {
+        @include above($big-desktop) {
+          border-left: none;
+        }
+      }
+      &:nth-of-type(4n) {
+        @include above($big-desktop) {
+          border-left: none;
+        }
+      }
+
+      @include above($tablet){
+        width: 50%;
+      }
+      @include above($tablet-landscape){
+        width: 33.33%;
+      }
+      @include above($big-desktop){
+        width: 25%;
+      }
+
+    }
+  }
+
+  .cart--in-line.cart{
+    @include above($tablet){
+      width: 100%;
+    }
+
+    @include above($tablet-landscape) {
+      border-top: none;
+      border-bottom: 0.2rem solid #F0F0F0;
+      border-left: none;
+    }
+    .cart__button{
+      @include above($tablet-landscape){
+        margin-left: 0;
+        .btn{
+          padding: 0 1rem;
+        }
+      }
+    }
+    .cart__options{
+      svg{
+        width: 1.4rem;
+        height: 1.4rem;
+        @include above($tablet){
+          width: 1.8rem;
+          height: 1.8rem;
+        }
+      }
+    }
+
+  }
+
+  &__more{
+    width: 100%;
+    height: auto;
+    min-height: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin-top: 3.2rem;
+
+    position: relative;
+
+    &-text{
+      margin-bottom: 1.6rem;
+
+      opacity: 0;
+
+      color: $helper-color-gray;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+
+      transition: opacity ease 0.25s;
+    }
+
+    .catalogue-content__more-to-top{
+      width: 5.5rem;
+      height: 5.5rem;
+
+      position: absolute;
+      right: 0;
+
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    & > button{
+      width: auto;
+    }
+
+    &--active{
+      .catalogue-content__more-text{
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.lk-block__content {
+
+  & .catalogue-content__wrapper .cart {
+
+    @include above($tablet) {
+      width: 50%;
+    }
+
+    @include above($desktop) {
+      width: 33.33%;
+    }
+
+    @include above($big-desktop) {
+      width: 25%;
+    }
+  }
+
+  & .cart {
+
+    border-bottom: 0.2rem solid #E8EDFF;
+
+    &:first-child {
+      @include above($tablet-landscape) {
+        border-bottom: none;
+      }
+
+      @include above($desktop) {
+        border-bottom: 0.2rem solid #E8EDFF;
+      }
+    }
+
+    &:nth-of-type(3n) {
+      @include above($tablet) {
+        border-left: 0.2rem solid #E8EDFF;
+        border-right: none;
+      }
+
+      @include above($desktop) {
+        border-left: none;
+        border-right: 0.2rem solid #E8EDFF;
+      }
+    }
+
+    &:nth-of-type(3n-1) {
+      @include above($tablet) {
+        border-left: 0.2rem solid #E8EDFF;
+        border-right: none;
+      }
+    }
+
+    &:nth-of-type(2n+2) {
+      @include above($tablet) {
+        border-right: 0.2rem solid #E8EDFF;
+        border-left: 0.2rem solid #E8EDFF;
+      }
+    }
+
+    &:nth-of-type(6n-4) {
+      @include above($tablet) {
+        border-left: none;
+      }
+    }
+
+    &:nth-of-type(5n) {
+      @include above($desktop) {
+        border-left: none;
+      }
+
+      @include above($big-desktop) {
+        border-left: 0.2rem solid #E8EDFF;
+      }
+    }
+
+    &:nth-of-type(4n+4) {
+      @include above($big-desktop) {
+        border-left: none;
+      }
+    }
+  }
+}
+
+.main-content {
+
+  & .catalogue-content .swiper-slide {
+    margin-right: 1rem;
+
+    @include above($tablet-landscape) {
+      margin-right: 1.2rem;
+    }
+
+    @include above($mid-desktop) {
+      margin-right: 1.5rem;
+    }
+
+    @include above($big-desktop) {
+      margin-right: 0;
+    }
+  }
+
+  & .catalogue-content {
+    @include above($mid-desktop) {
+      width: 100%;
+    }
+  }
+
+  & .catalogue-content__image {
+    @include above($tablet) {
+      margin-bottom: 0;
+    }
+  }
+
+  & .catalogue-content .swiper-container {
+    margin-right: 0;
+    margin-left: 0;
+    @include above($tablet) {
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
+    @include above($big-desktop) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  & .carts-slider .slider-slide {
+    @include above($phone) {
+      max-width: 33.5rem;
+    }
+
+    @include above($mobile) {
+      max-width: 27.5rem;
+    }
+
+    @include above($tablet) {
+      max-width: 20.8rem;
+    }
+
+    @include above($tablet-landscape) {
+      max-width: 25rem;
+    }
+
+    @include above($desktop) {
+      max-width: 32rem;
+    }
+    @include above($mid-desktop) {
+      max-width: 35.5rem;
+    }
+
+    @include above($big-desktop) {
+      max-width: 35rem;
+    }
+  }
+  & .catalogue-image {
+    width: 27.9rem;
+
+    @include above($phone) {
+      width: 33.5rem;
+    }
+
+    @include above($mobile) {
+      width: 27.5rem;
+    }
+
+    @include above($tablet) {
+      width: 20.8rem;
+      height: 16.1rem;
+    }
+
+    @include above($tablet-landscape) {
+      width: 25rem;
+      height: 20rem;
+    }
+
+    @include above($desktop) {
+      width: 32rem;
+      height: 23.5rem;
+    }
+
+    @include above($mid-desktop) {
+      width: 35.5rem;
+      height: 26.7rem;
+    }
+
+    @include above($big-desktop) {
+      width: 35rem;
+      height: 25.5rem;
+    }
+  }
+}

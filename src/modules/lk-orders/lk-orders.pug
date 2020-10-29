@@ -1,0 +1,65 @@
+include ../control-elements/buttons/btn-main
+mixin lk-link(text, type, href)
+    a(href=href ? href : '#' class=type ? 'lk-orders-item__link--' + type : '').lk-orders-item__link #{text}
+mixin lk__order-number(orderNumber, orderDate, status)
+    .lk-orders-item__numbers
+        .lk-orders-item__act
+            b Заказ №
+                span.lk-orders-item__act-order-number #{orderNumber}
+            span.lk-orders-item__act-order-date  #{orderDate}
+        .lk-orders__status-and-link
+            span(class=status.style ? 'lk-orders-item__status--' + status.style : '').lk-orders-item__status #{status.title}
+            .lk-orders__link-wrapper
+                if status.style == 'paid'
+                    +lk-link('Повторить', 'repeat')
+                    +lk-link('Проблема с заказом?', 'problem')
+                else if status.style == 'shipped'
+                    +lk-link('Повторить', 'repeat')
+                    +lk-link('Проблема с заказом?', 'problem')
+                else if status.style == 'confirmed'
+                    +lk-link('Повторить', 'repeat')
+                    +lk-link('Отменить', 'cancel')
+                    +lk-link('Проблема с заказом?', 'problem')
+
+                else
+                    +lk-link('Повторить', 'repeat')
+                    +lk-link('Редактировать', 'edit')
+                    +lk-link('Отменить', 'cancel')
+
+
+mixin lk__payer-and-order(payer, supplier, seeAll,  ...products)
+    .lk-orders-item__info
+        .lk-orders-item__info-inner
+            .lk-orders-item__payer
+                .lk-orders-item__title Плательщик
+                .lk-orders-item__text #{payer}
+            .lk-orders-item__supplier
+                .lk-orders-item__title Поставщик
+                .lk-orders-item__text #{supplier}
+        .lk-orders-item__products
+            .lk-orders-item__title Товары в заказе
+            each product in products
+                div(class=product.hidden ? 'lk-orders-item__product-item--hidden' : '').lk-orders-item__product-item
+                    .lk-orders-item__count #{product.counter} ×
+                    .lk-orders-item__text #{product.name}
+            if seeAll
+                button.lk-orders-item__see-all Показать все товары
+
+mixin lk__sum(sum, isPrint, isPaid)
+    .lk-orders-item__summ
+        .lk-orders-item__title Общая стоимость
+        .lk-orders-item__price #{sum} ₽
+        if isPaid
+            button.lk-orders-item__btn.lk-orders-item__btn--paid Оплатить на сайте
+        if isPrint
+            button.lk-orders-item__btn.lk-orders-item__btn--print Распечатать счёт
+
+mixin lk__com(add, not)
+    .lk-orders-item__com
+        .lk-orders-item__title Комментарий
+        if add
+            .lk-orders-item__com-add Список заказов: добавить колонку «Комментарий» из заказа нет фильтров по статусу, продавцу, плательщику
+        if not
+            .lk-orders-item__com-not
+
+

@@ -1,0 +1,15 @@
+include ../../modules/breadcrumbs/breadcrumbs
+
+block comparing-empty
+    section.section
+        div.section__wrapper.comparing-empty
+            +breadcrumbs('Сравнение')
+            h1.comparing-empty__heading Сравнение
+            div.comparing-empty__block
+                picture(v-image-lazy-load)
+                    source(type='image/webp' data-srcset='img/calendar-empty.webp')
+                    img(data-src='img/calendar-empty.png')
+                div.comparing-empty__block-text Добавьте товары для сравнения
+                a(href="#").comparing-empty__block-button  Перейти в каталог
+
+

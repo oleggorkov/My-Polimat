@@ -1,0 +1,34 @@
+extends ../../views/layouts/default
+include ../../modules/lk-block/lk-block
+include ../../modules/helper-mixins/main-caption
+include ../../modules/info-download/info-download
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Информация', 'Скачать')
+            +info-block(5)
+                .download
+                    .download__block-wrapper
+                        h1.lk-block__title Скачать материалы
+                        +info-download-files-block('Календарные блоки',
+                            {text: 'Cкачать каталог "Календарные блоки 2020"', href: '#', ico: 'pdf'},
+                            {text: 'Скачать все дизайны календарных блоков на 2020 год', href: '#', ico: 'zip'})
+                        +info-download-files-block('Расходные материалы',
+                            {text: 'Скачать каталог "Материалы для изготовления календарей и ежедневников"', href: '#', ico: 'pdf'})
+                        +info-download-files-block('Блоки и комплектующие для ежедневников',
+                            {text: 'Скачать каталог "Блоки и комплектующие для ежедневников"', href: '#', ico: 'pdf'})
+                    .download__block-wrapper
+                        .lk-block__title Документы
+                        +info-download-files-block('Договоры и письма',
+                            {text: 'Договор Поставки ООО ВДК', href: '#', ico: 'doc'},
+                            {text: 'Письмо о возврате переплаты ООО ВДК', href: '#', ico: 'doc'},
+                            {text: 'Письмо о возврате предоплаты ООО ВДК', href: '#', ico: 'doc'},
+                            {text: 'Письмо о возврате денежных средств ООО ВДК', href: '#', ico: 'doc'},
+                            {text: 'Письмо о перезачете оплаты ООО ВДК', href: '#', ico: 'doc'},
+                            {text: 'Письмо об ошибке в назначении платежа ООО ВДК', href: '#', ico: 'doc'},
+                            {text: 'Договор Поставки ИП Зарецкий', href: '#', ico: 'doc'},
+                            {text: 'Письмо о возврате предоплаты ИП Зарецкий', href: '#', ico: 'doc'},
+                            {text: 'Письмо о перезачете оплаты ИП Зарецкий', href: '#', ico: 'doc'},
+                            {text: 'Письмо об ошибке в назначении платежа ИП Зарецкий', href: '#', ico: 'doc'} )

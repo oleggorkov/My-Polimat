@@ -1,0 +1,69 @@
+include ../control-elements/select/select
+include ../control-elements/radio-button/radio-button
+mixin product-description(type, mobileClass, ...desc)
+    div.product-block__description(class=mobileClass ? 'product-block__description--' + mobileClass : '')
+        if type == 3
+            each item in desc
+                p.product-block__description-block #{item}
+        else
+            each item in desc
+                .product-block__description-wrapper
+                    img.product-block__description-img(src=item.src)
+                    p.product-block__description-block #{item.text}
+
+mixin product-specifications(col1, type)
+    .product-block__accordion-content.js-product-accordion-content
+        .product-block__accordion-content-wrapper
+            each item in col1
+                .product-block__spec-item
+                    if type == 'href'
+                        a(href=item.href) #{item.data}
+                    else
+                        span.product-block__spec-item-name #{item.title}
+                        span.product-block__spec-item-desc #{item.data}
+mixin  product-settings
+    .product-settings(class = attributes.class)
+        if attributes.type == '3'
+            .product-settings__title Календарный блок
+            .product-settings__subtitle ЕВРОПА МИНИ серебристо-белый 3-сп (ЕМД)
+        else
+            .product-settings__title Курсор
+                .product-settings__subtitle 340-380 синий АЛЬФА (уп.100шт.)
+        .product-settings__actions
+            button(type='button' class='product-settings__actions-btn product-settings__actions-btn--analog' v-scroll-to="'.product-analog'")
+                svg
+                    use(xlink:href='img/sprite.svg#copy2')
+                span Аналоги
+            button(type='button' class='product-settings__actions-btn product-settings__actions-btn--active product-settings__actions-btn--favorite')
+                svg.product-settings__svg-ico--favorite.product-settings__svg-ico.product-settings__svg-ico--active
+                    use(xlink:href='img/sprite.svg#heart-painted')
+                span В избранное
+            button(type='button' class='product-settings__actions-btn product-settings__actions-btn--active product-settings__actions-btn--compare')
+                svg.product-settings__svg-ico--compare.product-settings__svg-ico.product-settings__svg-ico--active
+                    use(xlink:href='img/sprite.svg#graph-painted')
+                span Сравнить
+        .product-settings__options.product-settings__options-mobile
+            .product-settings__option
+                span.product-settings__option-name Цвет
+                - var options = [{value: 1, title: 'Жёлтый'},{value: 2, title: 'Чёрный'},{value: 3, title: 'Синий'},{value: 4, title: 'Зелёный'}]
+                +select(options).product-settings__option-select
+            .product-settings__option
+                span.product-settings__option-name Размер
+                - var options = [{value: 1, title: '297x145'}, {value: 2, title: '450х320 мм (SRA3)'}]
+                +select(options).product-settings__option-select
+            .product-settings__option
+                span.product-settings__option-name Серия
+                - var options = [{value: 1, title: 'Европа металлик'},{value: 2, title: 'АЛЬФА (100% аналог ГЕВАРИУС-ПОЛИМАТ)'}]
+                +select(options).product-settings__option-select
+            if (attributes.type == '3')
+                .product-settings__option
+                    span.product-settings__option-name--modify Кол-во спиралей
+                    .product-settings__option-radios
+                        - var n = 0
+                        while n < 4
+                            - n++
+                            input(type='radio' id=`col-${n}` name='col' value=n).visibility-hidden
+                            label(for=`col-${n}`).product-settings__option-label #{n}
+
+
+

@@ -1,0 +1,9 @@
+extends ../layouts/default
+include ../../modules/type-of-calendar/type-of-calendar
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Типы календарей')
+            +type-of-calendar

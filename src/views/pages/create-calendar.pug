@@ -1,0 +1,9 @@
+extends ../layouts/default
+include ../../modules/breadcrumbs/breadcrumbs
+include ../../modules/create-calendar/create-calendar
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Создать календарь')
+            +create-calendar

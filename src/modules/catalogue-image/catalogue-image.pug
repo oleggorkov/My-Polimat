@@ -1,0 +1,5 @@
+mixin catalogue-image(href, path, image)
+    a(href=href).catalogue-image
+        picture(v-image-lazy-load)
+            source(type='image/webp' data-srcset=path)
+            img(data-src=image)

@@ -1,0 +1,20 @@
+mixin info-dealers-list(title, items)
+    .dealers-list
+        .dealers-list__title #{title}
+        each item in items
+            .dealers-list__item
+                .dealers-list__item-col
+                    span #{item[0]}
+                .dealers-list__item-col
+                    span #{item[1]}
+                .dealers-list__item-col
+                    each phone in item[2]
+                        - let reg = phone.replace(/([() -])/g, "");
+                        div
+                            a(href='tel:' + reg)
+                                svg
+                                    use(xlink:href='img/sprite.svg#phone')
+                                span #{phone}
+
+
+        

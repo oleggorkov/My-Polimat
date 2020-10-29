@@ -1,0 +1,300 @@
+extends ../layouts/default
+include ../../modules/helper-mixins/main-caption
+include ../../modules/lk-discounts/lk-discounts
+include ../../modules/specification-spring/specification-spring
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.specification-spring.section
+        .section__wrapper
+            +breadcrumbs('Спецификация по переплетной пружине')
+            +h1caption('specification-spring', 'Спецификация по переплетной пружине')
+            .carts-slider.specification-spring__table-wrapper
+                .swiper-container.slider
+                    .swiper-wrapper.slider-wrapper.specification-spring__table-area
+                        .swiper-slide.slide.specification-spring__slider-column.specification-spring__slider-column--with-title
+                            +specification-spring-column--with-title(
+                                {caption: 'ПЕРЕПЛЕТНАЯ ПРУЖИНА 3:1 В БОБИНАХ'},
+                                {title: ' '},
+                                {text: 'Шаг пружины'},
+                                {text: 'Количество крючков в бобине'},
+                                {text: 'Полная длина в бобине, м'},
+                                {text: 'Толщина скрепляемого блока, мм'},
+                                {text: 'Количество скрепляемых листов '}
+                            )
+                            +specification-spring-column--with-title(
+                                {caption: 'ПЕРЕПЛЕТНАЯ ПРУЖИНА 3:1 В НАРЕЗКЕ'},
+                                {title: ' '},
+                                {text: 'Шаг пружины'},
+                                {text: 'Количество крючков нарезки'},
+                                {text: 'Длина нарезки, мм'},
+                                {text: 'Толщина скрепляемого блока, мм'},
+                                {text: 'Количество скрепляемых листов (80 г/м2)'},
+                                {text: 'Упаковка (+2 бесплатно), шт.'}
+                            )
+                            +specification-spring-column--with-title(
+                                {caption: 'ПЕРЕПЛЕТНАЯ ПРУЖИНА 2:1 В БОБИНАХ'},
+                                {title: ' '},
+                                {text: 'Шаг пружины'},
+                                {text: 'Количество крючков в бобине'},
+                                {text: 'Полная длина в бобине, м'},
+                                {text: 'Толщина скрепляемого блока, мм'}
+                            )
+                            +specification-spring-column--with-title(
+                                {caption: 'ПЕРЕПЛЕТНАЯ ПРУЖИНА 2:1 В НАРЕЗКЕ'},
+                                {title: ' '},
+                                {text: 'Шаг пружины'},
+                                {text: 'Длина нарезки, мм'},
+                                {text: 'Толщина скрепляемого блока, мм'}
+                            )
+
+                        .swiper-slide.slide.specification-spring__slider-column
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '1/4" (6,9 мм)'},
+                                {text: '3:1'},
+                                {text: '87 000'},
+                                {text: '737'},
+                                {text: '4,8'},
+                                {text: '45'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '1/4" (6,9 мм)'},
+                                {text: '3:1'},
+                                {text: '34/39'},
+                                {text: '297/335'},
+                                {text: '4,8'},
+                                {text: '45'},
+                                {text: '100 (+2)'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '5/8" (16,0 мм)'},
+                                {text: '2:1'},
+                                {text: '10 500'},
+                                {text: '133,4'},
+                                {text: '13,5'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '5/8" (16,0 мм)'},
+                                {text: '23'},
+                                {text: '297'},
+                                {text: '50'}
+                            )
+
+                        .swiper-slide.slide.specification-spring__slider-column
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '5/16" (8,0 мм)'},
+                                {text: '3:1'},
+                                {text: '60 000'},
+                                {text: '510'},
+                                {text: '6,4'},
+                                {text: '60'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '5/16" (8,0 мм)'},
+                                {text: '3:1'},
+                                {text: '34/39'},
+                                {text: '297/335'},
+                                {text: '6,4'},
+                                {text: '60'},
+                                {text: '100 (+2)'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '3/4" (19,0 мм)'},
+                                {text: '2:1'},
+                                {text: '8 000'},
+                                {text: '101,6'},
+                                {text: '16'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '3/4" (19,0 мм)'},
+                                {text: '23'},
+                                {text: '297'},
+                                {text: '50'}
+                            )
+
+                        .swiper-slide.slide.specification-spring__slider-column
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '3/8" (9,5 мм)'},
+                                {text: '3:1'},
+                                {text: '44 000'},
+                                {text: '381'},
+                                {text: '7,9'},
+                                {text: '75'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '3/8" (9,5 мм)'},
+                                {text: '3:1'},
+                                {text: '34'},
+                                {text: '297'},
+                                {text: '7,9'},
+                                {text: '75'},
+                                {text: '50 (+1)'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '7/8" (22,0 мм)'},
+                                {text: '2:1'},
+                                {text: '6000'},
+                                {text: '76,2'},
+                                {text: '19'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '7/8" (22,0 мм)'},
+                                {text: '23'},
+                                {text: '297'},
+                                {text: '50'}
+                            )
+                        .swiper-slide.slide.specification-spring__slider-column
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '7/16" (11,0 мм)'},
+                                {text: '3:1'},
+                                {text: '32 000'},
+                                {text: '270'},
+                                {text: '9,5'},
+                                {text: '90'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '7/16" (11,0 мм)'},
+                                {text: '3:1'},
+                                {text: '34'},
+                                {text: '297'},
+                                {text: '9,5'},
+                                {text: '90'},
+                                {text: '50 (+1)'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '1" (25,4 мм)'},
+                                {text: '2:1'},
+                                {text: '4500'},
+                                {text: '57,2'},
+                                {text: '22'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '1" (25,4 мм)'},
+                                {text: '23'},
+                                {text: '297'},
+                                {text: '50'}
+                            )
+                        .swiper-slide.slide.specification-spring__slider-column
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '1/2" (12,7 мм)'},
+                                {text: '3:1'},
+                                {text: '25 000'},
+                                {text: '220'},
+                                {text: '11,0'},
+                                {text: '105'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '9/16" (14,3 мм)'},
+                                {text: '3:1'},
+                                {text: '34'},
+                                {text: '297'},
+                                {text: '13,5'},
+                                {text: '120'},
+                                {text: '50 (+1)'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '1 1/8" (28,5 мм)'},
+                                {text: '2:1'},
+                                {text: '3100'},
+                                {text: '39,4'},
+                                {text: '25'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '1 1/8" (28,5 мм)'},
+                                {text: '23'},
+                                {text: '297'},
+                                {text: '30'}
+                            )
+
+                        .swiper-slide.slide.specification-spring__slider-column
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '9/16" (14,3 мм)'},
+                                {text: '3:1'},
+                                {text: '21 000'},
+                                {text: '180'},
+                                {text: '13,5'},
+                                {text: '120'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: 'isEmpty'},
+                                {text: 'isEmpty'},
+                                {text: 'isEmpty'},
+                                {text: 'isEmpty'},
+                                {text: 'isEmpty'},
+                                {text: 'isEmpty'},
+                                {text: 'isEmpty'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '1 1/4" (32,0 мм)'},
+                                {text: '2:1'},
+                                {text: '3100'},
+                                {text: '39,4'},
+                                {text: '25'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '1 1/4" (32,0 мм)'},
+                                {text: '23'},
+                                {text: '297'},
+                                {text: '30'}
+                            )
+                        .swiper-slide.slide.specification-spring__slider-column
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: 'isEmpty'},
+                                {text: 'isEmpty'},
+                                {text: 'isEmpty'},
+                                {text: 'isEmpty'},
+                                {text: 'isEmpty'},
+                                {text: 'isEmpty'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: 'isEmpty'},
+                                {text: 'isEmpty'},
+                                {text: 'isEmpty'},
+                                {text: 'isEmpty'},
+                                {text: 'isEmpty'},
+                                {text: 'isEmpty'},
+                                {text: 'isEmpty'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '1 1/2" (38,1 мм)'},
+                                {text: '2:1'},
+                                {text: '-'},
+                                {text: '-'},
+                                {text: '30'}
+                            )
+                            +specification-spring-column(
+                                {caption: ' '},
+                                {title: '1 1/2" (38,1 мм)'},
+                                {text: '23'},
+                                {text: '297'},
+                                {text: '20'}
+                            )
+
+                +table-cart-navigation(true)

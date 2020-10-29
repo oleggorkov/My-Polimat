@@ -1,0 +1,108 @@
+include ../helper-mixins/svg-mix
+
+block mobile-menu
+    div.mobile-menu
+        button(type='button').mobile-menu__close.mobile-toggles
+            +svg-mix('cross')
+        ul.mobile-menu__list.mobile-menu__list--main
+            li
+                details
+                    summary Каталог
+                    div
+                        details
+                            summary Блоки для календарей
+                            ul
+                                li
+                                    a(href='#') Дизайнерские мелованные
+                                li
+                                    a(href='#') Офсетные
+                                li
+                                    a(href='#') Три в одном
+                                li
+                                    a(href='#') Тематические
+                                li
+                                    a(href='#') Домики
+                                li
+                                    a(href='#') Четырёх-блочные
+                        details
+                            summary Комплектующие для календарей
+                            ul
+                                li
+                                    a(href='#') Пружина в бобинах 3:1
+                                li
+                                    a(href='#') Пружина в нарезке 3:1
+                                li
+                                    a(href='#') Пружина в бобинах 2:1
+                                li
+                                    a(href='#') Пикколо/ люверсы/ ригели
+                                li
+                                    a(href='#') Часовые механизмы/коробки
+                                li
+                                    a(href='#') Курсоры
+                        details
+                            summary Для ежедневников
+                            ul
+                                li
+                                    a(href='#') Ежедневники датированные
+                                li
+                                    a(href='#') Ежедневники недатированные
+                                li
+                                    a(href='#') Планинги
+                        details
+                            summary Расходные материалы
+                            ul
+                                li
+                                    a(href='#') Плёнка для ламинирования
+                                li
+                                    a(href='#') Бумага для цифровой печати
+                                li
+                                    a(href='#') Ручки для пакетов
+                                li
+                                    a(href='#') Скобы для степлеров
+                                li
+                                    a(href='#') Переплетные крышки
+                                li
+                                    a(href='#') Проволока полиграфическая
+                        details
+                            summary Оборудование
+                            ul
+                                li
+                                    a(href='#') Брошюровка на пластиковую пружину
+                                li
+                                    a(href='#') Брошуровка на металлическую пружину
+                                li
+                                    a(href='#') Установка люверсов
+                                li
+                                    a(href='#') Биновка/ скругление углов
+            li
+                a(href='lk.html') Личный кабинет
+            li
+                a(href='info-about.html') Информация
+            li
+                a(href='contact.html') Контакты
+        ul.mobile-menu__list.mobile-menu__list--sub
+            li
+                a(href='holiday.html')
+                    +svg-mix('gift')
+                    | Праздники
+            li
+                a(href='lk-product-buy.html')
+                    +svg-mix('buy')
+                    | Покупки
+            li
+                a(href='#')
+                    +svg-mix('binoculars')
+                    | Вы смотрели
+            //li
+            //    a(href='catalogue-favorites.html')
+            //        +svg-mix('heart')
+            //        |Избранное
+            //li
+            //    a(href='comparing.html')
+            //        +svg-mix('graph')
+            //        |Сравнить
+            li
+                a(href='auth.html')
+                    +svg-mix('enter')
+                    |Войти
+

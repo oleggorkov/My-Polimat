@@ -1,0 +1,159 @@
+.payment-delivery-block {
+    width: 100%;
+
+    &__title {
+        display: none;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 2rem;
+        line-height: 2.3rem;
+        color: $main-black-color;
+        margin-bottom: 0.7rem;
+
+        @include above($tablet) {
+            display: flex;
+        }
+    }
+    &__caption{
+        display: none;
+        @include above($tablet){
+            display: flex;
+        }
+    }
+    &__text {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        margin-bottom: 1.6rem;
+        width: 100%;
+        word-break: break-word;
+        word-wrap: break-word;
+        @include above($tablet){
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+        }
+        &--mb-06 {
+            margin-bottom: 0.6rem;
+        }
+
+        &-title{
+            font-weight: 500;
+            margin-top: 2rem;
+            margin-bottom: 0.3rem;
+            font-size: 1.8rem;
+            line-height: 2.1rem;
+            @include above($tablet){
+                margin-bottom: 2.3rem;
+                margin-top: 3.8rem;
+            }
+        }
+
+        &-subtitle{
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1.6rem;
+        }
+
+        a {
+            display: inline-flex;
+            align-items: center;
+
+            color: $main-color-blue;
+            text-decoration: underline;
+    
+            @include above($desktop) {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            svg {
+                height: 1.6rem;
+                width: 1.6rem;
+                min-width: 1.6rem;
+                margin-right: 1rem;
+                fill: $main-color-blue;
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            max-width: 50rem;
+
+            caption{
+                margin-bottom: 1rem;
+            }
+
+            td {
+                padding: 0.8rem 0;
+                border: 0.2rem solid $main-gray-color;
+                
+                &:first-of-type{
+                    padding-left: 0;
+                    border-left: none;
+                }
+
+                &:last-of-type{
+                    border-right: none;
+                }
+
+                &:not(:first-of-type){
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+
+    &__tabs{
+        display: flex;
+
+        &-item{
+            font-size: 1.2rem;
+            line-height: 1.4rem;
+            border: none;
+            border-bottom: 0.2rem solid $main-gray-color;
+            transition: border-color 0.3s, color 0.3s;
+            padding: 1rem 2.2rem;
+            &:not(:last-of-type) {
+                margin-right: 0.2rem;
+            }
+            &:hover{
+                color: $main-color-blue;
+                border-bottom: 0.2rem solid $main-color-blue;
+            }
+            @include above($tablet){
+                font-size: 1.4rem;
+                line-height: 1.6rem;
+            }
+            @include above($desktop){
+                &:hover{
+                    //border-color: $main-color-blue;
+                }
+            }
+
+            &.active{
+                border-color: $main-color-blue;
+                color: $main-color-blue;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &__contents{
+        display: flex;
+        padding-top: 2.6rem;
+        @include above($tablet){
+            padding-top: 3.4rem;
+        }
+        &-item{
+            display: none;
+            flex-wrap: wrap;
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

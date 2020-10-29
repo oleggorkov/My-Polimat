@@ -1,0 +1,403 @@
+include ../helper-mixins/svg-mix
+include ../control-elements/inputs/input-main
+include ../navigation-menu-list/navigation-menu-list
+include ../filter-module/filter-module
+
+block header
+    header#top.header
+        div.header__container.header__container--top
+            div.header__wrapper.header__wrapper--main-content
+                div.header__row
+                    a(href='index.html')
+                        img(src='img/header-logo.svg')
+                    div.header__row-wrapper
+                        button(type='button').mobile-toggle.mobile-toggle--favorite.header__row-mobile-toggle
+                            +svg-mix('heart')
+                            .header__link-circle-counter-mobile.header__link-circle-counter-mobile--favorite 5
+                        button(type='button').mobile-toggle.mobile-toggle--comparing.header__row-mobile-toggle
+                            +svg-mix('graph')
+                            .header__link-circle-counter-mobile.header__link-circle-counter-mobile--comparing 5
+                        button(type='button').mobile-toggle.mobile-toggle--basket.header__row-mobile-toggle
+                            +svg-mix('shopping-cart')
+                            .header__link-circle-counter-mobile.header__link-circle-counter-mobile--basket 5
+                        button(type='button').mobile-toggle.header__row-mobile-toggle.mobile-toggles
+                            +svg-mix('burger')
+                nav
+                    ul.header__navigation
+                        li.header__navigation--item.t--size-medium
+                            span Каталог
+                            div.sub-navigation--catalogue
+                                a(href="#").sub-navigation__title Все товары
+                                div.sub-navigation__flex
+                                    div.sub-navigation__flex-item
+                                        +nav-menu('Блоки для календарей', 'Дизайнерские мелованные', 'Офсетные',
+                                            'Три в одном', 'Тематические', 'Домики', 'Четырёх-блочные')
+                                    div.sub-navigation__flex-item
+                                        +nav-menu('Комплектующие для календарей', 'Пружина в бобинах 3:1', 'Пружина в нарезке 3:1',
+                                        'Пружина в бобинах 2:1', 'Пикколо/ люверсы/ ригели', 'Часовые механизмы/коробки',
+                                            'Курсоры')
+                                        +nav-menu('Для ежедневников', 'Ежедневники датированные', 'Ежедневники недатированные',
+                                            'Планинги')
+                                    div.sub-navigation__flex-item
+                                        +nav-menu('Расходные материалы', 'Плёнка для ламинирования', 'Бумага для цифровой печати',
+                                            'Ручки для пакетов', 'Скобы для степлеров', 'Переплетные крышки',
+                                            'Проволока полиграфическая')
+                                        +nav-menu('Оборудование', 'Брошюровка на пластиковую пружину', 'Брошуровка на металлическую пружину',
+                                            'Установка люверсов', 'Биновка/ скругление углов')
+                        li.header__navigation--item.t--size-medium
+                            a(href='info-about.html') Информация
+                        li.header__navigation--item.t--size-medium
+                            a(href='lk.html') Личный кабинет
+                        li.header__navigation--item.t--size-medium
+                            a(href='contact.html') Контакты
+                form(id='headerSearch').header__search
+                    input(id='search-field' placeholder='Поиск' type='text' class='header__search-input')
+                    button(type='button', id='voice-button')
+                        +svg-mix('microphone')
+                    button(type='button')
+                        +svg-mix('search')
+                div.header__links
+                    a(href='holiday.html').header__links--item
+                        +svg-mix('gift')
+                        span.t--size-x-small Праздники
+                    a(href='#').header__links--item
+                        +svg-mix('binoculars')
+                        span.t--size-x-small Вы смотрели
+                    a(href='lk-product-buy.html').header__links--item
+                        +svg-mix('buy')
+                        span.t--size-x-small Покупки
+                    a(href='catalogue-favorites.html').header__links--item.header__links--favorites
+                        +svg-mix('heart', 'header__links-favorite-svg')
+                        .header__link-circle-counter 0
+                        span.t--size-x-small Избранное
+                    a(href='comparing.html').header__links--item.header__links--compare
+                        +svg-mix('graph')
+                        .header__link-circle-counter 0
+                        span.t--size-x-small Сравнить
+                    a(href='basket.html').header__links--item.header__links--basket
+                        +svg-mix('shopping-cart')
+                        .header__link-circle-counter.header__link-circle-counter--basket 5
+                        span.t--size-x-small Корзина
+                    a(href='auth.html').header__links--item
+                        +svg-mix('enter')
+                        span.t--size-x-small Войти
+                    a(href='lk.html').header__links--item
+                        +svg-mix('user1')
+                        span.t--size-x-small Личный кабинет
+                div.header__contact
+                    a(href='tel:+74952873377').header__contact--item.t--size-medium +7 (495) 287-33-77
+                    a(href='mailto:info@polimat.ru').header__contact--item.t--size-medium  info@polimat.ru
+                button(type='button').mobile-toggle.header__wrapper-mobile-toggle.mobile-toggles
+                    +svg-mix('burger')
+        .header__container--sub-navigation-wrapper
+            div.header__container.header__container--sub-navigation-desc.header__container--sub-navigation
+                div.header__wrapper
+                    nav.header__sub-navigation
+                        ul
+                            li
+                                a(href='#').t--size-medium Блоки для календарей
+                                div.sub-navigation.sub-navigation__blocks
+                                    a(href="#").sub-navigation__title Все блоки
+                                    div.sub-navigation__flex
+                                        div.sub-navigation__flex-item
+                                            div.sub-navigation__flex-item-heading По ширине и виду
+                                            +nav-menu('Трио', 'Мини 1-сп (1х297*445)', 'Мини 3-сп (3х297*145)',
+                                                'Миди 1-сп (335*490', 'Миди 3-сп (335*160)', 'Макси 3-сп (370*170)',
+                                                'Ангстрем 1х(10*170)', 'Микро (175*265)')
+                                            +nav-menu('Три в одном', 'Мини (297*207)', 'Миди (335*235)', 'Домики (95*200)')
+                                            +nav-menu('Четырех блочные', 'Мини 4-сп (4х297*145)', 'Миди-евро')
+                                        div.sub-navigation__flex-item
+                                            div.sub-navigation__flex-item-heading По серии (модели)
+                                            +nav-menu('Мелованные', 'Европа', 'Смарт-дизайн', 'Классика', 'Болд', 'Бизнес',
+                                                'Новая волна', 'Литера')
+                                            +nav-menu('Офсетные', 'Вердана', 'Болд офс')
+                                        div.sub-navigation__flex-item
+                                            div.sub-navigation__flex-item-heading По выходным
+                                            a(href='#') Красные субботы
+                                            a(href='#') Черные субботы
+                                            div.sub-navigation__flex-item-heading.sub-navigation__flex-item-heading--modify По цветовой гамме
+                                            a(href='#') Белая
+                                            a(href='#') Сине-голубая
+                                            a(href='#') Серая + серебро
+                                            a(href='#') Бежевая + золото
+                                            a(href='#') Зеленая
+                                            a(href='#') Красно-розовая
+                                            a(href='#') редкие цвета
+                                        div.sub-navigation__flex-item
+                                            div.sub-navigation__flex-item-heading Дополнительная информация
+                                            a(href='#') Таблица размеров
+                                            a(href='#') Плановое наличие на складе
+                                            a(href='#') Прайс-лист
+                                            a(href='#') Все дизайны
+                            li
+                                a(href='#').t--size-medium Курсоры
+                                div.sub-navigation.sub-navigation__cursor
+                                    a(href="#").sub-navigation__title Все курсоры
+                                    div.sub-navigation__flex
+                                        div.sub-navigation__flex-item
+                                            div.sub-navigation__flex-item-heading По ширине календаря
+                                            a(href='#') Мини 260-330 мм
+                                            a(href='#') Миди 320-380 мм
+                                            a(href='#') Макси 360-420 мм
+                                            a(href='#') Домики 180-230 мм
+                                            a(href='#') Ангстрем 80-130 мм
+                                            a(href='#') Микрон 180-230 мм
+                                            div.sub-navigation__flex-item-heading.sub-navigation__flex-item-heading--modify По цвету
+                                            a(href='#') Красные
+                                            a(href='#') Синие
+                                            a(href='#') Другие цвета
+                                        div.sub-navigation__flex-item
+                                            div.sub-navigation__flex-item-heading По серии (модели)
+                                            a(href='#') Альфа
+                                            a(href='#') Премьер
+                                            a(href='#') Драйв, сфера
+                                            a(href='#') Гевариус
+                                            a(href='#') Дпс
+                                            a(href='#') Фигурные
+                                            a(href='#') Фиксированные
+                                            div.sub-navigation__flex-item-heading.sub-navigation__flex-item-heading--modify На ленте
+                                            a(href='#') По чертежу
+                                            a(href='#') Рамки с печатью
+                                        div.sub-navigation__flex-item
+                                            div.sub-navigation__flex-item-heading Магнитные
+                                            a(href='#') Стандартные
+                                            a(href='#') По макету
+                                            div.sub-navigation__flex-item-heading.sub-navigation__flex-item-heading--modify Большие упаковки
+                                            a(href='#') Альфа
+                                            a(href='#') Премьер
+                                            a(href='#') Драйв
+                                        div.sub-navigation__flex-item
+                                            div.sub-navigation__flex-item-heading Дополнительная информация
+                                            a(href='#') Сравнительная таблица свойств
+                                            a(href='#') Брошюра "Курсоры"
+                                            a(href='#') Частые вопросы
+                            li
+                                a(href='#').t--size-medium Комплектующие для календарей
+                                div.sub-navigation.sub-navigation__calendar
+                                    a(href="#").sub-navigation__title Все комплектующие
+                                    div.sub-navigation__flex
+                                        div.sub-navigation__flex-item
+                                            +nav-menu('Пружины в бобинах', 'Пружина в бобине 3:1', 'Пружина в бобине 2:1')
+                                            +nav-menu('Пружины в нарезке', 'Пружина в нарезке 3:1)', 'Пружина в нарезке 2:1')
+                                        div.sub-navigation__flex-item
+                                            +nav-menu('Ригели', '100 мм', '150 мм', '200 мм', '250 мм', '290 мм', '350 мм',
+                                                '400 мм', '450 мм', '500 мм')
+                                        div.sub-navigation__flex-item
+                                            +nav-menu('Люверсы', '4 мм', '4,8 мм', '5,5 мм')
+                                            +nav-menu('Коробки для календарей', 'Миди')
+                                            +nav-menu('Часовые механизмы', '63/93 мм', '60/83 мм', '42/60 мм')
+                            li
+                                a(href='#').t--size-medium Для ежедневников
+                                div.sub-navigation.sub-navigation__daily
+                                    a(href="#").sub-navigation__title Все для ежедневников
+                                    div.sub-navigation__flex
+                                        div.sub-navigation__flex-item
+                                            +nav-menu('Блоки для ежедневников', 'Датированные', 'Недатированные')
+                                            +nav-menu('Блоки для еженедельников', '+ блокнот в линейку')
+                                        div.sub-navigation__flex-item
+                                            +nav-menu('Блоки для плагинов', 'Датированные', 'Недатированные')
+                                            +nav-menu('Комплектующие для ежедневников', 'Обложки для блоков')
+                            li
+                                a(href='#').t--size-medium Расходные материалы
+                                div.sub-navigation.sub-navigation__material
+                                    a(href="#").sub-navigation__title Все расходные материалы
+                                    div.sub-navigation__flex
+                                        div.sub-navigation__flex-item
+                                            +nav-menu('Рулонная плёнка для ламинирования', 'ВОРР до 300 м', 'РЕТ до 300 м',
+                                                'ULTRABOND (для цифровых оттисков)', 'Soft-touch', 'В большой намотке')
+                                            +nav-menu('Пакетная плёнка для ламинирования')
+                                            +nav-menu('Шариковые ручки', 'Senator', 'Portobello')
+                                        div.sub-navigation__flex-item
+                                            +nav-menu('Бумага для печати', 'Для цифровой печати', 'Мелованная матовая',
+                                                'Мелованная глянцевая', 'Офсетная', 'Офисная')
+                                            +nav-menu('Материалы для бумажных пакетов', 'Шнуры для пакетов',
+                                                'Ручки с пластиковым наконечником')
+                                        div.sub-navigation__flex-item
+                                            +nav-menu('Пружина металлическая', 'Металлическая 3:1 в бобинах',
+                                                'Металлическая 3:1 в нарезке', 'Металлическая 2:1 в бобинах', 'Металлическая 2:1 в нарезке')
+                                            +nav-menu('Пружина для переплёта', 'Пластиковая')
+                                        div.sub-navigation__flex-item
+                                            +nav-menu('Материалы для переплета', 'Скобы для степлеров', 'Проволка полиграфическая')
+                                            +nav-menu('Обложка для переплета', 'Пластиковые обложки', 'Картонные обложки')
+                                            +nav-menu('Разное', 'Ножки для вобблеров')
+                            li
+                                a(href='#').t--size-medium Оборудование
+                                div.sub-navigation.sub-navigation__equip
+                                    div.sub-navigation__flex
+                                        div.sub-navigation__flex-item
+                                            +nav-menu('Все оборудование', 'Брошюровка на металлическую пружину',
+                                                'Брошюровка на пластиковую пружину', 'Установка люверсов', 'Скругление углов',
+                                                'Запчасти')
+                        //    li
+                        //        a(href='#').t--size-medium
+                        //            img(src='img/manager.svg')
+                        //        div.sub-navigation.sub-navigation__manager
+                        //            div.sub-navigation__flex
+                        //                div.sub-navigation__flex-item
+                        //                    +nav-menu('', 'Календарные блоки', 'Курсоры', 'Проволка в нарезке',
+                        //                        'Бобина с проволокой 3:1', 'Часовые механизны', 'Пикколо', 'Ригель',
+                        //                        'Бобина с проволокой 2:1')
+            div.header__wrapper.header__container--sub-navigation-mobile.header__container--sub-navigation
+                div.header-mobile-links
+                    div.header-mobile-links__toggle
+                        button(type='button').header-mobile-links__menu Каталог
+                        button(type='button').header-mobile-links__tools
+                            +svg-mix('dots')
+                div.header-mobile-links__main-list.filter-module
+                    ul.filter-module__list
+                        li
+                            +list-button('Блоки для календарей')
+                            div.filter-module__wrapper
+                                div.filter-module__inner.filter-module__inner-js
+                                    div.sub-navigation
+                                        a(href="#").sub-navigation__title Все блоки
+                                        div.sub-navigation__flex
+                                            div.sub-navigation__flex-item
+                                                div.sub-navigation__flex-item-heading По ширине и виду
+                                                +nav-menu('Трио', 'Мини 1-сп (1х297*445)', 'Мини 3-сп (3х297*145)',
+                                                    'Миди 1-сп (335*490', 'Миди 3-сп (335*160)', 'Макси 3-сп (370*170)',
+                                                    'Ангстрем 1х(10*170)', 'Микро (175*265)')
+                                                +nav-menu('Три в одном', 'Мини (297*207)', 'Миди (335*235)', 'Домики (95*200)')
+                                                +nav-menu('Четырех блочные', 'Мини 4-сп (4х297*145)', 'Миди-евро')
+                                            div.sub-navigation__flex-item
+                                                div.sub-navigation__flex-item-heading По серии (модели)
+                                                +nav-menu('Мелованные', 'Европа', 'Смарт-дизайн', 'Классика', 'Болд', 'Бизнес',
+                                                    'Новая волна', 'Литера')
+                                                +nav-menu('Офсетные', 'Вердана', 'Болд офс')
+                                            div.sub-navigation__flex-item
+                                                div.sub-navigation__flex-item-heading По выходным
+                                                a(href='#') Красные субботы
+                                                a(href='#') Черные субботы
+                                                div.sub-navigation__flex-item-heading.sub-navigation__flex-item-heading--modify По цветовой гамме
+                                                a(href='#') Белая
+                                                a(href='#') Сине-голубая
+                                                a(href='#') Серая + серебро
+                                                a(href='#') Бежевая + золото
+                                                a(href='#') Зеленая
+                                                a(href='#') Красно-розовая
+                                                a(href='#') редкие цвета
+                                            div.sub-navigation__flex-item
+                                                div.sub-navigation__flex-item-heading Дополнительная информация
+                                                a(href='#') Таблица размеров
+                                                a(href='#') Плановое наличие на складе
+                                                a(href='#') Прайс-лист
+                                                a(href='#') Все дизайны
+                        li
+                            +list-button('Курсоры')
+                            div.filter-module__wrapper
+                                div.filter-module__inner.filter-module__inner-js
+                                    div.sub-navigation.sub-navigation__cursor
+                                        a(href="#").sub-navigation__title Все курсоры
+                                        div.sub-navigation__flex
+                                            div.sub-navigation__flex-item
+                                                div.sub-navigation__flex-item-heading По ширине календаря
+                                                a(href='#') Мини 260-330 мм
+                                                a(href='#') Миди 320-380 мм
+                                                a(href='#') Макси 360-420 мм
+                                                a(href='#') Домики 180-230 мм
+                                                a(href='#') Ангстрем 80-130 мм
+                                                a(href='#') Микрон 180-230 мм
+                                                div.sub-navigation__flex-item-heading.sub-navigation__flex-item-heading--modify По цвету
+                                                a(href='#') Красные
+                                                a(href='#') Синие
+                                                a(href='#') Другие цвета
+                                            div.sub-navigation__flex-item
+                                                div.sub-navigation__flex-item-heading По серии (модели)
+                                                a(href='#') Альфа
+                                                a(href='#') Премьер
+                                                a(href='#') Драйв, сфера
+                                                a(href='#') Гевариус
+                                                a(href='#') Дпс
+                                                a(href='#') Фигурные
+                                                a(href='#') Фиксированные
+                                                div.sub-navigation__flex-item-heading.sub-navigation__flex-item-heading--modify На ленте
+                                                a(href='#') По чертежу
+                                                a(href='#') Рамки с печатью
+                                            div.sub-navigation__flex-item
+                                                div.sub-navigation__flex-item-heading Магнитные
+                                                a(href='#') Стандартные
+                                                a(href='#') По макету
+                                                div.sub-navigation__flex-item-heading.sub-navigation__flex-item-heading--modify Большие упаковки
+                                                a(href='#') Альфа
+                                                a(href='#') Премьер
+                                                a(href='#') Драйв
+                                            div.sub-navigation__flex-item
+                                                div.sub-navigation__flex-item-heading Дополнительная информация
+                                                a(href='#') Сравнительная таблица свойств
+                                                a(href='#') Брошюра "Курсоры"
+                                                a(href='#') Частые вопросы
+                        li
+                            +list-button('Комплектующие для календарей')
+                            div.filter-module__wrapper
+                                div.filter-module__inner.filter-module__inner-js
+                                    div.sub-navigation.sub-navigation__calendar
+                                        a(href="#").sub-navigation__title Все комплектующие
+                                        div.sub-navigation__flex
+                                            div.sub-navigation__flex-item
+                                                +nav-menu('Пружины в бобинах', 'Пружина в бобине 3:1', 'Пружина в бобине 2:1')
+                                                +nav-menu('Пружины в нарезке', 'Пружина в нарезке 3:1)', 'Пружина в нарезке 2:1')
+                                            div.sub-navigation__flex-item
+                                                +nav-menu('Ригели', '100 мм', '150 мм', '200 мм', '250 мм', '290 мм', '350 мм',
+                                                    '400 мм', '450 мм', '500 мм')
+                                            div.sub-navigation__flex-item
+                                                +nav-menu('Люверсы', '4 мм', '4,8 мм', '5,5 мм')
+                                                +nav-menu('Коробки для календарей', 'Миди')
+                                                +nav-menu('Часовые механизмы', '63/93 мм', '60/83 мм', '42/60 мм')
+                        li
+                            +list-button('Для ежедневников')
+                            div.filter-module__wrapper
+                                div.filter-module__inner.filter-module__inner-js
+                                    div.sub-navigation.sub-navigation__daily
+                                        a(href="#").sub-navigation__title Все для ежедневников
+                                        div.sub-navigation__flex
+                                            div.sub-navigation__flex-item
+                                                +nav-menu('Блоки для ежедневников', 'Датированные', 'Недатированные')
+                                                +nav-menu('Блоки для ежеденедельников', '+ блокнот в линейку')
+                                            div.sub-navigation__flex-item
+                                                +nav-menu('Блоки для плагинов', 'Датированные', 'Недатированные')
+                                                +nav-menu('Комплектующие для ежедневников', 'Обложки для блоков')
+                        li
+                            +list-button('Расходные материалы')
+                            div.filter-module__wrapper
+                                div.filter-module__inner.filter-module__inner-js
+                                    div.sub-navigation.sub-navigation__material
+                                        a(href="#").sub-navigation__title Все расходные материалы
+                                        div.sub-navigation__flex
+                                            div.sub-navigation__flex-item
+                                                +nav-menu('Рулонная плёнка для ламинирования', 'ВОРР до 300 м', 'РЕТ до 300 м',
+                                                    'ULTRABOND (для цифровых оттисков)', 'Soft-touch', 'В большой намотке')
+                                                +nav-menu('Пакетная плёнка для ламинирования')
+                                                +nav-menu('Шариковые ручки', 'Senator', 'Portobello')
+                                            div.sub-navigation__flex-item
+                                                +nav-menu('Бумага для печати', 'Для цифровой печати', 'Мелованная матовая',
+                                                    'Мелованная глянцевая', 'Офсетная', 'Офисная')
+                                                +nav-menu('Материалы для бумажных пакетов', 'Шнуры для пакетов',
+                                                    'Ручки с пластиковым наконечником')
+                                            div.sub-navigation__flex-item
+                                                +nav-menu('Пружина металлическая', 'Металлическая 3:1 в бобинах',
+                                                    'Металлическая 3:1 в нарезке', 'Металлическая 2:1 в бобинах', 'Металлическая 2:1 в нарезке')
+                                                +nav-menu('Пружина для переплёта', 'Пластиковая')
+                                            div.sub-navigation__flex-item
+                                                +nav-menu('Материалы для переплета', 'Скобы для степлеров', 'Проволка полиграфическая')
+                                                +nav-menu('Обложка для переплета', 'Пластиковые обложки', 'Картонные обложки')
+                                                +nav-menu('Разное', 'Ножки для вобблеров')
+                        li
+                            +list-button('Оборудование')
+                            div.filter-module__wrapper
+                                div.filter-module__inner.filter-module__inner-js
+                                    div.sub-navigation.sub-navigation__equip
+                                        div.sub-navigation__flex
+                                            div.sub-navigation__flex-item
+                                                +nav-menu('Все оборудование', 'Брошюровка на металлическую пружину',
+                                                    'Брошюровка на пластиковую пружину', 'Установка люверсов', 'Скругление углов',
+                                                    'Запчасти')
+                        li
+                            +list-button('Инструмент менеджера')
+                            div.filter-module__wrapper
+                                div.filter-module__inner.filter-module__inner-js
+                                    div.sub-navigation.sub-navigation__manager
+                                        div.sub-navigation__flex
+                                            div.sub-navigation__flex-item
+                                                +nav-menu('', 'Календарные блоки', 'Курсоры', 'Проволка в нарезке',
+                                                    'Бобина с проволокой 3:1', 'Часовые механизны', 'Пикколо', 'Ригель',
+                                                    'Бобина с проволокой 2:1')

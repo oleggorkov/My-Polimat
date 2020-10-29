@@ -1,0 +1,19 @@
+include ../control-elements/select/select
+
+mixin lk-menu(items, active)
+    ul.lk-menu(class = attributes.class)
+        each item, index in items
+            if index === active
+                li.lk-menu__item
+                    if item.value
+                        a(href= item.value).lk-menu__link.lk-menu__link--active #{item.title}
+                    else
+                        a(href='#').lk-menu__link.lk-menu__link--active #{item.title}
+            else
+                li.lk-menu__item
+                    if item.value
+                        a(href=item.value).lk-menu__link #{item.title}
+                    else
+                        a(href='#').lk-menu__link #{item.title}
+    
+    +select(items, active).lk-menu-mobile

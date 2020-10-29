@@ -1,0 +1,40 @@
+extends ../layouts/default
+include ../../modules/helper-mixins/main-caption
+include ../../modules/lk-discounts/lk-discounts
+include ../../modules/specification-cursors/specification-cursors
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.specification-cursors.section
+        .section__wrapper
+            +breadcrumbs('Спецификация курсоры')
+            +h1caption('specification-cursors', 'Спецификация / курсоры для квартальных календарей')
+            .specification-cursors__table-wrapper.carts-slider
+                .swiper-container.slider
+                    .swiper-wrapper.slider-wrapper.specification-cursors__table
+                        +specification-cursors-column('Типы курсоров',
+                            'Драйв-Лайт',
+                            '',
+                            'Курсоры для квартальных календарей',
+                            '',
+                            'Сфера')
+                        +specification-cursors-column('Ширина календарного блока',
+                            '260-320 мм, 320-360 мм, 360-400 мм',
+                            '80-130 мм, 130-180 мм',
+                            '180-230 мм, 230-260 мм',
+                            '60-320 мм, 320-360 мм, 360-400 мм',
+                            '297 мм')
+                        +specification-cursors-column('Для блоков',
+                            'МИНИ / МИДИ / МАКСИ',
+                            '«Ангстрем»',
+                            '«Домики»',
+                            'МИНИ / МИДИ / МАКСИ',
+                            'МИНИ')
+
+                        +specification-cursors-column--img('Виды рамок для курсоров',
+                        'img/specification-cursors/kursor1-1.png',
+                        'img/specification-cursors/kursor2-1.png',
+                        'img/specification-cursors/kursor3-1.png',
+                        'img/specification-cursors/kursor4-1.png',
+                        'img/specification-cursors/kursor5-1.png')
+                +table-cart-navigation(true)

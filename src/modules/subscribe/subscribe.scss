@@ -1,0 +1,27 @@
+.subscribe{
+  width: 100%;
+  max-width: 34rem;
+  height: 33rem;
+  @include above($tablet-landscape) {
+    margin-bottom: 0.8rem;
+  }
+  @include above($tablet-landscape) {
+    margin-bottom: 2rem;
+  }
+  &__caption{
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  &__checkbox-wrapper{
+    position: relative;
+    height: 5rem;
+  }
+  &__btn-submit.btn{
+    margin: 2rem auto 0;
+    height: 4rem;
+    width: 22rem;
+  }
+  .checkbox-input:checked + .checkbox-label:before {
+    border: 0.2rem solid $main-color-blue;
+  }
+}

@@ -1,0 +1,552 @@
+.holiday {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &-title {
+    display: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.6rem;
+    line-height: 3rem;
+    color: #000000;
+    margin-top: 2.4rem;
+    margin-bottom: 2.4rem;
+
+    @include above($tablet) {
+      display: block;
+    }
+  }
+
+  &-heading {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    color: #000000;
+    margin-bottom: 1.5rem;
+  }
+
+  &-block {
+    display: flex;
+    flex-direction: column;
+
+    &--mobile {
+      display: flex;
+
+      @include above($mobile) {
+        display: none;
+      }
+    }
+
+    @include above($mid-desktop) {
+      flex-direction: row;
+    }
+
+    &:first-of-type {
+      & .holiday-block__item-month {
+        &:first-of-type {
+
+          & .holiday-block__item-month-flex {
+
+            & .holiday-date {
+                background: $main-color-red;
+                color: #ffffff;
+              }
+
+            & span {
+              &:nth-of-type(8n+1) {
+                color: $helper-color-gray;
+              }
+            }
+          }
+        }
+
+        &:nth-of-type(2) {
+          border-bottom: none;
+          border-top: none;
+          @include above($tablet) {
+            border-left: none;
+            border-right: none;
+            border-top: 0.2rem solid $main-gray-color;
+            border-bottom: 0.2rem solid $main-gray-color;
+          }
+
+          & .holiday-block__item-month-flex {
+
+            & .holiday-date {
+                background: $main-color-red;
+                color: #ffffff;
+            }
+
+            & span {
+              &:nth-of-type(8n+1) {
+                color: $helper-color-gray;
+              }
+            }
+          }
+        }
+
+        &:nth-of-type(3) {
+
+          & .holiday-block__item-month-flex {
+
+            & .holiday-date {
+              background: $main-color-red;
+              color: #ffffff;
+            }
+
+            & span {
+              &:nth-of-type(15) {
+                background: #ffffff;
+              }
+              &:nth-of-type(8n+1) {
+                color: $helper-color-gray;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-of-type(2) {
+
+      & .holiday-block__item-month {
+
+        &:first-of-type {
+          & .holiday-block__item-month-flex {
+            & span {
+              &:nth-of-type(8n+1) {
+                color: $helper-color-gray;
+              }
+            }
+          }
+        }
+
+        &:nth-of-type(2) {
+          border-bottom: none;
+          border-top: none;
+          @include above($tablet) {
+            border-left: none;
+            border-right: none;
+            border-top: 0.2rem solid $main-gray-color;
+            border-bottom: 0.2rem solid $main-gray-color;
+          }
+
+          & .holiday-block__item-month-flex {
+
+            & .holiday-date {
+                background: $main-color-red;
+                color: #ffffff;
+            }
+
+            & span {
+              &:nth-of-type(8n+1) {
+                color: $helper-color-gray;
+              }
+            }
+          }
+        }
+
+        &:nth-of-type(3) {
+
+          & .holiday-block__item-month-flex {
+
+            .holiday-date {
+              background: $main-color-red;
+              color: #ffffff;
+            }
+
+            & span {
+
+              &:nth-of-type(8n+1) {
+                color: $helper-color-gray;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-of-type(3) {
+      & .holiday-block__item-month {
+
+        &:first-of-type {
+          & .holiday-block__item-month-flex {
+            & span {
+              &:nth-of-type(8n+1) {
+                color: $helper-color-gray;
+              }
+            }
+          }
+        }
+
+        &:nth-of-type(2) {
+          border-bottom: none;
+          border-top: none;
+          @include above($tablet) {
+            border-left: none;
+            border-right: none;
+            border-top: 0.2rem solid $main-gray-color;
+            border-bottom: 0.2rem solid $main-gray-color;
+          }
+
+          & .holiday-block__item-month-flex {
+            & span {
+              &:nth-of-type(8n+1) {
+                color: $helper-color-gray;
+              }
+            }
+          }
+        }
+
+        &:last-of-type {
+          & .holiday-block__item-month-flex {
+            & span {
+              &:nth-of-type(8n+1) {
+                color: $helper-color-gray;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 2.3rem;
+    }
+
+    &:last-of-type {
+      margin-bottom: 4.1rem;
+      & .holiday-block__item-month {
+        &:first-of-type {
+
+          & .holiday-block__item-month-flex {
+
+            & .holiday-date {
+                background: $main-color-red;
+                color: #ffffff;
+              }
+
+            & span {
+              &:nth-of-type(8n+1) {
+                color: $helper-color-gray;
+              }
+            }
+          }
+        }
+
+        &:nth-of-type(2) {
+          border-bottom: none;
+          border-top: none;
+          @include above($tablet) {
+            border-left: none;
+            border-right: none;
+            border-top: 0.2rem solid $main-gray-color;
+            border-bottom: 0.2rem solid $main-gray-color;
+          }
+
+          & .holiday-block__item-month-flex {
+
+            & .holiday-date {
+              background: $main-color-red;
+              color: #ffffff;
+            }
+
+            & span {
+              &:nth-of-type(15) {
+                background: #ffffff;
+              }
+            }
+
+            & span {
+              &:nth-of-type(8n+1) {
+                color: $helper-color-gray;
+              }
+            }
+          }
+        }
+
+        &:last-of-type {
+          & .holiday-block__item-month-flex {
+            & span {
+              &:nth-of-type(8n+1) {
+                color: $helper-color-gray;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.6rem;
+
+      @include above($tablet) {
+        flex-direction: row;
+      }
+      &:first-of-type {
+
+        width: 100%;
+
+        @include above($mid-desktop) {
+          width: 58%;
+          margin-right: 1.3rem;
+        }
+
+        @include above($big-desktop) {
+          flex: 0.6;
+          margin-right: 3.3rem;
+        }
+      }
+
+      &:last-of-type {
+        display: none;
+        @include above($mobile) {
+          display: flex;
+        }
+
+        @include above($mid-desktop) {
+          width: 41%;
+        }
+
+        @include above($big-desktop) {
+          flex: 0.4;
+        }
+      }
+
+      &-month {
+        flex: 1;
+        padding: 1rem 1.2rem 0.5rem 1rem;
+        border: 0.2rem solid $main-gray-color;
+
+        @include above($tablet) {
+          padding: 1rem 1rem 0.5rem 1rem;
+        }
+
+        @include above($desktop) {
+          padding: 1rem 4rem 0.5rem 5rem;
+        }
+
+        @include above($mid-desktop) {
+          padding: 1rem 0.7rem 0.5rem 0.5rem;
+        }
+
+        @include above($big-desktop) {
+          padding: 1rem 0.7rem 0.5rem 1.3rem;
+        }
+
+        &-title {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 1.8rem;
+          line-height: 2.1rem;
+          text-align: left;
+          color: #000000;
+          margin-bottom: 1.3rem;
+        }
+
+        &-flex {
+          display: grid;
+          grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+          & span {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 2.1rem;
+            text-align: center;
+            color: #000000;
+            margin-bottom: 0.4rem;
+
+
+            @include above($desktop) {
+              width: 2.8rem;
+            }
+
+            @include above($mid-desktop) {
+              width: 2.3rem;
+            }
+
+            @include above($big-desktop) {
+              width: 2.8rem;
+            }
+
+            &:not(:nth-of-type(8n)) {
+              margin-right: 0.4rem;
+            }
+
+            &:nth-of-type(8n-1),
+            &:nth-of-type(8n) {
+              background: $main-color-red;
+              color: #ffffff;
+            }
+          }
+        }
+      }
+
+      &-flex {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-column-start: span;
+        border-bottom: 0.2rem solid $main-gray-color;
+
+        &--mobile {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 2.4fr 1fr 1fr;
+          grid-template-rows: auto;
+
+          @include above($mobile) {
+            border-bottom: 0.2rem solid $main-gray-color;
+          }
+
+          &-ico {
+            display: flex;
+            margin-top: 0.9rem;
+
+            @include above($mobile) {
+              display: none;
+            }
+          }
+
+          &-el {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.2rem;
+            line-height: 2.377rem;
+            text-align: center;
+            color: #000000;
+            border-left: 0.2rem solid $main-gray-color;
+
+            &:nth-of-type(3n-2) {
+              padding-left: 0.9rem;
+              text-align: left;
+            }
+
+            &:first-of-type,
+            &:nth-of-type(2),
+            &:nth-of-type(3),
+            &:nth-of-type(13),
+            &:nth-of-type(14),
+            &:nth-of-type(15) {
+              background: $main-gray-color;
+              font-weight: 500;
+            }
+
+            &:nth-of-type(25),
+            &:nth-of-type(26),
+            &:nth-of-type(27) {
+              border-bottom: 0.2rem solid $main-gray-color;
+
+              @include above($mobile) {
+                border-bottom: none;
+              }
+            }
+          }
+
+          &:nth-of-type(2) {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+
+            @include above($phone) {
+              grid-template-columns: 9.3rem 9.3rem;
+            }
+
+            @include above($mobile) {
+              border-bottom: 0.2rem solid $main-gray-color;
+            }
+
+            & .holiday-block__item-flex--mobile-el {
+              text-align: center;
+              padding: 0;
+              font-weight: normal;
+              background: #FFFFFF;
+
+              &:nth-of-type(17),
+              &:nth-of-type(18) {
+                border-bottom: 0.2rem solid $main-gray-color;
+
+                @include above($mobile) {
+                  border-bottom: none;
+                }
+              }
+
+              &:nth-of-type(2n) {
+                border-right: 0.2rem solid $main-gray-color;
+              }
+
+              &:first-of-type,
+              &:nth-of-type(2),
+              &:nth-of-type(9),
+              &:nth-of-type(10) {
+                background: $main-gray-color;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+
+        &-el {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 1.2rem;
+          line-height: 2.377rem;
+          text-align: center;
+          color: #000000;
+          border-left: 0.2rem solid $main-gray-color;
+
+          &:nth-of-type(5n-4) {
+            padding-left: 0.9rem;
+            text-align: left;
+          }
+
+          &:nth-of-type(5n+5) {
+            border-right: 0.2rem solid $main-gray-color;
+          }
+
+          &:first-of-type,
+          &:nth-of-type(2),
+          &:nth-of-type(3),
+          &:nth-of-type(4),
+          &:nth-of-type(5),
+          &:nth-of-type(21),
+          &:nth-of-type(22),
+          &:nth-of-type(23),
+          &:nth-of-type(24),
+          &:nth-of-type(25) {
+            background: $main-gray-color;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  & .carts-slider .slider-slide {
+    width: 71.6rem;
+  }
+
+  .carts-slider .slider:after {
+    display: none;
+  }
+
+  & .carts-slider .slider-slide {
+    max-width: 27.9rem;
+  }
+
+  & .carts-slider__navigation {
+    display: flex;
+
+    @include above($tablet) {
+      display: none;
+    }
+  }
+}

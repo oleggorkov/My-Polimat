@@ -1,0 +1,11 @@
+extends ../layouts/default
+include ../../modules/info-about-block/info-about-block
+include ../../modules/lk-block/lk-block
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Информация', 'О компании')
+            +info-block(0)
+                +info-about-block

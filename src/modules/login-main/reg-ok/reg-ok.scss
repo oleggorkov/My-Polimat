@@ -1,0 +1,55 @@
+.reg-ok {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 6.4rem;
+}
+
+.reg-ok__img img {
+  width: 100%;
+  max-width: 24rem;
+  margin-bottom: 4.4rem;
+
+  @include above($tablet) {
+    max-width: 37.5rem;
+  }
+}
+
+.reg-ok__text {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: #000000;
+  margin-bottom: 3rem;
+}
+
+.reg-ok__button {
+  width: 18.9rem;
+  height: auto;
+  min-height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3rem;
+  border-radius: 0.5rem;
+  margin-bottom: 10rem;
+  background: $main-color-blue;
+  color: white;
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+  @include above($desktop){
+    &:hover{
+      background: $main-color-dark-blue;
+      color: white;
+    }
+    &:focus{
+      border: 0.1rem solid $main-color-dark-blue;
+      color: $main-color-dark-blue;
+      background: white;
+    }
+  }
+}

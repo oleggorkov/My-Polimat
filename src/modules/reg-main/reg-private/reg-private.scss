@@ -1,0 +1,279 @@
+@include above($small-phone) {
+  .reg-private {
+    width: 100%;
+    padding-top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+
+  .reg-private__block:not(:nth-of-type(3)) {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #E8EDFF;
+    padding-bottom: 2.9rem;
+  }
+
+  .reg-private__block:not(:first-of-type) {
+    margin-top: 3.4rem;
+  }
+
+  .reg-private__block-heading {
+    margin-bottom: 2.2rem;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    color: #000000;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .reg-private__block-radio {
+    margin-bottom: 3.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reg-private__block-radio-button {
+    height: 2.8rem;
+  }
+
+  .reg-private__block-radio-button:not(:last-of-type) {
+    margin-bottom: 1.9rem;
+  }
+
+  .reg-private__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reg-private__form-flex {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reg-private__form-flex:not(:last-of-type) {
+    margin-bottom: 0.7rem;
+  }
+
+  .reg-private__form-flex-item:not(:last-of-type) {
+    margin-bottom: 0.7rem;
+  }
+
+  .reg-private__form-flex-item--title {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #808080;
+    margin-bottom: 1.3rem;
+  }
+
+  .reg-private__form-flex-item--heading {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #000000;
+    margin-bottom: 3rem;
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  .reg-private__form-flex-item--heading--check {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #000000;
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  .reg-private__form-flex-item-flex {
+    display: flex;
+  }
+
+  .reg-private__form-flex-item--input_small {
+    flex: 1;
+  }
+
+  .reg-private__form-flex-item--input_small:not(:last-of-type) {
+    margin-right: 0.2rem;
+  }
+
+  .reg-private-flex__item-block {
+    display: flex;
+  }
+
+  .reg-private__button {
+    width: 100%;
+    align-self: flex-end;
+    margin-top: 2.1rem;
+  }
+}
+
+@include above($tablet) {
+
+  .reg-private__block-radio {
+    margin-bottom: 0;
+    flex-direction: row;
+  }
+
+  .reg-private__block-radio-button {
+    width: 100%;
+  }
+
+  .reg-private__block-radio-button:nth-of-type(2) {
+    margin-right: 11rem;
+  }
+
+  .reg-private__block-radio-button:not(:last-of-type) {
+    margin-bottom: 2.9rem;
+  }
+
+  .reg-private__form-heading {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+  }
+
+  .reg-private__form {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .reg-private__form-flex {
+    width: 35.4rem;
+    flex: none;
+  }
+
+  .reg-private__form-flex:first-of-type {
+    margin-right: 2rem;
+  }
+
+  .private-form-flex__empty {
+    display: none;
+  }
+
+  .reg-private__form-flex:first-of-type {
+    margin-bottom: 0;
+  }
+
+  .reg-private__block:not(:nth-of-type(3)) {
+    padding-bottom: 3.1rem;
+  }
+
+  .reg-private__block:not(:first-of-type) {
+    margin-top: 2.8rem;
+  }
+
+  .reg-private__button {
+    width: auto;
+    margin-top: 3.8rem;
+  }
+
+  .reg-private__form-flex-item-input_small:not(:last-of-type) {
+    margin-right: 0.9rem;
+  }
+
+  .reg-private__form-flex-item-modify {
+    order: 1;
+    margin-top: 2rem;
+  }
+
+  .reg-private__form-flex-modify {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .reg-private__form-flex-modify .reg-private__form-flex-item {
+    width: 35.4rem;
+  }
+
+  .reg-private__form-flex-modify .reg-private__form-flex-item:first-of-type {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+@include above($tablet-landscape) {
+
+  .reg-private__form-flex {
+    width: 28rem;
+  }
+
+  .reg-private__form {
+    justify-content: space-between;
+  }
+
+  .private-form-flex__empty {
+    display: flex;
+  }
+
+  .reg-private__form-flex:not(:last-of-type) {
+    margin-right: 0;
+  }
+
+  .reg-private__form-flex:last-of-type {
+    margin-top: 0;
+  }
+
+  .reg-private__form-flex-item-modify {
+    order: 0;
+    margin-top: 0;
+  }
+
+  .reg-private__form-flex-modify {
+    flex-direction: column;
+  }
+
+  .reg-private__form-flex-modify .reg-private__form-flex-item:first-of-type {
+    margin-right: 0;
+    margin-bottom: 0.7rem;
+  }
+
+  .reg-private__form-flex-modify .reg-private__form-flex-item {
+    width: 28rem;
+  }
+}
+
+@include above($desktop) {
+
+  .reg-private__form-flex-item-title {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .reg-private__form-flex-item--input_small:not(:last-of-type) {
+    margin-right: 1.9rem;
+  }
+
+
+  .reg-private__form-flex-item--heading {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .reg-private-flex__item-heading--check {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #000000;
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  .reg-private__form-flex {
+    width: 34.3rem;
+  }
+
+  .reg-private__form-flex-modify .reg-private__form-flex-item {
+    width: 34.3rem;
+  }
+}
+
+@include above($mid-desktop) {
+
+  .reg-private__form-flex {
+    width: 35.5rem;
+  }
+
+  .reg-private__form-flex-modify .reg-private__form-flex-item {
+    width: 35.5rem;
+  }
+}
+

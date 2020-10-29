@@ -1,0 +1,51 @@
+.visibility-hidden {
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.is-red {
+    color: $main-color-red;
+}
+.is-bold {
+    font-weight: bold;
+}
+.is-green {
+    color: $helper-color-green;
+    fill: $helper-color-green;
+}
+.width100{
+    width: 100%;
+}
+
+.is-gray {
+    color: $helper-color-gray;
+}
+.hr-separator{
+    height: 0.2rem;
+
+    margin: 1.2em 0;
+    &--main-gray{
+        background-color: $main-gray-color;
+    }
+}
+.none{
+    display: none;
+}
+.position{
+    &--fixed{
+        position: fixed;
+    }
+    &--static{
+        position: static;
+    }
+
+    &--lock {
+        position: relative;
+    }
+
+    &--hidden {
+        overflow: hidden;
+    }
+}

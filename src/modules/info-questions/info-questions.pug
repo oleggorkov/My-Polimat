@@ -1,0 +1,46 @@
+include ../../modules/helper-mixins/svg-mix
+include ../../modules/control-elements/buttons/btn-main
+include ../../modules/filter-module/filter-module
+include ../../modules/helper-mixins/main-caption
+
+mixin question-btn(text)
+    button(class='filter-module__toggle questions__block-caption')
+        .questions__block-caption-text #{text}
+        span
+            +svg-mix('arrow-small')
+
+mixin question-text-plus-link(text, link)
+    p.questions__block-content-text #{text} &nbsp
+        if link
+            a.questions__block-content-link(href=link) #{link}
+
+mixin question-content-with-wrapper(text)
+    .filter-module__wrapper.questions__block-content
+        .filter-module__inner-wrapper.filter-module__inner--range-slider.filter-module__inner-js
+            each item in text
+                +question-text-plus-link(item)
+
+mixin questions-item(caption, ...text)
+    li.questions__block-content-wrapper
+        +question-btn(caption)
+        +question-content-with-wrapper(text)
+
+mixin question-item-with-img(caption, title, row, ...img)
+    li.questions__block-content-wrapper
+        +question-btn(caption)
+        .filter-module__wrapper.questions__block-content
+            .filter-module__inner-wrapper.filter-module__inner--range-slider.filter-module__inner-js
+                p.questions__block-content-text #{title}
+                .questions__block-content-items(class=row ? 'questions__block-content-items--row': '')
+                    each item in img
+                        .questions__block-content-item
+                            p.questions__block-content-text #{item.title}
+                            img.questions__block-content-img(class=row ? 'questions__block-content-img--row' : '' src=item.src)
+
+mixin downloadCatalogue
+    li.questions__block-content-wrapper
+        +question-btn('Как можно скачать каталог?')
+        .filter-module__wrapper.questions__block-content
+            .filter-module__inner-wrapper.filter-module__inner--range-slider.filter-module__inner-js
+                +question-text-plus-link('Скачать каталог расходных материалов можно по ссылке: ',
+                    'http://www.polimat.ru/files/polimat_materials.pdf')

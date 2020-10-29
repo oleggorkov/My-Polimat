@@ -1,0 +1,112 @@
+.how-to-get-block{
+    width: 100%;
+
+    &__title{
+        margin-bottom: 1.6rem;
+    }
+
+    &__text{
+        font-size: 1.4rem;
+        line-height: 132.19%;
+        margin-bottom: 1rem;
+
+        &-title{
+            font-weight: 500;
+            font-size: 1.8rem;
+            line-height: 132.19%;
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__img{
+        img{
+            width: 100%;
+            border: 0.2rem solid $main-gray-color;
+            border-radius: 0.5rem;
+        }
+    }
+
+    &__tabs{
+        display: flex;
+
+        &-item{
+            font-size: 1.2rem;
+            line-height: 1.4rem;
+            padding: 1rem 0;
+            border: none;
+            border-bottom: 0.2rem solid $main-gray-color;
+            transition: border-color 0.3s, color 0.3s;
+            width: 100%;
+
+            &:not(:last-of-type) {
+                margin-right: 0.2rem;
+            }
+            @include above($tablet){
+                padding: 1rem 2.2rem;
+                width: auto;
+                font-size: 1.4rem;
+                line-height: 1.6rem;
+            }
+
+            @include above($desktop){
+                &:hover{
+                    border-color: $main-color-blue;
+                    color: $main-color-blue;
+                }
+            }
+
+            &.active{
+                border-color: $main-color-blue;
+                color: $main-color-blue;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &__contents{
+        display: flex;
+        padding-top: 2rem;
+
+        &-item{
+            display: none;
+
+            &.active {
+                display: flex;
+            }
+        }
+    }
+
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -1rem;
+    }
+
+    &__col{
+        width: 100%;
+        padding: 0 1rem 1.5rem;
+
+        @include above($desktop){
+           padding-bottom: 2.7rem;
+        }
+
+        @include above($mid-desktop){
+            padding-bottom: 4.5rem;
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        &--less{
+            @include above($desktop){
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            @include above($big-desktop){
+                flex: 0 0 41.666%;
+                max-width: 41.666%;
+                margin-right: 8.333%;
+            }
+        }
+    }
+}

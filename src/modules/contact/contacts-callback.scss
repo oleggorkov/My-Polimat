@@ -1,0 +1,174 @@
+.contacts-callback {
+    width: 100%;
+    &__title {
+        font-size: 2rem;
+        line-height: 2.3rem;
+        margin-bottom: 1.2rem;
+    }
+
+    &__form {
+        width: 100%;
+        @include above ($tablet) {
+            width: calc(100% + 2rem);
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -1rem;
+            margin-right: -1rem;
+        }
+    }
+
+    &__success {
+        width: 100%;
+        height: 25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        line-height: 160%;
+        text-align: center;
+        color: $helper-color-gray;
+    }
+
+    &__policy{
+        width: 100%;
+        line-height: 100%;
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 1.3rem;
+
+        @include above ($tablet) {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        a {
+            color: $main-color-blue;
+            text-decoration: underline;
+    
+            @include above($desktop) {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    &__input{
+        width: 100%;
+
+        @include above ($tablet) {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        &--col50{
+            @include above ($tablet) {
+                flex: 0 0 50%;
+                max-width: 50%;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
+        &-row{
+            width: 100%;
+            @include above ($tablet) {
+                width: calc(100% + 2rem);
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: -1rem;
+                margin-right: -1rem;
+            }
+        }
+
+        &-group {
+            @include above ($tablet) {
+                flex: 0 0 58.333%;
+                max-width: 58.333%;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            @include above ($desktop) {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            @include above ($mid-desktop) {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    }
+
+    &__area{
+        width: 100%;
+        padding-bottom: 1.3rem;
+        padding-top: 0.7rem;
+
+        & .textarea__label-text {
+            display: none;
+        }
+
+        & .textarea__wrapper {
+            height: 100%;
+        }
+
+        & .textarea--default {
+            height: 100%;
+        }
+      
+        .area {
+            resize: none;
+            height: 100%;
+        }
+
+        @include above ($tablet) {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            flex: 0 0 41.666%;
+            max-width: 41.666%;
+        }
+
+        @include above ($desktop) {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        @include above ($mid-desktop) {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding-top: 0;
+            margin-top: 0.7rem;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        @include above ($tablet) {
+            margin-left: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            flex: 0 0 25%;
+            max-width: 25%;
+            margin-right: auto;
+        }
+
+        @include above ($mid-desktop) {
+            flex: 0 0 40%;
+            max-width: 40%;
+        }
+
+        @include above ($big-desktop) {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        .btn {
+            width: 100%;
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            padding: 1.2rem;
+            border-radius: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,114 @@
+.cookie-info{
+  width: 100%;
+  height: 14.1rem;
+  background: #FFD13C;
+  margin: auto 0 0;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 12;
+
+  &__none{
+    display: none;
+  }
+
+  @include above($tablet){
+    height: 9rem;
+  }
+
+  .cookie-info__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include above($tablet){
+      flex-direction: row;
+      margin: 0 7rem;
+    }
+  }
+
+  .pop-up__close{
+    top: 1rem;
+
+    @include above($tablet){
+      top: 3rem;
+    }
+  }
+
+  .cookie-info__text{
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #363636;
+    padding: 0 5rem;
+
+    @include above($tablet){
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+
+    @include above($tablet-landscape){
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+    }
+  }
+
+  .cookie-info__ok{
+    min-width: 5.7rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-align: center;
+    color: #FFFFFF;
+    background: $main-color-blue;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.9rem;
+    cursor: pointer;
+
+    @include above($tablet){
+      height: 4rem;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      margin-top: 0;
+    }
+  }
+
+  &__close{
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    right: 2rem;
+    top: 1rem;
+    cursor: pointer;
+    z-index: 10;
+
+    @include above($tablet){
+      top: 3rem;
+    }
+
+    &:hover:after,
+    &:hover:before{
+      background-color: $main-color-blue;
+    }
+
+    &:after,
+    &:before{
+      content: '';
+      position: absolute;
+      top: 49%;
+      left: 20%;
+      width: 2rem;
+      height: 0.2rem;
+      background-color: $helper-color-gray;
+      transform: rotate(45deg);
+    }
+
+    &:before{
+      transform: rotate(-45deg);
+    }
+  }
+}

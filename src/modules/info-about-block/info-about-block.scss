@@ -1,0 +1,84 @@
+.about-block{
+    width: 100%;
+    &__title{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 2rem;
+        line-height: 2.3rem;
+        margin: 0 0 1rem;
+        text-align: center;
+
+        @include above($tablet) {
+            text-align: left;
+        }
+    }
+
+    &__text{
+        font-size: 1.4rem;
+        line-height: 160%;
+        margin-bottom: 1rem;
+
+        a {
+            color: $main-color-blue;
+            text-decoration: underline;
+    
+            @include above($desktop) {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        &--underline{
+            padding-bottom: 1.6rem;
+            border-bottom: 0.2rem solid $main-gray-color;
+        }
+    }
+
+    &__img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        max-height: 35rem;
+        height: 100%;
+        @include above($tablet){
+            margin-top: 0;
+        }
+        @include above($mid-desktop) {
+            max-height: 45rem;
+        }
+
+        img{
+            height: 100%;
+            min-width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -1rem;
+    }
+
+    &__col{
+        width: 100%;
+        padding: 0 1rem;
+        margin-bottom: 2.2rem;
+
+        @include above($mid-desktop){
+            margin-bottom: 3rem;
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        &--m-first{
+            order: -1;
+            @include above($mid-desktop){
+                order: 0;
+            }
+        }
+
+    }
+}

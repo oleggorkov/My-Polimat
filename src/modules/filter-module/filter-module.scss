@@ -1,0 +1,642 @@
+.filter-module{
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 3.2rem);
+  & .sub-navigation__flex {
+    padding-bottom: 0.8rem;
+  }
+
+  & .sub-navigation__item-list ul {
+    margin-bottom: 0;
+  }
+
+  & .filter-module__checkbox {
+    width: 14rem;
+    height: 1.5rem;
+
+    &:last-of-type {
+      @include above($mid-desktop) {
+        width: 5rem;
+      }
+    }
+
+    @include above($tablet) {
+      width: 16rem;
+    }
+
+    @include above($mid-desktop) {
+      width: 13rem;
+    }
+
+    &-input {
+      -webkit-appearance: none;
+      appearance: none;
+      position: absolute;
+    }
+
+    &-label {
+      cursor: pointer;
+      transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+      font-size: 1rem;
+      line-height: 1.2rem;
+      color: #808080;
+      position: absolute;
+      padding-left: 2.5rem;
+      padding-top: 0.2rem;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 1.4rem;
+        height: 1.3rem;
+        border: 1px solid #A1A1A1;
+        border-radius: 5px;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0.2rem;
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        width: 0.5rem;
+        height: 0.3rem;
+        border-bottom: 0.2rem solid $main-color-blue;
+        border-left: 0.2rem solid $main-color-blue;
+        transform: rotate(-45deg);
+        position: absolute;
+        z-index: 2;
+        top: 0.5rem;
+        left: 0.8rem;
+        opacity: 0;
+      }
+    }
+  }
+
+  & .filter-module__block-series {
+    width: 14rem;
+    height: 1.5rem;
+
+    @include above($tablet) {
+      width: 16rem;
+    }
+
+    @include above($mid-desktop) {
+      width: 13rem;
+    }
+  }
+
+  &__toggle{
+    width: 100%;
+    min-height: 4.8rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+
+    padding: 1.2rem 0;
+
+    outline: none;
+    border: none;
+
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+
+    color: $main-black-color;
+    text-align: left;
+    span{
+      width: 2.4rem;
+      min-width: 2.4rem;
+      height: 2.4rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border: 0.2rem solid #F0F0F0;
+      border-radius: 50%;
+
+      svg{
+        width: 1rem;
+        height: 0.5rem;
+
+        fill: $helper-color-gray;
+
+        transition: transform ease 0.5s;
+      }
+    }
+
+    &--active{
+      span{
+        svg{
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__list{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    & > li{
+      width: 100%;
+      height: auto;
+
+      border-bottom: 0.2rem solid #F0F0F0;
+
+      position: relative;
+    }
+  }
+
+  &__wrapper{
+    width: 100%;
+    height: 100%;
+
+    max-height: 0;
+
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+    transition: max-height ease 0.5s, padding-bottom ease 0.5s;
+    .input-checkbox-filter{
+      &:not(:last-of-type){
+        margin-right: 0.4rem;
+        margin-bottom: 0.2rem;
+      }
+    }
+    &--active{
+      overflow: inherit;
+    }
+  }
+  &__show-quan-found{
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    position: static;
+    right: -10rem;
+    top: -4.3rem;
+    border: 1px solid $main-gray-color;
+    border-radius: 0.8rem;
+    padding: 0.8rem;
+    background-color: #FFFFFF;
+    z-index: 2;
+    display: inline-block;
+    height: 3rem;
+
+    @include above($mid-desktop){
+      position: absolute;
+      display: block;
+      flex-direction: column;
+      margin-right: 0;
+      height: 4.6rem;
+      border-radius: 0.8rem 0.9rem 0.9rem 0;
+    }
+    &-text{
+      color: $helper-color-gray;
+      margin-right: 1rem;
+      display: inline-block;
+      @include above($mid-desktop){
+        display: block;
+      }
+    }
+    &-show{
+      text-decoration-line: underline;
+      color: $main-color-blue;
+      cursor: pointer;
+
+      @include above($desktop) {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &__inner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+    &--range-slider{
+      display: block;
+
+      .vue-slider{
+        width: calc(100% - 1.6rem)!important;
+        margin: 0 auto;
+      }
+
+      .vue-slider-process{
+        background-color: $main-color-blue!important;
+      }
+
+      .vue-slider-dot-handle{
+        background-color: $main-color-blue;
+        border: none;
+        box-shadow: none;
+      }
+    }
+
+    &--type{
+      justify-content: space-between;
+    }
+  }
+  &__inner-wrapper{
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+
+    @include above($mid-desktop) {
+      margin-top: 0;
+    }
+  }
+  &__row{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 1.6rem;
+
+    input{
+      width: 8rem;
+      height: 2.2rem;
+
+      text-align: center;
+
+      border: 0.1rem solid $main-color-blue;
+      border-radius: 5px;
+    }
+  }
+
+  &__buttons{
+    margin-top: 3.2rem;
+
+    & > button{
+      &:not(:last-of-type){
+        margin-bottom: 1.2rem;
+      }
+    }
+  }
+
+  .input-checkbox-filter {
+    width: auto;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+
+    & > input {
+      display: none;
+    }
+
+    & > label {
+      width: auto;
+      height: auto;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      @include above($desktop) {
+        cursor: pointer;
+      }
+    }
+
+
+    &--default {
+      label {
+        min-height: 2.2rem;
+        padding: 0 0.4rem;
+
+        border: 0.1rem solid $main-color-blue;
+        border-radius: 5px;
+
+        transition: background-color ease 0.25s;
+      }
+
+      input:checked {
+        & + label {
+          background-color: $main-color-blue;
+
+          .input-checkbox-filter--default-name {
+            color: white;
+          }
+
+          .input-checkbox-filter--default-counter {
+            opacity: 0;
+          }
+
+          .input-checkbox-filter--default-clear {
+            opacity: 1;
+          }
+        }
+      }
+
+      &-name {
+        color: $main-color-blue;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        letter-spacing: 0.005rem;
+
+        transition: color ease 0.25s;
+      }
+
+      &-state {
+        width: 1.6rem;
+        height: 1.6rem;
+
+        margin-left: 0.6rem;
+
+        position: relative;
+      }
+
+      &-counter {
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+
+        transform: translateY(-50%) translateX(-100%);
+
+        margin-left: 0.4rem;
+
+        color: $helper-color-gray;
+        font-size: 0.9rem;
+        line-height: 1.1rem;
+        letter-spacing: 0.005rem;
+
+        transition: opacity ease 0.25s;
+      }
+
+      &-clear {
+        width: 0.8rem;
+        height: 0.8rem;
+
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+
+        transform: translateY(-50%) translateX(-50%);
+
+        opacity: 0;
+
+        transition: opacity ease 0.25s;
+
+        span {
+          width: 0.8rem;
+          height: 0.1rem;
+
+          position: absolute;
+
+          left: 50%;
+          top: 50%;
+
+          background-color: white;
+
+          &:first-of-type {
+            transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+          }
+
+          &:last-of-type {
+            transform: translateX(-50%) translateY(-50%) rotate(45deg);
+          }
+        }
+      }
+    }
+
+    &--type {
+      label {
+        width: auto;
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      input:checked {
+        & + label {
+          .input-checkbox-filter--type-case {
+            svg {
+              fill: $main-color-blue;
+            }
+          }
+        }
+      }
+
+      &-name {
+        margin-bottom: 1rem;
+
+        font-size: 1rem;
+        line-height: 1.2rem;
+        letter-spacing: 0.005rem;
+      }
+
+      &-case {
+        svg {
+          width: 5rem;
+          height: auto;
+          fill: #E2E2E2;
+        }
+      }
+
+      &:nth-of-type(1) {
+        svg {
+          height: 10.9rem;
+        }
+      }
+
+      &:nth-of-type(2) {
+        svg {
+          height: 11.6rem;
+        }
+      }
+
+      &:nth-of-type(3) {
+        svg {
+          height: 14.1rem;
+        }
+      }
+
+      &:nth-of-type(4) {
+        svg {
+          height: 5.7rem;
+        }
+      }
+    }
+
+    &--color {
+      width: 3.2rem;
+      height: 3.2rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 50%;
+
+      label {
+        width: 3.2rem;
+        height: 3.2rem;
+
+        border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: 0.1rem solid transparent;
+
+        transition: border ease 0.25s;
+
+        & > div {
+          width: 2.4rem;
+          height: 2.4rem;
+
+          border-radius: 50%;
+        }
+      }
+
+      input:checked {
+        & + label {
+          border: 0.1rem solid $main-color-blue;
+        }
+      }
+
+      & > div{
+        background-size: cover;
+        background-position: center center;
+      }
+
+      &-white {
+        border: 0.1rem solid #DEDEDE;
+        background-color: white;
+      }
+
+      &-blue {
+        background-color: #4D9EF8;
+      }
+
+      &-gray {
+        background-color: #969696;
+      }
+
+      &-orange {
+        background-color: #F4C28A;
+      }
+
+      &-green {
+        background-color: #5CBD37;
+      }
+
+      &-yellow {
+        background-color: #FCF050;
+      }
+
+      &-green-two {
+        background-color: #54ADA0;
+      }
+
+      &-purple {
+        background-color: #C594F8;
+      }
+
+      &-pink {
+        background-color: #EC87C5;
+      }
+
+      &-red {
+        background-color: #EC8783;
+      }
+    }
+
+    &--gamma {
+      width: 2.8rem;
+      height: 2.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+
+      label {
+        width: 2.8rem;
+        height: 2.8rem;
+
+        border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: 0.1rem solid transparent;
+
+        transition: border ease 0.25s;
+
+        & > div {
+          width: 2rem;
+          height: 2rem;
+
+          border-radius: 50%;
+        }
+      }
+
+      input:checked {
+        & + label {
+          border: 0.1rem solid $main-color-blue;
+        }
+      }
+
+      &-gray{
+        background-color: #C4C4C4;
+      }
+    }
+
+  }
+
+  &__block {
+    display: none;
+
+    &--active {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      left: 6rem;
+      top: 1.7rem;
+    }
+  }
+
+  .filter-module__checkbox-label:hover:before {
+    border: 0.1rem solid $main-color-blue;
+    cursor: pointer;
+    transition: border ease 0.25s;
+  }
+
+  .filter-module__checkbox-input:checked + .filter-module__checkbox-label:after {
+    opacity: 1;
+  }
+
+  .filter-module__checkbox-input:checked + .filter-module__checkbox-label:before {
+    border: 0.2rem solid $main-gray-color;
+  }
+}

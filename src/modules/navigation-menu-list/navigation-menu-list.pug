@@ -1,0 +1,6 @@
+mixin nav-menu(title, ...items)
+    div.sub-navigation__item-list
+        ul #{title}
+            each item in items
+                li
+                    a(href='#')=item

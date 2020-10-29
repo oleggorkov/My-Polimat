@@ -1,0 +1,288 @@
+.footer{
+  width: 100%;
+  height: auto;
+  
+  padding-top: 1.6rem;
+  padding-bottom: 2.4rem;
+
+  background-color: $main-color-blue;
+
+  &__wrapper{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__inner{
+    width: 100%;
+    height: auto;
+
+    max-width: 32.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    &:not(:last-of-type){
+      margin-bottom: 1.2rem;
+    }
+
+    @include above($tablet-landscape){
+      flex-direction: row;
+      justify-content: space-between;
+
+      max-width: none;
+
+      &:not(:last-of-type){
+        margin-bottom: 2.4rem;
+      }
+    }
+  }
+
+  &__list{
+    width: auto;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &:not(:last-of-type){
+      display: none;
+    }
+
+    & > li{
+      flex-shrink: 0;
+
+      &:not(:last-of-type){
+        margin-bottom: 1.2rem;
+      }
+
+      a, p{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        color: white;
+        font-size: 1.2rem;
+
+        & > svg{
+          width: 1.6rem;
+          height: 1.6rem;
+
+          margin-right: 0.8rem;
+
+          fill: white;
+        }
+
+        @include above($desktop){
+          font-size: 1.4rem;
+        }
+      }
+
+      a{
+        @include above($desktop){
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+
+      p{
+        & > a{
+          margin-left: 0.4rem;
+        }
+      }
+
+      @include above($tablet-landscape){
+        &:not(:last-of-type){
+          margin-bottom: 2.4rem;
+        }
+      }
+    }
+
+    &--last{
+      width: 100%;
+
+      max-width: 32.5rem;
+
+      & > li{
+        &:first-of-type{
+          display: none;
+
+          @include above($tablet-landscape){
+            display: block;
+          }
+        }
+      }
+
+      @include above($desktop){
+        max-width: 38rem;
+      }
+    }
+
+    @include above($tablet-landscape){
+      &:not(:last-of-type){
+        display: flex;
+      }
+    }
+  }
+
+  &__social{
+    width: auto;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    & > a{
+      width: auto;
+      height: auto;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      color: white;
+
+      & > svg{
+        width: 1.6rem;
+        height: 1.6rem;
+
+        fill: white;
+      }
+    }
+
+    &-link{
+      svg{
+        margin-right: 0.8rem;
+      }
+
+      @include above($desktop){
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &__social-inner{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .footer__social-icon{
+
+    & > svg{
+      width: 2.1rem;
+      height: 2.1rem;
+
+    }
+    @include above($tablet){
+      & > svg{
+        width: 2.6rem;
+        height: 2.6rem;
+
+      }
+    }
+    &:first-child{
+      margin-left: 2.4rem;
+    }
+    &:last-child{
+      margin-left: 0.2rem;
+      @include above($tablet){
+        margin-left: 0.5rem;
+      }
+    }
+
+  }
+
+  &__developers{
+    width: 100%;
+    height: auto;
+
+    max-width: 32.5rem;
+
+    margin-top: 0.8rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &-logo{
+      width: 2.4rem;
+      height: 1rem;
+
+      margin-right: 0.8rem;
+
+      fill: white;
+    }
+
+    @include above($tablet-landscape){
+      margin-top: 0;
+    }
+
+    @include above($desktop){
+      max-width: 38rem;
+    }
+  }
+  a.footer__email-link{
+    text-decoration: underline;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  &__text{
+    margin: 0;
+    &--gray{
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &--white{
+      color: white;
+      &:hover{
+        text-decoration: none;
+        color: #FFFFFF;
+      }
+    }
+
+    &--underline{
+
+      text-decoration: underline;
+
+      @include above($desktop){
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+
+  }
+
+  &__phone-link{
+    padding: 0.8rem 3.2rem;
+
+    border: 0.1rem solid #FFFFFF;
+    border-radius: 0.5rem;
+
+    font-size: 1.2rem;
+
+    @include above($tablet-landscape){
+      padding: 0;
+
+      border: none;
+
+      font-size: 1.4rem;
+    }
+  }
+
+  @include above($tablet-landscape){
+    padding-top: 6.4rem;
+    padding-bottom: 3.2rem;
+  }
+}

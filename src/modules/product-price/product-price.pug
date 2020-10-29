@@ -1,0 +1,112 @@
+include ../helper-mixins/svg-mix
+mixin product-subscribe
+    .product-block__subscribe
+        .product-block__subscribe-text Вы можете подписаться на информацию об акциях, снижение цены на товар и поступление товара на склад
+        +btn-main(thumbs='blue' class='btn btn--blue  btn--border02rem product-block__subscribe-btn product-block__subscribe-btn-js') Подписаться
+mixin product-settings-counter
+    .product-settings__description
+        p.is-gray
+            if (attributes.type == '3')
+                span.is-bold Кол-во комплектов
+                | (кратно 50)
+                span.is-bold  + 6 бесплатно
+            else
+                span.is-bold Кол-во упаковок
+                | / 1 уп = 100 шт + 1 шт бесплатно
+            if (attributes.type == '3')
+                +product-price-count('15')
+            else
+                +product-price-count('160')
+    if attributes.type == 3
+        .product-price__discount
+            p
+                | Цена за комплект снизится до
+                span.is-red 24.80 ₽
+                |  / 25.80 ₽
+            p
+                | Для этого нужно заказать ещё +350 комплектов или увеличить общую сумму
+                | заказа на +9 030 ₽
+    else
+        .product-price__discount.product-price__discount--type-2
+            div.product-price__discount-item
+                p 5-9 уп
+                p.is-red 191 ₽
+            div.product-price__discount-item
+                p 10-29 уп
+                p.is-red 185 ₽
+            div.product-price__discount-item
+                p 30-99 уп
+                p.is-red 179 ₽
+mixin product-price__in-basket(name, isAvailibilityVisible, type, nds)
+    .product-price__price-and-supplier
+        .product-price__price-old.product-price__price-text.product-price__price-text--is-gray 29.90 ₽
+        .product-price__price-supplier.product-price__price-text.product-price__price-text--is-blue #{name}
+    .product-price__price-block(class = 'product-price__price-block--type-' + type)
+        if type == 1 || type == 2
+            .product-price__price-block-boxing
+                .product-price__price-new 25.80 ₽
+                .product-price__price-des.product-price__price-text.product-price__price-text--is-gray Цена за шт
+
+        if type == 1 || type == 2
+            .product-price__price-block-piece
+                .product-price__price-wrapper
+                    .product-price__price-block-separator-area
+                        .product-price__price-block-separator
+                    .product-price__price-container
+                        .product-price__price-new--piece 25.80 ₽
+                        .product-price__price-des.product-price__price-text.product-price__price-text--is-gray  Цена за упаковку
+        else
+            .product-price__price-new.product-price__price-new--center 25.80 ₽
+                .product-price__price-des.product-price__price-text.product-price__price-text--is-gray Цена за комплект
+    .product-price__price-sum.product-price__price-text
+        span.product-price__price-sum--nds #{nds}
+        span.product-price__price-text Сумма:
+            span.product-price__price-text--is-bold  3 870 ₽
+
+    button.product-price__btn Положить в корзину
+
+    .product-price__availability(class=isAvailibilityVisible ? '' : 'none')
+        .product-price__availability-item.is-green
+            span
+                +svg-mix('okay')
+                | На складе
+            span 1 234
+        .product-price__availability-item
+            span
+                +svg-mix('hourglass')
+                | В резерве
+            span 550 шт
+        .product-price__availability-item
+            span
+                +svg-mix('padlock')
+                | Ещё поступит
+            span 20.12.2019
+mixin product-price-count(value)
+    .product-price__count
+        button.product-rem-count.product-price__btn-change –
+        the-mask(:mask="'#####'" value=value).product-count.product-price__input-change
+        button.product-add-count.product-price__btn-change +
+mixin product-price
+    .product-price__in-basket-wrapper
+        +product-settings-counter
+        .product-price__in-basket
+            if attributes.type == '3'
+                .product-price__toggle
+                    button.btn.btn--other.btn--blue.is-active.js-entrepreneur-btn(type="button") ИП Зарецкий А.В.
+                    button.btn.btn--other.btn--blue.js-company-btn(type="button") ООО Всё для календарей
+                .product-price__entrepreneur.is-shown
+                    +product-price__in-basket('ИП Зарецкий А.В.', false, attributes.type, 'без НДС')
+                .product-price__hr-separator.product-price__hr-separator--main-gray.width100
+                .product-price__company
+                    +product-price__in-basket('ООО Всё для календарей', 'availibility-true', attributes.type, 'с НДС')
+            if attributes.type == '2'
+                +product-price__in-basket('ИП Зарецкий А.В.', true, attributes.type, 'без НДС')
+            if attributes.type == '1'
+                .product-price__toggle
+                    button.btn.btn--other.btn--blue.is-active.js-entrepreneur-btn(type="button") ИП Зарецкий А.В.
+                    button.btn.btn--other.btn--blue.js-company-btn(type="button") ООО Всё для календарей
+                .product-price__entrepreneur.is-shown
+                    +product-price__in-basket('ИП Зарецкий А.В.', 'availibility-true', attributes.type, 'без НДС')
+                .product-price__hr-separator.product-price__hr-separator--main-gray.width100
+                .product-price__company
+                    +product-price__in-basket('ООО Всё для календарей', 'availibility-true', attributes.type, 'с НДС')

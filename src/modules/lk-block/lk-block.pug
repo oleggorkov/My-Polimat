@@ -1,0 +1,19 @@
+include ../lk-menu/lk-menu
+include ../lk-orders/lk-orders
+
+mixin lk-block(active)
+    .lk-block
+        .lk-block__menu
+            h2.lk-block__title Личный кабинет
+            - var items = [{title: 'Мои заказы', value: 'lk.html'}, {title: 'Список плательщиков', value: 'lk-payer.html'}, {title: 'Личные данные', value: 'lk-data.html'}, {title: 'Мои скидки', value: 'lk-discounts.html'}, {title: 'Связаться с нами', value: 'lk-check.html'}, {title: 'Мои подписки', value: 'lk-subscribe.html'}, {title: 'Купленные товары', value: 'lk-product-buy.html'}]
+            +lk-menu(items, active)
+        .lk-block__content
+            block
+mixin info-block(active)
+    .lk-block
+        .lk-block__menu
+            h2.lk-block__title Информация
+            - var items = [{title: 'О компании', value: 'info-about.html'}, {title: 'Оплата и доставка', value: 'info-payment-delivery.html'}, {title: 'Вопросы и ответы', value: 'info-questions.html'}, {title: 'Дилеры', value: 'info-dealers.html'}, {title: 'Прайс-лист', value: 'info-price-list.html'}, {title: 'Скачать', value: 'info-download.html'}, {title: 'Праздники', value: 'info-holiday.html'}]
+            +lk-menu(items, active)
+        .lk-block__content
+            block

@@ -1,0 +1,47 @@
+mixin company(name, inn)
+    p.order__payer-company-name.t--weight-bold #{name}
+    P.order__payer-company-inn #{inn}
+
+mixin caption-input(className, text)
+    div(class= 'order__' + className + '-wrapper')
+        h3.order__title #{text}
+        div(class= 'order__' + className)
+
+mixin input-radio-item(id, name, value, text , checke)
+    input.order__input.none(id=id type="radio" name=name value=value checked=checke)
+    label.order__label.circle-label(for=id )
+        .circle-label__border
+            .circle-label__active
+        .order__text-wrapper
+            p.order__input-text #{text}
+
+mixin input-radio-item--bordered(id, name, value, companyName, inn, checke)
+    input.order__payer-input(id=id type="radio" name="payer" value=value checked = checke)
+    label.order__payer-label.circle-label(for=id)
+        .circle-label__border
+            .circle-label__active
+        .order__payer-text-wrapper
+            p.order__payer-company-name #{companyName}
+            P.order__payer-company-inn #{inn}
+
+mixin input-delivery-address(adress)
+    .order__delivery-adress-wrapper
+        h3.order__title.order__title--black.order__title--margin-top0 Адрес доставки
+        +textarea(cols='1' rows='3' placeholder='Москва, Севастопольский проспект, д.56/40, стр. 1').order__delivery-adress #{adress}
+
+mixin input-delivery-mail(mail)
+    .order__delivery-adress-wrapper
+        h3.order__title-last.order__title--black.order__title--margin-top0 E-mail
+        +textarea(cols='1' rows='3' placeholder='example@email.com').order__delivery-adress #{mail}
+
+mixin input-radio-item--new-payer
+    input.order__payer-input(id=id type="button" name="new-payer" value=value checked = checke)
+    label.order__payer-label.order__payer-new(for=id)
+
+mixin  order-transport
+    .order-transport(class = attributes.class)
+        .order-transport__options.order-transport__options-mobile
+            .order-transport__option
+                - var options = [{value: 0, title: 'Выберите транспортную компанию'}, {value: 1, title: 'Желдорэкспедиция (Ср)'},{value: 2, title: 'Байкал-сервис (Пн, Чт)'},{value: 3, title: 'Главдоставка (Ср)'},{value: 4, title: 'Деловые линии (Вт, Пт)'}, {value: 4, title: 'Другая ТК (ПЛАТНО, название - в комментарии)'}, {value: 4, title: 'ТК (Самовывоз со склада Транспортной Компанией)'}]
+                +select(options).order-transport__option-select
+

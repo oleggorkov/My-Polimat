@@ -1,0 +1,18 @@
+mixin table-column(active, ...ceils)
+    .swiper-slide.slide.lk-discounts__table-column(class=active=='active' ? '.lk-discounts__table-column--active' : '')
+        each item in ceils
+            if item != ''
+                .lk-discounts__table-cell #{item}
+            else
+                .lk-discounts__table-cell.lk-discounts__table-cell--empty
+                    .lk-discounts__table-cell-long-line
+mixin table-cart-navigation(isHand)
+    div.carts-slider__navigation(class=isHand ? 'carts-slider__navigation--with-hand-ico' : '')
+        if isHand
+            img.carts-slider__navigation-touch-ico(src='img/touch-slider-ico.svg')
+        button(type='button')
+            +svg-mix('arrow-long')
+        div.carts-slider__navigation-progress-bar
+            span
+        button(type='button')
+            +svg-mix('arrow-long')

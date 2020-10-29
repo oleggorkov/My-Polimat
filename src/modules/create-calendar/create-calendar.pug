@@ -1,0 +1,78 @@
+include ../control-elements/select/select
+include ../filter-module/filter-module
+
+mixin create-calendar
+
+    .new-calendar
+        h1.new-calendar__title Создать свой календарный блок
+        .new-calendar__block
+            .new-calendar__block-flex
+                img(src='img/cart-image/cart-image.png')
+            .new-calendar__block-flex
+                .new-calendar__block-flex-settings
+                    .new-calendar__block-flex-settings-item
+                        .product-settings__options.product-settings__options-mobile.product-settings__options--modify
+                            .product-settings__option
+                                span.product-settings__option-name.product-settings__option-name--modify Серия
+                                .product-settings__option-block
+                                    .product-settings__option-block-item
+                                        .product-settings__option-block-item-title Трио 1-сп
+                                        +svg-mix('filter-module__type-1')
+                                    .product-settings__option-block-item
+                                        .product-settings__option-block-item-title Трио 3-сп
+                                        +svg-mix('filter-module__type-2')
+                                    .product-settings__option-block-item
+                                        .product-settings__option-block-item-title Quattro
+                                        +svg-mix('filter-module__type-3')
+                                    .product-settings__option-block-item
+                                        .product-settings__option-block-item-title «3 в 1»
+                                        +svg-mix('filter-module__type-4')
+                            .product-settings__option
+                                span.product-settings__option-name Цветовая гамма
+                                .filter-module__inner-wrapper.filter-module__inner-js
+                                    div.filter-module__inner
+                                        +filter-type-color(name, 'white', 'gamma-1', 'белый')
+                                        +filter-type-color(name, 'blue', 'gamma-2', 'синий')
+                                        +filter-type-color(name, 'gray', 'gamma-3', 'серый')
+                                        +filter-type-color(name, 'orange', 'gamma-4', 'оранжевый')
+                                        +filter-type-color(name, 'green', 'gamma-5', 'зелёный')
+                                        +filter-type-color(name, 'yellow', 'gamma-6', 'жёлтый')
+                                        +filter-type-color(name, 'green-two', 'gamma-7', 'бирюзовый')
+                                        +filter-type-color(name, 'purple', 'gamma-8', 'пурпурный')
+                                        +filter-type-color(name, 'pink', 'gamma-9', 'розовый')
+                                        +filter-type-color(name, 'red', 'gamma-10', 'красный')
+                            .product-settings__option
+                                span.product-settings__option-name Цвет
+                                - var options = [{value: 1, title: 'Жёлтый'},{value: 2, title: 'Чёрный'},{value: 3, title: 'Синий'},{value: 4, title: 'Зелёный'}]
+                                +select(options).product-settings__option-select
+                    .new-calendar__block-flex-settings-item
+                        .product-settings__options.product-settings__options-mobile
+                            .product-settings__option
+                                span.product-settings__option-name Шрифт
+                                - var options = [{value: 1, title: 'Клас'},{value: 2, title: 'Европа'},{value: 3, title: 'Болд'},{value: 4, title: 'Rodchenko'}]
+                                +select(options).product-settings__option-select
+                            .product-settings__option
+                                span.product-settings__option-name Бумага
+                                - var options = [{value: 1, title: 'Офсетная 80 г/м2'},{value: 2, title: 'Мелованная 90 г/м2'}]
+                                +select(options).product-settings__option-select
+                            .product-settings__option
+                                span.product-settings__option-name Выходные
+                                - var options = [{value: 1, title: 'Только воскресенья'},{value: 2, title: 'Субботы и воскресенья'}]
+                                +select(options).product-settings__option-select
+                            .product-settings__option
+                                span.product-settings__option-name Размер
+                                - var options = [{value: 1, title: '297x145'}, {value: 2, title: '450х320 мм (SRA3)'}]
+                                +select(options).product-settings__option-select
+                            .product-settings__option
+                                span.product-settings__option-name Серия
+                                - var options = [{value: 1, title: 'Европа металлик'},{value: 2, title: 'АЛЬФА (100% аналог ГЕВАРИУС-ПОЛИМАТ)'}]
+                                +select(options).product-settings__option-select
+                            .product-settings__option
+                                span.product-settings__option-name--modify Кол-во спиралей
+                                .product-settings__option-radios
+                                    - var n = 0
+                                    while n < 4
+                                        - n++
+                                        input(type='radio' id=`col-${n}` name='col' value=n).visibility-hidden
+                                        label(for=`col-${n}`).product-settings__option-label #{n}
+                .new-calendar__block-flex-actions

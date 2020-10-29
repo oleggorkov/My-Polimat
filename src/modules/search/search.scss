@@ -1,0 +1,388 @@
+.search{
+  &__caption{
+    //margin: 1.2rem 0 1.2rem;
+    margin-bottom: 1.2rem;
+    @include above($tablet-landscape){
+      margin-top: 2rem;
+    }
+  }
+  &__input-area{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    margin-right: auto;
+    align-items: baseline;
+    position: relative;
+
+    & .inp--default {
+      padding-right: 4rem;
+    }
+    .inp{
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+    }
+    .inp__label{
+      width: 100%;
+
+      @include above($tablet){
+        min-width: auto;
+        max-width: 48rem;
+      }
+    }
+    @include above($tablet){
+      flex-direction: row;
+    }
+
+    & .search-btn {
+      border: none;
+      min-width: 3.8rem;
+      height: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0.2rem;
+      top: 0.8rem;
+      bottom: 0;
+
+      @include above($tablet) {
+        display: none;
+      }
+
+      svg{
+        width: 2rem;
+        height: 2rem;
+        fill: $main-color-blue;
+      }
+    }
+  }
+  &__input-label{
+    width: 100%;
+
+  }
+  &__input{
+    height: 100%;
+    width: 100%;
+  }
+  &__input-btn.btn--default{
+    width: 19rem;
+    min-width: 19rem;
+    display: none;
+    height: 3.8rem;
+    margin-left: 2rem;
+    margin-top: 0.2rem;
+    @include above($tablet){
+      display: block;
+    }
+  }
+
+  &__rezult-flex {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      &:not(:last-of-type) {
+        margin-bottom: 2.4rem;
+      }
+
+      &-title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.8rem;
+        line-height: 2.1rem;
+        text-decoration-line: underline;
+        color: $main-color-blue;
+        margin-bottom: 1.6rem;
+
+        @include above($desktop) {
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+
+      &-text {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        color: #000000;
+        margin-bottom: 1.6rem;
+      }
+
+      &-path {
+        display: flex;
+
+        & span {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 1.2rem;
+          line-height: 1.4rem;
+          color: $helper-color-gray;
+          margin-right: 1rem;
+        }
+
+        &-breadcrumbs {
+          display: flex;
+
+          & a {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.2rem;
+            line-height: 1.4rem;
+            text-decoration-line: underline;
+            color: #000000;
+
+            @include above($desktop) {
+              &:hover {
+                text-decoration: none;
+              }
+            }
+          }
+
+          &-span {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.2rem;
+            line-height: 1.4rem;
+            color: #000000;
+            margin-left: 0.3rem;
+            margin-right: 0.3rem;
+          }
+        }
+      }
+    }
+
+    & .cart {
+
+      border-bottom: 0.2rem solid $main-gray-color;
+
+      &:first-of-type {
+        border-top: 0.2rem solid $main-gray-color;
+      }
+      &:nth-of-type(2n) {
+        @include above($tablet) {
+          border-left: none;
+        }
+        @include above($tablet-landscape) {
+          border-left: 0.2rem solid $main-gray-color;
+        }
+      }
+
+      &:nth-of-type(n+3) {
+        @include above($tablet) {
+          border-top: none;
+        }
+        @include above($tablet-landscape) {
+          border-top: 0.2rem solid $main-gray-color;
+        }
+      }
+      &:nth-of-type(n+4) {
+        @include above($tablet-landscape) {
+          border-top: none;
+        }
+        @include above($mid-desktop) {
+          border-top: 0.2rem solid $main-gray-color;
+        }
+      }
+      &:nth-of-type(3n-1) {
+        @include above($tablet-landscape) {
+          border-left: none;
+        }
+        @include above($mid-desktop) {
+          border-left: 0.2rem solid $main-gray-color;
+        }
+      }
+      &:nth-of-type(3n) {
+        @include above($tablet-landscape) {
+          border-left: none;
+        }
+        @include above($mid-desktop) {
+          border-left: 0.2rem solid $main-gray-color;
+        }
+      }
+      &:nth-of-type(n+5) {
+        @include above($mid-desktop) {
+          border-top: none;
+        }
+        @include above($big-desktop) {
+          border-top: 0.2rem solid $main-gray-color;
+        }
+      }
+      &:nth-of-type(4n-2) {
+        @include above($mid-desktop) {
+          border-left: none;
+        }
+        @include above($big-desktop) {
+          border-left: 0.2rem solid $main-gray-color;
+        }
+      }
+      &:nth-of-type(4n-1) {
+        @include above($mid-desktop) {
+          border-left: none;
+        }
+        @include above($big-desktop) {
+          border-left: 0.2rem solid $main-gray-color;
+        }
+      }
+      &:nth-of-type(4n) {
+        @include above($mid-desktop) {
+          border-left: none;
+        }
+        @include above($big-desktop) {
+          border-left: 0.2rem solid $main-gray-color;
+        }
+      }
+      &:nth-of-type(n+6) {
+        @include above($big-desktop) {
+          border-top: none;
+        }
+      }
+      &:nth-of-type(5n-3) {
+        @include above($big-desktop) {
+          border-left: none;
+        }
+      }
+      &:nth-of-type(5n-2) {
+        @include above($big-desktop) {
+          border-left: none;
+        }
+      }
+      &:nth-of-type(5n-1) {
+        @include above($big-desktop) {
+          border-left: none;
+        }
+      }
+      &:nth-of-type(5n) {
+        @include above($big-desktop) {
+          border-left: none;
+        }
+      }
+      @include above($tablet){
+        width: 50%;
+      }
+      @include above($tablet-landscape){
+        width: 33.33%;
+      }
+      @include above($mid-desktop){
+        width: 25%;
+      }
+      @include above($big-desktop){
+        width: 20%;
+      }
+    }
+  }
+  &__rezult-text{
+    &-wrapper{
+      width: 100%;
+      padding-bottom: 1.5rem;
+
+      & .catalogue-content__wrapper .cart {
+
+        &:not(:last-of-type) {
+          border-bottom: none;
+          @include above($tablet) {
+            border-bottom: 0.2rem solid $main-gray-color;
+          }
+        }
+        &:nth-of-type(n+3) {
+          @include above($tablet) {
+            border-top: none;
+          }
+          @include above($tablet-landscape) {
+            border-top: 0.2rem solid $main-gray-color;
+          }
+        }
+        @include above($tablet){
+          width: 50%;
+        }
+        @include above($tablet-landscape){
+          width: 33.33%;
+        }
+        @include above($mid-desktop){
+          width: 25%;
+        }
+      }
+    }
+    &-caption{
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    &-area{
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      display: flex;
+      margin-bottom: 2rem;
+    }
+    &--request{
+      color: $helper-color-gray;
+    }
+    &--request-text{
+      margin-left: 0.3rem;
+    }
+  }
+  &__btn-more-product.btn--gray{
+    width: 11rem;
+    padding: 0 1.2rem;
+    margin: 1.7rem auto 0;
+  }
+
+  &__nav-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 2.2rem;
+  }
+
+  &__nav-item {
+    padding: 1rem 0.3rem;
+    border-bottom: 0.2rem solid $main-gray-color;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: #000000;
+    &:not(:last-of-type) {
+      margin-right: 0.2rem;
+    }
+    @include above($desktop) {
+      &:hover,
+      &:focus {
+        color: $main-color-blue;
+        border-bottom: 0.2rem solid $main-color-blue;
+      }
+    }
+    @include above($tablet){
+      padding: 1rem 1.6rem;
+    }
+    &--active{
+      border-bottom: 0.2rem solid $main-color-blue;
+      z-index: 5;
+      font-weight: 500;
+      color: $main-color-blue;
+    }
+  }
+
+  &__content{
+    width: 100%;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .visually-hidden{
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+  }
+}

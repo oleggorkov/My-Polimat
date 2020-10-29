@@ -1,0 +1,9 @@
+extends ../layouts/default
+include ../../modules/holiday/holiday
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Праздники')
+            +holiday

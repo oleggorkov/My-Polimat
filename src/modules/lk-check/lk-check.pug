@@ -1,0 +1,39 @@
+include ../control-elements/buttons/btn-main
+include ../control-elements/inputs/input-main
+include ../control-elements/textarea/textarea
+
+block lk-check
+    div.lk-check
+        div.lk-check__block
+            form.lk-check__block-item
+                h1.lk-check__block-item-heading Связаться с нами
+                div.lk-check__block-item-input
+                    +input-main-handler(placeholder='Ваше имя' id="contact__inp-name" name='contact__inp-name' data-require
+                    data-require-length=3)
+                div.lk-check__block-item-flex
+                    div.lk-check__block-item-input
+                        +input-main-handler(placeholder='Ваш e-mail' id="contact__input-email" name='contact__inp-contact-us'
+                        data-email data-require class='contact__input-phone contact__input-phone-js')
+                    div.lk-check__block-item-input
+                        +input-main-handler(id='contact__input-phone' name='contact__inp-contact-us'
+                            class='inp inp--default inp--error inp--valid contact__input-phone contact__input-phone-js'
+                            placeholder='Ваш телефон' data-require data-require-length=18 mask="+7 (###) ### ## ##")
+                div.lk-check__block-item-area
+                    +textarea-handler(cols='1' rows='3' placeholder='Ваше сообщение' name='message' data-require data-require-length=3)
+                div.lk-check__policy
+                    | Оставляя данные на этом сайте вы соглашаетесь с&nbsp
+                    a(href="#")  Политикой конфиденциальности.
+                div.lk-check__block-item-button
+                    +btn-main(class='btn--other btn--blue-invert btn-form-submit')    Отправить
+            div.lk-check__block-item
+                h2.lk-check__block-item-heading Наши контакты
+                div.lk-check__block-item-text   Телефон:&nbsp
+                    a(href='tel:+74952873377').lk-check__link.t--size-medium +7 (495) 287-33-77
+                div.lk-check__block-item-text   Электронная почта:&nbsp
+                    a(href='mailto:info@polimat.ru').lk-check__link.t--size-medium  info@polimat.ru
+
+
+
+
+
+

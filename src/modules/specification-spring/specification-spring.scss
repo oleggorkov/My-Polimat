@@ -1,0 +1,128 @@
+.specification-spring{
+  &__table-wrapper{
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  &__slider-column{
+    display: flex;
+    flex-direction: column;
+    width: 12rem;
+
+    @include above($big-desktop){
+      width: 15.1rem;
+    }
+
+    &--with-title{
+      width: 32rem;
+
+      .specification-spring__table-cell{
+        justify-content: flex-start;
+      }
+
+      @include above($big-desktop){
+        width: 39.8rem;
+      }
+    }
+
+    &--with-title-min{
+      width: 24rem;
+
+      &:not(:last-child) {
+        margin-right: 1.6rem;
+      }
+
+      .specification-spring__table-cell--title{
+        justify-content: flex-start;
+      }
+    }
+
+    &--min{
+      width: 9rem;
+
+      .specification-spring__table-cell{
+        padding-left: 0.6rem;
+      }
+    }
+
+    &:not(:last-child){
+      margin-right: 2.3rem;
+
+      &.specification-spring__slider-column--with-title-min,
+      &.specification-spring__slider-column--min{
+        margin-right: 1.6rem;
+      }
+
+    }
+  }
+  &__table-column{
+    width: 100%;
+  }
+
+  &__table-cell {
+    height: 4rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: $helper-color-gray;
+    display: flex;
+    justify-content: center;
+    padding: 1.2rem 0.6rem 1.2rem 1.6rem;
+
+    &--caption{
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      color: #000000;
+      padding: 1.7rem 0;
+      text-align: left;
+      height: 5rem;
+      margin-top: 1rem;
+      width: 31.7rem;
+      @include above($tablet){
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+      }
+    }
+
+    &:nth-of-type(2n) {
+      background-color: $main-gray-color;
+    }
+    &:nth-of-type(2n).specification-spring__table-cell--empty{
+      background-color: transparent;
+    }
+
+    &--title,
+    &--title:nth-of-type(2n)
+    {
+      background-color: $main-color-blue;
+      color: #fff;
+    }
+
+    &--center{
+      justify-content: center;
+    }
+
+    &--black{
+      color: #000000;
+    }
+  }
+
+  &__text{
+    width: 100%;
+    margin-right: auto;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+
+    &:first-child{
+      margin-top: 2rem;
+    }
+
+    &:last-child{
+      margin-bottom: 2rem;
+    }
+  }
+  .carts-slider .slider:before,
+  .carts-slider .slider:after{
+    display: none;
+  }
+}

@@ -1,0 +1,23 @@
+.sort-menu{
+  .catalogue-sort{
+    width: 100%;
+    height: auto;
+    padding-top: 5.6rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    &-title{
+      display: none;
+    }
+
+    &-btn{
+      &:not(:last-of-type){
+        margin-right: 0;
+        margin-bottom: 2.4rem;
+      }
+    }
+  }
+}

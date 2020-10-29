@@ -1,0 +1,10 @@
+extends ../layouts/default
+include ../../modules/lk-block/lk-block
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Личный кабинет', 'Физическое лицо')
+            +lk-block
+                include ../../modules/lk-buyer/lk-buyer

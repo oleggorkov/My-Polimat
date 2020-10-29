@@ -1,0 +1,78 @@
+include ../product-tabs/product-tabs
+
+mixin how-to-get-block
+    .how-to-get-block
+        .how-to-get-block__title.title-main Подробнее о том, как добраться
+        
+        .how-to-get-block__tabs
+            +tab-btn(1).how-to-get-block__tabs-item.active
+                | На метро
+            +tab-btn(2).how-to-get-block__tabs-item
+                | Пешком
+            +tab-btn(3).how-to-get-block__tabs-item
+                | На автомобиле
+
+        .how-to-get-block__contents
+            +tab-content(1).how-to-get-block__contents-item.active
+                .how-to-get-block__row
+                   .how-to-get-block__col.how-to-get-block__col--less
+                        .how-to-get-block__text От станции метро "Щелковская"
+                        picture.how-to-get-block__img     
+                            img(src='img/how-to-get-image/how-to-get-image-1.jpg' alt='how-to-get-1')
+
+                   .how-to-get-block__col.how-to-get-block__col--less
+                        .how-to-get-block__text От станции метро "Первомайская"
+                        picture.how-to-get-block__img     
+                            img(src='img/how-to-get-image/how-to-get-image-2.jpg' alt='how-to-get-2')
+
+                   .how-to-get-block__col.how-to-get-block__col--less
+                        .how-to-get-block__text От станции метро "Черкизовская"
+                        picture.how-to-get-block__img     
+                            img(src='img/how-to-get-image/how-to-get-image-3.jpg' alt='how-to-get-3')
+
+                   .how-to-get-block__col.how-to-get-block__col--less
+                        .how-to-get-block__text От станции метро "Партизанская"
+                        picture.how-to-get-block__img     
+                            img(src='img/how-to-get-image/how-to-get-image-4.jpg' alt='how-to-get-4')
+
+                   .how-to-get-block__col
+                        .how-to-get-block__text Схема движения по территории промзоны (въезд с ул. Амурской через ворота (шлагбаум)):
+                        picture.how-to-get-block__img     
+                            img(src='img/how-to-get-image/how-to-get-image-5.jpg' alt='how-to-get-5')
+
+
+            +tab-content(2).how-to-get-block__contents-item
+                .how-to-get-block__row
+                    .how-to-get-block__col.how-to-get-block__col--less
+                        .how-to-get-block__text-title 1-й вариант. м. Преображенская площадь
+                        .how-to-get-block__text
+                            p Первый вагон из центра, выход из метро направо, выход в город - налево,
+                                | любая маршрутка (№ 41, 516) в сторону области до остановки "Калошино" (бывш. "Зоомагазин")
+                            p по подземному переходу перейти на противоположную сторону Щелковского шоссе
+                                | далее прямо через жилые дома до ул. Амурская, д. 5 территория Офисно-складского комплекса", проходная со шлагбаумом.
+                            p На проходной сказать: "В Компанию "ПОЛИМАТ".  ПРИ СЕБЕ ОБЯЗАТЕЛЬНО УДОСТОВЕРЕНИЕ ЛИЧНОСТИ.
+                            p после шлагбаума 20 м прямо, потом налево, последнее 2-х этажное кирпичное здание по правой стороне, 2 этаж, комн. 205
+
+                    .how-to-get-block__col.how-to-get-block__col--less
+                        .how-to-get-block__text-title 2- й вариант. м. Щелковская
+                        .how-to-get-block__text
+                            p Первый вагон из центра, выход из метро налево
+                                | любая маршрутка в сторону центра до остановки "Калошино" (бывш. "Зоомагазин")
+                                | далее прямо через жилые дома до ул. Амурская, д. 5, территория "Офисно-складского комплекса ", проходная со шлагбаумом.
+                            p На проходной сказать: "В Компанию "ПОЛИМАТ".  ПРИ СЕБЕ ОБЯЗАТЕЛЬНО УДОСТОВЕРЕНИЕ ЛИЧНОСТИ.
+                            p после шлагбаума 20 м прямо, потом налево, последнее 2-х этажное кирпичное здание по правой стороне, 2 этаж, комн. 205
+
+            +tab-content(3).how-to-get-block__contents-item
+                .how-to-get-block__row
+                    .how-to-get-block__col
+                        .how-to-get-block__text
+                            p Широта 55 48'35''N (55.809697)
+                            p Долгота 37 45'59''E (37.766495)
+                            p ВНИМАНИЕ: Если Вы вводите наши координаты в навигатор, большинство навигаторов приводят вас на соседнюю улицу Тагильская - ЗАЕЗД на нашу территорию С улицы АМУРСКАЯ! Шлагбаум рядом с синей проходной.
+                            p Въезд с Амурской улицы, территория "Офисно-складского комплекса", проходная со шлагбаумом
+                            p На проходной сказать: "В Компанию "ПОЛИМАТ".  ПРИ СЕБЕ ОБЯЗАТЕЛЬНО УДОСТОВЕРЕНИЕ ЛИЧНОСТИ. 
+                            p После шлагбаума 20 м прямо, потом налево, последнее 2-х этажное кирпичное здание по правой стороне, 2 этаж, комн. 205
+                    
+                    .how-to-get-block__col
+                        picture.how-to-get-block__img     
+                            img(src='img/how-to-get-image/how-to-get-image-6.jpg' alt='how-to-get-6')

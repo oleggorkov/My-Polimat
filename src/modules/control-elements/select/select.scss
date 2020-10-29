@@ -1,0 +1,51 @@
+.select {
+    * {
+        @include above($desktop){
+            cursor: pointer !important;
+        }
+    }
+    .SumoSelect {
+        width: 100%;
+
+        &:hover {
+            .CaptionCont{
+                box-shadow: none;
+                border-color: $main-color-blue;
+            }
+        }
+        &:focus {
+            .CaptionCont{
+                box-shadow: none;
+                border-color: $main-color-blue;
+            }
+        }
+        &.open{
+            .CaptionCont{
+                box-shadow: none;
+                border-color: $main-color-blue;
+            }
+        }
+        .CaptionCont{
+            border: 0.2rem solid $main-gray-color;
+            border-radius: 0.5rem;
+            &>label {
+                display: none;
+            }
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                pointer-events: none;
+                width: 0.8rem;
+                z-index: 1;
+                height:  0.8rem;
+                right: 2.1rem;
+                top: calc(50% - 0.8rem);
+                transform: rotate(-45deg);
+                border-left: 0.3rem  solid $helper-color-gray;
+                border-bottom: 0.3rem  solid $helper-color-gray;
+            }
+        }
+    }
+
+}

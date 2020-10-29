@@ -1,0 +1,228 @@
+.lk-payer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+
+  @include above($tablet){
+    padding-top: 0;
+  }
+  &__block{
+    display: flex;
+    flex-direction: column;
+    @include above($tablet-landscape){
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: normal;
+    }
+  }
+  &__heading {
+    display: none;
+    @include above($tablet){
+      display: block;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 2rem;
+      line-height: 2.3rem;
+      color: #000000;
+      margin-bottom: 2.4rem;
+
+    }
+  }
+  &__item {
+    width: 100%;
+    padding: 1.4rem 1.6rem;
+    border: 2px solid $main-gray-color;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    @include above($tablet){
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @include above($tablet-landscape){
+      width: 31rem;
+      height: 16.2rem;
+      flex-direction: column;
+      padding: 2.5rem 2.6rem 2.5rem 2.6rem;
+      margin-bottom: 1.7rem;
+      margin-right: 0.8rem;
+    }
+    @include above($mid-desktop){
+      &__item {
+        width: 28rem;
+        height: 10.8rem;
+        margin-right: 2.6rem;
+        padding: 0 2.3rem;
+        justify-content: center;
+      }
+    }
+    @include above($big-desktop) {
+      width: 35.5rem;
+    }
+    &--new{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+      height: 3.2rem;
+      justify-content: center;
+      @include above($tablet){
+        width: 10.5rem;
+        height: 6.4rem;
+        align-self: flex-end;
+        justify-content: center;
+        padding: 0;
+      }
+      @include above($tablet-landscape){
+        width: 13.2rem;
+        height: 16.2rem;
+        align-self: flex-start;
+      }
+
+      @include above($desktop) {
+        cursor: pointer;
+        &:hover {
+          border: 2px solid $main-color-blue;
+        }
+      }
+    }
+  }
+
+  &__item-flex-name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #000000;
+    @include above($tablet){
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+  }
+
+  &__item-flex-tel {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #000000;
+    margin-top: 1rem;
+    @include above($tablet){
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+  }
+
+  &__item-flex-mail {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #000000;
+    @include above($tablet){
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+  }
+
+  &__item-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item-flex-info {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 160%;
+    color: $helper-color-gray;
+    @include above($tablet){
+      font-size: 1.4rem;
+    }
+  }
+
+  &__item-link {
+    display: block;
+    cursor: default;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-align: center;
+    color:$main-color-blue;
+    text-decoration-line: underline;
+    transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+    cursor: pointer;
+    &:hover {
+      text-decoration-line: none;
+      color: $main-color-dark-blue;
+    }
+    @include above($tablet){
+      align-self: flex-end;
+      margin-top: 0;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+    @include above($tablet-landscape){
+      align-self: flex-start;
+      margin-top: 1rem;
+    }
+  }
+
+  &__btn{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  &__btn:after {
+    content: '';
+    width: 0.2rem;
+    height: 1.8rem;
+    position: absolute;
+    background-color: $main-gray-color;
+    transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+    @include above($tablet){
+        height: 2.6rem;
+    }
+    @include above($tablet-landscape){
+        width: 0.4rem;
+        height: 3.6rem;
+    }
+  }
+  &__btn:before {
+    content: '';
+    width: 0.2rem;
+    height: 1.6rem;
+    position: absolute;
+    background-color: $main-gray-color;
+    transform: rotate(90deg);
+    transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+    @include above($tablet){
+      height: 2.6rem;
+    }
+    @include above($tablet-landscape){
+      width: 0.4rem;
+      height: 3.6rem;
+    }
+  }
+  .lk-payer__item:hover .lk-payer__btn:before,
+  .lk-payer__item:hover .lk-payer__btn:after {
+
+    @include above($desktop) {
+      background-color: $main-color-blue;
+    }
+  }
+}
+
+
+
+
+
+
+
+

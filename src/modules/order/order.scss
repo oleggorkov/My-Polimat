@@ -1,0 +1,684 @@
+.order{
+
+  & .basket__column-product {
+    @include above($tablet) {
+      flex: 1;
+    }
+  }
+  &__caption{
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    @include above($tablet){
+      margin-top: 1rem;
+    }
+    @include above($tablet-landscape){
+      margin-top: 1.7rem;
+      font-size: 2.6rem;
+      line-height: 3rem;
+    }
+    @include above($desktop){
+      margin-top: 2.4rem;
+    }
+  }
+  &__form{
+    width: 100%;
+    margin-top: 0.2rem;
+    @include above($tablet){
+      width: 100%;
+    }
+  }
+  &__sectiont-wrapper{
+    @include above($desktop){
+      align-items: flex-start;
+    }
+  }
+  &__policy{
+    width: 100%;
+    line-height: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 1.3rem;
+    order: 4;
+    
+    @include above($tablet) {
+      text-align: right;
+    }
+
+    a {
+        color: $main-color-blue;
+        text-decoration: underline;
+
+        @include above($desktop) {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+  }
+  &__input-text{
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    width: 100%;
+    padding-top: 0.4rem;
+    @include above($tablet){
+      width: 20rem;
+    }
+    @include above($tablet-landscape){
+      width: 18rem;
+    }
+    @include above($desktop){
+      width: 26rem;
+    }
+  }
+  &__text-wrapper{
+    width: 100%;
+    @include above($tablet-landscape){
+      flex-wrap: nowrap;
+    }
+  }
+  &__title{
+    color: $helper-color-gray;
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    margin: 1.2rem 1.2rem 1.2rem 0;
+
+    &-last {
+      color: $helper-color-gray;
+      font-weight: normal;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      margin: 1.2rem 7.8rem 1.2rem 0;
+    }
+
+    &--mt06{
+      margin-top: 0.6rem;
+    }
+
+    &--black{
+      color: #000;
+    }
+
+    &--margin-top0{
+      margin-top: -0.2rem;
+    }
+
+    &--delivery{
+      margin-top: 0;
+      @include above($tablet){
+        margin-top: 2.1rem;
+      }
+    }
+  }
+  &__payer-label{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    &:hover{
+      border: 0.2rem solid $main-color-blue;
+      transition: border ease 0.25s;
+    }
+  }
+  .none{
+    display: none;
+  }
+  form{
+    .circle-label{
+      &__border{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.2rem;
+        height: 2.2rem;
+        min-width: 2.2rem;
+        //background-color: $main-color-blue;
+        border: 2px solid #F0F0F0;
+        border-radius: 50%;
+        margin-right: 0.6rem;
+      }
+      &:hover > .circle-label__border{
+        border: 0.2rem solid $main-color-blue;
+        cursor: pointer;
+      }
+    }
+    input{
+      &:checked + .circle-label{
+        .circle-label__active{
+          width: 1.25rem;
+          height: 1.25rem;
+          background-color: $main-color-blue;
+          border-radius: 50%
+        }
+      }
+    }
+  }
+
+  &__payer{
+    margin-top: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    position: relative;
+    @include above($tablet){
+      margin-top: 1.6rem;
+    }
+    input{
+      display: none;
+    }
+    label{
+      cursor: pointer;
+      margin-bottom: 1rem;
+      position: relative;
+      min-height: 5.9rem;
+      border: 2px solid #F0F0F0;
+      border-radius: 0.5rem;
+      padding: 1rem 0.4rem 1.3rem 1.8rem;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      order: 1;
+
+      @include above($mobile) {
+        max-width: 34rem;
+      }
+      @include above($tablet){
+        flex: 1;
+        max-width: 35.5rem;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        margin-right: 2rem;
+        position: relative;
+        height: 9rem;
+      }
+      @include above($desktop){
+        padding: 1rem 0.4rem 1.3rem 3.2rem;
+        margin-bottom: 3rem;
+      }
+      &:hover > .circle-label{
+        border: 0.2rem solid $main-color-blue;
+        transition: border ease 0.25s;
+      }
+    }
+    input:checked + label{
+      border: 2px solid $main-color-blue;
+      border-radius: 5px;
+    }
+    @include above($tablet){
+      flex-direction: row;
+    }
+    label.order__payer-new{
+      margin-left: auto;
+      margin-top: -7rem;
+      display: block;
+      width: 5rem;
+      max-width: 5rem;
+      min-height: 5rem;
+      height: 5rem;
+
+      padding: 0;
+      cursor: pointer;
+      //display: none;
+      @include above($tablet){
+        height: 5px;
+        position: absolute;
+        left: 30.2rem;
+      }
+      @include above($tablet-landscape){
+        position: relative;
+        order: 2;
+        margin: 0 0 1rem;
+        left: auto;
+        width: 10rem;
+        min-width: 10rem;
+        height: 9rem;
+      }
+      @include above($desktop){
+        height: 9rem;
+      }
+      &:before, &:after{
+        position: absolute;
+        content: '';
+        width: 2.5rem;
+        height: 0.3rem;
+        background-color: #F0F0F0;
+        top: 50%;
+        left: 50%;
+        margin-left: -1.25rem;
+      }
+      &:after{
+        transform: rotate(90deg);
+      }
+    }
+    &-link{
+      @include above($tablet-landscape){
+        order: 1;
+      }
+    }
+
+    &-add {
+      margin-left: auto;
+      margin-top: -7rem;
+      display: block;
+      width: 5rem;
+      max-width: 5rem;
+      min-height: 5rem;
+      height: 5rem;
+      padding: 0;
+      cursor: pointer;
+      margin-bottom: 1rem;
+      border: 0.2rem solid #F0F0F0;
+      border-radius: 0.5rem;
+      position: relative;
+      transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+      @include above($tablet){
+        position: absolute;
+        left: 29.4rem;
+      }
+      @include above($tablet-landscape){
+        position: relative;
+        order: 2;
+        margin: 0 0 1rem;
+        left: auto;
+        width: 10rem;
+        min-width: 10rem;
+        height: 9rem;
+      }
+
+      &-mark {
+        transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+        &:before, &:after{
+          position: absolute;
+          content: '';
+          width: 2.5rem;
+          height: 0.3rem;
+          background-color: #F0F0F0;
+          top: 50%;
+          left: 50%;
+          margin-left: -1.25rem;
+        }
+        &:after{
+          transform: rotate(90deg);
+        }
+      }
+      @include above($desktop) {
+        &:hover {
+          border: 0.2rem solid $main-color-blue;
+        }
+
+        &:hover .order__payer-add-mark:before,
+        &:hover .order__payer-add-mark:after {
+          background-color: $main-color-blue;
+        }
+      }
+    }
+  }
+  &__payer-text-wrapper{
+    padding-top: 0.2rem;
+    @include above($tablet){
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  &__input-radio-item {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.8rem;
+    @include above($tablet){
+      margin-top: 1.5rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    @include above($big-desktop){
+      width: 100%;
+    }
+  }
+
+  &__options-label{
+    display: flex;
+    align-items: center;
+
+  }
+
+
+  &__label{
+    display: flex;
+    margin-bottom: 2.1rem;
+
+    &:last-of-type {
+      order: 1;
+      @include above($mid-desktop) {
+        margin-left: 8rem;
+      }
+
+      @include above($big-desktop) {
+        order: 0;
+      }
+    }
+    @include above($tablet){
+      margin-bottom: 1.4rem;
+    }
+    @include above($tablet-landscape){
+      margin-right: 1rem;
+      min-width: auto;
+    }
+    @include above($tablet-landscape){
+      margin-right: 1rem;
+      width: 25rem;
+    }
+    @include above($desktop){
+      margin-right: 1rem;
+      width: 32.0rem;
+    }
+
+    @include above($big-desktop){
+      width: 25.0rem;
+    }
+  }
+  &__delivery-adress-wrapper{
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    @include above($tablet){
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  &__delivery-adress{
+    border: 2px solid $main-gray-color;
+    border-radius: 5px;
+    width: 100%;
+    //min-height: 6rem;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    &:hover{
+      border: 0.2rem solid $main-color-blue;
+    }
+    @include above($tablet){
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      width: 45.2rem;
+      min-width: 45.2rem;
+      height: 4.4rem;
+    }
+    @include above($tablet-landscape){
+      width: 45.2rem;
+      min-width: 45.2rem;
+    }
+    @include above($desktop){
+      width: 59rem;
+      min-width: 59rem;
+    }
+    @include above($big-desktop){
+      width: 61rem;
+      min-width: 61rem;
+    }
+  }
+  &__comment-wrapper{
+    width: 100%;
+    display: none;
+    @include above($tablet){
+      display: block;
+    }
+    @include above($tablet-landscape){
+      width: 39rem;
+    }
+    @include above($desktop){
+      width: 54rem;
+    }
+  }
+  &__comment-caption{
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    @include above($mid-desktop){
+      width: 39rem;
+      font-size: 1.8rem;
+      line-height: 2.1rem;
+    }
+  }
+  &__comment{
+    width: 100%;
+    height: 10rem;
+    border: 2px solid $main-gray-color;
+    border-radius: 0.5rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    padding: 1.2rem;
+    cursor: default;
+  }
+  &__price-submit-text{
+    @include above($tablet){
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: unset;
+      .basket__price-with-nds{
+        width: 100%;
+        order: 1
+      }
+      .order__text-price-about-company{
+        order: 2;
+        max-width: 25rem;
+      }
+      .order__submit-btn{
+        order: 3;
+        margin-left: 4rem;
+        margin-right: 0;
+        width: 18rem;
+      }
+    }
+    @include above($big-desktop){
+      align-items: baseline;
+      .order__text-price-about-company{
+        max-width: none;
+      }
+    }
+  }
+
+
+  &__product-caption{
+    padding-bottom: 1.6rem;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+  &__price-submit-text{
+
+    @include above($tablet){
+      //display: flex;
+      //flex-wrap: wrap;
+      //width: 100%;
+    }
+  }
+  &__text-price-about-company{
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    text-align: right;
+    color: $helper-color-gray;
+    margin-top: 2.5rem;
+    @include above($tablet) {
+      margin-top: 0;
+    }
+  }
+  &__form-submit-area{
+    width: 100%;
+    @include above($tablet-landscape){
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .basket{
+    &__item-availability{
+      //@include above($desktop){
+      //  width: 16%;
+      //}
+    }
+    &__delete{
+      display: none;
+      @include above($tablet){
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        display: none;
+      }
+    }
+    &__weight--on-tablet-scree{
+      @include above($tablet){
+        display: none;
+      }
+      @include above($desktop){
+        display: none;
+      }
+    }
+    &__item-delete{
+      display: none;
+    }
+    &__purchase-img-and-desc{
+    }
+    &__price-and-sum-wrap{
+    }
+  }
+  &__passport-data{
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: $helper-color-gray;
+    max-width: 73rem;
+    margin: 2.2rem auto 1rem 0;
+    &--link{
+      color: $main-color-blue;
+      text-decoration: underline;
+
+      &:hover {
+        @include above($desktop) {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .basket__count-minus,
+  .basket__count-plus,
+  .basket__column-delete{
+   // display: none;
+  }
+  .basket__count-number {
+    //text-align: left;
+  }
+
+  &-transport {
+
+    @include above($tablet-landscape) {
+      width: 27.5rem;
+    }
+
+    @include above($desktop) {
+      width: 34.4rem;
+    }
+
+    @include above($mid-desktop) {
+      width: 31.4rem;
+    }
+
+    @include above($big-desktop) {
+      margin-left: 88.2rem;
+    }
+    &__options {
+
+    }
+
+    &__option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.1rem;
+      &:last-of-type {
+        justify-content: space-between;
+        @include above($tablet) {
+          justify-content: flex-start;
+        }
+      }
+      @include above($tablet){
+        margin-bottom: 2.2rem;
+      }
+
+      &-select {
+        width: 100%;
+        max-width: 100%;
+        min-width: 22rem;
+        @include above($tablet){
+          max-width: 22rem;
+        }
+        @include above($tablet-landscape){
+          max-width: 100%;
+        }
+        .SelectBox, .optWrapper {
+          font-size: 1.4rem;
+          line-height: 1.6rem;
+          padding: 0.1rem 0 0.1rem 1.1rem;
+        }
+        .CaptionCont.SelectBox{
+          border: 0.2rem solid $main-gray-color
+        }
+
+        .SumoSelect{
+          .CaptionCont.SelectBox{
+            border: 0.2rem solid $main-gray-color;
+            height: 4rem;
+            line-height: 3.6rem;
+
+            &:before{
+              top: calc(50% - .7rem);
+              right: 1.5rem;
+              width: 0.7rem;
+              height: 0.7rem;
+              border-left: .15rem solid $helper-color-gray;
+              border-bottom: .15rem solid $helper-color-gray;
+              transition: 0.5s transform;
+            }
+          }
+        }
+        .SumoSelect.open>.optWrapper {
+          padding-left: 0;
+          top: 4rem;
+          display: block;
+          border: 0.2rem solid $main-color-blue;
+          border-top: none;
+          border-top-right-radius: 0;
+          border-top-left-radius: 0;
+          @include above($tablet){
+            top: 3.8rem;
+          }
+        }
+
+        .SumoSelect.open>.optWrapper>.options>li.opt:first-of-type {
+          display: none;
+        }
+
+        .SumoSelect>.optWrapper>.options>li.opt{
+          padding-left: 1rem;
+        }
+
+        .SumoSelect.open>.CaptionCont.SelectBox {
+          border-top: 0.2rem solid $main-color-blue;
+          border-left: 0.2rem solid $main-color-blue;
+          border-right: 0.2rem solid $main-color-blue;
+          border-bottom: 0.2rem solid $main-gray-color;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+          &:before{
+            border-left: .15rem solid $main-color-blue;
+            border-bottom: .15rem solid $main-color-blue;
+            transform: rotate(135deg);
+
+            top: 1.6rem;
+            @include above($tablet){
+              top: 0.9rem
+            }
+          }
+        }
+      }
+    }
+  }
+}

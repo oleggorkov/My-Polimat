@@ -1,0 +1,145 @@
+.carts-slider{
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__navigation{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 0.8rem;
+
+    button{
+      width: 3.2rem;
+      height: 3.2rem;
+
+      border: 0.2rem solid $helper-color-gray;
+      border-radius: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+
+      transition: border ease 0.25s;
+      &:hover{
+        border-color: $main-color-blue;
+        svg{
+          fill: $main-color-blue;
+        }
+      }
+      svg{
+        width: 1.2rem;
+        height: 0.8rem;
+
+        fill: $helper-color-gray;
+      }
+
+      &:last-of-type{
+        svg{
+          transform: rotate(180deg);
+        }
+      }
+
+      @include above($desktop){
+        &:hover{
+          border: 0.2rem solid $main-color-blue;
+          svg{
+            fill: $main-color-blue;
+          }
+        }
+      }
+    }
+
+    &-progress-bar{
+      width: 100%;
+      height: 2px;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      margin: 0 1rem;
+
+      background-color: $helper-color-gray;
+
+      position: relative;
+
+      span{
+        width: 25%;
+        height: 0.2rem;
+
+        position: relative;
+        left: 0;
+        top: 0;
+        bottom: 0;
+
+        background-color: $main-color-blue;
+
+        transition: left linear 0.25s;
+      }
+    }
+
+    @include above($tablet){
+      display: flex;
+    }
+
+    &--with-hand-ico{
+      position: relative;
+      padding-top: 4rem;
+    }
+    &-touch-ico{
+      position: absolute;
+      top: 0;
+      left: 50%;
+    }
+  }
+
+  .slider{
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    &:before{
+      position: absolute;
+      content: '';
+      display: block;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0.2rem;
+      background: $main-gray-color;
+    }
+
+    &:after{
+      position: absolute;
+      content: '';
+      display: block;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 0.2rem;
+      background: $main-gray-color;
+    }
+
+    
+  }
+
+  .slider-slide{
+    width: 28.6rem;
+    max-width: 28.6rem;
+    &:not(:last-of-type){
+      .cart{
+        border-right: none;
+      }
+    }
+  }
+}

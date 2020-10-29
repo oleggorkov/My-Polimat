@@ -1,0 +1,37 @@
+mixin  product-photo-swiper
+    .product-photo-swiper(class = attributes.class)
+        .swiper-container.product-photo-swiper__gallery
+            .swiper-wrapper
+                - var gallery = 0
+                while gallery < 3
+                    - gallery++
+                    .swiper-slide
+                        picture.product-photo-swiper__img
+                            if attributes.type == '3'
+                                source(type='image/webp' srcset='img/cart-image/cart-image.webp')
+                                img(src='img/cart-image/cart-image.png' alt='cart-image')
+                                .product-photo-swiper__img-number 4
+                            else
+                                source(type='image/webp' srcset='img/cart-image/cart-image-cursor.webp')
+                                img(src='img/cart-image/cart-image-cursor.png' alt='cart-image')
+                                .product-photo-swiper__img-number 4
+        .product-photo-swiper__slider-nav-wrapper
+            button(type='button' class='product-photo-swiper__gallery-thumbs-btn product-photo-swiper__gallery-thumbs-prev')
+                .product-photo-swiper__gallery-thumbs-btn-arrow.product-photo-swiper__gallery-thumbs-btn-arrow--prev
+
+            .swiper-container.product-photo-swiper__gallery-thumbs.carts-slider__navigation
+
+                .swiper-wrapper
+                    - var gallery = 0
+                    while gallery < 3
+                        - gallery++
+                        .swiper-slide
+                            picture.product-photo-swiper__img
+                                if attributes.type == '3'
+                                    source(type='image/webp' srcset='img/cart-image/cart-image.webp')
+                                    img(src='img/cart-image/cart-image.png' alt='cart-image')
+                                else
+                                    source(type='image/webp' srcset='img/cart-image/cart-image.webp')
+                                    img(src='img/cart-image/cart-image-cursor.png' alt='cart-image')
+            button(type='button' class='product-photo-swiper__gallery-thumbs-btn product-photo-swiper__gallery-thumbs-next')
+                .product-photo-swiper__gallery-thumbs-btn-arrow.product-photo-swiper__gallery-thumbs-btn-arrow--next

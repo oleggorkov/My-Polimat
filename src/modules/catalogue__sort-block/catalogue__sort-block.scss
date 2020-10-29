@@ -1,0 +1,135 @@
+.catalogue{
+  &-sort{
+    width: auto;
+    height: auto;
+
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__wrapper{
+      &--small-screen{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4.6rem;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+      }
+      @include above($mid-desktop){
+        display: flex;
+      }
+      &--display{
+        display: none;
+        @include above($mid-desktop){
+          display: flex;
+        }
+      }
+    }
+
+    &-title{
+      margin-right: 4.8rem;
+
+      color: $helper-color-gray;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+
+    &-btn{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      outline: none;
+      border: none;
+
+      color: black;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+
+      transition: color ease 0.25s;
+
+      &:not(:last-of-type){
+        margin-right: 3.2rem;
+      }
+
+      svg{
+        width: 1rem;
+        height: 1.5rem;
+
+        margin-left: 0.8rem;
+
+        fill: black;
+
+        transform: rotate(-90deg);
+      }
+
+      &--active-color{
+        color: $main-color-blue;
+        svg{
+          fill: $main-color-blue;
+        }
+      }
+
+      &--active-arrow{
+        svg{
+          transform: rotate(90deg);
+        }
+      }
+
+      @include above($desktop){
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+
+    @include above($mid-desktop){
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    &__btn-display{
+      width: 2.2rem;
+      height: 2.2rem;
+      //background-color: $helper-color-gray;
+      border: none;
+      &:hover{
+        .catalogue-sort__btn-display-block {
+          background-color: $main-color-blue;
+        }
+      }
+      &:nth-child(2n-1){
+        margin-right: 0.8rem;
+      }
+      &--active{
+        .catalogue-sort__btn-display-block {
+          background-color: $main-color-blue;
+        }
+      }
+    }
+    &__btn-display-block{
+      height: 0.9rem;
+      background-color: $helper-color-gray;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      &:first-child{
+        margin-bottom: 0.3rem;
+      }
+      &--tile{
+        width: 0.9rem;
+        flex-direction: row;
+        &:first-child{
+          margin-right: 0.2rem;
+        }
+      }
+    }
+    &__btn-display-wrapper{
+      display: flex;
+      width: 100%;
+    }
+  }
+}

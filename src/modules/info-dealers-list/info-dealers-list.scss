@@ -1,0 +1,91 @@
+.dealers-list {
+    padding: 1.8rem 3rem 1.3rem;
+    border: 0.2rem solid $main-gray-color;
+    width: 100%;
+    margin-bottom: 1.5rem;
+
+    @include above($tablet){
+        padding: 2.7rem 3.8rem 1.9rem;
+    }
+
+    @include above($mid-desktop){
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title{
+        font-weight: 500;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        margin-bottom: 1.7rem;
+
+        @include above($tablet){
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            margin-bottom: 2.2rem;
+        }
+    }
+
+    &__item{
+        width: 100%;
+        @include above($tablet){
+            display: flex;
+            align-self: center;
+        }
+        &-col{
+            width: 100%;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            line-height: 2.2rem;
+
+            @include above($tablet){
+                font-size: 1.4rem;
+                line-height: 2.2rem;
+                display: flex;
+                flex-wrap: wrap;
+                align-self: center;
+                flex: 0 0 33.333%;
+                margin-bottom: 0.8rem;
+                &:not(:last-of-type){
+                    padding-right: 1rem;
+                }
+                &:not(:first-of-type){
+                    padding-left: 1rem;
+                }
+            }
+            & > * {
+                width: 100%;
+                display: inline-block;
+            }
+            a {
+                color: $main-color-blue;
+
+                @include above($desktop) {
+                    color: inherit;
+                }
+    
+                svg {
+                    fill: $main-color-blue;
+                    height: 0.9rem;
+                    width: 0.9rem;
+                    min-width: 0.9rem;
+                    margin-right: 1rem;
+                    @include above($desktop) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+
+        &:not(:last-of-type){
+            margin-bottom: 0.5rem;
+            border-bottom: 0.2rem solid $main-gray-color;
+
+            @include above($tablet){
+                margin-bottom: 0.8rem;
+            }
+        }
+    }
+}

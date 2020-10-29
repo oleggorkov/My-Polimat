@@ -1,0 +1,71 @@
+block footer
+    footer.section.footer
+        div.section__wrapper
+            div.footer__wrapper
+                div.footer__inner
+                    ul.footer__list
+                        li
+                            a(href='catalogue.html') Каталог
+                        li
+                            a(href='info-about.html') Информация
+                        li
+                            a(href='lk.html') Личный кабинет
+                    ul.footer__list
+                        li
+                            a(href='info-about.html') О компании
+                        li
+                            a(href='info-payment-delivery.html') Оплата и доставка
+                        li
+                            a(href='info-questions.html') Вопросы
+                        li
+                            a(href='contact.html') Контакты
+                    ul.footer__list
+                        li
+                            a(href='info-dealers.html') Дилеры
+                        li
+                            a(href='info-download.html') Скачать каталог
+                        li
+                            a(href='#') Документы
+                        li
+                            a(href='info-price-list.html') Скачать прайс-лист
+                    ul.footer__list
+                        li
+                            a(href='#') Календарные блоки
+                        li
+                            a(href='#') Ежедневники
+                        li
+                            a(href='#') Расходные материалы
+                        li
+                            a(href='#') Оборудование
+                    ul.footer__list.footer__list--last
+                        li
+                            a(href='sitemap.html') Карта сайта
+                        li
+                            a(href='#') Амурская улица, д. 5, строение 2, Москва, 107497, Россия
+                        li
+                            p Электронная почта:
+                                = "  "
+                                a(class="footer__email-link" href='mailto:info@polimat.ru') info@polimat.ru
+                        li
+                            div.footer__social
+                                a(href="tel:+74952873377").footer__social-link.footer__phone-link
+                                    svg
+                                        use(xlink:href='img/sprite.svg#phone')
+                                    | +7 (495) 287-33-77
+                                .footer__social-inner
+                                    a(href='https://www.facebook.com/Polimat-402877463171691/' target="_blank").footer__social-icon
+                                        svg
+                                            use(xlink:href='img/sprite.svg#facebook')
+                                    a(href='https://vk.com/club59440053' target="_blank").footer__social-icon
+                                        svg
+                                            use(xlink:href='img/sprite.svg#vk')
+                div.footer__inner
+                    p.t--size-medium.footer__text--gray 2020 © Компания «Полимат»
+                    div.footer__developers
+                        svg.footer__developers-logo
+                            use(xlink:href='img/sprite.svg#voxweb-logo')
+                        p.t--size-medium.footer__text--white Разработка и развитие сайта —
+                            =' '
+                            a(href='https://voxweb.ru' target='_blank').t--size-medium.footer__text--white.footer__text--underline VoxWeb
+
+

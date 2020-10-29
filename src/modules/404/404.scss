@@ -1,0 +1,28 @@
+.error404{
+  padding: 10rem 0;
+  &__text{
+    max-width: 32rem;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    @include above($tablet){
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+  }
+  &__404{
+    color: $helper-color-gray;
+    font-weight: bold;
+    font-size: 14.4rem;
+    line-height: 16.9rem;
+    text-align: center;
+  }
+  &__btn-to-home.btn{
+    width: 20rem;
+    height: 3rem;
+    margin: 3.2rem auto 0;
+    @include above($tablet){
+      height: 4rem;
+    }
+  }
+}

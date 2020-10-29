@@ -1,0 +1,71 @@
+include ../../helper-mixins/svg-mix
+mixin input-main
+    label.inp__label
+        .inp__label-text #{attributes.label}
+        div(class=attributes.state ? 'inp__wrapper inp__wrapper--' + attributes.state : 'inp__wrapper inp__wrapper--default')
+            if (attributes.mask)
+                the-mask.inp.inp--default.inp--error.inp--valid(
+                    placeholder=attributes.placeholder
+                    class=attributes.class
+                    type=attributes.type
+                    name=attributes.name
+                    value=attributes.value
+                    min=attributes.min
+                    max=attributes.max
+                    maxlength=attributes.maxlength
+                    required=attributes.required
+                    disabled=attributes.disabled
+                    id=attributes.id
+                    mask != attributes.mask)
+            else
+                input.inp.inp--default.inp--error.inp--valid(
+                    placeholder=attributes.placeholder
+                    class=attributes.class
+                    type=attributes.type
+                    name=attributes.name
+                    value=attributes.value
+                    min=attributes.min
+                    max=attributes.max
+                    maxlength=attributes.maxlength
+                    required=attributes.required
+                    disabled=attributes.disabled
+                    id=attributes.id)
+
+            if (attributes.type == 'password')
+                +svg-mix('password-eye', 'inp__password-control')
+            p.inp__error-message Пожалуйста, заполните поле
+            p.inp__valid-ico
+mixin input-main-handler
+    label.inp__label
+        if block
+            block
+        else
+            .inp__label-text
+        div(class='inp__wrapper inp__wrapper--default')
+            if (attributes.mask)
+                the-mask(class='inp inp--default inp--error inp--valid')&attributes(attributes)
+            else
+                input(class='inp inp--default inp--error inp--valid')&attributes(attributes)
+            p.inp__error-message Пожалуйста, заполните поле
+            p.inp__valid-ico
+
+mixin input-main-handler--off-varning
+    label.inp__label
+        .inp__label-text
+        div(class='inp__wrapper inp__wrapper--default inp__wrapper--warning-off')
+            if (attributes.mask)
+                the-mask(class='inp inp--default inp--error inp--valid inp--warning-off')&attributes(attributes)
+            else
+                input(class='inp inp--default inp--error inp--valid')&attributes(attributes)
+            p.inp__error-message Пожалуйста, заполните поле
+            p.inp__valid-ico
+mixin input-main-handler--without-label
+    label.inp__label
+        block
+        div(class='inp__wrapper inp__wrapper--default')
+            if (attributes.mask)
+                the-mask(class='inp inp--default inp--error inp--valid')&attributes(attributes)
+            else
+                input(class='inp inp--default inp--error inp--valid')&attributes(attributes)
+            p.inp__error-message Пожалуйста, заполните поле
+            p.inp__valid-ico

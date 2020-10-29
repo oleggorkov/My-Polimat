@@ -1,0 +1,12 @@
+extends ../layouts/default
+include ../../modules/lk-block/lk-block
+include ../../modules/helper-mixins/main-caption
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Информация', 'Прайс-лист')
+            .info-pricelist
+                +info-block(4)
+                    h1.lk-block__title Прайс-лист

@@ -1,0 +1,70 @@
+extends ../layouts/default
+include ../../modules/lk-block/lk-block
+include ../../modules/lk-discounts/lk-discounts
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Личный кабинет', 'Скидки')
+            +lk-block(3)
+                .lk-block__title.lk-block__title--mobile-none Скидки
+                .lk-discounts__user
+                    .lk-discounts__user-item
+                        .lk-discounts__user-item-text Текущая группа скидки:
+                        .lk-discounts__user-item-group 3
+                    .lk-discounts__user-item
+                        .lk-discounts__user-item-text-total Мой оборот в текущем сезоне (апрель 2020 - март 2021), руб.:
+                        .lk-discounts__user-item-total 0,00 &#8381
+                    .lk-discounts__user-item
+                        .lk-discounts__user-item-info Не хватает для перехода к большей группе скидки, руб.: 20 000,00
+                .lk-discounts
+                    .lk-discounts__info-area
+                        .lk-discounts__info.lk-discounts__info--bold.lk-discounts__info--margin-top.lk-discounts__info--margin-bottom
+                            |Ваша скидка на продукцию ПОЛИМАТ зависит от Вашего оборота с компанией ПОЛИМАТ:
+                        .lk-discounts__info — В начале сезона* (1 апреля) она определяется оборотом за предыдущий сезон.
+                        .lk-discounts__info — Если в текущем сезоне оборот превысит оборот предыдущего сезона, то скидка определяется оборотом текущего сезона.
+                        .lk-discounts__info — Переход к более высокой скидке происходит автоматически при достижении следующего уровня оборота (см. таблицу ниже).
+                    .lk-discounts__info-area
+                        .lk-discounts__info.lk-discounts__info--bold.lk-discounts__info--margin-top.lk-discounts__info--margin-bottom Например
+                        .lk-discounts__info  Ваш оборот составляет 65 тысяч рублей. Поэтому вы работаете по группе скидки 5
+                    .lk-discounts__table-wrapper.lk-discounts-slider
+                        img.lk-discounts__touch-ico(src='img/touch-slider-ico.svg')
+                        .swiper-container.slider
+                            .swiper-wrapper.slider-wrapper.lk-discounts__table
+                                +table-column('',
+                                    'Оборот',
+                                    'Группа скидки',
+                                    'КОС, мини 1-сп.',
+                                    'КОС, мини 3-сп.',
+                                    'БОС, мини 1-сп.',
+                                    'БОС, мини 3-сп.',
+                                    'БОС, миди 3-сп.')
+                                +table-column('',
+                                    '0 - 5 000 ₽ ', '1', '', '', '', '', '')
+                                +table-column('',
+                                    'до 10 000 ₽ ', '2', '', '', '', '', '')
+                                +table-column('',
+                                    'до 20 000 ₽ ', '3', '16.3', '16.3', '16.3', '19.3', '23.8')
+                                +table-column('',
+                                    'до 50 000 ₽ ',  '4',  '15.3',  '18.3',  '15.3',  '18.3',  '22.8')
+                                +table-column('active',
+                                    'до 100 000 ₽ ',  '5',  '15.3',  '18.3',  '15.3',  '18.3',  '22.8')
+                                +table-column('',
+                                    'до 200 000 ₽ ',  '6',  '15.3',  '18.3',  '15.3',  '18.3',  '22.8')
+                                +table-column('',
+                                    'до 500 000 ₽ ',  '7',  '15.3',  '18.3',  '15.3',  '18.3',  '22.8')
+                                +table-column('',
+                                    'от 500 000 ₽ и более', '8', 'Звоните', 'Звоните', 'Звоните', 'Звоните', 'Звоните')
+                        +table-cart-navigation
+
+                    .lk-discounts__info-area
+                        .lk-discounts__info Вашу действующую группу скидки Вы можете увидеть в Вашем личном кабинете.
+                            |При авторизации на сайте ПОЛИМАТ вы будете видеть в каталоге Ваши цены.
+                            |В текущем сезоне ваша скидка может только возрасти.
+                        .lk-discounts__info.lk-discounts__info--margin-top
+                            b * Сезон
+                            |— в компании ПОЛИМАТ сезон сдвинут на три месяца по отношению к календарному
+                            |году:
+                        .lk-discounts__info
+                            b начинается 1 апреля и заканчивается 31 марта.

@@ -1,0 +1,50 @@
+extends ../layouts/default
+include ../../modules/search/search
+include ../../modules/control-elements/buttons/btn-main
+include ../../modules/control-elements/inputs/input-main
+include ../../modules/helper-mixins/main-caption
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.search.section
+        .section__wrapper
+            +breadcrumbs('Поиск')
+            +h1caption('search', 'Поиск')
+            - var request = 'emptyRequest'
+            - var rezult = false
+            .search__nav-wrapper
+                .search__nav-item.search__nav-item--active(data-tab=0)
+                    span.search__nav-item-name По товарам&nbsp
+                    span.search__nav-item-rezult (10)
+                .search__nav-item(data-tab=1)
+                    span.search__nav-item-name По сайту&nbsp
+                    span.search__nav-item-rezult (10)
+            .search__content.search__content--active(data-tab=0)
+                form.search__input-area(method='get')
+                    if request === 'emptyRequest'
+                        input-main('', 'inp inp--default ')
+                        button(type='button' class='search-btn')
+                            +svg-mix('microphone')
+                    else
+                        input-main('', 'inp inp--default ')
+                        button(type='button' class='search-btn')
+                            +svg-mix('microphone')
+                    +btn-main(type='submit' class='btn btn--default btn--blue-invert search__input-btn') Искать
+                +search-rezult-text(request, rezult)
+            .search__content.visually-hidden(data-tab=1)
+                form.search__input-area(method='get')
+                    if request === 'emptyRequest'
+                        input-main('', 'inp inp--default ')
+                        button(type='button' class='search-btn')
+                            +svg-mix('microphone')
+                    else
+                        input-main('', 'inp inp--default ')
+                        button(type='button' class='search-btn')
+                            +svg-mix('microphone')
+                    +btn-main(type='submit' class='btn btn--default btn--blue-invert search__input-btn') Искать
+                +search-rezult-text-site(request, rezult)
+
+
+
+
+

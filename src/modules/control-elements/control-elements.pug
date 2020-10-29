@@ -1,0 +1,47 @@
+include buttons/btn-main
+include inputs/input-main
+include checkbox/checkbox
+include textarea/textarea
+include radio-button/radio-button
+include select/select
+
+
+block control-elements
+    div.control-elements
+        div.control-elements__buttons
+            div.control-elements__buttons-item
+                +btn-main(class='btn btn--default btn--blue-invert') Личный кабинет
+            div.control-elements__buttons-item
+                +btn-main(class='btn btn--default btn--blue') Личный кабинет
+            div.control-elements__buttons-item
+                +btn-main(class='btn btn--default btn--red') Личный кабинет
+            div.control-elements__buttons-item
+                +btn-main(class='btn btn--default btn--not-active') Личный кабинет
+            div.control-elements__buttons-item
+                +btn-main(class='btn btn--other btn--gray') Личный кабинет
+        div.control-elements__inputs
+            div.control-elements__inputs-item
+                +input-main()
+            div.control-elements__inputs-item
+                +input-main(state='error')
+            div.control-elements__inputs-item
+                +input-main(state='valid')
+        div.control-elements__checkbox
+            div.control-elements__checkbox-item
+                +checkbox-main('Запомнить меня на этом компьютере', 'remember', ['checkbox-label',
+                    'checkbox-label--square', 'checkbox-input'])
+        div.control-elements__radio
+            div.control-elements__radio-item
+                +radio-btn('Юридическое лицо', 'radio-company', 'customer',
+                    'company', ['radio-label', 'radio-input'])
+            div.control-elements__radio-item
+                +radio-btn('Индивидуальный предприниматель', 'radio-private', 'customer', 'private',
+                    ['radio-label', 'radio-input'])
+        div.control-elements__area
+            div.control-elements__area-item
+                +textarea(cols='1' rows='3' placeholder='Ваше сообщение' name='message')
+                +textarea(cols='1' rows='3' placeholder='Ваше сообщение' name='message' state='error')
+                +textarea(cols='1' rows='3' placeholder='Ваше сообщение' name='message' state='valid')
+        div.control-elements__select
+            div.control-elements__select-item
+                +select('     ', 'dfgsdgfsdfg')

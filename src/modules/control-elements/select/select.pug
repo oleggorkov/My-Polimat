@@ -1,0 +1,8 @@
+mixin select(options, active)
+    .select(class = attributes.class)
+        select
+            each option, index in options
+                if index === active
+                    option(selected value = option.value) #{option.title}
+                else
+                    option(value = option.value) #{option.title}

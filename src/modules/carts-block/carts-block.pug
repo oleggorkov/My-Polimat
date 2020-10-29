@@ -1,0 +1,30 @@
+include ../cart/cart
+
+mixin carts-block(title, hasAccordion)
+    section.section(class = attributes.class)
+        div.section__wrapper.carts-block
+            if hasAccordion
+                h1.product-analog-title.js-product-accordion-header.section__wrapper-title= title
+                    button(type='button' v-scroll-to="'.product-block__tabs'").analog-arrow
+                        +svg-mix('arrow-long')
+                .carts-block__accordion-content.js-product-accordion-content
+                    .carts-block__accordion-content-wrapper
+                        .carts-block__slider
+                            include ../carts-slider/carts-slider
+                        .carts-block__dropdown
+                            .carts-dropdown
+                                .carts-dropdown__wrapper
+                                    - for (let x = 0; x < 7; x++)
+                                        +cart
+            else
+                h1.product-analog-title.section__wrapper-title= title
+                    button(type='button' v-scroll-to="'.product-block__tabs'").analog-arrow
+                        +svg-mix('arrow-long')
+                .carts-block__slider
+                    include ../carts-slider/carts-slider
+                .carts-block__dropdown
+                    .carts-dropdown
+                        .carts-dropdown__wrapper
+                            - for (let x = 0; x < 7; x++)
+                                +cart
+                        button.btn.btn--default.btn--blue-invert.carts-dropdown__btn(type="button") Ещё товары

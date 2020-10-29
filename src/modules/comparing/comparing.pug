@@ -1,0 +1,216 @@
+include ../control-elements/radio-button/radio-button
+include ../cart/cart
+include ../helper-mixins/svg-mix
+include ../breadcrumbs/breadcrumbs
+
+mixin item-menu-row(...titles)
+    each item in titles
+        div.comparing-table__item-menu-row  #{item}
+mixin item-menu-row-mobile(...titles)
+    each item in titles
+        div.comparing-table__item-menu-row--mobile  #{item}
+mixin item-element-text(...arr)
+    each item in arr
+        if item.color
+            div.comparing-table__item-elements.comparing-table__item-elements--colors
+                div.product-color__checkbox
+                    div.product-color__checkbox-input.product-color__checkbox-input--color
+                        input(type='checkbox' value='color-1' name='color' id=item-id)
+                        label(for=item.id)
+                            div(class='product-color__checkbox-input--color-'+item.color)
+        else if item.discount
+            div.comparing-table__item-elements
+                +cart-stock-ico(item.discountColor, item.discountText)
+        else if item.delete
+            div.comparing-table__item-elements
+                button(name='delete').comparing-table__item-button-delete
+                    +svg-mix('basket-ico', 'comparing-table__item-delete-ico')
+                    span(class='product-delete')   Удалить
+        else
+            div.comparing-table__item-elements
+                span #{item.text}
+mixin item-element-text-mobile(...arr)
+    each item in arr
+        if item.color
+            div.comparing-table__item-elements--mobile.comparing-table__item-elements--colors
+                div.product-color__checkbox
+                    div.product-color__checkbox-input.product-color__checkbox-input--color
+                        input(type='checkbox' value='color-1' name='color' id=item-id)
+                        label(for=item.id)
+                            div(class='product-color__checkbox-input--color-'+item.color)
+        else if item.discount
+            div.comparing-table__item-elements--mobile
+                +cart-stock-ico(item.discountColor, item.discountText)
+        else if item.delete
+            div.comparing-table__item-elements--mobile
+                .comparing-table__item-button-delete
+                    +svg-mix('basket-ico', 'comparing-table__item-delete-ico')
+                    span(class='product-delete')   Удалить
+        else
+            div.comparing-table__item-elements--mobile
+                span #{item.text}
+block comparing
+    section.section
+        div.section__wrapper
+            +breadcrumbs('Сравнение')
+            div.comparing
+                div.comparing-block
+                    h1.comparing-heading    Сравнение
+                    div.comparing-table
+                        div.comparing-table__item
+                            div.comparing-table__item-menu
+                                div.comparing-table__item-menu-row
+                                    div.comparing-table__item-menu-row-radio
+                                        div.comparing-table__item-menu-row-radio--button
+                                            +radio-btn('Все параметры', 'radio-all', 'parameters',
+                                                'all', ['radio-label', 'radio-input', 'radio-label--check'])
+                                        div.comparing-table__item-menu-row-radio--button
+                                            +radio-btn('Различающиеся', 'radio-different', 'parameters', 'different',
+                                                ['radio-label', 'radio-input', 'radio-label--check'])
+                                +item-menu-row('Цена', 'Вид', 'Размер', 'Цвет', 'Серия', 'Кол-во спиралей', 'Бумага', 'Шрифт', 'Наличие', 'Красные субботы', 'Скидки', 'Убрать из сравнения')
+                div.comparing-block.carts-slider
+                    div.carts-slider__navigation
+                        button(type='button')
+                            +svg-mix('arrow-long')
+                        div.carts-slider__navigation-progress-bar
+                            span
+                        button(type='button')
+                            +svg-mix('arrow-long')
+                    div.swiper-container.slider
+                        div.swiper-wrapper
+                            div.swiper-slide.slider-slide
+                                div.comparing-block-content
+                                    div.comparing-table__item
+                                        +cart
+                                        +item-element-text(
+                                            {class: 'kind', text: 'Трио 3-сп'},
+                                            {class: 'size', text: '297*445'},
+                                            {color: 'white', id: 'color-1'},
+                                            {class: 'series', text: 'ЕВРОПА металлик'},
+                                            {class: 'amount', text: '3'},
+                                            {class: 'paper', text: 'офсетная 80 г/м2'},
+                                            {class: 'font', text: 'европа'},
+                                            {class: 'available', text: 'На складе'},
+                                            {class: 'sat', text: 'да'},
+                                            {discount: true, discountColor: 'green', discountText: 'Весна'},
+                                            {delete: true}
+                                        )
+                                        div.comparing-table__item--mobile
+                                            div.comparing-table__item--mobile-item
+                                                +item-menu-row-mobile('Цена', 'Вид', 'Размер', 'Цвет', 'Серия', 'Кол-во спиралей', 'Бумага', 'Шрифт', 'Наличие', 'Красные субботы', 'Скидки', 'Убрать из сравнения')
+                                            div.comparing-table__item--mobile-item
+                                                +item-element-text-mobile(
+                                                    {class: 'kind', text: 'Трио 3-сп'},
+                                                    {class: 'size', text: '297*445'},
+                                                    {color: 'white', id: 'color-1'},
+                                                    {class: 'series', text: 'ЕВРОПА металлик'},
+                                                    {class: 'amount', text: '3'},
+                                                    {class: 'paper', text: 'офсетная 80 г/м2'},
+                                                    {class: 'font', text: 'европа'},
+                                                    {class: 'available', text: 'На складе'},
+                                                    {class: 'sat', text: 'да'},
+                                                    {discount: true, discountColor: 'green', discountText: 'Весна'},
+                                                    {delete: true}
+                                            )
+                            div.swiper-slide.slider-slide
+                                div.comparing-block-content
+                                    div.comparing-table__item
+                                        +cart
+                                        +item-element-text(
+                                            {class: 'kind', text: 'Трио 1-сп'},
+                                            {class: 'size', text: '297*445'},
+                                            {color: 'blue', id: 'color-2'},
+                                            {class: 'series', text: 'ЕВРОПА металлик'},
+                                            {class: 'amount', text: '1'},
+                                            {class: 'paper', text: 'офсетная 80 г/м2'},
+                                            {class: 'font', text: 'европа'},
+                                            {class: 'available', text: 'На складе'},
+                                            {class: 'sat', text: 'да'},
+                                            {discount: true, discountColor: 'red', discountText: 'Акция'},
+                                            {delete: true}
+                                        )
+                                        div.comparing-table__item--mobile
+                                            div.comparing-table__item--mobile-item
+                                                +item-menu-row-mobile('Цена', 'Вид', 'Размер', 'Цвет', 'Серия', 'Кол-во спиралей', 'Бумага', 'Шрифт', 'Наличие', 'Красные субботы', 'Скидки', 'Убрать из сравнения')
+                                            div.comparing-table__item--mobile-item
+                                                +item-element-text-mobile(
+                                                    {class: 'kind', text: 'Трио 3-сп'},
+                                                    {class: 'size', text: '297*445'},
+                                                    {color: 'white', id: 'color-1'},
+                                                    {class: 'series', text: 'ЕВРОПА металлик'},
+                                                    {class: 'amount', text: '3'},
+                                                    {class: 'paper', text: 'офсетная 80 г/м2'},
+                                                    {class: 'font', text: 'европа'},
+                                                    {class: 'available', text: 'На складе'},
+                                                    {class: 'sat', text: 'да'},
+                                                    {discount: true, discountColor: 'red', discountText: 'Акция'},
+                                                    {delete: true}
+                                                )
+                            div.swiper-slide.slider-slide
+                                div.comparing-block-content
+                                    div.comparing-table__item
+                                        +cart
+                                        +item-element-text(
+                                            {class: 'kind', text: 'Трио 3-сп'},
+                                            {class: 'size', text: '297*445'},
+                                            {color: 'gray', id: '3'},
+                                            {class: 'series', text: 'ЕВРОПА металлик'},
+                                            {class: 'amount', text: '1'},
+                                            {class: 'paper', text: 'офсетная 80 г/м2'},
+                                            {class: 'font', text: 'европа'},
+                                            {class: 'available', text: 'в резерве'},
+                                            {class: 'sat', text: 'да'},
+                                            {discount: true, discountColor: 'black', discountText: 'Black'},
+                                            {delete: true}
+                                        )
+                                        div.comparing-table__item--mobile
+                                            div.comparing-table__item--mobile-item
+                                                +item-menu-row-mobile('Цена', 'Вид', 'Размер', 'Цвет', 'Серия', 'Кол-во спиралей', 'Бумага', 'Шрифт', 'Наличие', 'Красные субботы', 'Скидки', 'Убрать из сравнения')
+                                            div.comparing-table__item--mobile-item
+                                                +item-element-text-mobile(
+                                                    {class: 'kind', text: 'Трио 3-сп'},
+                                                    {class: 'size', text: '297*445'},
+                                                    {color: 'white', id: 'color-1'},
+                                                    {class: 'series', text: 'ЕВРОПА металлик'},
+                                                    {class: 'amount', text: '3'},
+                                                    {class: 'paper', text: 'офсетная 80 г/м2'},
+                                                    {class: 'font', text: 'европа'},
+                                                    {class: 'available', text: 'На складе'},
+                                                    {class: 'sat', text: 'да'},
+                                                    {discount: true, discountColor: 'black', discountText: 'Black'},
+                                                    {delete: true}
+                                                )
+                            div.swiper-slide.slider-slide
+                                div.comparing-block-content
+                                    div.comparing-table__item
+                                        +cart
+                                        +item-element-text(
+                                            {class: 'kind', text: 'Трио 3-сп'},
+                                            {class: 'size', text: '297*445'},
+                                            {color: 'orange', id: '4'},
+                                            {class: 'series', text: 'ЕВРОПА металлик'},
+                                            {class: 'amount', text: '1'},
+                                            {class: 'paper', text: 'офсетная 80 г/м2'},
+                                            {class: 'font', text: 'европа'},
+                                            {class: 'available', text: 'в резерве'},
+                                            {class: 'sat', text: 'да'},
+                                            {discount: true, discountColor: 'yellow', discountText: 'Распродажа'},
+                                            {delete: true}
+                                        )
+                                        div.comparing-table__item--mobile
+                                            div.comparing-table__item--mobile-item
+                                                +item-menu-row-mobile('Цена', 'Вид', 'Размер', 'Цвет', 'Серия', 'Кол-во спиралей', 'Бумага', 'Шрифт', 'Наличие', 'Красные субботы', 'Скидки', 'Убрать из сравнения')
+                                            div.comparing-table__item--mobile-item
+                                                +item-element-text-mobile(
+                                                    {class: 'kind', text: 'Трио 3-сп'},
+                                                    {class: 'size', text: '297*445'},
+                                                    {color: 'white', id: 'color-1'},
+                                                    {class: 'series', text: 'ЕВРОПА металлик'},
+                                                    {class: 'amount', text: '3'},
+                                                    {class: 'paper', text: 'офсетная 80 г/м2'},
+                                                    {class: 'font', text: 'европа'},
+                                                    {class: 'available', text: 'На складе'},
+                                                    {class: 'sat', text: 'да'},
+                                                    {discount: true, discountColor: 'yellow', discountText: 'Распродажа'},
+                                                    {delete: true}
+                                                )

@@ -1,0 +1,219 @@
+@include above($small-phone) {
+  .lk-data-block {
+    @include above($mid-desktop) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @include above($big-desktop) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .lk-data {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+
+  .lk-data__heading {
+    display: none;
+  }
+
+  .lk-data__input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lk-data__button {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    margin-top: 0.3rem;
+  }
+
+  .lk-data__input-title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: $helper-color-gray;
+    margin-bottom: 0.4rem;
+  }
+
+  .lk-data__link {
+
+    cursor: default;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color:$main-color-blue;
+    text-decoration-line: underline;
+    transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+    @include above($desktop) {
+      cursor: pointer;
+
+      &:hover {
+        color: $main-color-dark-blue;
+        text-decoration-line: none;
+      }
+    }
+  }
+
+  .lk-data__orders {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+    @include above($desktop) {
+      width: 60%;
+    }
+
+    @include above($mid-desktop) {
+      width: 43rem;
+      margin-left: 9.5rem;
+      margin-top: 0;
+    }
+
+    &-heading {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 2rem;
+      line-height: 2.3rem;
+      text-align: left;
+      margin-bottom: 1.5rem;
+
+      @include above($mid-desktop) {
+        margin-bottom: 2.6rem;
+      }
+    }
+
+    &-block {
+      display: flex;
+      flex-direction: column;
+
+      &-item {
+        display: flex;
+        justify-content: space-between;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        color: #000000;
+
+        @include above($mobile) {
+          font-size: 1.4rem;
+          line-height: 1.6rem;
+        }
+
+        & span {
+          color: $main-color-blue;
+        }
+
+        &-balance {
+          width: 72%;
+
+          @include above($mobile) {
+            width: auto;
+          }
+        }
+
+        &:not(:last-of-type) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  .lk-data__manager {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    @include above($desktop) {
+      width: 60%;
+    }
+
+    @include above($mid-desktop) {
+      width: 37rem;
+    }
+
+    @include above($big-desktop) {
+      margin-left: 12.5rem;
+      width: 36rem;
+      margin-top: 0;
+    }
+
+    &-heading {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 2rem;
+      line-height: 2.3rem;
+      text-align: left;
+      margin-bottom: 1.5rem;
+
+      @include above($mid-desktop) {
+        margin-bottom: 2.6rem;
+      }
+    }
+
+    &-block {
+      display: flex;
+      flex-direction: column;
+
+      &-item {
+        display: flex;
+        justify-content: space-between;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        color: #000000;
+
+        @include above($phone) {
+          font-size: 1.4rem;
+          line-height: 1.6rem;
+        }
+
+        &:not(:last-of-type) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@include above($tablet) {
+
+  .lk-data__heading {
+    display: block;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    color: #000000;
+    margin-bottom: 2.6rem;
+  }
+
+  .lk-data {
+    width: 22.9rem;
+    padding-top: 0;
+  }
+}
+
+@include above($tablet-landscape) {
+
+  .lk-data {
+    width: 28rem;
+  }
+}
+
+@include above($big-desktop) {
+
+  .lk-data {
+    width: 25rem;
+  }
+}

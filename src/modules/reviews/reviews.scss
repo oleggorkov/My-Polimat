@@ -1,0 +1,143 @@
+.reviews{
+  padding: 0 1.8rem;
+  max-width: 73rem;
+  @include above($tablet){
+    padding: 0;
+  }
+  &__form-caption{
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: #000000;
+    padding-bottom: 1.4rem;
+  }
+  &__form-unauthorized{
+    @include above($tablet){
+      display: flex;
+      justify-content: space-between;
+    }
+    @include above($desktop){
+      justify-content: flex-start;
+    }
+  }
+  &__form-email-and-name{
+    .inp__label{
+      width: 50%;
+      &:first-child{
+        margin-right: 1.8rem;
+      }
+    }
+    @include above($tablet){
+      display: flex;
+    }
+  }
+  &__form-text{
+    padding-bottom: 1.4rem;
+    &--unauthorized{
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      color: $helper-color-gray;
+      @include above($tablet){
+        width: 50rem;
+      }
+    }
+  }
+  &__form-enter-btn.btn{
+    width: 8.6rem;
+    height: 3rem;
+    margin-bottom: 2.1rem;
+  }
+  &__form-submit-btn.btn{
+    height: 4rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    @include above($tablet){
+      width: 17rem;
+      height: 4rem;
+      margin-left: auto;
+    }
+  }
+  .reviews__rating-label{
+    padding-bottom: 0.6rem;
+  }
+  .reviews__rating{
+    margin-bottom: 6rem;
+
+    &-policy {
+      width: 100%;
+      line-height: 1.4rem;
+      font-size: 1.2rem;
+      text-align: left;
+      margin-bottom: 1.5rem;
+
+      & a {
+        color: $main-color-blue;
+        text-decoration: underline;
+        @include above($desktop) {
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  .reviews__reviewStars-input input:checked ~ label,
+  .reviews__reviewStars-input label,
+  .reviews__reviewStars-input label:hover,
+  .reviews__reviewStars-input label:hover ~ label {
+    svg{
+      fill: $main-gray-color;
+      width: 3.6rem;
+      height: 3.6rem;
+    }
+  }
+
+  .reviews__reviewStars-input {
+
+    position: relative;
+    float: left;
+  }
+
+  .reviews__reviewStars-input input {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+
+    width: 3.6rem;
+    height: 3.6rem;
+
+    position: absolute;
+    top: 0;
+    z-index: 0;
+  }
+
+  .reviews__reviewStars-input input:checked ~ label svg{
+    fill: $helper-color-yellow;
+    height: 3.6rem;
+    width: 3.6rem;
+  }
+
+  .reviews__reviewStars-input label {
+    background-position: 0 0;
+    height: 3.6rem;
+    width: 3.6rem;
+    float: right;
+    cursor: pointer;
+    margin-right: 10px;
+
+    position: relative;
+    z-index: 1;
+  }
+
+  .reviews__reviewStars-input label:hover,
+  .reviews__reviewStars-input label:hover ~ label {
+    svg{
+      fill: $helper-color-yellow;
+    }
+    height: 3.6rem;
+    width: 3.6rem;
+  }
+
+  &__reviewStars-input{
+    margin-bottom: 1rem;
+  }
+}

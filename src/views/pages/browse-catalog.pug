@@ -1,0 +1,12 @@
+extends ../layouts/default
+include ../../modules/flipbook/flipbook
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.basket-empty.section
+        .section__wrapper
+            +breadcrumbs('Каталог 2020')
+            +flipbook
+            a(href="#").flipbook__pdf-href
+                +svg-mix('pdf-ico')
+                span Скачать каталог "Календарные блоки 2020"

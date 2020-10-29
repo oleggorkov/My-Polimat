@@ -1,0 +1,20 @@
+mixin sub-create
+    section.section.sub-create
+        div.section__wrapper
+            div.sub-create-flex
+                div.sub-create-flex__block.sub-create-flex__block--subscribe
+                    div.sub-create-flex__block-element
+                        div.sub-create-flex__block-element-title Подписка на Polimat.ru
+                        div.sub-create-flex__block-element-text Узнавайте первым информацию об акциях
+                    div.sub-create-flex__block-element
+                        form.sub-create-flex__block-element-form
+                            div.sub-create-flex__block-element-form-input
+                                +input-main(class='sub-create__inp sub-create__inp--email-input' type='email', placeholder='Укажите e-mail' name='subscribe-input-on-main')
+                            div.sub-create-flex__block-element-form-button
+                                +btn-main(class='btn--other btn--blue-invert sub-create__btn sub-create__btn--subscribe' id='subscribe-btn-on-main') Подписаться
+                div.sub-create-flex__block.sub-create-flex__block--create-calendar
+                    picture(v-image-lazy-load)
+                        source(type='image/webp' data-srcset='img/create.webp')
+                        img(data-src='img/create.png')
+                    div.sub-create-flex__block-title Создать свой календарь
+

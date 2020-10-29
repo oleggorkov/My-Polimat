@@ -1,0 +1,32 @@
+.sitemap{
+  &__caption{
+    margin-bottom: 1.4rem;
+  }
+  &__list{
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    color: $main-color-blue;
+    margin: 0 auto 1.6rem 1.5rem;
+    text-decoration: none;
+    &:hover{
+      text-decoration: none;
+    }
+    &--main{
+      margin-left: 0;
+    }
+  }
+  &__list-item{
+    font-size: 1.4rem;
+    line-height: 160%;
+    text-decoration-line: underline;
+    &:hover{
+      text-decoration: none;
+    }
+    :last-of-type{
+      //margin-bottom: 1rem;
+    }
+  }
+  &__list-item-href{
+    color: $main-color-blue;
+  }
+}

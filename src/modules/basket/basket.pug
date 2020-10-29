@@ -1,0 +1,43 @@
+include ../helper-mixins/svg-mix
+mixin basket-provider(name)
+    .basket__provider-wrapper.width100
+        .basket__provider
+            .basket__provider-title.basket__local-title Поставщик
+            .basket__provider-name #{name}
+mixin basket-item(src, count, descBold, desc, weight)
+    form.section__wrapper.basket__purchase-wrapper(method='get')
+        .basket__column-name
+            a(href="product.html").basket__product-title.basket__column-product
+                span.t--weight-bold #{descBold}
+                span #{desc}
+        .basket__column-weight
+            .basket__weight-title Вес
+            .basket__weight-text #{weight} кг
+        .basket__column-count
+            .basket__count-caption.basket__local-title Количество
+            .basket__count
+                button(type="button").product-rem-count.basket__count-minus –
+                the-mask(:mask="'#####'" name='count' value=count).product-count.basket__count-item.basket__count-number.inp__digit-of-numbers-js
+                button(type="button").product-add-count.basket__count-plus +
+        .basket__column-price
+            .basket__price.basket__local-title Цена
+            .basket__price--bold.t--weight-bold 101.80 &#8381
+        .basket__column-sum
+            .basket__price.basket__local-title Сумма
+            .basket__price--bold.t--weight-bold 916 200 &#8381
+        .basket__column-delete
+            .basket__price.basket__local-title.basket__delete-title Удалить
+            button.basket__delete-btn.section(name='delete')
+                +svg-mix('basket-ico')
+mixin basket-header(className, objs)
+    ul(class='basket__' + className)
+        each val, index in objs
+            li(class='basket__description-item basket__column-' + index) #{val}
+mixin basket-total-price-with-nds(sum, text, nds)
+    .basket__price-with-nds
+        .basket__price-with-nds-title.basket__price-with-nds-title--total #{text}
+        .basket__price-with-nds-title.basket__price-with-nds-title--numb #{sum} &#8381
+        .basket__price-with-nds-title.basket__price-with-nds-title--grey #{nds}
+mixin informWindowWithSrc (text, src, className)
+    img.basket-empty__ico(src=src alt=className)
+    p.basket-empty__text #{text}

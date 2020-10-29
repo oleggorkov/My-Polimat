@@ -1,0 +1,50 @@
+.dealers{
+    width: 100%;
+    
+    @include above($tablet){
+        margin-top: 3.6rem;
+    }
+   
+    &__row{
+        @include above($mid-desktop){
+            margin-left: -1rem;
+            margin-right: -1rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__col{
+        width: 100%;
+
+        @include above($mid-desktop){
+            padding: 0 1rem;
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+
+    &-map{
+        max-width: 100%;
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: center;
+
+        @include above($tablet){
+            margin-top: 0;
+        }
+
+        &>*{
+            width: 100%;
+            @include above($desktop){
+                width: auto;
+                height: 30.7rem;
+            }
+
+            @include above($mid-desktop){
+                height: 43.3rem;
+                margin-left: 0;
+            }
+        }
+    }
+}

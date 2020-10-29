@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Polimat</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/logo.svg">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/svg+xml" href="img/favicon/logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="img/favicon/logo.svg" color="blue">
+  <link href="./styles/vendors.css" rel="stylesheet"><link href="./styles/app.css" rel="stylesheet"></head>
+  <body>
+    <div id="app">
+      <div class="mobile-menu">
+        <button class="mobile-menu__close mobile-toggles" type="button">
+                <svg>
+                  <use xlink:href="img/sprite.svg#cross"></use>
+                </svg>
+        </button>
+        <ul class="mobile-menu__list mobile-menu__list--main">
+          <li>
+            <details>
+              <summary>Каталог</summary>
+              <div>
+                <details>
+                  <summary>Блоки для календарей</summary>
+                  <ul>
+                    <li><a href="#">Дизайнерские мелованные</a></li>
+                    <li><a href="#">Офсетные</a></li>
+                    <li><a href="#">Три в одном</a></li>
+                    <li><a href="#">Тематические</a></li>
+                    <li><a href="#">Домики</a></li>
+                    <li><a href="#">Четырёх-блочные</a></li>
+                  </ul>
+                </details>
+                <details>
+                  <summary>Комплектующие для календарей</summary>
+                  <ul>
+                    <li><a href="#">Пружина в бобинах 3:1</a></li>
+                    <li><a href="#">Пружина в нарезке 3:1</a></li>
+                    <li><a href="#">Пружина в бобинах 2:1</a></li>
+                    <li><a href="#">Пикколо/ люверсы/ ригели</a></li>
+                    <li><a href="#">Часовые механизмы/коробки</a></li>
+                    <li><a href="#">Курсоры</a></li>
+                  </ul>
+                </details>
+                <details>
+                  <summary>Для ежедневников</summary>
+                  <ul>
+                    <li><a href="#">Ежедневники датированные</a></li>
+                    <li><a href="#">Ежедневники недатированные</a></li>
+                    <li><a href="#">Планинги</a></li>
+                  </ul>
+                </details>
+                <details>
+                  <summary>Расходные материалы</summary>
+                  <ul>
+                    <li><a href="#">Плёнка для ламинирования</a></li>
+                    <li><a href="#">Бумага для цифровой печати</a></li>
+                    <li><a href="#">Ручки для пакетов</a></li>
+                    <li><a href="#">Скобы для степлеров</a></li>
+                    <li><a href="#">Переплетные крышки</a></li>
+                    <li><a href="#">Проволока полиграфическая</a></li>
+                  </ul>
+                </details>
+                <details>
+                  <summary>Оборудование</summary>
+                  <ul>
+                    <li><a href="#">Брошюровка на пластиковую пружину</a></li>
+                    <li><a href="#">Брошуровка на металлическую пружину</a></li>
+                    <li><a href="#">Установка люверсов</a></li>
+                    <li><a href="#">Биновка/ скругление углов</a></li>
+                  </ul>
+                </details>
+              </div>
+            </details>
+          </li>
+          <li><a href="lk.html">Личный кабинет</a></li>
+          <li><a href="info-about.html">Информация</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+        </ul>
+        <ul class="mobile-menu__list mobile-menu__list--sub">
+          <li><a href="holiday.html">
+                    <svg>
+                      <use xlink:href="img/sprite.svg#gift"></use>
+                    </svg>Праздники</a></li>
+          <li><a href="lk-product-buy.html">
+                    <svg>
+                      <use xlink:href="img/sprite.svg#buy"></use>
+                    </svg>Покупки</a></li>
+          <li><a href="#">
+                    <svg>
+                      <use xlink:href="img/sprite.svg#binoculars"></use>
+                    </svg>Вы смотрели</a></li>
+          <!--li-->
+          <!--    a(href='catalogue-favorites.html')-->
+          <!--        +svg-mix('heart')-->
+          <!--        |Избранное-->
+          <!--li-->
+          <!--    a(href='comparing.html')-->
+          <!--        +svg-mix('graph')-->
+          <!--        |Сравнить-->
+          <li><a href="auth.html">
+                    <svg>
+                      <use xlink:href="img/sprite.svg#enter"></use>
+                    </svg>Войти</a></li>
+        </ul>
+      </div>
+      <header class="header" id="top">
+        <div class="header__container header__container--top">
+          <div class="header__wrapper header__wrapper--main-content">
+            <div class="header__row"><a href="index.html"><img src="img/header-logo.svg"></a>
+              <div class="header__row-wrapper">
+                <button class="mobile-toggle mobile-toggle--favorite header__row-mobile-toggle" type="button">
+                        <svg>
+                          <use xlink:href="img/sprite.svg#heart"></use>
+                        </svg>
+                  <div class="header__link-circle-counter-mobile header__link-circle-counter-mobile--favorite">5</div>
+                </button>
+                <button class="mobile-toggle mobile-toggle--comparing header__row-mobile-toggle" type="button">
+                        <svg>
+                          <use xlink:href="img/sprite.svg#graph"></use>
+                        </svg>
+                  <div class="header__link-circle-counter-mobile header__link-circle-counter-mobile--comparing">5</div>
+                </button>
+                <button class="mobile-toggle mobile-toggle--basket header__row-mobile-toggle" type="button">
+                        <svg>
+                          <use xlink:href="img/sprite.svg#shopping-cart"></use>
+                        </svg>
+                  <div class="header__link-circle-counter-mobile header__link-circle-counter-mobile--basket">5</div>
+                </button>
+                <button class="mobile-toggle header__row-mobile-toggle mobile-toggles" type="button">
+                        <svg>
+                          <use xlink:href="img/sprite.svg#burger"></use>
+                        </svg>
+                </button>
+              </div>
+            </div>
+            <nav>
+              <ul class="header__navigation">
+                <li class="header__navigation--item t--size-medium"><span>Каталог</span>
+                  <div class="sub-navigation--catalogue"><a class="sub-navigation__title" href="#">Все товары</a>
+                    <div class="sub-navigation__flex">
+                      <div class="sub-navigation__flex-item">
+                              <div class="sub-navigation__item-list">
+                                <ul>Блоки для календарей
+                                  <li><a href="#">Дизайнерские мелованные</a></li>
+                                  <li><a href="#">Офсетные</a></li>
+                                  <li><a href="#">Три в одном</a></li>
+                                  <li><a href="#">Тематические</a></li>
+                                  <li><a href="#">Домики</a></li>
+                                  <li><a href="#">Четырёх-блочные</a></li>
+                                </ul>
+                              </div>
+                      </div>
+                      <div class="sub-navigation__flex-item">
+                              <div class="sub-navigation__item-list">
+                                <ul>Комплектующие для календарей
+                                  <li><a href="#">Пружина в бобинах 3:1</a></li>
+                                  <li><a href="#">Пружина в нарезке 3:1</a></li>
+                                  <li><a href="#">Пружина в бобинах 2:1</a></li>
+                                  <li><a href="#">Пикколо/ люверсы/ ригели</a></li>
+                                  <li><a href="#">Часовые механизмы/коробки</a></li>
+                                  <li><a href="#">Курсоры</a></li>
+                                </ul>
+                              </div>
+                              <div class="sub-navigation__item-list">
+                                <ul>Для ежедневников
+                                  <li><a href="#">Ежедневники датированные</a></li>
+                                  <li><a href="#">Ежедневники недатированные</a></li>
+                                  <li><a href="#">Планинги</a></li>
+                                </ul>
+                              </div>
+                      </div>
+                      <div class="sub-navigation__flex-item">
+                              <div class="sub-navigation__item-list">
+                                <ul>Расходные материалы
+                                  <li><a href="#">Плёнка для ламинирования</a></li>
+                                  <li><a href="#">Бумага для цифровой печати</a></li>
+                                  <li><a href="#">Ручки для пакетов</a></li>
+                                  <li><a href="#">Скобы для степлеров</a></li>
+                                  <li><a href="#">Переплетные крышки</a></li>
+                                  <li><a href="#">Проволока полиграфическая</a></li>
+                                </ul>
+                              </div>
+                              <div class="sub-navigation__item-list">
+                                <ul>Оборудование
+                                  <li><a href="#">Брошюровка на пластиковую пружину</a></li>
+                                  <li><a href="#">Брошуровка на металлическую пружину</a></li>
+                                  <li><a href="#">Установка люверсов</a></li>
+                                  <li><a href="#">Биновка/ скругление углов</a></li>
+                                </ul>
+                              </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="header__navigation--item t--size-medium"><a href="info-about.html">Информация</a></li>
+                <li class="header__navigation--item t--size-medium"><a href="lk.html">Личный кабинет</a></li>
+                <li class="header__navigation--item t--size-medium"><a href="contact.html">Контакты</a></li>
+              </ul>
+            </nav>
+            <form class="header__search" id="headerSearch">
+              <input class="header__search-input" id="search-field" placeholder="Поиск" type="text">
+              <button type="button" id="voice-button">
+                      <svg>
+                        <use xlink:href="img/sprite.svg#microphone"></use>
+                      </svg>
+              </button>
+              <button type="button">
+                      <svg>
+                        <use xlink:href="img/sprite.svg#search"></use>
+                      </svg>
+              </button>
+            </form>
+            <div class="header__links"><a class="header__links--item" href="holiday.html">
+                      <svg>
+                        <use xlink:href="img/sprite.svg#gift"></use>
+                      </svg><span class="t--size-x-small">Праздники</span></a><a class="header__links--item" href="#">
+                      <svg>
+                        <use xlink:href="img/sprite.svg#binoculars"></use>
+                      </svg><span class="t--size-x-small">Вы смотрели</span></a><a class="header__links--item" href="lk-product-buy.html">
+                      <svg>
+                        <use xlink:href="img/sprite.svg#buy"></use>
+                      </svg><span class="t--size-x-small">Покупки</span></a><a class="header__links--item header__links--favorites" href="catalogue-favorites.html">
+                      <svg class="header__links-favorite-svg">
+                        <use xlink:href="img/sprite.svg#heart"></use>
+                      </svg>
+                <div class="header__link-circle-counter">0</div><span class="t--size-x-small">Избранное</span></a><a class="header__links--item header__links--compare" href="comparing.html">
+                      <svg>
+                        <use xlink:href="img/sprite.svg#graph"></use>
+                      </svg>
+                <div class="header__link-circle-counter">0</div><span class="t--size-x-small">Сравнить</span></a><a class="header__links--item header__links--basket" href="basket.html">
+                      <svg>
+                        <use xlink:href="img/sprite.svg#shopping-cart"></use>
+                      </svg>
+                <div class="header__link-circle-counter header__link-circle-counter--basket">5</div><span class="t--size-x-small">Корзина</span></a><a class="header__links--item" href="auth.html">
+                      <svg>
+                        <use xlink:href="img/sprite.svg#enter"></use>
+                      </svg><span class="t--size-x-small">Войти</span></a><a class="header__links--item" href="lk.html">
+                      <svg>
+                        <use xlink:href="img/sprite.svg#user1"></use>
+                      </svg><span class="t--size-x-small">Личный кабинет</span></a></div>
+            <div class="header__contact"><a class="header__contact--item t--size-medium" href="tel:+74952873377">+7 (495) 287-33-77</a><a class="header__contact--item t--size-medium" href="mailto:info@polimat.ru"> info@polimat.ru</a></div>
+            <button class="mobile-toggle header__wrapper-mobile-toggle mobile-toggles" type="button">
+                    <svg>
+                      <use xlink:href="img/sprite.svg#burger"></use>
+                    </svg>
+            </button>
+          </div>
+        </div>
+        <div class="header__container--sub-navigation-wrapper">
+          <div class="header__container header__container--sub-navigation-desc header__container--sub-navigation">
+            <div class="header__wrapper">
+              <nav class="header__sub-navigation">
+                <ul>
+                  <li><a class="t--size-medium" href="#">Блоки для календарей</a>
+                    <div class="sub-navigation sub-navigation__blocks"><a class="sub-navigation__title" href="#">Все блоки</a>
+                      <div class="sub-navigation__flex">
+                        <div class="sub-navigation__flex-item">
+                          <div class="sub-navigation__flex-item-heading">По ширине и виду</div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Трио
+                                    <li><a href="#">Мини 1-сп (1х297*445)</a></li>
+                                    <li><a href="#">Мини 3-сп (3х297*145)</a></li>
+                                    <li><a href="#">Миди 1-сп (335*490</a></li>
+                                    <li><a href="#">Миди 3-сп (335*160)</a></li>
+                                    <li><a href="#">Макси 3-сп (370*170)</a></li>
+                                    <li><a href="#">Ангстрем 1х(10*170)</a></li>
+                                    <li><a href="#">Микро (175*265)</a></li>
+                                  </ul>
+                                </div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Три в одном
+                                    <li><a href="#">Мини (297*207)</a></li>
+                                    <li><a href="#">Миди (335*235)</a></li>
+                                    <li><a href="#">Домики (95*200)</a></li>
+                                  </ul>
+                                </div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Четырех блочные
+                                    <li><a href="#">Мини 4-сп (4х297*145)</a></li>
+                                    <li><a href="#">Миди-евро</a></li>
+                                  </ul>
+                                </div>
+                        </div>
+                        <div class="sub-navigation__flex-item">
+                          <div class="sub-navigation__flex-item-heading">По серии (модели)</div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Мелованные
+                                    <li><a href="#">Европа</a></li>
+                                    <li><a href="#">Смарт-дизайн</a></li>
+                                    <li><a href="#">Классика</a></li>
+                                    <li><a href="#">Болд</a></li>
+                                    <li><a href="#">Бизнес</a></li>
+                                    <li><a href="#">Новая волна</a></li>
+                                    <li><a href="#">Литера</a></li>
+                                  </ul>
+                                </div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Офсетные
+                                    <li><a href="#">Вердана</a></li>
+                                    <li><a href="#">Болд офс</a></li>
+                                  </ul>
+                                </div>
+                        </div>
+                        <div class="sub-navigation__flex-item">
+                          <div class="sub-navigation__flex-item-heading">По выходным</div><a href="#">Красные субботы</a><a href="#">Черные субботы</a>
+                          <div class="sub-navigation__flex-item-heading sub-navigation__flex-item-heading--modify">По цветовой гамме</div><a href="#">Белая</a><a href="#">Сине-голубая</a><a href="#">Серая + серебро</a><a href="#">Бежевая + золото</a><a href="#">Зеленая</a><a href="#">Красно-розовая</a><a href="#">редкие цвета</a>
+                        </div>
+                        <div class="sub-navigation__flex-item">
+                          <div class="sub-navigation__flex-item-heading">Дополнительная информация</div><a href="#">Таблица размеров</a><a href="#">Плановое наличие на складе</a><a href="#">Прайс-лист</a><a href="#">Все дизайны</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li><a class="t--size-medium" href="#">Курсоры</a>
+                    <div class="sub-navigation sub-navigation__cursor"><a class="sub-navigation__title" href="#">Все курсоры</a>
+                      <div class="sub-navigation__flex">
+                        <div class="sub-navigation__flex-item">
+                          <div class="sub-navigation__flex-item-heading">По ширине календаря</div><a href="#">Мини 260-330 мм</a><a href="#">Миди 320-380 мм</a><a href="#">Макси 360-420 мм</a><a href="#">Домики 180-230 мм</a><a href="#">Ангстрем 80-130 мм</a><a href="#">Микрон 180-230 мм</a>
+                          <div class="sub-navigation__flex-item-heading sub-navigation__flex-item-heading--modify">По цвету</div><a href="#">Красные</a><a href="#">Синие</a><a href="#">Другие цвета</a>
+                        </div>
+                        <div class="sub-navigation__flex-item">
+                          <div class="sub-navigation__flex-item-heading">По серии (модели)</div><a href="#">Альфа</a><a href="#">Премьер</a><a href="#">Драйв, сфера</a><a href="#">Гевариус</a><a href="#">Дпс</a><a href="#">Фигурные</a><a href="#">Фиксированные</a>
+                          <div class="sub-navigation__flex-item-heading sub-navigation__flex-item-heading--modify">На ленте</div><a href="#">По чертежу</a><a href="#">Рамки с печатью</a>
+                        </div>
+                        <div class="sub-navigation__flex-item">
+                          <div class="sub-navigation__flex-item-heading">Магнитные</div><a href="#">Стандартные</a><a href="#">По макету</a>
+                          <div class="sub-navigation__flex-item-heading sub-navigation__flex-item-heading--modify">Большие упаковки</div><a href="#">Альфа</a><a href="#">Премьер</a><a href="#">Драйв</a>
+                        </div>
+                        <div class="sub-navigation__flex-item">
+                          <div class="sub-navigation__flex-item-heading">Дополнительная информация</div><a href="#">Сравнительная таблица свойств</a><a href="#">Брошюра "Курсоры"</a><a href="#">Частые вопросы</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li><a class="t--size-medium" href="#">Комплектующие для календарей</a>
+                    <div class="sub-navigation sub-navigation__calendar"><a class="sub-navigation__title" href="#">Все комплектующие</a>
+                      <div class="sub-navigation__flex">
+                        <div class="sub-navigation__flex-item">
+                                <div class="sub-navigation__item-list">
+                                  <ul>Пружины в бобинах
+                                    <li><a href="#">Пружина в бобине 3:1</a></li>
+                                    <li><a href="#">Пружина в бобине 2:1</a></li>
+                                  </ul>
+                                </div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Пружины в нарезке
+                                    <li><a href="#">Пружина в нарезке 3:1)</a></li>
+                                    <li><a href="#">Пружина в нарезке 2:1</a></li>
+                                  </ul>
+                                </div>
+                        </div>
+                        <div class="sub-navigation__flex-item">
+                                <div class="sub-navigation__item-list">
+                                  <ul>Ригели
+                                    <li><a href="#">100 мм</a></li>
+                                    <li><a href="#">150 мм</a></li>
+                                    <li><a href="#">200 мм</a></li>
+                                    <li><a href="#">250 мм</a></li>
+                                    <li><a href="#">290 мм</a></li>
+                                    <li><a href="#">350 мм</a></li>
+                                    <li><a href="#">400 мм</a></li>
+                                    <li><a href="#">450 мм</a></li>
+                                    <li><a href="#">500 мм</a></li>
+                                  </ul>
+                                </div>
+                        </div>
+                        <div class="sub-navigation__flex-item">
+                                <div class="sub-navigation__item-list">
+                                  <ul>Люверсы
+                                    <li><a href="#">4 мм</a></li>
+                                    <li><a href="#">4,8 мм</a></li>
+                                    <li><a href="#">5,5 мм</a></li>
+                                  </ul>
+                                </div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Коробки для календарей
+                                    <li><a href="#">Миди</a></li>
+                                  </ul>
+                                </div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Часовые механизмы
+                                    <li><a href="#">63/93 мм</a></li>
+                                    <li><a href="#">60/83 мм</a></li>
+                                    <li><a href="#">42/60 мм</a></li>
+                                  </ul>
+                                </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li><a class="t--size-medium" href="#">Для ежедневников</a>
+                    <div class="sub-navigation sub-navigation__daily"><a class="sub-navigation__title" href="#">Все для ежедневников</a>
+                      <div class="sub-navigation__flex">
+                        <div class="sub-navigation__flex-item">
+                                <div class="sub-navigation__item-list">
+                                  <ul>Блоки для ежедневников
+                                    <li><a href="#">Датированные</a></li>
+                                    <li><a href="#">Недатированные</a></li>
+                                  </ul>
+                                </div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Блоки для еженедельников
+                                    <li><a href="#">+ блокнот в линейку</a></li>
+                                  </ul>
+                                </div>
+                        </div>
+                        <div class="sub-navigation__flex-item">
+                                <div class="sub-navigation__item-list">
+                                  <ul>Блоки для плагинов
+                                    <li><a href="#">Датированные</a></li>
+                                    <li><a href="#">Недатированные</a></li>
+                                  </ul>
+                                </div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Комплектующие для ежедневников
+                                    <li><a href="#">Обложки для блоков</a></li>
+                                  </ul>
+                                </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li><a class="t--size-medium" href="#">Расходные материалы</a>
+                    <div class="sub-navigation sub-navigation__material"><a class="sub-navigation__title" href="#">Все расходные материалы</a>
+                      <div class="sub-navigation__flex">
+                        <div class="sub-navigation__flex-item">
+                                <div class="sub-navigation__item-list">
+                                  <ul>Рулонная плёнка для ламинирования
+                                    <li><a href="#">ВОРР до 300 м</a></li>
+                                    <li><a href="#">РЕТ до 300 м</a></li>
+                                    <li><a href="#">ULTRABOND (для цифровых оттисков)</a></li>
+                                    <li><a href="#">Soft-touch</a></li>
+                                    <li><a href="#">В большой намотке</a></li>
+                                  </ul>
+                                </div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Пакетная плёнка для ламинирования
+                                  </ul>
+                                </div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Шариковые ручки
+                                    <li><a href="#">Senator</a></li>
+                                    <li><a href="#">Portobello</a></li>
+                                  </ul>
+                                </div>
+                        </div>
+                        <div class="sub-navigation__flex-item">
+                                <div class="sub-navigation__item-list">
+                                  <ul>Бумага для печати
+                                    <li><a href="#">Для цифровой печати</a></li>
+                                    <li><a href="#">Мелованная матовая</a></li>
+                                    <li><a href="#">Мелованная глянцевая</a></li>
+                                    <li><a href="#">Офсетная</a></li>
+                                    <li><a href="#">Офисная</a></li>
+                                  </ul>
+                                </div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Материалы для бумажных пакетов
+                                    <li><a href="#">Шнуры для пакетов</a></li>
+                                    <li><a href="#">Ручки с пластиковым наконечником</a></li>
+                                  </ul>
+                                </div>
+                        </div>
+                        <div class="sub-navigation__flex-item">
+                                <div class="sub-navigation__item-list">
+                                  <ul>Пружина металлическая
+                                    <li><a href="#">Металлическая 3:1 в бобинах</a></li>
+                                    <li><a href="#">Металлическая 3:1 в нарезке</a></li>
+                                    <li><a href="#">Металлическая 2:1 в бобинах</a></li>
+                                    <li><a href="#">Металлическая 2:1 в нарезке</a></li>
+                                  </ul>
+                                </div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Пружина для переплёта
+                                    <li><a href="#">Пластиковая</a></li>
+                                  </ul>
+                                </div>
+                        </div>
+                        <div class="sub-navigation__flex-item">
+                                <div class="sub-navigation__item-list">
+                                  <ul>Материалы для переплета
+                                    <li><a href="#">Скобы для степлеров</a></li>
+                                    <li><a href="#">Проволка полиграфическая</a></li>
+                                  </ul>
+                                </div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Обложка для переплета
+                                    <li><a href="#">Пластиковые обложки</a></li>
+                                    <li><a href="#">Картонные обложки</a></li>
+                                  </ul>
+                                </div>
+                                <div class="sub-navigation__item-list">
+                                  <ul>Разное
+                                    <li><a href="#">Ножки для вобблеров</a></li>
+                                  </ul>
+                                </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li><a class="t--size-medium" href="#">Оборудование</a>
+                    <div class="sub-navigation sub-navigation__equip">
+                      <div class="sub-navigation__flex">
+                        <div class="sub-navigation__flex-item">
+                                <div class="sub-navigation__item-list">
+                                  <ul>Все оборудование
+                                    <li><a href="#">Брошюровка на металлическую пружину</a></li>
+                                    <li><a href="#">Брошюровка на пластиковую пружину</a></li>
+                                    <li><a href="#">Установка люверсов</a></li>
+                                    <li><a href="#">Скругление углов</a></li>
+                                    <li><a href="#">Запчасти</a></li>
+                                  </ul>
+                                </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <!--    li-->
+                <!--        a(href='#').t--size-medium-->
+                <!--            img(src='img/manager.svg')-->
+                <!--        div.sub-navigation.sub-navigation__manager-->
+                <!--            div.sub-navigation__flex-->
+                <!--                div.sub-navigation__flex-item-->
+                <!--                    +nav-menu('', 'Календарные блоки', 'Курсоры', 'Проволка в нарезке',-->
+                <!--                        'Бобина с проволокой 3:1', 'Часовые механизны', 'Пикколо', 'Ригель',-->
+                <!--                        'Бобина с проволокой 2:1')-->
+              </nav>
+            </div>
+          </div>
+          <div class="header__wrapper header__container--sub-navigation-mobile header__container--sub-navigation">
+            <div class="header-mobile-links">
+              <div class="header-mobile-links__toggle">
+                <button class="header-mobile-links__menu" type="button">Каталог</button>
+                <button class="header-mobile-links__tools" type="button">
+                        <svg>
+                          <use xlink:href="img/sprite.svg#dots"></use>
+                        </svg>
+                </button>
+              </div>
+            </div>
+            <div class="header-mobile-links__main-list filter-module">
+              <ul class="filter-module__list">
+                <li>
+                        <button class="filter-module__toggle" type="button">Блоки для календарей<span>
+                                  <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-small"></use>
+                                  </svg></span></button>
+                  <div class="filter-module__wrapper">
+                    <div class="filter-module__inner filter-module__inner-js">
+                      <div class="sub-navigation"><a class="sub-navigation__title" href="#">Все блоки</a>
+                        <div class="sub-navigation__flex">
+                          <div class="sub-navigation__flex-item">
+                            <div class="sub-navigation__flex-item-heading">По ширине и виду</div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Трио
+                                      <li><a href="#">Мини 1-сп (1х297*445)</a></li>
+                                      <li><a href="#">Мини 3-сп (3х297*145)</a></li>
+                                      <li><a href="#">Миди 1-сп (335*490</a></li>
+                                      <li><a href="#">Миди 3-сп (335*160)</a></li>
+                                      <li><a href="#">Макси 3-сп (370*170)</a></li>
+                                      <li><a href="#">Ангстрем 1х(10*170)</a></li>
+                                      <li><a href="#">Микро (175*265)</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Три в одном
+                                      <li><a href="#">Мини (297*207)</a></li>
+                                      <li><a href="#">Миди (335*235)</a></li>
+                                      <li><a href="#">Домики (95*200)</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Четырех блочные
+                                      <li><a href="#">Мини 4-сп (4х297*145)</a></li>
+                                      <li><a href="#">Миди-евро</a></li>
+                                    </ul>
+                                  </div>
+                          </div>
+                          <div class="sub-navigation__flex-item">
+                            <div class="sub-navigation__flex-item-heading">По серии (модели)</div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Мелованные
+                                      <li><a href="#">Европа</a></li>
+                                      <li><a href="#">Смарт-дизайн</a></li>
+                                      <li><a href="#">Классика</a></li>
+                                      <li><a href="#">Болд</a></li>
+                                      <li><a href="#">Бизнес</a></li>
+                                      <li><a href="#">Новая волна</a></li>
+                                      <li><a href="#">Литера</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Офсетные
+                                      <li><a href="#">Вердана</a></li>
+                                      <li><a href="#">Болд офс</a></li>
+                                    </ul>
+                                  </div>
+                          </div>
+                          <div class="sub-navigation__flex-item">
+                            <div class="sub-navigation__flex-item-heading">По выходным</div><a href="#">Красные субботы</a><a href="#">Черные субботы</a>
+                            <div class="sub-navigation__flex-item-heading sub-navigation__flex-item-heading--modify">По цветовой гамме</div><a href="#">Белая</a><a href="#">Сине-голубая</a><a href="#">Серая + серебро</a><a href="#">Бежевая + золото</a><a href="#">Зеленая</a><a href="#">Красно-розовая</a><a href="#">редкие цвета</a>
+                          </div>
+                          <div class="sub-navigation__flex-item">
+                            <div class="sub-navigation__flex-item-heading">Дополнительная информация</div><a href="#">Таблица размеров</a><a href="#">Плановое наличие на складе</a><a href="#">Прайс-лист</a><a href="#">Все дизайны</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                        <button class="filter-module__toggle" type="button">Курсоры<span>
+                                  <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-small"></use>
+                                  </svg></span></button>
+                  <div class="filter-module__wrapper">
+                    <div class="filter-module__inner filter-module__inner-js">
+                      <div class="sub-navigation sub-navigation__cursor"><a class="sub-navigation__title" href="#">Все курсоры</a>
+                        <div class="sub-navigation__flex">
+                          <div class="sub-navigation__flex-item">
+                            <div class="sub-navigation__flex-item-heading">По ширине календаря</div><a href="#">Мини 260-330 мм</a><a href="#">Миди 320-380 мм</a><a href="#">Макси 360-420 мм</a><a href="#">Домики 180-230 мм</a><a href="#">Ангстрем 80-130 мм</a><a href="#">Микрон 180-230 мм</a>
+                            <div class="sub-navigation__flex-item-heading sub-navigation__flex-item-heading--modify">По цвету</div><a href="#">Красные</a><a href="#">Синие</a><a href="#">Другие цвета</a>
+                          </div>
+                          <div class="sub-navigation__flex-item">
+                            <div class="sub-navigation__flex-item-heading">По серии (модели)</div><a href="#">Альфа</a><a href="#">Премьер</a><a href="#">Драйв, сфера</a><a href="#">Гевариус</a><a href="#">Дпс</a><a href="#">Фигурные</a><a href="#">Фиксированные</a>
+                            <div class="sub-navigation__flex-item-heading sub-navigation__flex-item-heading--modify">На ленте</div><a href="#">По чертежу</a><a href="#">Рамки с печатью</a>
+                          </div>
+                          <div class="sub-navigation__flex-item">
+                            <div class="sub-navigation__flex-item-heading">Магнитные</div><a href="#">Стандартные</a><a href="#">По макету</a>
+                            <div class="sub-navigation__flex-item-heading sub-navigation__flex-item-heading--modify">Большие упаковки</div><a href="#">Альфа</a><a href="#">Премьер</a><a href="#">Драйв</a>
+                          </div>
+                          <div class="sub-navigation__flex-item">
+                            <div class="sub-navigation__flex-item-heading">Дополнительная информация</div><a href="#">Сравнительная таблица свойств</a><a href="#">Брошюра "Курсоры"</a><a href="#">Частые вопросы</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                        <button class="filter-module__toggle" type="button">Комплектующие для календарей<span>
+                                  <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-small"></use>
+                                  </svg></span></button>
+                  <div class="filter-module__wrapper">
+                    <div class="filter-module__inner filter-module__inner-js">
+                      <div class="sub-navigation sub-navigation__calendar"><a class="sub-navigation__title" href="#">Все комплектующие</a>
+                        <div class="sub-navigation__flex">
+                          <div class="sub-navigation__flex-item">
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Пружины в бобинах
+                                      <li><a href="#">Пружина в бобине 3:1</a></li>
+                                      <li><a href="#">Пружина в бобине 2:1</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Пружины в нарезке
+                                      <li><a href="#">Пружина в нарезке 3:1)</a></li>
+                                      <li><a href="#">Пружина в нарезке 2:1</a></li>
+                                    </ul>
+                                  </div>
+                          </div>
+                          <div class="sub-navigation__flex-item">
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Ригели
+                                      <li><a href="#">100 мм</a></li>
+                                      <li><a href="#">150 мм</a></li>
+                                      <li><a href="#">200 мм</a></li>
+                                      <li><a href="#">250 мм</a></li>
+                                      <li><a href="#">290 мм</a></li>
+                                      <li><a href="#">350 мм</a></li>
+                                      <li><a href="#">400 мм</a></li>
+                                      <li><a href="#">450 мм</a></li>
+                                      <li><a href="#">500 мм</a></li>
+                                    </ul>
+                                  </div>
+                          </div>
+                          <div class="sub-navigation__flex-item">
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Люверсы
+                                      <li><a href="#">4 мм</a></li>
+                                      <li><a href="#">4,8 мм</a></li>
+                                      <li><a href="#">5,5 мм</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Коробки для календарей
+                                      <li><a href="#">Миди</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Часовые механизмы
+                                      <li><a href="#">63/93 мм</a></li>
+                                      <li><a href="#">60/83 мм</a></li>
+                                      <li><a href="#">42/60 мм</a></li>
+                                    </ul>
+                                  </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                        <button class="filter-module__toggle" type="button">Для ежедневников<span>
+                                  <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-small"></use>
+                                  </svg></span></button>
+                  <div class="filter-module__wrapper">
+                    <div class="filter-module__inner filter-module__inner-js">
+                      <div class="sub-navigation sub-navigation__daily"><a class="sub-navigation__title" href="#">Все для ежедневников</a>
+                        <div class="sub-navigation__flex">
+                          <div class="sub-navigation__flex-item">
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Блоки для ежедневников
+                                      <li><a href="#">Датированные</a></li>
+                                      <li><a href="#">Недатированные</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Блоки для ежеденедельников
+                                      <li><a href="#">+ блокнот в линейку</a></li>
+                                    </ul>
+                                  </div>
+                          </div>
+                          <div class="sub-navigation__flex-item">
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Блоки для плагинов
+                                      <li><a href="#">Датированные</a></li>
+                                      <li><a href="#">Недатированные</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Комплектующие для ежедневников
+                                      <li><a href="#">Обложки для блоков</a></li>
+                                    </ul>
+                                  </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                        <button class="filter-module__toggle" type="button">Расходные материалы<span>
+                                  <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-small"></use>
+                                  </svg></span></button>
+                  <div class="filter-module__wrapper">
+                    <div class="filter-module__inner filter-module__inner-js">
+                      <div class="sub-navigation sub-navigation__material"><a class="sub-navigation__title" href="#">Все расходные материалы</a>
+                        <div class="sub-navigation__flex">
+                          <div class="sub-navigation__flex-item">
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Рулонная плёнка для ламинирования
+                                      <li><a href="#">ВОРР до 300 м</a></li>
+                                      <li><a href="#">РЕТ до 300 м</a></li>
+                                      <li><a href="#">ULTRABOND (для цифровых оттисков)</a></li>
+                                      <li><a href="#">Soft-touch</a></li>
+                                      <li><a href="#">В большой намотке</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Пакетная плёнка для ламинирования
+                                    </ul>
+                                  </div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Шариковые ручки
+                                      <li><a href="#">Senator</a></li>
+                                      <li><a href="#">Portobello</a></li>
+                                    </ul>
+                                  </div>
+                          </div>
+                          <div class="sub-navigation__flex-item">
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Бумага для печати
+                                      <li><a href="#">Для цифровой печати</a></li>
+                                      <li><a href="#">Мелованная матовая</a></li>
+                                      <li><a href="#">Мелованная глянцевая</a></li>
+                                      <li><a href="#">Офсетная</a></li>
+                                      <li><a href="#">Офисная</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Материалы для бумажных пакетов
+                                      <li><a href="#">Шнуры для пакетов</a></li>
+                                      <li><a href="#">Ручки с пластиковым наконечником</a></li>
+                                    </ul>
+                                  </div>
+                          </div>
+                          <div class="sub-navigation__flex-item">
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Пружина металлическая
+                                      <li><a href="#">Металлическая 3:1 в бобинах</a></li>
+                                      <li><a href="#">Металлическая 3:1 в нарезке</a></li>
+                                      <li><a href="#">Металлическая 2:1 в бобинах</a></li>
+                                      <li><a href="#">Металлическая 2:1 в нарезке</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Пружина для переплёта
+                                      <li><a href="#">Пластиковая</a></li>
+                                    </ul>
+                                  </div>
+                          </div>
+                          <div class="sub-navigation__flex-item">
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Материалы для переплета
+                                      <li><a href="#">Скобы для степлеров</a></li>
+                                      <li><a href="#">Проволка полиграфическая</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Обложка для переплета
+                                      <li><a href="#">Пластиковые обложки</a></li>
+                                      <li><a href="#">Картонные обложки</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Разное
+                                      <li><a href="#">Ножки для вобблеров</a></li>
+                                    </ul>
+                                  </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                        <button class="filter-module__toggle" type="button">Оборудование<span>
+                                  <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-small"></use>
+                                  </svg></span></button>
+                  <div class="filter-module__wrapper">
+                    <div class="filter-module__inner filter-module__inner-js">
+                      <div class="sub-navigation sub-navigation__equip">
+                        <div class="sub-navigation__flex">
+                          <div class="sub-navigation__flex-item">
+                                  <div class="sub-navigation__item-list">
+                                    <ul>Все оборудование
+                                      <li><a href="#">Брошюровка на металлическую пружину</a></li>
+                                      <li><a href="#">Брошюровка на пластиковую пружину</a></li>
+                                      <li><a href="#">Установка люверсов</a></li>
+                                      <li><a href="#">Скругление углов</a></li>
+                                      <li><a href="#">Запчасти</a></li>
+                                    </ul>
+                                  </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                        <button class="filter-module__toggle" type="button">Инструмент менеджера<span>
+                                  <svg>
+                                    <use xlink:href="img/sprite.svg#arrow-small"></use>
+                                  </svg></span></button>
+                  <div class="filter-module__wrapper">
+                    <div class="filter-module__inner filter-module__inner-js">
+                      <div class="sub-navigation sub-navigation__manager">
+                        <div class="sub-navigation__flex">
+                          <div class="sub-navigation__flex-item">
+                                  <div class="sub-navigation__item-list">
+                                    <ul>
+                                      <li><a href="#">Календарные блоки</a></li>
+                                      <li><a href="#">Курсоры</a></li>
+                                      <li><a href="#">Проволка в нарезке</a></li>
+                                      <li><a href="#">Бобина с проволокой 3:1</a></li>
+                                      <li><a href="#">Часовые механизны</a></li>
+                                      <li><a href="#">Пикколо</a></li>
+                                      <li><a href="#">Ригель</a></li>
+                                      <li><a href="#">Бобина с проволокой 2:1</a></li>
+                                    </ul>
+                                  </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <section class="section">
+          <div class="section__wrapper">
+            <div class="breadcrumbs">
+              <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="#">Информация</a>
+                </li>
+                <li><span>Доставка и оплата</span></li>
+              </ul>
+            </div>
+            <div class="lk-block">
+              <div class="lk-block__menu">
+                <h2 class="lk-block__title">Информация</h2>
+                <ul class="lk-menu">
+                  <li class="lk-menu__item"><a class="lk-menu__link" href="info-about.html">О компании</a>
+                  </li>
+                  <li class="lk-menu__item"><a class="lk-menu__link lk-menu__link--active" href="info-payment-delivery.html">Оплата и доставка</a>
+                  </li>
+                  <li class="lk-menu__item"><a class="lk-menu__link" href="info-questions.html">Вопросы и ответы</a>
+                  </li>
+                  <li class="lk-menu__item"><a class="lk-menu__link" href="info-dealers.html">Дилеры</a>
+                  </li>
+                  <li class="lk-menu__item"><a class="lk-menu__link" href="info-price-list.html">Прайс-лист</a>
+                  </li>
+                  <li class="lk-menu__item"><a class="lk-menu__link" href="info-download.html">Скачать</a>
+                  </li>
+                  <li class="lk-menu__item"><a class="lk-menu__link" href="info-holiday.html">Праздники</a>
+                  </li>
+                </ul>
+                <div class="select lk-menu-mobile">
+                  <select>
+                    <option value="info-about.html">О компании</option>
+                    <option selected value="info-payment-delivery.html">Оплата и доставка</option>
+                    <option value="info-questions.html">Вопросы и ответы</option>
+                    <option value="info-dealers.html">Дилеры</option>
+                    <option value="info-price-list.html">Прайс-лист</option>
+                    <option value="info-download.html">Скачать</option>
+                    <option value="info-holiday.html">Праздники</option>
+                  </select>
+                </div>
+              </div>
+              <div class="lk-block__content">
+                <div class="payment-delivery-block">
+                  <h1 class="lk-block__title">Оплата и доставка</h1>
+                  <div class="payment-delivery-block__tabs">
+                    <button class="payment-delivery-block__tabs-item active tab-btn" data-tab="1">Оплата
+                    </button>
+                    <button class="payment-delivery-block__tabs-item tab-btn" data-tab="2">Доставка
+                    </button>
+                  </div>
+                  <div class="payment-delivery-block__contents">
+                    <div class="payment-delivery-block__contents-item active tab-content" data-tab="1">
+                      <div class="payment-delivery-block__text"><a href="&quot;#payment1&quot;" v-scroll-to="&quot;#payment1&quot;">1. Способы оплаты товаров</a></div>
+                      <div class="payment-delivery-block__text"><a href="&quot;#payment11&quot;" v-scroll-to="&quot;#payment11&quot;">1.1.   Оплата счета через банк</a></div>
+                      <div class="payment-delivery-block__text"><a href="&quot;#payment12&quot;" v-scroll-to="&quot;#payment12&quot;">1.2.   Оплата счета наличными в кассу ПОЛИМАТ (при розничной покупке)</a></div>
+                      <div class="payment-delivery-block__text"><a href="&quot;#payment13&quot;" v-scroll-to="&quot;#payment13&quot;">1.3.   Оплата в интернет-магазине ПОЛИМАТ</a></div>
+                      <div class="payment-delivery-block__text"><a href="&quot;#payment14&quot;" v-scroll-to="&quot;#payment14&quot;">1.4.   Отсрочка платежа</a></div>
+                      <div class="payment-delivery-block__text"><a href="&quot;#payment15&quot;" v-scroll-to="&quot;#payment15&quot;">1.5.   Оформление заказа</a></div>
+                      <div class="payment-delivery-block__text payment-delivery-block__text--mb-06"><a href="#">
+                                <svg>
+                                  <use xlink:href="img/sprite.svg#pdf-ico"></use>
+                                </svg><span>Публичная оферта по оплате через интернет-магазин на ООО «Всё для календарей»</span></a></div>
+                      <div class="payment-delivery-block__text payment-delivery-block__text--mb-06"><a href="#">
+                                <svg>
+                                  <use xlink:href="img/sprite.svg#pdf-ico"></use>
+                                </svg><span>Публичная оферта по оплате через интернет-магазин на ИП Зарецкий А.В.</span></a></div>
+                      <div class="payment-delivery-block__text-title" id="payment1">Способы оплаты товаров</div>
+                      <div class="payment-delivery-block__text-subtitle" id="payment11">1.1.   Оплата счета (полученного у менеджеров ПОЛИМАТ или в интернет – магазине ПОЛИМАТ) через банк.</div>
+                      <div class="payment-delivery-block__text">
+                        <p class="is-gray">Безналичными</p>
+                        <p class="is-gray">Наличными (для физических лиц)</p>
+                      </div>
+                      <div class="payment-delivery-block__text-subtitle" id="payment12">1.2.   Оплата счета наличными в кассу ПОЛИМАТ (при розничной покупке)</div>
+                      <div class="payment-delivery-block__text-subtitle" id="payment13">1.3  Оплата в интернет – магазине ПОЛИМАТ (только товары БЕЗ НДС!)</div>
+                      <div class="payment-delivery-block__text">
+                        <p class="is-gray">Банковской картой (VISA, MASTERCARD, DCI) – для физических и юридических (корпоративная карта) лиц,</p>
+                        <p class="is-gray">Электронной наличностью (WebManey, QIWI, Яндекс.Деньги) – для физических лиц.</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <P>Оплата через банк: при отгрузке заказа выдается оригинал счета, накладная и счет-фактура.</P>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p>
+                          Оплата в кассе ПОЛИМАТ или в интернет – магазине: при отгрузке заказа выдается товарная накладная,счет – фактура и кассовый чек (при оплате через кассу). По запросу выдается приходный ордер.</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p>
+                          При получении товара, оплаченного от юридического лица, требуется доверенность от организации.Для физического лица необходимы паспорт и (желательно) распечатка счета.</p>
+                      </div>
+                      <div class="payment-delivery-block__text-subtitle" id="payment14">1.4.  Отсрочка платежа</div>
+                      <div class="payment-delivery-block__text">
+                        <p>
+                          Для клиентов, не имеющих права на отсрочку платежа, требуется 100% предоплата (поступление денегна расчетный счет или в кассу Продавца, информация платежных систем о проведенной транзакции
+                          (списании средств) при оплате банковской картой или электронной наличностью) для получения продукции ПОЛИМАТ.
+                        </p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <P>
+                          Решение о предоставлении права на отсрочку платежа для постоянных клиентов принимается руководствомкомпании ПОЛИМАТ. В этом случае также принимается решение о разрешенном лимите задолженности и
+                          разрешенном сроке оплаты после получения заказа, превышение которых приводит к прекращению
+                          отгрузок продукции ПОЛИМАТ до погашения всех задолженностей.
+                        </P>
+                      </div>
+                      <div class="payment-delivery-block__text-subtitle" id="payment15">1.5.  Оформление заказа</div>
+                      <div class="payment-delivery-block__text">
+                        <p>Добавьте выбранные товары в корзину. Перейдите на страницу&nbsp<a href="basket.html">Моя корзина</a> и нажмите "Оформить заказ".</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <P>Если Вы у нас впервые - пожалуйста,&nbsp<a href="reg-main.html">зарегистрируйтесь</a>, заполнив все поля.</P>
+                      </div>
+                    </div>
+                    <div class="payment-delivery-block__contents-item tab-content" data-tab="2">
+                      <div class="payment-delivery-block__text"><a href="&quot;#delivery1&quot;" v-scroll-to="&quot;#delivery1&quot;">1.   Компанией Полимат по Москве</a></div>
+                      <div class="payment-delivery-block__text"><a href="&quot;#delivery11&quot;" v-scroll-to="&quot;#delivery11&quot;">1.1.  Доставка автотранспортом</a></div>
+                      <div class="payment-delivery-block__text"><a href="&quot;#delivery12&quot;" v-scroll-to="&quot;#delivery12&quot;">1.2.  Курьерская доставка</a></div>
+                      <div class="payment-delivery-block__text"><a href="&quot;#delivery13&quot;" v-scroll-to="&quot;#delivery13&quot;">1.3.  Доставка до транспортных компаний  ТК – ПАРТНЕР ПОЛИМАТ</a></div>
+                      <div class="payment-delivery-block__text"><a href="&quot;#delivery14&quot;" v-scroll-to="&quot;#delivery14&quot;">1.4.  Условия доставки до транспортной компании</a></div>
+                      <div class="payment-delivery-block__text"><a href="&quot;#delivery15&quot;" v-scroll-to="&quot;#delivery15&quot;">1.5.  Доставка до выбранной вами транспортной компании</a></div>
+                      <div class="payment-delivery-block__text"><a href="&quot;#delivery2&quot;" v-scroll-to="&quot;#delivery2&quot;">2.  Самовывоз</a></div>
+                      <div class="payment-delivery-block__text"><a href="&quot;#delivery21&quot;" v-scroll-to="&quot;#delivery21&quot;">2.1.  Самовывоз собственной транспортной (курьерской) службой</a></div>
+                      <div class="payment-delivery-block__text"><a href="&quot;#delivery22&quot;" v-scroll-to="&quot;#delivery22&quot;">2.2.  Самовывоз выбранной вами транспортной компанией</a></div>
+                      <div class="payment-delivery-block__text"><a href="&quot;#delivery3&quot;" v-scroll-to="&quot;#delivery3&quot;">3.  Условия разрешения на получение товара</a></div>
+                      <div class="payment-delivery-block__text-title" id="delivery1">Доставка компанией Полимат по Москве в пределах МКАД</div>
+                      <div class="payment-delivery-block__text-subtitle" id="delivery11">1.1.  Доставка автотранспортом (разгрузка осуществляется ПОКУПАТЕЛЕМ) Доставка компанией ПОЛИМАТ осуществляется силами транспортных компаний Москвы.</div>
+                      <div class="payment-delivery-block__text">
+                        <p>Стоимость доставки определяется суммой заказа и не зависит от веса и объема продукции.</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p class="is-gray">при стоимости заказа - свыше 10000: 1500 рублей / заказ</p>
+                        <p class="is-gray">при стоимости заказа - до 10000 рублей: 3000 рублей / заказ</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p>Доставка (при соблюдении «Условий разрешения на получение товара») осуществляется, как правило, на 2-4 рабочий день</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p class="is-gray">после поступления 100% предоплаты на счет Продавца – для клиентов, не имеющих права на отсрочку</p>
+                        <p class="is-gray">после сообщения о необходимости доставки данного заказа своему менеджеру – для клиентов, имеющих право на отсрочку.</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p>Доставка автотранспортом по г. Москва в пределах МКАД (разгрузка осуществляется ПОКУПАТЕЛЕМ)</p>
+                      </div>
+                      <div class="payment-delivery-block__text-subtitle" id="delivery12">1.2.  Курьерская доставка по г. Москва в пределах МКАД</div>
+                      <div class="payment-delivery-block__text">
+                        <p>Стоимость доставки курьерской службой (осуществляется по Москве только внутри МКАД) определяется весом груза.</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p class="is-gray">при весе груза до 5 кг: 350 рублей / заказ</p>
+                        <p class="is-gray">при весе груза от 5 до 8 кг: 550 рублей / заказ</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p>Доставка (при соблюдении «Условий разрешения на получение товара») осуществляется на 2-4 рабочий день</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p class="is-gray">после поступления 100% предоплаты на счет Продавца – для клиентов, не имеющих права на отсрочку</p>
+                        <p class="is-gray">после сообщения о необходимости доставки данного заказа своему менеджеру – для клиентов, имеющих право на отсрочку.</p>
+                      </div>
+                      <div class="payment-delivery-block__text-subtitle" id="delivery13">1.3.  Доставка до транспортных компаний ТК – ПАРТНЕР ПОЛИМАТ (до терминала ТК в пределах МКАД)</div>
+                      <div class="payment-delivery-block__text">
+                        <p class="is-red">ВНИМАНИЕ!</p>
+                        <p class="is-red">Комплектация товара для Транспортной компании, производится строго по оплаченным счетам (деньги поступили на наш расчетный счет) НЕ ПОЗДНЕЕ, ЧЕМ ЗА СУТКИ до отгрузки в ТК!</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p>Если вы выбираете транспортную компанию из списка ТК – ПАРТНЕРОВ ПОЛИМАТ (см. таблицу ниже), сообщите нам</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p class="is-gray">её название,</p>
+                        <p class="is-gray">адрес доставки,</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p>и мы передадим заказ в транспортную компанию. Вы оплачиваете только услуги доставки транспортной компании непосредственно при получении заказа. Вместе с грузом вы получаете полный пакет необходимых документов (см. ниже «Документы», одну подписанную вами накладную необходимо будет отправить в компанию ПОЛИМАТ).</p>
+                        <p>Доставка компанией ПОЛИМАТ до транспортных компаний ПАРТНЕРОВ ПОЛИМАТ осуществляется БЕСПЛАТНО. Никакая дополнительная плата не берется вне зависимости от стоимости, веса и объема груза.</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p>Следующие ТК являются ПАРТНЕРАМИ ПОЛИМАТ (указаны также дни отгрузки):</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <table class="payment-delivery-block__table">
+                          <caption class="is-gray">День отгрузки</caption>
+                          <tr>
+                            <td class="is-gray">Название</td>
+                            <td>Пн</td>
+                            <td>Вт</td>
+                            <td>Ср</td>
+                            <td>Чт</td>
+                            <td>Пт</td>
+                            <td>Сб</td>
+                          </tr>
+                          <tr>
+                            <td>Деловые линии</td>
+                            <td class="is-green"></td>
+                            <td class="is-green">+</td>
+                            <td class="is-green"></td>
+                            <td class="is-green"></td>
+                            <td class="is-green"></td>
+                            <td class="is-green">+</td>
+                          </tr>
+                          <tr>
+                            <td>Байкал-сервис</td>
+                            <td class="is-green">+</td>
+                            <td class="is-green"></td>
+                            <td class="is-green"></td>
+                            <td class="is-green">+</td>
+                            <td class="is-green"></td>
+                            <td class="is-green"></td>
+                          </tr>
+                          <tr>
+                            <td>Желдорэкспедиция</td>
+                            <td class="is-green"></td>
+                            <td class="is-green"></td>
+                            <td class="is-green">+</td>
+                            <td class="is-green"></td>
+                            <td class="is-green"></td>
+                            <td class="is-green"></td>
+                          </tr>
+                          <tr>
+                            <td>Главдоставка</td>
+                            <td class="is-green"></td>
+                            <td class="is-green"></td>
+                            <td class="is-green">+</td>
+                            <td class="is-green"></td>
+                            <td class="is-green"></td>
+                            <td class="is-green"></td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="payment-delivery-block__text-subtitle" id="delivery14">1.4.  Доставка до транспортной компании (при соблюдении «Условий разрешения на получение товара») осуществляется на следующий день (в соответствии с приведенной выше таблицей)</div>
+                      <div class="payment-delivery-block__text">
+                        <p class="is-gray">после поступления 100% предоплаты на счет Продавца – для клиентов, не имеющих права на отсрочку.</p>
+                        <p class="is-gray">после сообщения о необходимости доставки данного заказа своему менеджеру – для клиентов, имеющих право на отсрочку.</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p>ТАРИФЫ при пересылке транспортной компанией Вы можете уточнить на сайте выбранной вами транспортной компании.</p>
+                        <p>Решение о жесткой упаковке (обрешетке груза) и заказе данной услуги в транспортной компании принимается и реализуется клиентом САМОСТОЯТЕЛЬНО. Соответствующие расценки – на сайте вашей транспортной компании.</p>
+                      </div>
+                      <div class="payment-delivery-block__text-subtitle" id="delivery15">1.5.  Доставка до выбранной вами транспортной компании (в переделах МКАД), не являющейся ТК – ПАРТНЕР ПОЛИМАТ</div>
+                      <div class="payment-delivery-block__text">
+                        <p>Доставка компанией ПОЛИМАТ до транспортных компаний, не являющимися ТК - ПАРТНЕРАМИ ПОЛИМАТ, осуществляется в соответствии с расценками и условиями, приведенными выше – «Доставка компанией Полимат по Москве».</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p>В данном случае вы должны также выполнить следующие дополнительные условия:</p>
+                        <p class="is-gray">сообщить название транспортной компании</p>
+                        <p class="is-gray">ее адрес</p>
+                        <p class="is-gray">телефон</p>
+                        <p class="is-gray">контактное лицо в транспортной компании, извещенное вами о вашей доставке</p>
+                        <p class="is-gray">схему проезда</p>
+                      </div>
+                      <div class="payment-delivery-block__text payment-delivery-block__text--mb-3">
+                        <p>Сроки ДОСТАВКИ и ТАРИФЫ при пересылке транспортной компанией Вы можете уточнить на сайте выбранной вами транспортной компании.</p>
+                      </div>
+                      <div class="payment-delivery-block__text-title" id="delivery2">Самовывоз</div>
+                      <div class="payment-delivery-block__text-subtitle" id="delivery21">2.1.  Самовывоз собственной транспортной (курьерской) службой</div>
+                      <div class="payment-delivery-block__text">
+                        <p>В случае самостоятельно вывоза товара («самовывоза») со склада компании Полимат у покупателя или его представителя должны быть при себе доверенность или печать той организации, от которой произведен платеж по выставленному счету. Для физического лица (в том числе совершившего оплату через интернет банковской картой или электронной наличностью) необходимо наличие паспорта и желательна распечатка счета.</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p>Самовывоз осуществляется при соблюдении «Условий разрешения на получение товара».</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p>Самовывоз осуществляется по адресу: 107497, г. Москва, ул. Амурская, д.5, на территории строение 2. Пропуск предварительно заказывать не надо. Схема проезда</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p class="is-red">ВНИМАНИЕ</p>
+                        <p class="is-red">ДЛЯ ПРОХОДА ЧЕРЕЗ ПРОХОДНУЮ ПРИ СЕБЕ НЕОБХОДИМО ИМЕТЬ ДОКУМЕНТ, УДОСТОВЕРЯЮЩИЙ ЛИЧНОСТЬ!</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p>ДЛЯ заказывающих курьерскую службу ДОСТАВИСТА:</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p>Курьеру указать номер счета (заказа)</p>
+                        <p>Обязательно уведомить менеджера компании ПОЛИМАТ: на электронную почту выслать доверенность вашей организации с подписью и печатью</p>
+                      </div>
+                      <div class="payment-delivery-block__text-subtitle" id="delivery22">2.2.  Самовывоз выбранной вами транспортной компанией</div>
+                      <div class="payment-delivery-block__text">
+                        <p>В случае самостоятельно вывоза товара («самовывоза») со склада компании Полимат выбранной покупателем транспортной компанией, покупателю необходимо не позднее чем за сутки до отгрузки на электронную почту менеджера, с которым работает ПОКУПАТЕЛЬ, отправить письмо со следующей информацией:</p>
+                      </div>
+                      <div class="payment-delivery-block__text">
+                        <p class="is-gray">названием транспортной компании,</p>
+                        <p class="is-gray">контактным лицом в транспортной компании,</p>
+                        <p class="is-gray">телефоном для оперативных контактов,</p>
+                        <p class="is-gray">примерной датой приезда транспортной компании.</p>
+                        <p class="is-gray">Самовывоз осуществляется при соблюдении </p>
+                        <p class="is-gray">«Условий разрешения на получение товара».</p>
+                      </div>
+                      <div class="payment-delivery-block__text payment-delivery-block__text--mb-3">
+                        <p>Самовывоз осуществляется по адресу: 107497, г. Москва, ул. Амурская, д. 5, на территории строение 2. </p>
+                        <p>Пропуск предварительно заказывать не надо. <a href="how-to-get.html">Схема проезда</a></p>
+                      </div>
+                      <div class="payment-delivery-block__text-title" id="delivery3">Условия разрешения на получение товара</div>
+                      <div class="payment-delivery-block__text-subtitle" id="delivery31">3.1.  Для компаний, имеющих право на отсрочку платежа</div>
+                      <div class="payment-delivery-block__text">
+                        <p>Для компаний, имеющих право на отсрочку платежа, отгрузка разрешена в случае, когда не превышен разрешенный лимит задолженности и не превышены разрешенные сроки платежей. </p>
+                      </div>
+                      <div class="payment-delivery-block__text-subtitle" id="delivery32">3.2.  Для компаний, не имеющих право на отсрочку платежа</div>
+                      <div class="payment-delivery-block__text">
+                        <p>Для компаний, не имеющих право на отсрочку платежа, отгрузка разрешена в случае, когда отгружаемый товар полностью оплачен (деньги поступили на расчетный счет организации либо пришло оповещение об оплате карточкой или электронными деньгами). </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="section footer">
+        <div class="section__wrapper">
+          <div class="footer__wrapper">
+            <div class="footer__inner">
+              <ul class="footer__list">
+                <li><a href="catalogue.html">Каталог</a></li>
+                <li><a href="info-about.html">Информация</a></li>
+                <li><a href="lk.html">Личный кабинет</a></li>
+              </ul>
+              <ul class="footer__list">
+                <li><a href="info-about.html">О компании</a></li>
+                <li><a href="info-payment-delivery.html">Оплата и доставка</a></li>
+                <li><a href="info-questions.html">Вопросы</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+              </ul>
+              <ul class="footer__list">
+                <li><a href="info-dealers.html">Дилеры</a></li>
+                <li><a href="info-download.html">Скачать каталог</a></li>
+                <li><a href="#">Документы</a></li>
+                <li><a href="info-price-list.html">Скачать прайс-лист</a></li>
+              </ul>
+              <ul class="footer__list">
+                <li><a href="#">Календарные блоки</a></li>
+                <li><a href="#">Ежедневники</a></li>
+                <li><a href="#">Расходные материалы</a></li>
+                <li><a href="#">Оборудование</a></li>
+              </ul>
+              <ul class="footer__list footer__list--last">
+                <li><a href="sitemap.html">Карта сайта</a></li>
+                <li><a href="#">Амурская улица, д. 5, строение 2, Москва, 107497, Россия</a></li>
+                <li>
+                  <p>Электронная почта:  <a class="footer__email-link" href="mailto:info@polimat.ru">info@polimat.ru</a>
+                  </p>
+                </li>
+                <li>
+                  <div class="footer__social"><a class="footer__social-link footer__phone-link" href="tel:+74952873377">
+                      <svg>
+                        <use xlink:href="img/sprite.svg#phone"></use>
+                      </svg>+7 (495) 287-33-77</a>
+                    <div class="footer__social-inner"><a class="footer__social-icon" href="https://www.facebook.com/Polimat-402877463171691/" target="_blank">
+                        <svg>
+                          <use xlink:href="img/sprite.svg#facebook"></use>
+                        </svg></a><a class="footer__social-icon" href="https://vk.com/club59440053" target="_blank">
+                        <svg>
+                          <use xlink:href="img/sprite.svg#vk"></use>
+                        </svg></a></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__inner">
+              <p class="t--size-medium footer__text--gray">2020 © Компания «Полимат»</p>
+              <div class="footer__developers">
+                <svg class="footer__developers-logo">
+                  <use xlink:href="img/sprite.svg#voxweb-logo"></use>
+                </svg>
+                <p class="t--size-medium footer__text--white">Разработка и развитие сайта — <a class="t--size-medium footer__text--white footer__text--underline" href="https://voxweb.ru" target="_blank">VoxWeb</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="pop-up">
+        <div class="pop-up__wrapper">
+          <div class="pop-up__close"></div>
+          <div class="pop-up__content"></div>
+        </div>
+      </div>
+      <!--<div class="lk-subscribe__checkbox-wrapper inp__wrapper">-->
+      <!--<input required placeholder="Ваш e-mail" type="text" class="inp inp--default inp--error inp--valid pop-up__subscribe-email-input" name="pop-up__subscribe-email-input" id="pop-up__subscribe-email-input" value="${this.options.email}">-->
+      <!--<p class="inp__error-message">Пожалуйста, заполните email</p>-->
+      <!--<p class="inp__valid-ico"></p>-->
+      <!--</div>-->
+    </div>
+  <script type="text/javascript" src="js/vendors.js"></script><script type="text/javascript" src="js/app.js"></script></body>
+</html>

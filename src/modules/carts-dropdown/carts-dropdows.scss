@@ -1,0 +1,45 @@
+.carts-dropdown{
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__wrapper{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    overflow: hidden;
+
+    transition: max-height ease 0.75s;
+  }
+
+  .carts-dropdown__btn{
+    width: auto;
+
+    margin-top: 1.6rem;
+  }
+
+  .cart{
+    height: 23.5rem;
+
+    flex-shrink: 0;
+
+    border-right: none;
+    border-left: none;
+    border-bottom: 0.2rem solid $main-gray-color;
+    @include above($tablet){
+      border-bottom: none;
+    }
+    //&:not(:last-of-type){
+    //  border-bottom: none;
+    //}
+  }
+}

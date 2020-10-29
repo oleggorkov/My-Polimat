@@ -1,0 +1,21 @@
+doctype html
+html(lang='ru')
+    head
+        title Polimat
+        meta(charset='utf-8')
+        meta(name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0")
+        link(rel="apple-touch-icon" sizes="180x180" href="img/favicon/logo.svg")
+        link(rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon")
+        link(rel="icon" type="image/svg+xml" href="img/favicon/logo.svg")
+        link(rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png")
+        link(rel="mask-icon" href="img/favicon/logo.svg" color="blue")
+    body
+        div#app
+            block helper-blocks
+            include ../../modules/mobile-menu/mobile-menu
+            include ../../modules/header/header
+            main.main
+                block content
+            include ../../modules/footer/footer
+            include ../../modules/pop-up/pop-up

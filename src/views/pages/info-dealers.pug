@@ -1,0 +1,15 @@
+extends ../../views/layouts/default
+include ../../modules/lk-block/lk-block
+include ../../modules/info-dealers/info-dealers
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Информация', 'Дилеры')
+            +info-block(3)
+                h1.lk-block__title Дилеры
+                .dealers-map
+                    img(src='img/info-dealers-map.svg' alt='info-dealers-map')
+            +info-dealers
+

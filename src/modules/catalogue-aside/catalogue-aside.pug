@@ -1,0 +1,15 @@
+include ../../modules/control-elements/buttons/btn-main
+include ../filter-module/filter-module
+
+block catalogue-aside
+    div.catalogue__aside
+        +filter-module('catalogue-aside', 'desctop')
+        div.catalogue__aside-links
+                ul
+                    li
+                        a(href='#') Полистать каталог
+                    li
+                        a(href='#') Скачать каталог
+                    li
+                        a(href='#') Скачать все дизайны
+

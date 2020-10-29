@@ -1,0 +1,57 @@
+include ../helper-mixins/main-caption
+include ../../modules/control-elements/checkbox/checkbox
+block lk-subscribe
+    h1.lk-subscribe__heading Какие письма вы бы хотели получать на свой email от нас?
+    .lk-subscribe__sub-caption.lk-subscribe__sub-caption--bold.lk-subscribe__sub-caption--first Стандартные оповещения
+        .lk-subscribe__checkbox-wrapper
+            +checkbox-main('Новый заказ', 'lk-subscribe-new-order', ['checkbox-label',
+                'checkbox-label--square', 'checkbox-input'], true)
+        .lk-subscribe__checkbox-wrapper
+            +checkbox-main('Отмена заказа', 'lk-subscribe-reject-order', ['checkbox-label',
+                'checkbox-label--square', 'checkbox-input'], true)
+        .lk-subscribe__checkbox-wrapper
+            +checkbox-main('Заказ оплачен', 'lk-subscribe-payed', ['checkbox-label',
+                'checkbox-label--square', 'checkbox-input'], true)
+        .lk-subscribe__checkbox-wrapper
+            +checkbox-main('Доставка заказа разрешена', 'lk-subscribe-delivery', ['checkbox-label',
+                'checkbox-label--square', 'checkbox-input'], true)
+        .lk-subscribe__checkbox-wrapper.lk-subscribe__checkbox-wrapper--info
+            +checkbox-main('Оповещение об акциях', 'lk-subscribe-info', ['checkbox-label',
+                'checkbox-label--square', 'checkbox-input', 'checkbox-label--fw500'], true)
+    .lk-subscribe__sub-caption.lk-subscribe__sub-caption--bold.lk-subscribe__sub-caption--separator Оповещения по товарам
+    .lk-subscribe__sub-caption.lk-subscribe__sub-caption--is-gray Вы подписаны на информацию о товарах
+    p.lk-subscribe__text 290-330 красный АЛЬФА (ВОХ) (уп.2400шт.)
+    .lk-subscribe__checkbox-wrapper
+        +checkbox-main('Снижение цены', 'lk-subscribe-290-330-discount', ['checkbox-label', 'checkbox-label--square', 'checkbox-input'], true)
+    .lk-subscribe__checkbox-wrapper
+        +checkbox-main('Поступление товара на склад', 'lk-subscribe-290-330-in-stock', ['checkbox-label', 'checkbox-label--square', 'checkbox-input'], true)
+        .lk-subscribe__input-quan-wrapper
+            +input-main(mask='#####' id='lk-subscribe-number-290-330-in-stock' class='lk-subscribe__number-input')
+    p.lk-subscribe__text 1/2, 25 т.кр., белый (MAXYS PLUS)
+
+    .lk-subscribe__checkbox-wrapper
+        +checkbox-main('Снижение цены', 'lk-subscribe-printwire-discount', ['checkbox-label',
+                'checkbox-label--square', 'checkbox-input'], true)
+    .lk-subscribe__checkbox-wrapper
+        +checkbox-main('Поступление товара на склад', 'lk-subscribe-printwire-in-stock', ['checkbox-label',
+                'checkbox-label--square', 'checkbox-input'], true)
+        .lk-subscribe__input-quan-wrapper
+            +input-main(mask='#####' id='lk-subscribe-number-printwire-in-stock' class='lk-subscribe__number-input')
+    p.lk-subscribe__text Календарный блок ЕВРОПА МИНИсеребристо-белый 3-сп (ЕМД)
+
+    .lk-subscribe__checkbox-wrapper
+        +checkbox-main('Снижение цены', 'lk-subscribe-europe-mini-discount', ['checkbox-label',
+                'checkbox-label--square', 'checkbox-input'], true)
+    .lk-subscribe__checkbox-wrapper
+        +checkbox-main('Поступление товара на склад', 'lk-subscribe-europe-mini-in-stock', ['checkbox-label',
+                'checkbox-label--square', 'checkbox-input'], true)
+        .lk-subscribe__input-quan-wrapper
+            +input-main(mask='#####' id='lk-subscribe-number-europe-mini-in-stock' class='lk-subscribe__number-input')
+
+
+
+
+
+
+
+

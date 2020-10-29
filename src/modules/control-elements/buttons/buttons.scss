@@ -1,0 +1,153 @@
+.btn{
+  width: auto;
+  height: auto;
+
+  outline: none;
+  border: none;
+  cursor: default;
+
+  transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+  @include above($desktop){
+    cursor: pointer;
+  }
+
+  &--default{
+    width: 100%;
+    height: auto;
+
+    min-height: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 3.2rem;
+
+    border-radius: 0.5rem;
+  }
+
+  &--other{
+    width: 100%;
+    height: auto;
+
+    min-height: 4rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 3.2rem;
+
+    border-radius: 0.5rem;
+
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    @include above($tablet){
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+  }
+
+  &--gray{
+    background-color: white;
+    border: 0.1rem solid $helper-color-gray;
+    color: $helper-color-gray;
+
+    @include above($desktop){
+      &:hover{
+        border: 0.1rem solid $main-color-blue;
+        color: $main-color-blue;
+      }
+    }
+  }
+
+  &--red{
+    border: 0.1rem solid $main-color-red;
+    color: $main-color-red;
+
+    @include above($desktop){
+      &:hover{
+        background-color: $main-color-red;
+        color: white;
+      }
+      &:focus{
+        background-color: $main-color-red;
+        border: 0.1rem solid $focus-color-red;
+        color: white;
+      }
+    }
+  }
+
+  &--blue{
+    background-color: white;
+    border: 0.1rem solid $main-color-blue;
+    color: $main-color-blue;
+
+    @include above($desktop){
+      &:hover{
+        background: $main-color-dark-blue;
+        color: white;
+      }
+      &:focus{
+        border: 0.1rem solid $main-color-dark-blue;
+        color: $main-color-dark-blue;
+        background: white;
+      }
+    }
+  }
+  &--border02rem{
+    border-width: 0.2rem;
+  }
+  &--lightblue{
+    border: 0.1rem solid $helper-color-blue;
+    color: $helper-color-blue;
+  }
+  &--height4rem{
+    height: 4rem;
+  }
+  &--height3rem{
+    height: 3rem;
+  }
+
+  &--blue-invert{
+    background-color: $main-color-blue;
+    border: 0.1rem solid $main-color-blue;
+    color: white;
+
+    @include above($desktop){
+      &:hover{
+        background-color: $main-color-dark-blue;
+      }
+      &:focus{
+        background-color: white;
+        border: 0.1rem solid $main-color-dark-blue;
+        color: $main-color-dark-blue;
+      }
+    }
+  }
+
+  &--green{
+    background-color: $helper-color-green;
+    border: 0.1rem solid $helper-color-green;
+    color: #fff;
+
+    @include above($desktop){
+      &:hover{
+        background-color: #fff;
+        color: $helper-color-green;
+      }
+    }
+  }
+
+  &--width100{
+    width: 100%;
+  }
+
+  &--not-active {
+    background-color: $main-gray-color;
+    color: $helper-color-gray;
+  }
+
+  
+}

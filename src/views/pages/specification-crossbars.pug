@@ -1,0 +1,88 @@
+extends ../layouts/default
+include ../../modules/helper-mixins/main-caption
+include ../../modules/lk-discounts/lk-discounts
+include ../../modules/lk-discounts/lk-discounts
+include ../../modules/specification-spring/specification-spring
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.specification-spring.specification-crossbars.section
+        .section__wrapper
+            +breadcrumbs('Спецификация ригели')
+            +h1caption('specification-spring', 'СПЕЦИФИКАЦИЯ - ригели для квартальных календарей')
+            p.specification-spring__text Главное условие для выбора размера ригеля - это плотность бумаги для
+                | изготовления календаря и длина стороны, предназначенная для подвешивания.
+                | Плотность бумаги играет при этом большую роль; если плотность очень высокая, то возможно провисание
+                | календаря, и тогда длина ригеля допускается такая же, как ширина календаря.
+            p.specification-spring__text Исключить провисание календаря, если длина продвешиваемой стороны больше
+                | 500 мм можно путем использования вместо одного большого ригеля по центру два небольших, расположив их по краям.
+            .carts-slider.specification-spring__table-wrapper
+                .swiper-container.slider
+                    .swiper-wrapper.slider-wrapper.specification-spring__table-area
+                        .swiper-slide.slide.specification-spring__slider-column.specification-spring__slider-column--with-title-min
+                            +specification-spring-column--with-title(
+                                {caption: 'isEmpty'},
+                                {title: 'Длина, мм'},
+                                {text: 'Рекомендуемая длина подвешиваемой стороны, мм'}
+                            )
+                        .swiper-slide.slide.specification-spring__slider-column.specification-spring__slider-column--min
+                            +specification-spring-column(
+                                {caption: 'isEmpty'},
+                                {title: '80'},
+                                {text: 'до 150'}
+                            )
+                        .swiper-slide.slide.specification-spring__slider-column.specification-spring__slider-column--min
+                            +specification-spring-column(
+                                {caption: 'isEmpty'},
+                                {title: '105'},
+                                {text: 'до 200'}
+                            )
+                        .swiper-slide.slide.specification-spring__slider-column.specification-spring__slider-column--min
+                            +specification-spring-column(
+                                {caption: 'isEmpty'},
+                                {title: '150'},
+                                {text: 'до 250'}
+                            )
+                        .swiper-slide.slide.specification-spring__slider-column.specification-spring__slider-column--min
+                            +specification-spring-column--with-title(
+                                {caption: 'isEmpty'},
+                                {title: '200'},
+                                {text: 'до 300'}
+                            )
+                        .swiper-slide.slide.specification-spring__slider-column.specification-spring__slider-column--min
+                            +specification-spring-column--with-title(
+                                {caption: 'isEmpty'},
+                                {title: '250'},
+                                {text: 'до 350'}
+                            )
+                        .swiper-slide.slide.specification-spring__slider-column.specification-spring__slider-column--min
+                            +specification-spring-column--with-title(
+                                {caption: 'isEmpty'},
+                                {title: '290'},
+                                {text: 'до 400'}
+                            )
+                        .swiper-slide.slide.specification-spring__slider-column.specification-spring__slider-column--min
+                            +specification-spring-column--with-title(
+                                {caption: 'isEmpty'},
+                                {title: '350'},
+                                {text: 'до 500'}
+                            )
+                        .swiper-slide.slide.specification-spring__slider-column.specification-spring__slider-column--min
+                            +specification-spring-column--with-title(
+                                {caption: 'isEmpty'},
+                                {title: '400'},
+                                {text: 'до 600'}
+                            )
+                        .swiper-slide.slide.specification-spring__slider-column.specification-spring__slider-column--min
+                            +specification-spring-column--with-title(
+                                {caption: 'isEmpty'},
+                                {title: '450'},
+                                {text: 'до 650'}
+                            )
+                        .swiper-slide.slide.specification-spring__slider-column.specification-spring__slider-column--min
+                            +specification-spring-column--with-title(
+                                {caption: 'isEmpty'},
+                                {title: '500'},
+                                {text: 'до 700'}
+                            )
+                +table-cart-navigation(true)

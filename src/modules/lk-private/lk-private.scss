@@ -1,0 +1,513 @@
+@include above($small-phone) {
+
+  .lk-private {
+    width: 100%;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    & input::placeholder {
+      color: $main-gray-color;
+    }
+  }
+
+  .lk-private__block-flex {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .lk-private__block-link {
+    margin-left: 0.7rem;
+    cursor: default;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: $main-color-blue;
+    text-decoration-line: underline;
+    transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+    @include above($desktop) {
+      cursor: pointer;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+
+  .lk-private__block:not(:nth-of-type(3)) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lk-private__block:not(:first-of-type) {
+    margin-top: 1rem;
+  }
+
+  .lk-private__block-heading {
+    display: none;
+  }
+
+  .lk-private__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lk-private__form-flex {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lk-private__form-flex--modify {
+    display: flex;
+    width: 100%;
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  .lk-private__form-flex-item--modify {
+    order: 1;
+  }
+
+  .lk-private__form-flex:first-of-type {
+    margin-bottom: 0.7rem;
+  }
+
+  .lk-private__form-flex:last-of-type {
+    margin-top: 0.7rem;
+  }
+
+  .lk-private__form-flex-item:not(:last-of-type) {
+    margin-bottom: 0.5rem;
+  }
+
+  .lk-private__form-flex-item--title {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #808080;
+    margin-bottom: 1.1rem;
+    display: flex;
+  }
+
+  .lk-private__form-flex-item--heading {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #000000;
+    margin-bottom: 1.1rem;
+    font-style: Italic;
+    font-weight: normal;
+  }
+
+  .lk-private__form-flex-item--input .inp--default {
+    height: 3rem;
+  }
+
+  .lk-private__form-flex-item--flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  .lk-private__form-flex-item--input--modify {
+    width: 13rem;
+  }
+
+  .lk-private__form-flex-item--input_small {
+    width: 8.5rem;
+  }
+
+  .lk-private__form-flex-item--input_small:not(:last-of-type) {
+    margin-right: 0.2rem;
+  }
+
+  .lk-private-flex__item-block {
+    display: flex;
+  }
+
+  .lk-private__button {
+    width: 100%;
+    align-self: flex-end;
+    margin-top: 2.1rem;
+  }
+
+  .lk-private__flex {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.7rem;
+  }
+
+  .lk-private__flex-link {
+    height: 4rem;
+    align-self: center;
+    margin-top: 1.2rem;
+    order: 1;
+    cursor: default;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    text-align: center;
+    color: $main-color-blue;
+    text-decoration-line: underline;
+    transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+    @include above($desktop) {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@include above($tablet) {
+
+  .lk-private__block-heading {
+    display: block;
+    margin-bottom: 1.8rem;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    color: #000000;
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  .lk-private {
+    padding-top: 0;
+  }
+
+  .lk-private__form-flex--modify {
+    flex: 0;
+    width: 16.7rem;
+    flex-direction: column;
+    order: -1;
+    padding-top: 8.5rem;
+  }
+
+  .lk-private__form {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .lk-private__block:not(:first-of-type) .lk-private__form .lk-private__form-flex {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .lk-private__form-flex {
+    width: 29.2rem;
+    flex: none;
+  }
+
+  .lk-private__form-flex-item--block {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
+    width: 29.2rem;
+  }
+
+  .lk-private__form-flex-item--title {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .lk-private__form-flex-item--heading {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .lk-private__form-flex--100 {
+    width: 100%;
+    flex: none;
+    display: flex;
+    margin-top: 0.5rem;
+  }
+
+  .lk-private__form-flex--100 .lk-private__form-flex-item {
+    width: 29.2rem;
+  }
+
+  .lk-private__form-flex-item--input--modify {
+    width: 16.7rem;
+  }
+
+  .lk-private__form-flex:first-of-type {
+    order: -1;
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
+
+  .lk-private__form-flex-item--modify {
+    width: 16.7rem;
+    order: 1;
+    margin-left: 2rem;
+  }
+
+  .lk-private__block:not(:first-of-type) {
+    margin-top: 1.9rem;
+  }
+
+  .lk-private__button {
+    width: auto;
+    margin-top: 3.8rem;
+  }
+
+  .lk-private__form-flex-item--input_small {
+    width: 10.2rem;
+  }
+
+  .lk-private__form-flex-item--input_small:last-of-type {
+    margin-top: 0.44rem;
+  }
+
+  .lk-private__form-flex-item--input_small:not(:last-of-type) {
+    margin-right: 0;
+  }
+
+  .lk-private__form-flex-item--flex {
+    flex-wrap: wrap;
+    height: 100%;
+    width: 22.8rem;
+    padding-top: 2.55rem;
+  }
+
+  .lk-private-flex__item-modify {
+    order: 1;
+    margin-top: 2rem;
+  }
+
+  .private-form-flex-modify {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .private-form-flex-modify .lk-private__form-flex-item {
+    width: 35.4rem;
+  }
+
+  .private-form-flex-modify .lk-private__form-flex-item:first-of-type {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  .lk-private__flex {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .lk-private__flex-link {
+    order: 0;
+    margin-right: 3.4rem;
+  }
+}
+
+@include above($tablet-landscape) {
+
+  .lk-private__form-flex-item--input_small:not(:last-of-type) {
+    margin-right: 1.6rem;
+  }
+
+  .lk-private .lk-private__form-flex-item--input_small .inp--default {
+    padding: 0 0.35rem;
+  }
+
+  .lk-private__form-flex-item--title {
+    flex-direction: column;
+  }
+
+  .lk-private__flex {
+    padding-right: 0;
+  }
+
+  .lk-private__form-flex--100 {
+    margin-top: 0;
+  }
+
+  .lk-private__form-flex:first-of-type {
+    order: 0;
+    margin-right: 0;
+  }
+
+  .lk-private__form-flex:first-of-type {
+    width: 20.6rem;
+    margin-right: 2rem;
+  }
+
+  .lk-private__form-flex--modify {
+    order: 0;
+    padding-top: 0;
+  }
+
+  .lk-private__form-flex--100 {
+    width: 20.6rem;
+    flex-direction: column;
+    margin-right: 1.6rem;
+    margin-left: 1.6rem;
+  }
+
+  .lk-private__form-flex--100 .lk-private__form-flex-item {
+    width: auto;
+  }
+
+  .lk-private__form-flex-item--modify {
+    width: 20.6rem;
+    order: -1;
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .lk-private__form-flex-item--input--modify {
+    width: 13.1rem;
+  }
+
+  .lk-private__form {
+    flex-wrap: nowrap;
+  }
+
+  .lk-private__block:not(:first-of-type) .lk-private__form .lk-private__form-flex {
+    flex-direction: column;
+    width: 20.6rem;
+  }
+
+  .lk-private__form-flex:last-of-type {
+    margin-top: 0;
+  }
+
+  .lk-private__form-flex:first-of-type {
+    margin-right: 0;
+  }
+
+  .lk-private__flex-button {
+    width: 23.2rem;
+  }
+
+  .lk-private__block:not(:first-of-type) .lk-private__form .lk-private__form-flex:not(:last-of-type) {
+    margin-right: 1.6rem;
+  }
+
+  .lk-private__form-flex-item--flex {
+    padding-top: 0;
+  }
+
+  .lk-private__form-flex-item--flex {
+    width: auto;
+  }
+
+  .lk-private__form-flex-item--input_small:last-of-type {
+    margin-top: 0;
+  }
+
+  .lk-private__form-flex-item--block {
+    margin-right: 0;
+    width: 20.6rem;
+  }
+
+  .lk-private__form-flex-item--input_small {
+    width: 5.8rem;
+  }
+
+  .lk-private__form-flex-item--input_small:last-of-type .lk-private__form-flex-item--title {
+    margin-bottom: 2.7rem;
+  }
+}
+
+@include above($desktop) {
+
+  .lk-private__flex {
+    padding-right: 0;
+  }
+}
+
+@include above($mid-desktop) {
+
+  .lk-private .lk-private__form-flex-item--input_small .inp--default {
+    padding: 0 1.5rem;
+  }
+
+  .lk-private__form-flex-item--input_small:last-of-type .lk-private__form-flex-item--title {
+    margin-bottom: 1.1rem;
+  }
+
+  .lk-private__form-flex-item--title {
+    flex-direction: row;
+  }
+
+  .lk-private__flex {
+    padding-right: 10rem;
+  }
+
+  .lk-private__form-flex:first-of-type {
+    width: 28rem;
+  }
+
+  .lk-private__form-flex--100 {
+    width: 28rem;
+  }
+
+  .lk-private__form-flex-item--modify {
+    width: 28rem;
+  }
+
+  .lk-private__form-flex-item--input--modify {
+    width: 12.2rem;
+  }
+
+  .lk-private__form-flex-item--block {
+    width: 28rem;
+  }
+
+  .lk-private__block:not(:first-of-type) .lk-private__form .lk-private__form-flex {
+    width: 28rem;
+  }
+
+  .lk-private__form-flex-item--input_small {
+    width: 8rem;
+  }
+
+  .lk-private__form-flex-item--input_small:nth-of-type(2) .lk-private__form-flex-item--title {
+    margin-bottom: 1.1rem;
+  }
+}
+
+@include above($big-desktop) {
+
+  .lk-private__flex {
+    padding-right: 12.5rem;
+  }
+
+  .lk-private__form-flex:first-of-type {
+    width: 35.5rem;
+  }
+
+  .lk-private__form-flex--100 {
+    width: 35.5rem;
+  }
+
+  .lk-private__form-flex-item--modify {
+    width: 35.5rem;
+  }
+
+  .lk-private__form-flex-item--input--modify {
+    width: 12.2rem;
+  }
+
+  .lk-private__form-flex-item--block {
+    width: 35.5rem;
+  }
+
+  .lk-private__block:not(:first-of-type) .lk-private__form .lk-private__form-flex {
+    width: 35.5rem;
+  }
+
+  .lk-private__form-flex-item--input_small {
+    width: 10.5rem;
+  }
+
+  .lk-private__form-flex-item--input_small:nth-of-type(2) .lk-private__form-flex-item--title {
+    margin-bottom: 1.1rem;
+  }
+
+  .lk-private__form-flex-item--input_small:last-of-type .lk-private__form-flex-item--title {
+    margin-bottom: 1.1rem;
+  }
+}
+

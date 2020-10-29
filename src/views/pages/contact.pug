@@ -1,0 +1,14 @@
+extends ../layouts/default
+include ../../modules/contact/contact
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Контакты')
+            .contacts-block
+                h1.title-main.contacts-block__title Контактные данные
+                +contacts-details.contacts-block__details
+                +contacts-managers.contacts-block__managers
+                +contacts-map.contacts-block__map
+                +contacts-callback.contacts-block__callback

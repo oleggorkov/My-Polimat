@@ -1,0 +1,239 @@
+@import "node_modules/swiper/swiper";
+
+.product-photo-swiper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    @include above($big-desktop){
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+    &__gallery {
+        width: 100%;
+        height: 22.3rem;
+        @include above($tablet) {
+            height: 29.6rem;
+        }
+
+        @include above($desktop) {
+            height: 34.6rem;
+        }
+
+
+        @include above($big-desktop) {
+            height: 43.2rem;
+            width: calc(100% - 8.8rem);
+        }
+
+        .swiper-slide {
+            height: 100%;
+            @include above($desktop) {
+                cursor: ew-resize;
+            }
+        }
+
+        &-thumbs {
+            display: none;
+            width: auto;
+            height: 4.5rem;
+            margin-top: 3rem;
+
+            @include above($tablet) {
+                display: flex;
+                height: 5.5rem;
+            }
+
+            @include above($desktop) {
+                height: 7rem;
+            }
+            
+            @include above($mid-desktop) {
+                height: 8rem;
+            }
+
+            @include above($big-desktop) {
+                width: 8.8rem;
+                height: auto;
+                margin-top: 0;
+            }
+            .swiper-slide {
+                border: 0.2rem solid $main-gray-color;
+                width: 4.5rem;
+                height: 100%;
+                transition: 0.3s border-color;
+
+                @include above($tablet) {
+                    width: 5.5rem;
+                }
+    
+                @include above($desktop) {
+                    width: 7rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        border: 0.2rem solid $main-color-blue;
+                    }
+                }
+                
+                @include above($mid-desktop) {
+                    width: 8rem;
+                }
+
+                @include above($big-desktop) {
+                    height: 8.8rem;
+                    width: 8.8rem;
+                }
+
+                &-thumb-active {
+                    border: 0.2rem solid $main-color-blue;
+                }
+            }
+            .product-photo-swiper__img {
+                align-items: center;
+                img {
+                    max-height: 7rem;
+                }
+
+            }
+
+        }
+
+    }
+    &__slider-nav-wrapper{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        width: 100%;
+        height: 0;
+        justify-content: space-between;
+        align-items: center;
+        @include above($tablet) {
+            position: static;
+            height: auto;
+            align-items: stretch;
+        }
+        @include above($big-desktop){
+            width: auto;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 2.2rem;
+        }
+    }
+    &__gallery-thumbs{
+        &-progress-bar{
+            width: 100%;
+        }
+        &-prev,
+        &-next {
+            border: 0.15rem solid $helper-color-gray;
+            width: 2.4rem;
+            min-width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:hover,
+            &:focus{
+                border: 0.15rem solid $main-color-blue;
+                .product-photo-swiper__gallery-thumbs-btn-arrow{
+                    border-bottom: 0.15rem solid $main-color-blue;
+                    border-right: 0.15rem solid $main-color-blue;
+                }
+            }
+            @include above($tablet) {
+                width: 3rem;
+                min-width: 3rem;
+                height: 3rem;
+                margin-top: 4.2rem;
+            }
+            @include above($desktop) {
+                margin-top: 5rem;
+            }
+            @include above($mid-desktop) {
+                margin-top: 5.5rem;
+            }
+            @include above($big-desktop) {
+                margin-top: 1rem;
+            }
+
+            svg {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+        &-prev{
+            margin-right: 0.5rem;
+            @include above($big-desktop){
+                margin-bottom: 2rem;
+            }
+        }
+        &-next{
+            margin-left: 0.5rem;
+        }
+        &-btn-arrow{
+            width: 0.7rem;
+            height: 0.7rem;
+            border-bottom: 0.15rem solid $helper-color-gray;;
+            border-right: 0.15rem solid $helper-color-gray;;
+            &--next{
+                transform: rotate(-45deg);
+                margin-right: 0.2rem;
+                @include above($big-desktop){
+                    transform: rotate(45deg);
+                    margin-right: 0;
+                }
+            }
+            &--prev{
+                transform: rotate(135deg);
+                margin-left: 0.2rem;
+                @include above($big-desktop){
+                    transform: rotate(225deg);
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    &__img {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            height: 100%;
+            max-width: 22rem;
+            object-fit: contain;
+            @include above($tablet){
+                max-width: 100%;
+            }
+        }
+
+        &-number {
+            display: block;
+            position: absolute;
+            width: 2.4rem;
+            height: 2.4rem;
+            top: 2rem;
+            right: 0;
+            background-color: #0019ff;
+            border-radius: 50%;
+            min-width: 1.5rem;
+            color: #FFFFFF;
+            font-size: 1.3rem;
+            line-height: 2.4rem;
+            text-align: center;
+
+            @include above($tablet) {
+                display: none;
+            }
+        }
+
+    }
+
+}

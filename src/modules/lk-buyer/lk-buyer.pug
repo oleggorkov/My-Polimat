@@ -1,0 +1,77 @@
+include ../control-elements/buttons/btn-main
+include ../control-elements/inputs/input-main
+include ../control-elements/radio-button/radio-button
+
+block lk-buyer
+    form.lk-buyer(method='post' id='lk-buyer-payer')
+        div.lk-buyer__block
+            div.lk-buyer__block-flex
+                picture(v-image-lazy-load)
+                    source(type='image/webp' data-srcset='img/lk-image/arrow-left.webp')
+                    img(data-src='img/lk-image/arrow-left.png')
+                a(href="#").lk-company__block-link Вернуться к списку
+            h1.lk-buyer__block-heading  Физическое лицо
+            div.lk-buyer__form
+                div.lk-buyer__form-flex
+                    div.lk-buyer__form-flex-item--title   ФИО
+                    div.lk-buyer__form-flex-item--input
+                        +input-main-handler(placeholder='Иванов Иван Иванович' class='lk-buyer__inp lk-buyer__inp-fio'
+                            name='lk-buyer__inp-fio' id='lk-buyer__inp-fio' data-require data-require-length=3)
+
+        div.lk-buyer__block
+            div.lk-buyer__form
+                div.lk-buyer__form-flex
+                    div.lk-buyer__form-flex-item--block
+                        div.lk-buyer__form-flex-item
+                            h3.lk-buyer__form-flex-item--heading   Адрес доставки
+                            div.lk-buyer__form-flex-item--title   Населенный пункт
+                            div.lk-buyer__form-flex-item--input
+                                +input-main-handler(placeholder='Москва' class='inp inp--default inp--error inp--valid lk-buyer__inp lk-buyer__inp-locality'
+                                    name='lk-buyer__inp-locality' id='lk-buyer__inp-locality')
+                        div.lk-buyer__form-flex-item
+                            div.lk-buyer__form-flex-item--title   Улица
+                            div.lk-buyer__form-flex-item--input
+                                +input-main-handler(placeholder='Ленина' class='lk-buyer__inp lk-buyer__inp-sreet'
+                                    name='lk-buyer__inp-sreet' id='lk-buyer__inp-sreet')
+                    div.lk-buyer__form-flex-item
+                        div.lk-buyer__form-flex-item--flex
+                            div.lk-buyer__form-flex-item--input_small
+                                div.lk-buyer__form-flex-item--title   Дом,стр./корп.
+                                +input-main-handler(placeholder='100' class='lk-buyer__inp lk-buyer__inp-building'
+                                    name='lk-buyer__inp-building' id='lk-buyer__inp-building')
+                            div.lk-buyer__form-flex-item--input_small
+                                div.lk-buyer__form-flex-item--title    офис/кв.
+                                +input-main-handler(placeholder='100' class='lk-buyer__inp lk-buyer__inp-office'
+                                    name='lk-buyer__inp-office' id='lk-buyer__inp-office')
+                            div.lk-buyer__form-flex-item--input_small
+                                div.lk-buyer__form-flex-item--title   Индекс
+                                +input-main-handler(placeholder='000000' class='lk-buyer__inp lk-buyer__inp-index'
+                                    name='lk-buyer__inp-index' id='lk-buyer__inp-index')
+        div.lk-buyer__block
+            div.lk-buyer__block--text Нам понадобятся ваши паспортные данные при выборе доставки “Доставка до терминала транспортной компании (ТК) в Москве (по России) с выбором ТК”
+        div.lk-buyer__block
+            div.lk-buyer__form
+                div.lk-buyer__form-flex
+                    div.lk-buyer__form-flex-item
+                        div.lk-buyer__form-flex-item--title   Серия и номер паспорта
+                        div.lk-buyer__form-flex-item--input
+                            +input-main-handler(placeholder='0000 000000' class='inp inp--default inp--error inp--valid lk-buyer__inp lk-buyer__inp-identity-number'
+                                name='lk-buyer__inp-identity-number' mask="#### ######" data-require data-require-length='11')
+        div.lk-buyer__block
+            div.lk-buyer__form
+                div.lk-buyer__form-flex
+                    div.lk-buyer__form-flex-item
+                        div.lk-buyer__form-flex-item--title   Телефон
+                        div.lk-buyer__form-flex-item--input
+                            +input-main-handler(mask='+7 (###) ### ## ##' id="lk-buyer__input-phone" name='lk-buyer__input-phone'
+                                class="inp inp--default inp--error inp--valid lk-buyer__input-phone lk-buyer__input-phone-js"
+                                placeholder='Ваш телефон' data-require data-require-length=18)
+                    div.lk-buyer__form-flex-item
+                        div.lk-buyer__form-flex-item--title   E-mail
+                        div.lk-buyer__form-flex-item--input
+                            +input-main-handler(placeholder = 'Ваш e-mail' name='lk-buyer-input__email' data-require data-email)
+        div.lk-buyer__flex.lk-buyer__flex--column-reverse
+            a(href="#").lk-company__flex-link Удалить плательщика
+            div.lk-buyer__flex-button
+                +btn-main(class='btn--other btn--blue-invert lk-buyer__save-buyer btn-form-submit'
+                    id='lk-buyer__save-buyer' name='lk-buyer__save-buyer')    Сохранить плательщика

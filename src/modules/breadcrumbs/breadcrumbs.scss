@@ -1,0 +1,65 @@
+.breadcrumbs {
+  width: 100%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: #000000;
+  margin-top: 1rem;
+  display: none;
+
+  @include above($tablet) {
+    display: flex;
+  }
+
+  @include above($tablet-landscape) {
+    margin-top: 2.8rem;
+  }
+
+  & ul {
+    display: flex;
+
+    & li {
+      &:not(:last-of-type) {
+        margin-right: 0.8rem;
+      }
+
+      @include above($tablet){
+        &:not(:first-child) {
+          position: relative;
+          margin-left: 2.4rem;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0.7rem;
+            left: -2.4rem;
+            width: 1.6rem;
+            height: 0.1rem;
+            background-color: #ACACAC;
+          }
+        }
+      }
+
+      & a {
+        text-decoration: underline;
+
+        @include above($desktop) {
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+
+      & span {
+        font-weight: 500;
+      }
+
+        @include above($desktop) {
+          &:hover {
+            text-decoration: none;
+          }
+        }
+    }
+  }
+}

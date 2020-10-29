@@ -1,0 +1,539 @@
+.basket{
+  width: 100%;
+  .flex{
+    display: flex;
+  }
+  &__caption{
+    padding-bottom: 1.6rem;
+    margin-bottom: 0;
+
+    @include above($tablet) {
+      padding-bottom: 3rem;
+    }
+    @include above($tablet-landscape){
+      margin-top: 2.2rem;
+    }
+    @include above($desktop){
+      margin-top: 2.8rem;
+    }
+  }
+  &__provider{
+    display: flex;
+    @include above($tablet){
+      align-items: baseline;
+    }
+    &-wrapper{
+      border-bottom: 0.2rem solid $main-gray-color;
+      padding-bottom: 0.7rem;
+      @include above($tablet){
+        width: 100%;
+        border-bottom: 0.2rem solid transparent;
+        padding-bottom: 0;
+      }
+    }
+    &-title.basket__local-title {
+      display: flex;
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      font-style: normal;
+      font-weight: normal;
+      align-self: center;
+      @include above($tablet){
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+      }
+    }
+    &-name{
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      margin-left: 1rem;
+      color: $main-color-blue;
+      font-weight: 500;
+      @include above($tablet-landscape){
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+      }
+    }
+    @include above($tablet){
+      width: 100%;
+    }
+  }
+  &__descriptions{
+    border-bottom: 0.2rem solid $main-gray-color;
+    padding-bottom: 1rem;
+    display: none;
+    @include above($tablet){
+      padding-top: 0.7rem;
+      padding-bottom: 0.9rem;
+      display: flex;
+      width: 100%;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      color: $helper-color-gray;
+    }
+    @include above($tablet-landscape){
+      padding-top: 1.6rem;
+    }
+    @include above($desktop){
+      padding-top: 1rem;
+      padding-bottom: 1.7rem;
+    }
+
+  }
+  &__purchase-wrapper{
+    border-bottom: 0.2rem solid $main-gray-color;
+    padding: 1.5rem 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    @include above($tablet){
+      align-items: baseline;
+      width: 100% ;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding: 1.4rem 0 1.5rem;
+    }
+    @include above($tablet-landscape){
+      padding: 2.8rem 0 1.5rem;
+    }
+  }
+  &__purchase-desc-wrapper{
+    padding-left: 1.6rem;
+    @include above($tablet){
+      display: flex;
+    }
+  }
+  &__product-title{
+    left: 3.9rem;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+    @include above($tablet){
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      width: 100%;
+    }
+    @include above($desktop) {
+      &:hover {
+        color: $main-color-blue;
+      }
+    }
+  }
+
+  //&__delete-and-price{
+  //  margin-top: 1.2rem;
+  //  display: flex;
+  //  flex-direction: row;
+  //  justify-content: space-between;
+  //  width: 28rem;
+  //  @include above($tablet){
+  //    width: 23.3rem;
+  //  }
+  //  @include above($desktop) {
+  //    margin-top: 0.0rem;
+  //    width: 25%;
+  //    justify-content: flex-end;
+  //  }
+  //}
+  &__delete{
+    width: 6.2rem;
+    padding-right: 1.8rem;
+    border: 1px solid transparent;
+    justify-content: center;
+    @include above($tablet){
+      width: 6.2rem;
+      margin-right: 0;
+    }
+    @include above($desktop) {
+      width: 30%;
+    }
+  }
+  &__column{
+
+    &-name {
+      flex: 1;
+    }
+    &-weight{
+      margin-top: 1.7rem;
+      width: 100%;
+      margin-bottom: 1rem;
+      @include above($tablet) {
+        margin-bottom: 0;
+      }
+    }
+    &-count{
+      width: 100%;
+      margin-bottom: 2.5rem;
+      margin-right: auto;
+    }
+    &-price{
+      width: 33%;
+    }
+    &-sum{
+      width: 33%;
+    }
+    &-delete{
+      width: 33%;
+    }
+    //@include above($tablet){ //TODO delete before build
+    //  &-product {
+    //    background-color: lightcyan;
+    //  }
+    //  &-weight{
+    //    background-color: lightgoldenrodyellow;
+    //  }
+    //  &-count{
+    //    background-color: lightsalmon;
+    //  }
+    //  &-price{
+    //    background-color: lightseagreen;
+    //  }
+    //  &-sum{
+    //    background-color: lightskyblue;
+    //  }
+    //  &-delete{
+    //    background-color: lightpink;
+    //  }
+    //}
+    @include above($tablet){
+      &-product {
+        width: 33%;
+      }
+      &-weight{
+        margin-top: 0;
+        padding-left: 1rem;
+        width: 11%;
+      }
+      &-count{
+        width: 17%;
+        padding: 0.2rem 0 0.2rem 1rem;
+        margin: 0;
+        @include above($tablet) {
+          padding: 0;
+        }
+      }
+      &-price{
+        width: 15%;
+        padding-left: 1rem;
+        @include above($tablet) {
+          padding-left: 2rem;
+        }
+
+        @include above($tablet-landscape) {
+          width: 12.5%;
+        }
+
+        &  .t--weight-bold {
+          text-align: right;
+        }
+      }
+      &-sum{
+        width: 14%;
+        padding-left: 1rem;
+
+        @include above($tablet-landscape) {
+          width: 11.5%;
+        }
+
+        &  .t--weight-bold {
+          text-align: right;
+        }
+      }
+      &-delete{
+        width: 10%;
+        text-align: center;
+
+        @include above($tablet-landscape) {
+          width: 15%;
+        }
+      }
+    }
+    @include above($desktop){
+      &-product {
+        width: 48%;
+      }
+      &-weight{
+        width: 9%;
+      }
+      &-count{
+        width: 12.8%;
+      }
+      &-price{
+        width: 10.3%;
+      }
+      &-sum{
+        width: 9.5%;
+      }
+      &-delete{
+        width: 10.4%;
+      }
+    }
+
+    @include above($big-desktop){
+
+      &-product {
+        width: 56%;
+      }
+
+      &-price{
+        width: 7.4%;
+      }
+      &-sum{
+        width: 6.6%;
+      }
+      &-delete{
+        width: 8%;
+      }
+    }
+  }
+  &__local-title{
+    color: $helper-color-gray;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    margin-bottom: 1rem;
+    @include above($tablet){
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      display: none;
+    }
+  }
+
+  &__weight{
+    &-title{
+      color: $helper-color-gray;
+      font-size: 1.2rem;
+      line-height: 2.4rem;
+      margin-right: 0.6rem;
+      margin-bottom: 1rem;
+      @include above($tablet){
+        display: none;
+        margin-bottom: 0;
+      }
+    }
+    &-text{
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+    @include above($tablet){
+      display: block;
+      font-size: 1.6em;
+      margin-top: 3.6rem;
+      padding-left: 0.6rem;
+      width: 13rem;
+    }
+    @include above($tablet-landscape){
+      padding-left: 1rem;
+      width: 10rem;
+    }
+
+    @include above($desktop) {
+      font-size: 1.4rem;
+      width: 16%;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 0;
+    }
+    &--on-tablet-screen{
+      display: block;
+      position: absolute;
+      left: 10.4rem;
+      min-width: 10rem;
+      margin-bottom: 1.1rem;
+      @include above($tablet){
+        display: none;
+      }
+      @include above($desktop){
+        display: none;
+      }
+    }
+  }
+
+
+  &__count-caption{
+    line-height: 2.4rem;
+  }
+  &__count{
+    display: flex;
+
+    &-item{
+      width: 8.1rem;
+      height: 3.4rem;
+      text-align: center;
+    }
+    &-number{
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      border: 1px solid transparent;
+      text-align: center;
+      min-width: 6rem;
+      @include above($tablet){
+        width: 5.5rem;
+      }
+    }
+    &-minus, &-plus{
+      border: 0.1rem solid $main-gray-color;
+      box-sizing: border-box;
+      border-radius: 0.5rem;
+      line-height: 1.9rem;
+      font-size: 1.6rem;
+      width: 9.7rem;
+      transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+      @include above($tablet){
+        width: 3.4rem;
+      }
+      @include above($desktop) {
+        &:hover {
+          color: $main-color-blue;
+          border: 0.1rem solid $main-color-blue;
+        }
+      }
+    }
+  }
+  &__price{
+    margin-bottom: 0.4rem;
+    &--bold{
+      font-weight: bold;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+      text-transform: uppercase;
+      color: #000000;
+    }
+  }
+  &__price-with-nds{
+    margin-bottom: 1.2rem;
+    align-items: flex-end;
+    padding-right: 0;
+    margin-left: auto;
+    text-align: end;
+    @include above($tablet){
+      margin-right: 1rem;
+    }
+    @include above($desktop) {
+      max-width: 112rem;
+      align-items: flex-end;
+    }
+    @include above($big-desktop) {
+      align-items: flex-end;
+    }
+    //margin: 1.5rem 0 1.2rem auto;
+  }
+  &__price-with-nds-title{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    color: #000;
+    &--numb{
+      font-weight: bold;
+      font-size: 2.2rem;
+      line-height: 2.6rem;
+      text-transform: uppercase;
+      color: #000000;
+      @include above($tablet) {
+        font-size: 3rem;
+        line-height: 3.5rem;
+      }
+    }
+    &--grey{
+      color: $helper-color-gray;
+    }
+    &--total{
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+      @include above($mid-desktop) {
+        font-size: 2rem;
+        line-height: 2.3rem;
+      }
+    }
+
+  }
+  &__btn{
+    margin-bottom: 1.8rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    height: 4rem;
+    &--empty{
+      width: 21rem;
+      @include above($tablet){
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    @include above($tablet){
+      width: 18rem;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+  }
+  &__clear{
+    @include above($tablet){
+      margin-bottom: 0.4rem;
+    }
+  }
+  &__form-order{
+    width: 100%;
+
+    &:not(:last-of-type) {
+      margin-bottom: 4.3rem;
+
+      @include above($tablet) {
+        margin-bottom: 0;
+      }
+    }
+    @include above($tablet){
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+  &__delete-btn{
+    border: none;
+    &:hover{
+      svg{
+        fill: $main-color-blue;
+      }
+    }
+    svg{
+      width: 2rem;
+      height: 2rem;
+      fill: $helper-color-gray;
+    }
+  }
+  &__delete-title{
+    text-align: center;
+  }
+  &__total-weight{
+    border-bottom: none;
+    font-weight: bold;
+    color: #000;
+  }
+  &__total-weight-area{
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+.basket-empty{
+  margin-bottom: 4rem;
+  &__wrapper{
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+  }
+  &__ico{
+    width: 38rem;
+  }
+  &__text{
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #000000;
+  }
+}

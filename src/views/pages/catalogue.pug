@@ -1,0 +1,15 @@
+extends ../layouts/default
+include ../../modules/catalogue-head/catalogue-head
+include ../../modules/breadcrumbs/breadcrumbs
+block helper-blocks
+    include ../../modules/filter-menu/filter-menu
+    include ../../modules/catalogue__sort-menu/catalogue__sort-menu
+
+block content
+    section.section.catalogue
+        div.section__wrapper
+            +breadcrumbs('Каталог')
+            +catalogue-head('block')
+            div.catalogue__inner
+                include ../../modules/catalogue-aside/catalogue-aside
+                include ../../modules/catalogue-content/catalogue-content

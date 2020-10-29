@@ -1,0 +1,21 @@
+.catalogue-favorites-empty {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.catalogue-favorites-empty__text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: $helper-color-gray;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  text-align: center;
+
+  @include above($tablet) {
+    margin-top: 18.4rem;
+    margin-bottom: 20rem;
+  }
+}

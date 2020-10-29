@@ -1,0 +1,22 @@
+include ../../control-elements/buttons/btn-main
+include ../../control-elements/inputs/input-main
+include ../../control-elements/checkbox/checkbox
+include ../../breadcrumbs/breadcrumbs
+
+block .login-main
+    section.section.login
+        div.section__wrapper
+            +breadcrumbs('Вход в личный кабинет')
+            form.login-form
+                h1.login-form__heading Вход в личный кабинет
+                div.login-form__input
+                    +input-main(type='email' placeholder='Ваш e-mail')
+                div.login-form__input
+                    +input-main(type='password' placeholder='Пароль')
+                div.login-form__checkbox
+                    +checkbox-main('Запомнить меня на этом компьютере', 'remember', ['checkbox-label',
+                        'checkbox-label--square', 'checkbox-input'])
+                div.login-form__button
+                    +btn-main(class='btn--other btn--blue-invert')    Войти
+                a(href="#").login-form__link Регистрация
+                a(href="#").login-form__link Напомнить пароль

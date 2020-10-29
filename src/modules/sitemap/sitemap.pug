@@ -1,0 +1,6 @@
+mixin list-item(item)
+    li.sitemap__list-item
+        a(href=item.href target="_blank").sitemap__list-item-href #{item.text}
+mixin lists(...arr)
+    each item in arr
+        +list-item(item)

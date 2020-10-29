@@ -1,0 +1,675 @@
+.cart{
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.2rem 0;
+
+
+  @include above($tablet){
+    border: 0.2rem solid $main-gray-color;
+  }
+  &__wrapper{
+    width: 100%;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  &__inner{
+    width: 100%;
+    min-width: 13.2rem;
+
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__case{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    position: relative;
+
+    @include above($tablet){
+      align-items: center;
+    }
+  }
+
+  &__share{
+    position: absolute;
+    top: 8.5rem;
+    left: -2.4rem;
+
+    width: auto;
+    height: auto;
+
+    min-height: 3rem;
+
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+
+
+    color: white;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    &--red{
+      background-color: $main-color-red;
+      &:after{
+        border-top: 1.5rem solid $main-color-red;
+        border-bottom: 1.5rem solid $main-color-red;
+      }
+    }
+    &--yellow{
+      background-color: #FFD13C;
+      &:after{
+        border-top: 1.5rem solid #FFD13C;
+        border-bottom: 1.5rem solid #FFD13C;
+      }
+    }
+    &--green{
+      background-color: #11D300;
+      &:after{
+        border-top: 1.5rem solid #11D300;
+        border-bottom: 1.5rem solid #11D300;
+      }
+    }
+    &--black{
+      background-color: #000000;
+      &:after{
+        border-top: 1.5rem solid #000000;
+        border-bottom: 1.5rem solid #000000;
+      }
+    }
+    &:after{
+      content: '';
+      display: block;
+
+      position: absolute;
+      right: -11px;
+      top: 0;
+      bottom: 0;
+
+      width: 0;
+      height: 0;
+      border-right: 1.2rem solid transparent;
+    }
+
+    @include above($tablet){
+      display: flex;
+    }
+  }
+  &__options{
+    width: auto;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin-bottom: 0.8rem;
+    &--horizontal.cart__options{
+      @include above($tablet){
+        flex-direction: row;
+        button{
+          margin-bottom: 1.2rem;
+        }
+        button:not(:last-of-type){
+          margin-right: 1.2rem;
+        }
+      }
+    }
+    button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      outline: none;
+      border: none;
+
+      &:first-of-type {
+        margin-top: 0.4rem;
+        @include above($tablet) {
+          margin-top: 0;
+        }
+      }
+
+      &:not(:last-of-type){
+        margin-right: 1.2rem;
+      }
+
+      &:focus,
+      &:hover{
+        svg{
+          fill: $main-color-blue;
+        }
+      }
+
+      @include above($tablet){
+        &:not(:last-of-type){
+          margin-right: 0;
+          margin-bottom: 1.2rem;
+        }
+      }
+    }
+
+    svg{
+      width: 2.4rem;
+      height: 2.4rem;
+
+      fill: $helper-color-gray;
+    }
+    .cart__options-btn--favorites,
+    .cart__options-btn--compare{
+      &:hover,
+      &:focus{
+        svg{
+          fill: transparent;
+          stroke: $main-color-blue;
+        }
+      }
+    }
+
+    @include above($tablet){
+      flex-direction: column;
+
+      margin-bottom: 0;
+
+      position: absolute;
+      right: 0;
+      top: 8.5rem;
+    }
+    &-btn{
+      &--favorites,
+      &--compare{
+        position: relative;
+        svg{
+          fill: transparent;
+          stroke-width: 1.5px; //px it is IMPORTANT do not change to rem
+          stroke: $helper-color-gray;
+        }
+        &:focus,
+        &:hover{
+          svg{
+            stroke: $main-color-blue;
+          }
+        }
+      }
+      &--favorites.active,
+      &--compare.active{
+        svg{
+          fill: $main-color-blue;
+          stroke: transparent;
+        }
+
+        &:focus,
+        &:hover{
+          svg{
+            fill: $main-color-blue;
+            stroke: transparent;
+          }
+        }
+      }
+    }
+  }
+  &__title{
+    max-width: 22rem;
+
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: #000000;
+    min-height: 4rem;
+    transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+    strong{
+      display: block;
+    }
+
+    @include above($tablet){
+      min-height: 6rem;
+    }
+
+    @include above($desktop) {
+      &:hover {
+        color: $main-color-blue;
+      }
+    }
+
+    @include above($tablet){
+      text-align: center;
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+    }
+  }
+  &__image{
+    width: auto;
+    height:  15rem;
+
+    img{
+      width: 87%;
+      height: 15rem;
+
+      object-fit: contain;
+
+      box-shadow: 3px 3px 6px 0 rgba(50, 50, 50, 0.25);
+
+      @include above($tablet){
+        height: 19rem;
+        width: 87%;
+      }
+    }
+
+    &--desktop{
+      display: none;
+
+      @include above($tablet){
+        display: block;
+      }
+    }
+
+    &--mobile{
+      padding: 0 2.4rem;
+
+      @include above($tablet){
+        display: none;
+      }
+    }
+
+    @include above($tablet){
+      margin-top: 0.4rem;
+
+      height: 19rem;
+    }
+  }
+
+  &__price{
+    margin-top: 0.8rem;
+
+    text-align: left;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+
+    font-weight: bold;
+
+    color: #000000;
+
+    span{
+      display: block;
+
+      font-weight: normal;
+      font-size: 1rem;
+      line-height: 1.2rem;
+      color: $helper-color-gray;
+    }
+
+    @include above($tablet){
+      text-align: center;
+      font-size: 2rem;
+      line-height: 2.3rem;
+    }
+  }
+  &__button{
+    width: 100%;
+    height: auto;
+
+    margin-top: 0.8rem;
+  }
+  &__helper-info{
+    width: 100%;
+    height: auto;
+
+    margin-top: 0.8rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-item{
+      width: auto;
+      flex: 1;
+      height: auto;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &:last-of-type {
+        justify-content: flex-end;
+        flex: 0.7;
+
+        @include above($tablet) {
+          flex: 0.9;
+        }
+
+        @include above($tablet-landscape) {
+          flex: 0.8;
+        }
+        @include above($mid-desktop) {
+          flex: 0.8;
+        }
+      }
+
+      svg{
+        width: 1.6rem;
+        height: 1.6rem;
+
+        margin-right: 0.4rem;
+
+        fill: $helper-color-blue;
+      }
+      span{
+        font-size: 1rem;
+        line-height: 1.2rem;
+        color: #000000;
+      }
+    }
+
+    &-item-wrapper{
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-item-text{
+      white-space: pre;
+    }
+  }
+
+  @include above($tablet){
+    width: auto;
+    height: 40.5rem;
+
+    padding: 1.6rem 2.4rem;
+  }
+  .cart__btn-buy-it{
+    width: 100%;
+    margin: 1rem auto 0;
+  }
+}
+.cart--in-line{
+
+  & .cart {
+    border: none;
+  }
+
+  width: 100%;
+  border: none;
+  border-bottom: 0.2rem solid $main-gray-color;
+
+  & .cart__button {
+    @include above($tablet) {
+      width: auto;
+    }
+    @include above($desktop) {
+      width: 100%;
+    }
+
+    & button {
+      transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+      @include above($desktop) {
+        &:hover {
+          border: 0.1rem solid $helper-color-blue;
+          color: #ffffff;
+          background: $helper-color-blue;
+        }
+      }
+    }
+  }
+
+  & .btn--default {
+    padding: 0 3rem;
+  }
+  @include above($tablet){
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  .cart__wrapper{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3.8rem;
+    @include above($tablet-landscape){
+      margin: 0;
+    }
+  }
+  .cart__inner{
+    flex-direction: column;
+    @include above($tablet){
+      flex-direction: row;
+      position: relative;
+      border-bottom: 0.2rem solid #F0F0F0;
+      margin: 2rem 2.3rem 0;
+    }
+    @include above($tablet-landscape){
+      border-bottom: 0.2rem solid transparent;
+    }
+  }
+  .cart__case{
+    padding-top: 0.5rem;
+    padding-bottom: 0.7rem;
+    flex-direction: row;
+    border-bottom: 0.2rem solid #F0F0F0;
+    max-width: 28rem;
+    margin: 0 auto;
+    //background-color: rgba(158, 255, 158, 0.5);
+
+    @include above($phone){
+      max-width: 33.5rem;
+    }
+
+    @include above($tablet){
+      max-width: none;
+      border-bottom: none;
+    }
+    .cart__image{
+      height: 7.5rem;
+      img{
+        height: 7.5rem;
+        box-shadow: none;
+      }
+    }
+    &--main-info-wrapper{
+      @include above($tablet-landscape){
+        order: 1;
+      }
+    }
+    &--phisical-characteristic-wrapper{
+      display: flex;
+      flex-direction: column;
+      @include above($tablet){
+        justify-content: flex-start;
+        border-left: 0.2rem solid #F0F0F0;
+        border-right: 0.2rem solid #F0F0F0;
+        margin-bottom: 0.5rem;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+      }
+      @include above($tablet-landscape){
+        order: 2;
+      }
+    }
+    &--price{
+      border-bottom: 0.2rem solid transparent;
+      @include above($tablet-landscape){
+        padding-left: 1.8rem;
+        order: 4;
+      }
+    }
+    &--helper-info{
+      padding-top: 0;
+      @include above($tablet){
+        position: absolute;
+        bottom: -5rem;
+        left: 0;
+        padding: 0;
+        margin-top: 0;
+        border-bottom: 0.2rem solid #F0F0F0;
+      }
+      @include above($tablet-landscape){
+        position: static;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: space-evenly;
+        padding: 0;
+        order: 3;
+        border-bottom: none;
+      }
+    }
+  }
+  .cart__case-wrapper{
+    padding-left: 2rem;
+    @include above($tablet){
+      padding: 0 1rem;
+      min-width: 18rem;
+      display: flex;
+      flex-direction: column-reverse;
+      height: 100%;
+      justify-content: center;
+    }
+
+    @include above($desktop){
+      min-width: 19rem;
+    }
+  }
+
+  .cart__helper-info-item {
+    flex: 1;
+
+    &:nth-of-type(2) {
+      margin-top: 1.4rem;
+      margin-bottom: 1.4rem;
+    }
+
+    &:last-of-type {
+      justify-content: flex-end;
+      flex: 0.7;
+
+      @include above($tablet) {
+        flex: 0.3;
+      }
+
+      @include above($tablet-landscape) {
+        flex: 0.8;
+      }
+      @include above($mid-desktop) {
+        flex: 0.7;
+      }
+    }
+  }
+  .cart__options{
+    position: static;
+    &-wrapper{}
+    @include above($tablet){
+      flex-direction: row;
+    }
+  }
+  .cart__image--desktop{
+    display: flex;
+  }
+
+  .cart__row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    &:not(:first-of-type){
+      margin-top: 1rem;
+    }
+  }
+
+  .cart__characteristic-flex{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .cart__column{
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .cart__text-title{
+    text-align: left;
+    line-height: 1.5;
+    font-size: 1.4rem;
+    &--bold{
+      font-weight: bold;
+    }
+
+    @include above($tablet) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .cart__characteristic{
+    font-size: 1rem;
+    line-height: 1.2rem;
+    width: 50%;
+    &-sub-title{
+      color: $helper-color-gray;
+      margin-bottom: 0.4rem;
+    }
+    &-text{
+      color: #000000;
+    }
+  }
+  .cart__characteristic-color{
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    &--red{
+      background-color: red;
+    }
+  }
+  .cart__price{
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    @include above($tablet){
+      margin-top: 0;
+      .btn{
+        width: 17rem;
+      }
+      span{
+        width: 15rem;
+        margin: 0 auto;
+      }
+    }
+  }
+  .cart__btn-buy-it{
+    width: 100%;
+    margin: 0 auto;
+  }
+  .cart__helper-info{
+    @include above($tablet){
+      margin-top: 0;
+    }
+    @include above($tablet-landscape){
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      height: 100%;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+      border-right: 0.2rem solid #F0F0F0;
+    }
+  }
+  @include above($tablet){
+    width: 100%;
+  }
+
+}

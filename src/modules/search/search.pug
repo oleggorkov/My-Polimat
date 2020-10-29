@@ -1,0 +1,61 @@
+include ../cart/cart
+include ../control-elements/buttons/btn-main
+include ../to-top/to-top-btn
+
+mixin search-rezult-text(requestText, rezultData)
+    if (requestText != false )
+        .search__rezult-text-wrapper
+            .search__rezult-text-caption Результаты поиска
+            if (requestText === 'emptyRequest' && rezultData === false )
+                .search__rezult Пустой поисковой запрос (запрос не содержит букв или цифр)
+            else if (rezultData == 'emptyRezult')
+                .search__rezult-text-area
+                    .search__rezult-text--request По запросу
+                    .search__rezult-text--request-text.t--weight-bold #{requestText}
+                .search__rezult К сожалению, по вашему запросу ничего не найдено. Измените запрос и попробуйте снова.
+            else
+                .search__rezult-text-area
+                    .search__rezult-text--request По запросу
+                    .search__rezult-text--request-text.t--weight-bold #{requestText}
+                .search__rezult-flex
+                    - for (let x = 0; x < 10; x++)
+                        +cart
+                div.catalogue-content__more.catalogue-content__more--active
+                    p.catalogue-content__more-text Секундочку, загружается...
+                    +btn-main(theme='blue', class='btn--default') Ещё товары
+                    +btn-to-top('catalogue-content__more-to-top')
+
+mixin search-rezult-text-site(requestText, rezultData)
+    if (requestText != false )
+        .search__rezult-text-wrapper
+            .search__rezult-text-caption Результаты поиска
+            if (requestText === 'emptyRequest' && rezultData === false )
+                .search__rezult Пустой поисковой запрос (запрос не содержит букв или цифр)
+            else if (rezultData == 'emptyRezult')
+                .search__rezult-text-area
+                    .search__rezult-text--request По запросу
+                    .search__rezult-text--request-text.t--weight-bold #{requestText}
+                .search__rezult К сожалению, по вашему запросу ничего не найдено. Измените запрос и попробуйте снова.
+            else
+                .search__rezult-text-area
+                    .search__rezult-text--request По запросу
+                    .search__rezult-text--request-text.t--weight-bold #{requestText}
+                .search__rezult-flex
+                    - for (let x = 0; x < 3; x++)
+                        .search__rezult-flex-item
+                            a(href='#').search__rezult-flex-item-title Прайс-лист (в зависимости от оборота клиента)
+                            .search__rezult-flex-item-text
+                                | Скачать прайс-лист на календарные блоки (без учета текущих Акций и Спецпредложений) в формате Excel ПОСТАВЩИК: Текущие цены на календарные блоки (с учетом текущих Акций и Спецпредложений) ПОСТАВЩИК: Текущие цены на календарные блоки (с учетом текущих Акций и Спецпредложений)
+                            .search__rezult-flex-item-path
+                                span Путь:
+                                .search__rezult-flex-item-path-breadcrumbs
+                                    a(href='#') Главная
+                                    .search__rezult-flex-item-path-breadcrumbs-span /
+                                    a(href='#') Информация
+                                    .search__rezult-flex-item-path-breadcrumbs-span /
+                                    a(href='#') Прайс-лист
+                div.catalogue-content__more.catalogue-content__more--active
+                    p.catalogue-content__more-text Секундочку, загружается...
+                    +btn-to-top('catalogue-content__more-to-top')
+
+

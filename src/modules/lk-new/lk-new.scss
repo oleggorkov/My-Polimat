@@ -1,0 +1,537 @@
+.lk-new {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  @include above($tablet) {
+    padding-top: 0;
+  }
+
+  & input::placeholder {
+    color: $main-gray-color;
+  }
+
+  &__flex {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.7rem;
+    @include above($tablet) {
+      padding-right: 0;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+    @include above($tablet-landscape) {
+      padding-right: 0;
+    }
+    @include above($desktop) {
+      padding-right: 14.2rem;
+    }
+    @include above($mid-desktop) {
+      padding-right: 10rem;
+    }
+    @include above($big-desktop) {
+      padding-right: 12.5rem;
+    }
+    &--modufy{
+      @include above($tablet) {
+        flex: 0;
+        width: 16.7rem;
+        flex-direction: column;
+        order: -1;
+        padding-top: 8.5rem;
+      }
+    }
+  }
+  &__flex-button {
+    @include above($tablet-landscape) {
+      width: 25rem;
+    }
+  }
+  &__flex-button-empty {
+    width: 29.2rem;
+    margin-right: 1.6rem;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    @include above($tablet) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    @include above($tablet-landscape) {
+      flex-wrap: nowrap;
+    }
+
+  }
+  &__form-flex {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    @include above($tablet) {
+      width: 29.2rem;
+      flex: none;
+    }
+    @include above($tablet-landscape){
+      width: 19.2rem;
+    }
+    &--modify {
+      display: flex;
+      width: 100%;
+      flex: 1;
+      justify-content: space-between;
+      @include above($tablet){
+        justify-content: flex-start;
+      }
+      @include above($tablet-landscape){
+        flex-direction: column;
+        order: 0;
+        padding-top: 0;
+      }
+      .lk-new__form-flex-item:first-child{
+        margin-right: 2rem;
+        .lk-new__form-flex-item--input--modify{
+          @include above($tablet){
+            width: 29.2rem;
+          }
+          @include above($tablet-landscape){
+            width: 20.6rem;
+          }
+
+        }
+      }
+
+    }
+    &--100 {
+      @include above($tablet) {
+        width: 100%;
+        //flex: none;
+        //display: flex;
+        margin-top: 0.5rem;
+      }
+      @include above($tablet-landscape) {
+        flex-direction: column;
+        margin-top: 0;
+        margin-left: 1.6rem;
+        margin-right: 1.6rem;
+        width: 20.6rem;
+      }
+      @include above($mid-desktop) {
+        width: 28rem;
+      }
+      @include above($big-desktop) {
+        width: 35.5rem;
+      }
+    }
+    &:first-of-type {
+      margin-bottom: 0.7rem;
+      @include above($tablet) {
+        order: -1;
+        margin-bottom: 0;
+        margin-right: 2rem;
+      }
+      @include above($tablet-landscape) {
+        order: 0;
+        width: 20.6rem;
+        margin-right: 0;
+      }
+      @include above($mid-desktop) {
+        width: 28rem;
+      }
+      @include above($big-desktop) {
+        width: 35.5rem;
+      }
+    }
+    &:last-of-type {
+      margin-top: 0.7rem;
+      @include above($tablet-landscape) {
+        margin-top: 0;
+      }
+    }
+  }
+  &__form-flex--100 .lk-new__form-flex-item {
+    @include above($tablet) {
+      width: 29.2rem;
+    }
+    @include above($tablet-landscape) {
+      width: auto;
+    }
+  }
+  &__form-flex-item{
+    &:not(:last-of-type) {
+      margin-bottom: 0.5rem;
+    }
+    &--block{
+      @include above($tablet) {
+        display: flex;
+        flex-direction: column;
+        margin-right: 2rem;
+        width: 29.2rem;
+      }
+      @include above($tablet-landscape) {
+        margin-right: 0;
+        width: 20.6rem;
+      }
+      @include above($mid-desktop) {
+        width: 28rem;
+      }
+      @include above($big-desktop) {
+        width: 35.5rem;
+      }
+    }
+    &--modify {
+      order: 1;
+      @include above($tablet) {
+        width: 16.7rem;
+        order: 1;
+        margin-left: 2rem;
+      }
+      @include above($tablet-landscape) {
+        width: 20.6rem;
+        order: -1;
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+      }
+      @include above($mid-desktop) {
+        width: 28rem;
+      }
+      @include above($big-desktop) {
+        width: 35.5rem;
+      }
+    }
+    &--title {
+      display: flex;
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      color: #808080;
+      margin-bottom: 1.1rem;
+      @include above($tablet) {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+      }
+      @include above($tablet-landscape) {
+        flex-direction: column;
+      }
+      @include above($mid-desktop) {
+        flex-direction: row;
+      }
+    }
+    &--heading {
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      color: #000000;
+      margin-bottom: 1.1rem;
+      font-style: Italic;
+      font-weight: normal;
+      @include above($tablet) {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+      }
+      @include above($tablet-landscape) {
+        margin-bottom: 3rem;
+      }
+      @include above($big-desktop) {
+        margin-bottom: 1.1rem;
+      }
+    }
+    &--heading-check {
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      color: #000000;
+      margin-bottom: 1.1rem;
+      font-style: Italic;
+      font-weight: normal;
+      @include above($tablet) {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+      }
+      @include above($tablet-landscape) {
+        width: 100%;
+        margin-bottom: 0.5rem;
+        margin-left: 0;
+      }
+      @include above($big-desktop) {
+        width: 100%;
+        margin-bottom: 1.1rem;
+      }
+    }
+    &--input .inp--default {
+      height: 3rem;
+      @include above($mid-desktop) {
+        padding: 0 1.5rem;
+      }
+    }
+    &--flex {
+      display: flex;
+      justify-content: space-between;
+      @include above($tablet) {
+        flex-wrap: wrap;
+        height: 100%;
+        width: 22.8rem;
+        padding-top: 2.55rem;
+      }
+      @include above($tablet-landscape) {
+        padding-top: 0;
+        width: auto;
+      }
+    }
+    &--input--modify {
+      width: 16.7rem;
+      @include above($tablet){
+        //width: 29.2rem;
+        //margin-right: 2rem;
+      }
+      @include above($tablet-landscape) {
+        width: 13.1rem;
+        margin-right: 0;
+      }
+      @include above($mid-desktop) {
+        width: 12.2rem;
+      }
+      @include above($big-desktop) {
+        width: 12.2rem;
+      }
+    }
+    &--input_small {
+      width: 8.5rem;
+      margin-top: 1rem;
+      @include above($tablet) {
+        width: 10.2rem;
+        margin-top: 0;
+      }
+      @include above($tablet-landscape) {
+        width: 5.8rem;
+        margin-top: 1rem;
+      }
+      @include above($mid-desktop) {
+        width: 8rem;
+      }
+      @include above($big-desktop) {
+        width: 10.5rem;
+      }
+      &:not(:last-of-type) {
+        margin-right: 0.2rem;
+        @include above($tablet) {
+          margin-right: 0;
+        }
+        @include above($tablet-landscape) {
+          margin-right: 1.6rem;
+        }
+      }
+      &:nth-of-type(2) .lk-new__form-flex-item--title {
+        @include above($mid-desktop) {
+          margin-bottom: 1.1rem;
+        }
+      }
+      &:last-of-type .lk-new__form-flex-item--title {
+        @include above($tablet-landscape) {
+          margin-bottom: 2.7rem;
+        }
+        @include above($mid-desktop) {
+          margin-bottom: 1.1rem;
+        }
+        @include above($big-desktop) {
+          margin-bottom: 1.1rem;
+        }
+      }
+    }
+    &--input_small .inp--default {
+      @include above($tablet-landscape) {
+        padding: 0 0.35rem;
+      }
+      @include above($mid-desktop) {
+        padding: 0 1rem;
+      }
+
+    }
+  }
+  &__form-flex-item-check {
+    display: flex;
+    justify-content: space-between;
+    @include above($tablet-landscape) {
+      flex-direction: column;
+    }
+    @include above($big-desktop) {
+      flex-direction: row;
+    }
+  }
+  &__form-checkbox {
+    height: 1.85rem;
+    width: 15.5rem;
+    margin-left: auto;
+    @include above($tablet){
+      width: 44%;
+      margin-bottom: 0;
+    }
+    @include above($tablet-landscape) {
+      height: 1.85rem;
+      width: 100%;
+      margin-bottom: 0.6rem;
+    }
+  }
+  &__form-checkbox-input {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    &:checked + .lk-new__form-checkbox-label:after {
+      opacity: 1;
+    }
+    &:checked + .lk-new__form-checkbox-label:before {
+      border: 0.2rem solid $main-gray-color;
+    }
+  }
+  &__form-checkbox-label {
+    cursor: pointer;
+    transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: #808080;
+    position: absolute;
+    padding-left: 2.5rem;
+    padding-top: 0.2rem;
+    &:before {
+      content: "";
+      display: block;
+      width: 1.4rem;
+      height: 1.3rem;
+      border: 0.2rem solid #A1A1A1;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0.2rem;
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: 0.7rem;
+      height: 0.3rem;
+      border-bottom: 0.2rem solid $main-color-blue;
+      border-left: 0.2rem solid $main-color-blue;
+      transform: rotate(-45deg);
+      position: absolute;
+      z-index: 2;
+      top: 0.5rem;
+      left: 0.7rem;
+      opacity: 0;
+    }
+    &:hover:before {
+      border: 0.2rem solid $main-color-blue;
+      cursor: pointer;
+      transition: border ease 0.25s;
+    }
+  }
+  &__block{
+    &:not(:nth-of-type(3)) {
+      display: flex;
+      flex-direction: column;
+    }
+    &:not(:first-of-type) {
+      margin-top: 1rem;
+      @include above($tablet) {
+        margin-top: 1.9rem;
+      }
+    }
+    &:not(:first-of-type) .lk-new__form .lk-new__form-flex {
+      &:not(:last-of-type) {
+        @include above($tablet-landscape) {
+          margin-right: 1.6rem;
+        }
+      }
+      @include above($tablet) {
+        width: 100%;
+        flex-direction: row;
+      }
+      @include above($tablet-landscape) {
+        flex-direction: column;
+        width: 20.6rem;
+      }
+      @include above($mid-desktop) {
+        width: 28rem;
+      }
+      @include above($big-desktop) {
+        width: 35.5rem;
+      }
+    }
+  }
+  &__block-heading {
+    display: none;
+    @include above($tablet) {
+      display: block;
+      margin-bottom: 1.8rem;
+      font-size: 2rem;
+      line-height: 2.3rem;
+      color: #000000;
+      font-style: normal;
+      font-weight: normal;
+    }
+  }
+  &__block-radio {
+    width: 100%;
+    margin-bottom: 2.7rem;
+    display: flex;
+    flex-direction: column;
+    @include above($desktop) {
+      flex-direction: row;
+      min-width: 88rem;
+    }
+    @include above($big-desktop) {
+      flex-direction: row;
+      min-width: 110rem;
+    }
+
+    &--button {
+      height: 2.2rem;
+      @include above($desktop) {
+        flex: 1;
+      }
+      &:not(:last-of-type) {
+        margin-bottom: 1.9rem;
+      }
+      &:nth-of-type(2) {
+        @include above($desktop) {
+          margin-right: 10rem;
+        }
+      }
+    }
+  }
+  &__block-content{
+    width: 100%;
+    @include above($tablet){
+      width: auto;
+    }
+  }
+  &__block-flex {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    @include above($tablet) {
+      display: none;
+    }
+  }
+  &__block-link {
+    margin-left: 0.7rem;
+    cursor: default;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: $main-color-blue;
+    text-decoration-line: underline;
+    transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+    @include above($desktop) {
+      cursor: pointer;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+  &__button {
+    width: 100%;
+    align-self: flex-end;
+    margin-top: 2.1rem;
+    @include above($tablet) {
+      width: auto;
+      margin-top: 3.8rem;
+    }
+  }
+}

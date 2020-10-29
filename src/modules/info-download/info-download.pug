@@ -1,0 +1,9 @@
+include ../helper-mixins/svg-mix
+mixin info-download-files-block(caption, ...items)
+    .download__content-block
+        .download__content-caption #{caption}
+        .download__content-wrapper
+            each item in items
+                a.download__content-item-link(href=item.href)
+                    +svg-mix(item.ico + '-ico', 'download__content-item-ico')
+                    span.download__content-item-text #{item.text}

@@ -1,0 +1,28 @@
+include ../../control-elements/buttons/btn-main
+include ../../control-elements/inputs/input-main
+include ../../breadcrumbs/breadcrumbs
+
+block fast-reg
+    section.section.fast-reg
+        div.section__wrapper
+            +breadcrumbs('Быстрая регистрация')
+            form.fast-reg-form
+                h1.fast-reg-form__heading Быстрая регистрация
+                div.fast-reg-form__flex
+                    div.fast-reg-form__flex_input
+                        +input-main(placeholder='Фамилия')
+                    div.fast-reg-form__flex_input
+                        +input-main(type='tel' placeholder='Телефон')
+                    div.fast-reg-form__flex_input
+                        +input-main(placeholder='Имя')
+                    div.fast-reg-form__flex_input
+                        +input-main(type='email' placeholder='Ваш e-mail')
+                    div.fast-reg-form__flex_input
+                        +input-main(placeholder='Отчество')
+                    div.fast-reg-form__flex_input
+                        +input-main(type='password' placeholder='Пароль')
+                div.fast-reg-form__button
+                    +btn-main(class='btn--other btn--blue-invert')    Быстро зарегистрироваться
+                a(href="#").fast-reg-form__link Уже зарегистрированы?
+                a(href="#").fast-reg-form__link Регистрация для компаний
+                include ../../social-buttons/social-buttons

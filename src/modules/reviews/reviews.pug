@@ -1,0 +1,44 @@
+include ../../modules/control-elements/inputs/input-main
+include ../../modules/control-elements/textarea/textarea
+include ../helper-mixins/svg-mix
+mixin review-add
+    .reviews.width100(class=attributes.class)
+        form.reviews__form
+            .reviews__form-caption Оставить отзыв о товаре
+            .reviews__form-unauthorized
+                .reviews__form-text.reviews__form-text--unauthorized Добавьте отзыв, заполнив личные данные, или
+                    | войдите на сайт, тогда информация будет автоматически взята из профиля.
+                a(href='auth.html')
+                    +btn-main(thumbs='blue' class='btn btn--blue reviews__form-enter-btn') Войти
+            .reviews__form-email-and-name
+                +input-main-handler(class='reviews__form-inp' name="reviews__email"
+                    id='reviews__email' data-require data-email)
+                    .inp__label-text Ваш email
+                +input-main-handler(class='reviews__form-inp' name="reviews__name"
+                    id='reviews__name' data-require data-require-length=3)
+                    .inp__label-text Ваше имя
+            .reviews__rating
+                .reviews__rating-label.inp__label Оцените товар
+                div(class="reviews__reviewStars-input")
+                    input(id="star-4" type="radio" name="reviewStars")
+                    label(title="gorgeous" for="star-4")
+                        +svg-mix('review-star', 'reviews__stars-rating-ico')
+                    input(id="star-3" type="radio" name="reviewStars")
+                    label(title="good" for="star-3")
+                        +svg-mix('review-star', 'reviews__stars-rating-ico')
+                    input(id="star-2" type="radio" name="reviewStars")
+                    label(title="regular" for="star-2")
+                        +svg-mix('review-star', 'reviews__stars-rating-ico')
+                    input(id="star-1" type="radio" name="reviewStars")
+                    label(title="poor" for="star-1")
+                        +svg-mix('review-star', 'reviews__stars-rating-ico')
+                    input(id="star-0" type="radio" name="reviewStars")
+                    label(title="bad" for="star-0")
+                        +svg-mix('review-star', 'reviews__stars-rating-ico')
+            +textarea-handler(class='reviews__form-inp' name="reviews__name"
+                id='reviews__name' row-3 data-require data-require-length=3)
+                .inp__label-text Ваш отзыв
+            div.reviews__rating-policy
+                | Оставляя данные на этом сайте вы соглашаетесь с&nbsp
+                a(href="#")  Политикой конфиденциальности.
+            +btn-main(thumbs='blue' class='btn btn--blue-invert reviews__form-submit-btn btn-form-submit') Отправить

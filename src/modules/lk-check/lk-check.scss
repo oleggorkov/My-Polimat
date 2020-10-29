@@ -1,0 +1,172 @@
+@include above($small-phone) {
+
+  .lk-check__policy {
+    width: 100%;
+    line-height: 1.4rem;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2.3rem;
+
+    a {
+      color: $main-color-blue;
+      text-decoration: underline;
+
+      @include above($desktop) {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .lk-check {
+    width: 100%;
+    padding-top: 2rem;
+  }
+
+  .lk-check__block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lk-check__block-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lk-check__block-item-heading {
+    display: none;
+  }
+
+  .lk-check__block-item-input {
+    width: 100%;
+  }
+
+  .lk-check__block-item-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .lk-check__block-item-area {
+    width: 100%;
+  }
+
+  .lk-check__block-item-button {
+    width: 100%;
+  }
+
+  .lk-check__block-item-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: #000000;
+  }
+
+  .lk-check__block-item:first-of-type {
+    margin-bottom: 2.1rem;
+  }
+
+  .lk-check__block-item-text:first-of-type {
+    margin-bottom: 1rem;
+  }
+
+  .lk-check__link{
+    &:hover,
+    &:focus{
+      color: $main-color-blue;
+    }
+  }
+}
+
+@include above($tablet) {
+
+  .lk-check__policy {
+    text-align: left;
+    margin-bottom: 1.3rem;
+  }
+
+  .lk-check {
+    padding-top: 0;
+  }
+
+  form.lk-check__block-item {
+    width: 41.6rem;
+  }
+
+  .lk-check__block-item-heading {
+    display: block;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    color: #000000;
+    margin-bottom: 1.6rem;
+  }
+
+  .lk-check__block-item:first-of-type {
+    margin-bottom: 2.4rem;
+  }
+
+  .lk-check__block-item-flex {
+    flex-direction: row;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+  }
+
+  .lk-check__block-item-flex .lk-check__block-item-input:first-of-type {
+    margin-right: 1.2rem;
+  }
+
+  .lk-check__block-item-button {
+    width: 19.6rem;
+  }
+}
+
+@include above($tablet-landscape) {
+
+  form.lk-check__block-item {
+    width: 43.2rem;
+  }
+
+  .lk-check__block-item-button {
+    width: 20.6rem;
+  }
+}
+
+@include above($mid-desktop) {
+
+  form.lk-check__block-item {
+    width: 47.9rem;
+  }
+
+
+  .lk-check__block {
+    flex-direction: row;
+  }
+
+  .lk-check__block {
+    justify-content: space-between;
+  }
+
+  .lk-check__block-item-button {
+    width: 22.9rem;
+  }
+
+  .lk-check__block-item:first-of-type {
+    margin-bottom: 0;
+  }
+}
+
+@include above($big-desktop) {
+
+  .lk-check__block {
+    flex-direction: row;
+    justify-content: normal;
+  }
+
+  form.lk-check__block-item {
+    margin-right: 10rem;
+  }
+}

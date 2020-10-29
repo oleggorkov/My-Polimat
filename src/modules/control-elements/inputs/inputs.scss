@@ -1,0 +1,168 @@
+.inp {
+  width: auto;
+  height: auto;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  cursor: auto;
+  transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+  &::placeholder{
+    color: $helper-color-gray;
+  }
+
+  &__wrapper {
+    position: relative;
+
+    &--error {
+      &:after, &:before {
+        content: '';
+        top: 1rem;
+        right: 2rem;
+        width: 0.2rem;
+        height: 1.8rem;
+        position: absolute;
+        background-color: $main-color-red;
+      }
+
+      &:after {
+        transform: rotate(45deg);
+      }
+
+      &:before {
+        transform: rotate(135deg);
+      }
+    }
+    &--warning-off{
+      &:after, &:before{
+        display: none;
+      }
+    }
+  }
+
+  &__error-message {
+    display: none;
+    color: $main-color-red;
+    &--right{
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &__wrapper--error > .inp__error-message {
+    position: absolute;
+    display: block;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    color: $main-color-red;
+    bottom: 0;
+    left: 0;
+  }
+  &__wrapper--error.inp__wrapper--warning-off {
+    &> .inp__error-message {
+      display: none;
+    }
+  }
+  &__wrapper--valid.inp__wrapper--warning-off {
+    &> .inp__valid-ico {
+      display: none;
+    }
+  }
+  &__wrapper--error > .inp--error,
+  &__wrapper--error > .inp--error:hover,
+  &__wrapper--error > .inp--error:focus{
+    border: 0.2rem solid $main-color-red;
+    padding-right: 3rem;
+  }
+
+  .inp__valid-ico {
+    display: none;
+  }
+
+  &__wrapper--valid > .inp__valid-ico {
+    position: absolute;
+    display: block;
+    border-bottom: 0.2rem solid $helper-color-green;
+    border-right: 0.2rem solid $helper-color-green;
+    transform: rotate(50deg);
+    top: 1rem;
+    right: 1.6rem;
+    width: 0.8rem;
+    height: 1.4rem;
+  }
+  &__wrapper--valid:disabled > .inp__valid-ico {
+    display: none;
+  }
+  &__wrapper--valid > .inp--valid,
+  &__wrapper--valid > .inp--valid:hover,
+  &__wrapper--valid > .inp--valid:focus{
+    border: 0.2rem solid $helper-color-green;
+    padding-right: 3rem;
+  }
+
+  &--default {
+    width: 100%;
+    height: auto;
+
+    min-height: 4rem;
+    border: 0.2rem solid $main-gray-color;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: black;
+    padding: 0 1.5rem;
+    background: transparent;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+
+    &:hover, &:focus {
+      transition: border ease 0.25s;
+      border: 0.2rem solid $main-color-blue;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: #808080;
+    @include above($tablet){
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+  }
+  &__label-text{
+    padding-bottom: 0.8rem;
+  }
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus{
+    border: 0.2rem solid $main-gray-color;
+    background-color: $main-gray-color;
+    color: $helper-color-gray;
+  }
+  &__password-control{
+    width: 2rem;
+    height: 2rem;
+    padding: 0.2rem;
+    fill: $main-gray-color;
+    position: absolute;
+    right: 1.2rem;
+    top: 1rem;
+    cursor: pointer;
+    &:hover{
+      fill: $helper-color-gray;
+    }
+  }
+}
+.inp__wrapper--valid.inp__wrapper--warning-off > .inp--valid,
+.inp__wrapper--valid.inp__wrapper--warning-off > .inp--valid:hover,
+.inp__wrapper--valid.inp__wrapper--warning-off > .inp--valid:focus {
+  padding-right: 0.5rem;
+}
+.inp__wrapper--error.inp__wrapper--warning-off > .inp--error,
+.inp__wrapper--error.inp__wrapper--warning-off > .inp--error:hover,
+.inp__wrapper--error.inp__wrapper--warning-off > .inp--error:focus {
+  padding-right: 0.5rem;
+}

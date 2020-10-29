@@ -1,0 +1,47 @@
+.control-elements {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+}
+
+.control-elements__buttons {
+  display: flex;
+  margin-bottom: 5rem;
+}
+
+.control-elements__inputs {
+  margin-bottom: 3rem;
+}
+
+.control-elements__buttons-item {
+  margin-right: 2rem;
+}
+
+.control-elements__checkbox {
+  margin-bottom: 5rem;
+}
+
+.control-elements__checkbox-item {
+  width: 100%;
+  height: 2.4rem;
+}
+
+.control-elements__radio {
+  display: flex;
+  margin-bottom: 5rem;
+}
+
+.control-elements__radio-item {
+  height: 3rem;
+  margin-right: 20rem;
+}
+
+.control-elements__area {
+  margin-bottom: 5rem;
+}
+
+.control-elements__inputs-item:not(:last-of-type) {
+
+  margin-bottom: 1rem;
+}
+

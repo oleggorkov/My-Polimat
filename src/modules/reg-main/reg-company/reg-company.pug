@@ -1,0 +1,152 @@
+include ../../control-elements/buttons/btn-main
+include ../../control-elements/inputs/input-main
+include ../../control-elements/checkbox/checkbox
+include ../../control-elements/radio-button/radio-button
+include ../../breadcrumbs/breadcrumbs
+
+block reg-company
+    section.section
+        div.section__wrapper
+            +breadcrumbs('Регистрация')
+            form.reg-company
+                div.reg-company__block
+                    h1.reg-company__block-heading  Регистрация
+                    div.reg-company__block-radio
+                        div.reg-company__block-radio--button
+                            +radio-btn('Юридическое лицо', 'radio-company', 'customer',
+                                'company', ['radio-label', 'radio-input'])
+                        div.reg-company__block-radio--button
+                            +radio-btn('Индивидуальный предприниматель', 'radio-private', 'customer', 'private',
+                            ['radio-label', 'radio-input'])
+                        div.reg-company__block-radio--button
+                            +radio-btn('Я частный покупатель', 'radio-buyer', 'customer', 'buyer',
+                            ['radio-label', 'radio-input'])
+                    div.reg-company__form
+                        div.reg-company__form-flex
+                            div.reg-company__form-flex-item
+                                div.reg-company__form-flex-item--title   Полное название компании
+                                div.reg-company__form-flex-item--input
+                                    +input-main()
+                            div.reg-company__form-flex-item
+                                div.reg-company__form-flex-item--title   ИНН
+                                div.reg-company__form-flex-item--input
+                                    +input-main()
+                            div.reg-company__form-flex-item
+                                div.reg-company__form-flex-item--title   КПП
+                                div.reg-company__form-flex-item--input
+                                    +input-main()
+                        div.reg-company__form-flex
+                            div.reg-company__form-flex-item
+                                div.reg-company__form-flex-item--title   Номер банковского счета
+                                div.reg-company__form-flex-item--input
+                                    +input-main()
+                            div.reg-company__form-flex-item
+                                div.reg-company__form-flex-item--title   БИК банка
+                                div.reg-company__form-flex-item--input
+                                    +input-main()
+                        div.reg-company__form-flex.company-form-flex__empty
+                div.reg-company__block
+                    div.reg-company__form
+                        div.reg-company__form-flex
+                            div.reg-company__form-flex-item
+                                h3.reg-company__form-flex-item--heading   Юридический адрес
+                                div.reg-company__form-flex-item--title   Населенный пункт
+                                div.reg-company__form-flex-item--input
+                                    +input-main()
+                            div.reg-company__form-flex-item
+                                div.reg-company__form-flex-item--title   Улица
+                                div.reg-company__form-flex-item--input
+                                    +input-main()
+                            div.reg-company__form-flex-item
+                                div.reg-company__form-flex-item--flex
+                                    div.reg-company__form-flex-item--input_small
+                                        div.reg-company__form-flex-item--title   Дом,стр./корп.
+                                        +input-main()
+                                    div.reg-company__form-flex-item--input_small
+                                        div.reg-company__form-flex-item--title    офис/кв.
+                                        +input-main()
+                                    div.reg-company__form-flex-item--input_small
+                                        div.reg-company__form-flex-item--title   Индекс
+                                        +input-main(placeholder='000000')
+                        div.reg-company__form-flex
+                            div.reg-company__form-flex-item
+                                h3.reg-company__form-flex-item--heading--check   Фактический адрес
+                                div.reg-company__form-checkbox
+                                    input(id='address' type='checkbox').reg-company__form-checkbox-input
+                                    label(for='address').reg-company__form-checkbox-label   Совпадает с юридическим адресом
+                                div.reg-company__form-flex-item--title   Населенный пункт
+                                div.reg-company__form-flex-item--input
+                                    +input-main()
+                            div.reg-company__form-flex-item
+                                div.reg-company__form-flex-item--title   Улица
+                                div.reg-company__form-flex-item--input
+                                    +input-main()
+                            div.reg-company__form-flex-item
+                                div.reg-company__form-flex-item--flex
+                                    div.reg-company__form-flex-item--input_small
+                                        div.reg-company__form-flex-item--title   Дом,стр./корп.
+                                        +input-main()
+                                    div.reg-company__form-flex-item--input_small
+                                        div.reg-company__form-flex-item--title    офис/кв.
+                                        +input-main()
+                                    div.reg-company__form-flex-item--input_small
+                                        div.reg-company__form-flex-item--title   Индекс
+                                        +input-main(placeholder='000000')
+                        div.reg-company__form-flex
+                            div.reg-company__form-flex-item
+                                h3.reg-company__form-flex-item--heading   Адрес доставки
+                                div.reg-company__form-flex-item--title   Населенный пункт
+                                div.reg-company__form-flex-item--input
+                                    +input-main()
+                            div.reg-company__form-flex-item
+                                div.reg-company__form-flex-item--title   Улица
+                                div.reg-company__form-flex-item--input
+                                    +input-main()
+                            div.reg-company__flex-item-flex
+                                div.reg-company__form-flex-item--flex
+                                    div.reg-company__form-flex-item--input_small
+                                        div.reg-company__form-flex-item--title   Дом,стр./корп.
+                                        +input-main()
+                                    div.reg-company__form-flex-item--input_small
+                                        div.reg-company__form-flex-item--title    офис/кв.
+                                        +input-main()
+                                    div.reg-company__form-flex-item--input_small
+                                        div.reg-company__form-flex-item--title   Индекс
+                                        +input-main(placeholder='000000')
+                div.reg-company__block
+                    div.reg-company__form
+                        div.reg-company__form-flex
+                            div.reg-company__form-flex-item
+                                div.reg-company__form-flex-item--title   ФИО
+                                div.reg-company__form-flex-item--input
+                                    +input-main()
+                            div.reg-company__form-flex-item
+                                div.reg-company__form-flex-item--title   Телефон
+                                div.reg-company__form-flex-item--input
+                                    +input-main(type='tel')
+                        div.reg-company__form-flex
+                            div.reg-company__form-flex-item.reg-company-flex__item-modify
+                                div.reg-company__form-flex-item--title   Факс
+                                div.reg-company__form-flex-item--input
+                                    +input-main(type='tel')
+                            div.reg-company__form-flex-item
+                                div.reg-company__form-flex-item--title   E-mail
+                                div.reg-company__form-flex-item--input
+                                    +input-main(type='email')
+                        div.reg-company__form-flex.company-form-flex-modify
+                            div.reg-company__form-flex-item
+                                div.reg-company__form-flex-item--title   Пароль
+                                div.reg-company__form-flex-item--input
+                                    +input-main(type='password')
+                            div.reg-company__form-flex-item
+                                div.reg-company__form-flex-item--title   Повторите пароль
+                                div.reg-company__form-flex-item--input
+                                    +input-main(type='password')
+                div.reg-company__button
+                    +btn-main(class='btn--other btn--blue') Подтвердить регистрацию
+
+
+
+
+
+

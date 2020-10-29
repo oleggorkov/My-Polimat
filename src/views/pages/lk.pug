@@ -1,0 +1,65 @@
+extends ../layouts/default
+include ../../modules/lk-block/lk-block
+include ../../modules/menu/menu
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Личный кабинет')
+            +lk-block(0)
+                .lk-block__flex
+                    h1.lk-block__title.lk-block__title--mobile-none Мои заказы
+                    .lk-block__flex-item
+                        span Сортировка
+                        button(type='button') По статусу
+                        button(type='button').lk-block__flex-item-active По продавцу
+                        button(type='button') По плательщику
+                    .sort-menu__toggles Сортировка
+                    +menu('Сортировка','sort-menu' ,'sort-menu')
+                        button(type='button') По статусу
+                        button(type='button').active По продавцу
+                        button(type='button') По плательщику
+                .lk-orders
+                    .lk-orders-item
+                        +lk__order-number(123456, '12.05.2020', {title: 'Принят', style: ''})
+                        +lk__payer-and-order('ООО «Делаем классные календари»',
+                            'ООО «Все для календарей»', false,
+                            {counter: 1, name: '290-330 красный АЛЬФА (ВОХ) (уп.2400шт.)'},
+                            {counter: 100, name: '1/2, 25 т.кр., белый "PrintWire" ДК'} )
+                        +lk__sum('101 800')
+                        +lk__com(false, true)
+
+                    .lk-orders-item
+                        +lk__order-number(123456, '12.05.2020', {title: 'Подтверждён', style: 'confirmed'})
+                        +lk__payer-and-order('ООО «Делаем классные календари»',
+                            'ООО «Все для календарей»', false,
+                            {counter: 1, name: '290-330 красный АЛЬФА (ВОХ) (уп.2400шт.)'},
+                            {counter: 100, name: '1/2, 25 т.кр., белый "PrintWire" ДК'} )
+                        +lk__sum('101 800', true, false)
+                        +lk__com(false, true)
+
+
+                    .lk-orders-item
+                        +lk__order-number(123456, '12.05.2020', {title: 'Оплачен', style: 'paid'})
+                        +lk__payer-and-order('ООО «Делаем классные календари»',
+                            'ИП Зарецкий', false,
+                            {counter: 1, name: '290-330 красный АЛЬФА (ВОХ) (уп.2400шт.)'},
+                            {counter: 100, name: '1/2, 25 т.кр., белый "PrintWire" ДК'} )
+                        +lk__sum('101 800', true, '')
+                        +lk__com(true, false)
+
+
+                    .lk-orders-item
+                        +lk__order-number(123456, '12.05.2020', {title: 'Отгружен', style: 'shipped'})
+                        +lk__payer-and-order('ИП Календарёв А.Б.',
+                            'ИП Зарецкий', true,
+                            {counter: 1, name: '290-330 красный АЛЬФА (ВОХ) (уп.2400шт.)'},
+                            {counter: 100, name: '1/2, 25 т.кр., белый "PrintWire" ДК'},
+                            {counter: 1, name: '290-330 красный АЛЬФА (ВОХ) (уп.2400шт.)'},
+                            {counter: 100, name: '1/2, 25 т.кр., белый "PrintWire" ДК', hidden: true},
+                            {counter: 1, name: '290-330 красный АЛЬФА (ВОХ) (уп.2400шт.)', hidden: true},
+                            {counter: 100, name: '1/2, 25 т.кр., белый "PrintWire" ДК', hidden: true} )
+                        +lk__sum('101 800', true, '')
+                        +lk__com(true, false)
+

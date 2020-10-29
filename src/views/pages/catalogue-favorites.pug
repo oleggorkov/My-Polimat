@@ -1,0 +1,9 @@
+extends ../layouts/default
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section.catalogue
+        div.section__wrapper
+            +breadcrumbs('Избранное')
+            div.catalogue__inner
+                include ../../modules/catalogue-favorites/catalogue-favorites

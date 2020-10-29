@@ -1,0 +1,28 @@
+mixin legends-items(...items)
+    .plan-availability__legends-items
+        each item in items
+            .plan-availability__legends-item
+                div(class='plan-availability__legends-color-block--' + item.color).plan-availability__legends-color-block #{item.status}
+                span.plan-availability__legends-color-text #{item.desc}
+mixin table-title-area(title1, title2, style)
+    .plan-availability__table-title-area
+        .plan-availability__table-title-text(class= style=='center' ? 'plan-availability__h-center' : '') #{title1}
+        .plan-availability__table-title-text(class= style=='center' ? 'plan-availability__h-center' : '') #{title2}
+mixin table-title-area--2x(title, subTitle1, subTitle2)
+    .plan-availability__table-title-area
+        .plan-availability__table-title-text.plan-availability__h-center #{title}
+        .plan-availability__table-title-text.plan-availability__table-title
+            .plan-availability__table-title-text-dual.plan-availability__h-center #{subTitle1}
+            .plan-availability__table-title-text-dual.plan-availability__h-center #{subTitle2}
+mixin table-items--text(...items)
+    .plan-availability__item
+        each item in items
+            .plan-availability__item-cell.plan-availability__item-cell--text #{item}
+mixin table-items--block(...items)
+    .plan-availability__item-title
+    .plan-availability__item
+        each item in items
+            .plan-availability__item-cell
+                .plan-availability__legends-color-block(class='plan-availability__legends-color-block--' + item.color1) #{item.text1}
+                if item.color2
+                    .plan-availability__legends-color-block(class='plan-availability__legends-color-block--' + item.color2) #{item.text2}

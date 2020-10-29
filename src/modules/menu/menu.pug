@@ -1,0 +1,10 @@
+include ../helper-mixins/svg-mix
+
+mixin menu(title, name, classes)
+    .menu(class= classes data-name= name)
+        .menu__head
+            p.menu__title= title
+            button(type='button').menu__toggles
+                +svg-mix('cross')
+        vue-custom-scrollbar.menu__content
+            block

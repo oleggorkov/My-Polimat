@@ -1,0 +1,72 @@
+extends ../layouts/default
+include ../../modules/control-elements/buttons/btn-main
+include ../../modules/basket/basket
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.basket.section
+        .section__wrapper
+            +breadcrumbs('Корзина')
+            h1.title-main.basket__caption Корзина
+            +basket-provider('ИП Зарецкий')
+            +basket-header('descriptions',{
+                'product': 'Товар',
+                'weight': 'Вес',
+                'count': 'Количество',
+                'price': 'Цена',
+                'sum': 'Сумма',
+                'delete': 'Удалить'})
+            +basket-item(
+                'img/basket/cart-img1.png',
+                '1 000 шт',
+                '2020- ЕВРОПА металлик',
+                ' мини 1-сп (1 х 297*445)  серебристо-белый', 2)
+            +basket-item(
+                'img/basket/cart-img2.png',
+                '9 000 шт',
+                '',
+                'Классика А5, 2+2, недатированный, форзац, белый, уголок', 5.25)
+            +basket-header('descriptions basket__total-weight-area',{
+                'product': '',
+                'weight basket__total-weight': '7.25 кг',
+                'count': '',
+                'price': '',
+                'sum': '',
+                'delete': ''})
+            +basket-total-price-with-nds('1 018 000', "Итого:", "без НДС")
+
+            form.basket__form-order(method='post')
+                div
+                +btn-main(type='blue-invert' class='btn btn--default btn--blue-invert btn--other basket__btn') Оформить заказ
+
+
+            +basket-provider('ООО ВДК')
+            +basket-header('descriptions',{
+                'product': 'Товар',
+                'weight': 'Вес',
+                'count': 'Количество',
+                'price': 'Цена',
+                'sum': 'Сумма',
+                'delete': 'Удалить'})
+            +basket-item(
+                'img/basket/cart-img1.png',
+                '1 000 шт',
+                '2020- ЕВРОПА металлик',
+                ' мини 1-сп (1 х 297*445)  серебристо-белый', 2)
+            +basket-item(
+                'img/basket/cart-img2.png',
+                '9 000 шт',
+                '',
+                'Классика А5, 2+2, недатированный, форзац, белый, уголок', 5.25)
+            +basket-header('descriptions basket__total-weight-area',{
+                'product': '',
+                'weight basket__total-weight': '7.25 кг',
+                'count': '',
+                'price': '',
+                'sum': '',
+                'delete': ''
+            })
+            +basket-total-price-with-nds('1 018 000', "Итого:", "с НДС")
+            form.basket__form-order(method='post')
+                +btn-main(type='blue-invert' class='btn btn--default btn--blue-invert btn--other basket__btn') Оформить заказ
+                +btn-main(type='', class='btn btn--default btn--gray basket__clear basket__btn') Очистить корзину

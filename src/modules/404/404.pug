@@ -1,0 +1,11 @@
+extends ../../views/layouts/default
+include ../../modules/control-elements/buttons/btn-main
+include ../../modules/breadcrumbs/breadcrumbs
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('404')
+            .error404
+                .error404__404 404
+                .error404__text Ой, вы кажется заблудились, вернитесь на главную страницу!
+                +btn-main(type='submit' class='btn btn--default btn--blue-invert error404__btn-to-home') Polimat

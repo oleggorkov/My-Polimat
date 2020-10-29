@@ -1,0 +1,22 @@
+mixin breadcrumbs(page, page2)
+    .breadcrumbs(class = attributes.class)
+        ul
+            li
+                a(href="index.html") Главная
+            if page2
+                li
+                    if page === 'Каталог'
+                        span Каталог
+                    else
+                        a(href="#")
+                            | #{page}
+                li
+                    span
+                        | #{page2}
+            else if page
+                li
+                    if page === 'Каталог'
+                        span Каталог
+                    else
+                        span
+                            | #{page}

@@ -1,0 +1,11 @@
+mixin specification-cursors-column(title, ...ceils)
+    .swiper-slide.slide.specification-cursors__table-column
+        .specification-cursors__table-cell.specification-cursors__table-cell--title #{title}
+        each item in ceils
+            .specification-cursors__table-cell #{item}
+mixin specification-cursors-column--img(title, ...ceils)
+    .swiper-slide.slide.specification-cursors__table-column
+        .specification-cursors__table-cell.specification-cursors__table-cell--title #{title}
+        each item in ceils
+            .specification-cursors__table-cell.specification-cursors__table-cell--center
+                img(src=item)

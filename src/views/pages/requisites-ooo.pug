@@ -1,0 +1,9 @@
+extends ../layouts/default
+include ../../modules/requisites/requisites
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+    section.section
+        .section__wrapper
+            +breadcrumbs('Контакты', 'Реквизиты ООО')
+            +requisites('OOO')

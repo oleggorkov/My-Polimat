@@ -1,0 +1,33 @@
+include ../control-elements/buttons/btn-main
+include ../to-top/to-top-btn
+include ../cart/cart
+include ../catalogue-image/catalogue-image
+block catalogue-content
+    div.catalogue-content
+        div.catalogue-content__wrapper
+            - for (let x = 0; x < 8; x++)
+                +cart
+        div.catalogue-content__image.carts-slider
+            div.carts-slider__navigation
+                button(type='button')
+                    +svg-mix('arrow-long')
+            div.swiper-container.slider
+                div.swiper-wrapper
+                    div.swiper-slide.slider-slide
+                        +catalogue-image('#', 'img/catalogue/banner-small.webp', 'img/catalogue/banner-small.png')
+                    div.swiper-slide.slider-slide
+                        +catalogue-image('#', 'img/catalogue/banner-small.webp', 'img/catalogue/banner-small.png')
+                    div.swiper-slide.slider-slide
+                        +catalogue-image('#', 'img/catalogue/banner-small.webp', 'img/catalogue/banner-small.png')
+                    div.swiper-slide.slider-slide
+                        +catalogue-image('#', 'img/catalogue/banner-small.webp', 'img/catalogue/banner-small.png')
+            div.carts-slider__navigation
+                button(type='button')
+                    +svg-mix('arrow-long')
+        div.catalogue-content__wrapper
+            - for (let x = 0; x < 8; x++)
+                +cart
+        div.catalogue-content__more.catalogue-content__more--active
+            p.catalogue-content__more-text Секундочку, загружается...
+            +btn-main(theme='blue', class='btn--default find-new-lazy-img-js') Ещё товары
+            +btn-to-top('catalogue-content__more-to-top')

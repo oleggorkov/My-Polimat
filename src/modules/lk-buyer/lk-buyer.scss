@@ -1,0 +1,119 @@
+.lk-buyer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  @include above($tablet){
+    width: 35.5rem;
+    padding-top: 0;
+  }
+  &__flex{
+    display: flex;
+    margin-top: 1.4rem;
+    @include above($tablet){
+      width: 25rem;
+      align-self: flex-end;
+    }
+    &--column-reverse{
+      flex-direction: column;
+      @include above($tablet){
+        flex-direction: column-reverse;
+      }
+    }
+  }
+  &__block{
+    &:nth-of-type(2) {
+      margin-top: 1.3rem;
+    }
+    &--text{
+      font-style: italic;
+      font-weight: normal;
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      color: $helper-color-gray;
+      margin-bottom: 1.8rem;
+    }
+  }
+  &__block-flex {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    @include above($tablet) {
+      display: none;
+    }
+  }
+  &__block-link {
+    margin-left: 0.7rem;
+    cursor: default;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: $main-color-blue;
+    text-decoration-line: underline;
+    transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+
+    @include above($desktop) {
+      cursor: pointer;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+  &__block-heading {
+    display: none;
+    @include above($tablet){
+      display: block;
+      margin-bottom: 1.8rem;
+      font-size: 2rem;
+      line-height: 2.3rem;
+      color: #000000;
+      font-style: normal;
+      font-weight: normal;
+    }
+  }
+  &__form-flex-item {
+    margin-bottom: 0.5rem;
+    &--title{
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      color: $helper-color-gray;
+      margin-bottom: 0.6rem;
+      @include above($tablet){
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+      }
+    }
+    &--heading {
+      font-style: italic;
+      font-weight: normal;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      color: #000000;
+      margin-bottom: 1.1rem;
+    }
+    &--flex {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &--input_small {
+      width: 8.5rem;
+      @include above($tablet){
+        width: 10.5rem;
+      }
+    }
+  }
+  &__form-flex {
+    display: flex;
+    flex-direction: column;
+  }
+  .lk-company__flex-link{
+    margin-right: 0;
+  }
+
+  & input::placeholder {
+    color: $main-gray-color;
+  }
+}

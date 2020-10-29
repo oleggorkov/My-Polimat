@@ -1,0 +1,11 @@
+include ../../modules/control-elements/buttons/btn-main
+include ../../modules/breadcrumbs/breadcrumbs
+
+block order-thanks
+    section.section.order-thanks
+        div.section__wrapper
+            +breadcrumbs('Ваш заказ')
+            div.order-thanks__number    № 1234
+            div.order-thanks__text  Номер вашего заказа
+            div.order-thanks__button
+                +btn-main(class='btn--other btn--blue-invert') Перейти в список заказов

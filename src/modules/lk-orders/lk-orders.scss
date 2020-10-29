@@ -1,0 +1,455 @@
+.lk-block__flex {
+    display: flex;
+    justify-content: space-between;
+
+    & .sort-menu__toggles {
+        width: 100%;
+        display: flex;
+        border: 0.2rem solid #F0F0F0;
+        border-radius: 0.5rem;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        color: $helper-color-gray;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+
+        @include above($tablet) {
+            display: none;
+        }
+    }
+
+    & .menu__content {
+        align-items: normal;
+
+        & button {
+            border: none;
+            margin-right: 0;
+            margin-bottom: 2.4rem;
+            outline: none;
+            color: black;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            transition: color ease 0.25s;
+
+            }
+
+        & .active {
+            color: $main-color-blue;
+        }
+    }
+
+    &-item {
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        height: 2.3rem;
+
+        @include above($tablet) {
+            display: flex;
+        }
+
+        & button {
+            margin-left: 2rem;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            color: #000000;
+            border: none;
+            height: 1.6rem;
+
+            @include above($tablet-landscape) {
+                margin-left: 4rem;
+            }
+
+            @include above($desktop) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        & .lk-block__flex-item-active {
+            color: $main-color-blue;
+        }
+
+        & span {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            color: $helper-color-gray;
+        }
+    }
+}
+
+
+.lk-orders {
+    width: 100%;
+
+    &-item {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1.6rem 0;
+        border-bottom: 0.2rem solid $main-gray-color;
+        
+        &:first-of-type {
+            @include above($tablet){
+                border-top: 0.2rem solid $main-gray-color;
+            }
+        }
+
+        &:last-of-type {
+            border-bottom: none;
+            @include above($tablet){
+                border-bottom: 0.2rem solid $main-gray-color;
+            }
+        }
+
+        &__numbers {
+            width: 100%;
+
+            @include above($tablet){
+                padding-right: 1rem;
+                flex: 0 0 44.444%;
+                max-width: 44.444%;
+            }
+
+            @include above($tablet-landscape){
+                flex: 0 0 30%;
+                max-width: 30%;
+            }
+
+            @include above($desktop){
+                flex: 0 0 30%;
+                max-width: 30%;
+            }
+
+            @include above($mid-desktop){
+                flex: 0 0 20%;
+                max-width: 20%;
+            }
+        }
+
+        &__info {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+            @include above($tablet){
+                padding-left: 1rem;
+                flex: 0 0 55.555%;
+                max-width: 55.555%;
+            }
+
+            @include above($tablet-landscape){
+                flex: 0 0 40%;
+                max-width: 40%;
+            }
+
+            @include above($desktop){
+                padding-right: 1rem;
+                flex: 0 0 40%;
+                max-width: 40%;
+            }
+
+            @include above($mid-desktop){
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            &-inner {
+                flex: 1;
+            }
+        }
+        &__payer, &__supplier {
+            width: 100%;
+            margin-right: 1rem;
+
+        }
+
+        &__products {
+            width: 100%;
+            margin-top: 1.5rem;
+
+            @include above($tablet){
+                margin-top: 0;
+            }
+
+            @include above($desktop){
+                flex: 0 0 60%;
+                max-width: 60%;
+                padding-left: 1rem;
+            }
+        }
+
+        &__summ {
+            width: 100%;
+            margin-top: 1.5rem;
+
+            @include above($tablet){
+                margin-top: 0;
+                padding-left: 1rem;
+                flex: 0 0 55.555%;
+                max-width: 55.555%;
+                margin-left: auto;
+                display: flex;
+                flex-direction: column;
+            }
+
+            @include above($tablet-landscape){
+                flex: 0 0 30%;
+                max-width: 30%;
+            }
+
+            @include above($mid-desktop){
+                flex: 0 0 17%;
+                max-width: 17%;
+            }
+
+            @include above($big-desktop){
+                flex: 0 0 15%;
+                max-width: 15%;
+            }
+
+        }
+
+        &__com {
+            width: 100%;
+            margin-top: 1.5rem;
+
+            @include above($tablet){
+                margin-top: 0;
+                padding-left: 1rem;
+                flex: 0 0 55.555%;
+                max-width: 55.555%;
+                margin-left: auto;
+                display: flex;
+                flex-direction: column;
+            }
+
+            @include above($tablet-landscape){
+                flex: 0 0 30%;
+                max-width: 30%;
+            }
+
+            @include above($mid-desktop){
+                flex: 0 0 13%;
+                max-width: 13%;
+            }
+
+            @include above($big-desktop){
+                flex: 0 0 15%;
+                max-width: 15%;
+            }
+
+            &-add {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 1rem;
+                line-height: 1.2rem;
+                color: #000000;
+            }
+
+            &-not {
+                width: 3.1rem;
+                height: 0.2rem;
+                background: $main-gray-color;
+                margin-top: 1rem;
+            }
+
+        }
+
+        &__act {
+            font-size: 1.4rem;
+            line-height: 2.5rem;
+            color: $helper-color-gray;
+            margin-bottom: 0.9rem;
+
+            b {
+                color: #000;
+                font-weight: 500;
+            }
+        }
+
+        &__status {
+            display: inline-block;
+            font-size: 1.4rem;
+            line-height: 2.5rem;
+            height: 3rem;
+            border-radius: 0.5rem;
+            padding: 0.2rem 1.1rem;
+            background: $main-gray-color;
+            color: $main-color-blue;
+
+            &--confirmed {
+                background: $main-color-blue;
+                color: #fff;
+            }
+
+            &--paid {
+                background: $helper-color-yellow;
+                color: #fff;
+            }
+
+            &--shipped {
+                background: #97B557;
+                color: #fff;
+            }
+        }
+        &__link{
+            font-size: 1.2rem;
+            line-height: 1.6rem;
+            text-decoration-line: underline;
+            text-align: end;
+            @include above($tablet){
+                font-size: 1.4rem;
+                text-align: start ;
+            }
+            &:first-child{
+                margin-top: 0;
+                @include above($tablet){
+                    margin-top: 1rem;
+                }
+            }
+            margin-top: 1rem;
+            &:hover {
+                text-decoration-line: none;
+            }
+            &--cancel{
+                color: $helper-color-gray;
+                margin-top: 1rem;
+                &:hover,
+                &:focus{
+                  color: $helper-color-gray;
+                }
+            }
+            &--problem{
+                color: $helper-color-gray;
+                &:hover,
+                &:focus{
+                  color: $helper-color-gray;
+                }
+            }
+            &--repeat{
+                color: $main-color-blue;
+                &:hover,
+                &:focus{
+                  color: $main-color-blue;
+                }
+            }
+            &--edit{
+                color: $main-color-blue;
+                &:hover,
+                &:focus{
+                  color: $main-color-blue;
+                }
+            }
+            @include above($desktop) {
+                &:hover {
+                    text-decoration-line: none;
+                }
+            }
+        }
+        &__title {
+            font-size: 1.4rem;
+            line-height: 2.5rem;
+            color: $helper-color-gray;
+            margin-bottom: 0.4rem;
+        }
+
+        &__text {
+            font-size: 1rem;
+            line-height: 1.2rem;
+        }
+
+        &__product-item {
+            display: flex;
+            margin-bottom: 1rem;
+            &--hidden {
+                display: none;
+            }
+        }
+
+        &__count {
+            font-size: 1rem;
+            line-height: 1.2rem;
+            color: $helper-color-gray;
+            flex: 0 0 3.5rem;
+        }
+
+        &__price {
+            font-weight: bold;
+            font-size: 2rem;
+            line-height: 2.3rem;
+            text-transform: uppercase;
+        }
+        &__btn{
+            margin-top: 0.5rem;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            text-align: center;
+            color: $main-color-blue;
+            border: 0.1rem solid $main-color-blue;
+            border-radius: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            width: 100%;
+            transition: color ease 0.25s, background-color ease 0.25s, border ease 0.25s;
+            @include above($tablet){
+                width: 15rem;
+            }
+            @include above($desktop){
+                &:hover{
+                    background: $main-color-blue;
+                    color: white;
+                }
+                &:focus{
+                    border: 0.1rem solid $main-color-blue;
+                    color: $main-color-blue;
+                    background: white;
+                }
+            }
+        }
+        &__btn--print {
+
+        }
+        &__btn--paid {
+            margin-top: 1.4rem;
+            margin-bottom: 0.5rem;
+            @include above($tablet){
+                margin-top: 0.5rem;
+            }
+            @include above($big-desktop){
+                margin-right: 0.5rem;
+            }
+
+        }
+        &__see-all {
+            border: none;
+            font-size: 1rem;
+            line-height: 1.2rem;
+            text-decoration-line: underline;
+            color: $helper-color-gray;
+            display: inline-block;
+        }
+    }
+    &__link-wrapper{
+        display: flex;
+        flex-direction: column;
+        @include above($tablet){
+            margin-top: 1.3rem;
+        }
+    }
+    &__status-and-link{
+        display: flex;
+        justify-content: space-between;
+        @include above($tablet){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}

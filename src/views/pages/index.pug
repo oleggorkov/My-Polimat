@@ -1,0 +1,34 @@
+extends ../layouts/default
+include ../../modules/carts-block/carts-block
+include ../../modules/subscribe-create/subscribe-create
+include ../../modules/catalogue-image/catalogue-image
+
+block content
+    include ../../modules/top-side/top-side
+    include ../../modules/general-title/general-title
+    +carts-block('Акции')
+    +carts-block('Товары недели')
+    section.section.main-content
+        .section__wrapper
+            .catalogue-content.catalogue-content--on-general-page-js
+                div.catalogue-content__image.carts-slider
+                    div.carts-slider__navigation
+                        button(type='button')
+                            +svg-mix('arrow-long')
+                    div.swiper-container.slider
+                        div.swiper-wrapper
+                            div.swiper-slide.slider-slide
+                                +catalogue-image('#', 'img/catalogue/banner-small.webp', 'img/catalogue/banner-small.png')
+                            div.swiper-slide.slider-slide
+                                +catalogue-image('#', 'img/catalogue/banner-small.webp', 'img/catalogue/banner-small.png')
+                            div.swiper-slide.slider-slide
+                                +catalogue-image('#', 'img/catalogue/banner-small.webp', 'img/catalogue/banner-small.png')
+                            div.swiper-slide.slider-slide
+                                +catalogue-image('#', 'img/catalogue/banner-small.webp', 'img/catalogue/banner-small.png')
+                    div.carts-slider__navigation
+                        button(type='button')
+                            +svg-mix('arrow-long')
+    +carts-block('Распродажа')
+    +sub-create
+    include ../../modules/to-top/to-top
+

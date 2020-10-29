@@ -1,0 +1,206 @@
+.lk-discounts{
+
+  &__user {
+    display: flex;
+    margin-bottom: 5rem;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include above($mid-desktop) {
+      flex-direction: row;
+    }
+
+    &-item {
+      display: flex;
+      justify-content: space-between;
+
+      &-text {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        color: #000000;
+        margin-right: 2.3rem;
+        width: 11.5rem;
+        padding-top: 0.5rem;
+
+        @include above($big-desktop) {
+          margin-right: 4.3rem;
+        }
+
+        &-total {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 1.4rem;
+          line-height: 1.6rem;
+          color: #000000;
+          margin-right: 2.3rem;
+          width: 22rem;
+          padding-top: 0.5rem;
+
+          @include above($big-desktop) {
+            margin-right: 4.3rem;
+          }
+        }
+      }
+
+      &-group {
+        width: 7rem;
+        height: 4rem;
+        background: $main-color-blue;
+        border-radius: 0.5rem;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 2.4rem;
+        line-height: 4rem;
+        color: #FFFFFF;
+        text-align: center;
+      }
+
+      &-total {
+        width: 15.7rem;
+        height: 4rem;
+        background: $main-color-blue;
+        border-radius: 0.5rem;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 2.4rem;
+        line-height: 4rem;
+        color: #FFFFFF;
+        text-align: center;
+      }
+
+      &-info {
+        width: 30rem;
+        height: 4rem;
+        text-align: left;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        color: #000000;
+        background: #F3F6FF;
+        border-radius: 0.5rem;
+        padding: 0.5rem 0;
+
+        @include above($mid-desktop) {
+          padding: 0.5rem 1.4rem;
+        }
+      }
+
+      &:nth-of-type(2) {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        @include above($mid-desktop) {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  &__caption{
+    font-size: 2rem;
+    line-height: 2.3rem;
+    margin-top: 1.9rem;
+    display: none;
+    @include above($tablet){
+      display: block;
+    }
+  }
+  &__caption-state{
+    color: #B7B7B7;
+  }
+  &__info{
+    font-size: 1.2rem;
+    line-height: 160%;
+    &-area{
+      margin-bottom: 2rem;
+    }
+    &--bold{
+      font-weight: 600;
+    }
+    &--margin-top{
+      margin-top: 1.7rem;
+    }
+    &--margin-bottom{
+      margin-bottom: 1.7rem;
+    }
+  }
+  &__table{
+    width: 100%;
+    height: 100%;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    &-wrapper{
+      margin-bottom: 2.4rem;
+    }
+    &-column{
+      width: 11.3rem;
+      text-align: left;
+      &:not(:first-child){
+        text-align: center;
+        border-left: 0.2rem solid $main-gray-color;
+      }
+      &:first-child{
+        width: 11.3rem;
+      }
+      &:nth-child(2){
+        width: 9rem;
+      }
+      &:nth-child(3){
+        width: 9rem;
+      }
+      &:nth-child(4){
+        width: 9.5rem;
+      }
+
+      &:last-child{
+        width: 11.3rem;
+      }
+      &--active{
+        background-color: $main-gray-color;
+      }
+    }
+    &-cell{
+      padding: 1.3rem 0.2rem 1.3rem 0.1rem;
+      height: 4.8rem;
+
+      &:not(:first-child){
+        border-top: 0.2rem solid $main-gray-color;
+        height: 3.8rem;
+      }
+      &:first-child{
+        font-weight: bold;
+      }
+      &:nth-child(2){
+        font-weight: bold;
+      }
+      &--empty{
+        position: relative;
+        .lk-discounts__table-cell-long-line{
+          width: 2rem;
+          height: 0.2rem;
+          background-color: $main-gray-color;
+          margin: 0 auto;
+        }
+      }
+
+    }
+  }
+  .carts-slider{
+    &__navigation{
+      display: flex;
+      @include above($mid-desktop){
+        display: none;
+      }
+    }
+  }
+  .lk-discounts__touch-ico{
+    margin-bottom: 0.4rem;
+    transform: rotate(180deg);
+    @include above($mid-desktop){
+      display: none;
+    }
+  }
+}

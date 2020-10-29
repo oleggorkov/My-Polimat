@@ -1,0 +1,214 @@
+extends ../layouts/default
+include ../../modules/info-questions/info-questions
+include ../../modules/helper-mixins/main-caption
+include ../../modules/lk-block/lk-block
+include ../../modules/breadcrumbs/breadcrumbs
+
+block content
+
+    section.section.questions
+        .section__wrapper
+            +breadcrumbs('Информация', 'Вопросы и ответы')
+            +info-block(2)
+                h1.lk-block__title Вопросы и ответы
+                .filter-module.questions__wrapper
+                    .questions__nav-wrapper
+                        .questions__nav-item.questions__nav-item--active(data-tab=0)
+                            span.questions__nav-item-name--full Календарные блоки
+                            span.questions__nav-item-name--short Кален-е блоки
+                        .questions__nav-item(data-tab=1)
+                            span.questions__nav-item-name--full О других товарах
+                            span.questions__nav-item-name--short О других товарах
+                        .questions__nav-item(data-tab=2)
+                            span.questions__nav-item-name--full База знаний
+                            span.questions__nav-item-name--short База знаний
+                    ul.filter-module__list.questions__list.questions__list
+                        .questions__content.questions__content--active(data-tab=0)
+                            .questions__column.questions__column--first
+                                li.questions__block-content-wrapper
+                                    +question-btn('Как узнать, какие календарные блоки есть в наличии?')
+                                    .filter-module__wrapper.questions__block-content
+                                        .filter-module__inner-wrapper.filter-module__inner--range-slider.filter-module__inner-js
+                                            +question-text-plus-link('Самый быстрый вариант: на нашем сайте мы специально настроили страницу, ' +
+                                            'показывающую наличие календарных блоков ПОЛИМАТ на складе в данный момент!',
+                                            'http://www.polimat.ru/catalog/calendars/blocks/')
+                                +question-item-with-img('Чем отличаются календарные блоки КМД и БМД и т.п.?',
+                                    'Шрифт, дизайн сетки',
+                                    true,
+                                    {title: 'БМД', src: 'img/info-questions/questions-bmd-calendar.png'},
+                                    {title: 'КМД', src: 'img/info-questions/questions-kmd-calendar.png'})
+                                +questions-item('Что такое 1-сп. и 3-сп.?',
+                                    'Данная информация относится к календарным блокам: 1сп – блок нерезаный ' +
+                                    '(используется в односпиральных календарях – на 1 листе три месяца), ' +
+                                    '3сп – блок, резанный на три части (используется в трехспиральных календарях, каждый блок ' +
+                                    'висит на отдельной пружинке).')
+                                +questions-item('Какая минимальная партия закупки по календарным блокам?',
+                                    'Минимальная партия равна количеству в одной упаковке: календарные блоки упаковка – 50 комплектов.')
+                                +questions-item('Сколько в упаковке календарных блоков?',
+                                    'Упаковка 50 комплектов = 50 календарей +2 бесплатно.')
+                                +questions-item('Есть ли у вас блоки на бумаге 115 г?',
+                                    'Нет')
+                                +questions-item('Какие календарные блоки у вас с красной субботой?',
+                                    'Серия «Классика Мелованные Дизайнерские металлик» (КМД металлик), «ЕВРОПА оригинал» (ЕМД), НОВАЯ ВОЛНА (NWD)')
+                                +questions-item('Бумага для календарных блоков мелованная матовая или глянцевая?',
+                                    'Матовая, 90г/м2')
+                                li.questions__block-content-wrapper
+                                    +question-btn('Чем отличаются календарные блоки металлик и суперметаллик?')
+                                    .filter-module__wrapper.questions__block-content
+                                        .filter-module__inner-wrapper.filter-module__inner--range-slider.filter-module__inner-js
+                                            p.questions__block-content-text У суперметалликов больший выбор цветов металлизированных
+                                                | красок (СМ - серебро, золото, бронза, синий металлик, зеленый металлик, М - серебро,
+                                                | золото) и больший процент поверхности, покрытых ими, например: #[br] #[br]
+                                                | КМД металлик – классика мелованный дизайнерский металлик: #[br]
+                                                | Шрифт - простой классический с засечками, [br]
+                                                | Количество и тип красок – 4+0: 3 – неметаллизированные, 1 – серебро (золото) #[br] #[br]
+                                                | КМД супер-металлик – классика мелованный дизайнерский супер-металлик #[br]
+                                                | Шрифт – простой классический с засечками, #[br]
+                                                | Количество и тип красок – 4+0: 3 – неметаллизированные, 1 – металл: #[br]
+                                                | Серебро #[br]
+                                                | Синий металлик #[br]
+                                                | Зеленый металлик #[br]
+                                                | Золото #[br]
+                                                | Бронза
+                                                .questions__block-content-items.questions__block-content-items--row(
+                                                    class='questions__block-content-items--hide-on-small-screen')
+                                                    .questions__block-content-item
+                                                        img.questions__block-content-img.questions__block-content-img--row(
+                                                            src='img/info-questions/questions-calendar-me.png')
+                                                    .questions__block-content-item
+                                                        img.questions__block-content-img.questions__block-content-img--row(
+                                                            src='img/info-questions/questions-calendar-super-me.png')
+
+                                li.questions__block-content-wrapper
+                                    +question-btn('Что такое QRC-code, что в нем зашифровано?')
+                                    .filter-module__wrapper.questions__block-content
+                                        .filter-module__inner-wrapper.filter-module__inner--range-slider.filter-module__inner-js
+                                            +question-text-plus-link('Что такое QR-code?')
+                                            +question-text-plus-link('QR-код (англ. quick response — быстрый отклик) — матричный код (двумерный штрих код), ' +
+                                            'разработанный и представленный японской компанией «Denso-Wave» в 1994 году.')
+                                            +question-text-plus-link('Основное достоинство QR-кода — это размещение на небольшой площади достаточно большого объема ' +
+                                            'информации и её легкое распознавание сканирующим оборудованием (в том числе и фотокамерой мобильного телефона).')
+                                            +question-text-plus-link('В календарных блоках ПОЛИМАТ QR-код используется для размещения дополнительной информации ' +
+                                            'о праздниках, компаниях - партнерах, ссылках на сайты и т.д.')
+                                            +question-text-plus-link('Подробнее можно почитать здесь', 'http://www.polimat.ru/news/134725/')
+                                +questions-item('Есть ли календарные блоки с международными праздниками?',
+                                    'Пока нет')
+                                li.questions__block-content-wrapper
+                                    +question-btn('Как можно скачать каталог календарных блоков?')
+                                    .filter-module__wrapper.questions__block-content
+                                        .filter-module__inner-wrapper.filter-module__inner--range-slider.filter-module__inner-js
+                                            +question-text-plus-link('Скачать каталог календаных блоков можно по ссылке:', 'http://www.polimat.ru/files/polimat_blocks.pdf')
+                                            +question-text-plus-link('Скачать каталог расходных материалов можно по ссылке:','http://www.polimat.ru/news/134725/')
+                            .questions__column.questions__column--second
+                                +questions-item('Мне нужно 800 календарных блоков, могу я посмотреть только те позиции, в которых это количество есть?',
+                                    'Да, для этого на странице сайта «Календарные блоки» в фильтре «Наличие на складе» ' +
+                                    '(слева вверху) надо установить значение «от 800». ')
+                                +questions-item('Нужные мне календарные блоки находятся в резерве? А как я могу их получить в случае снятия резервов на них?',
+                                    'Блоки, которых нет в «свободном» доступе, но имеющиеся на складе под резервом, можно увидеть, ' +
+                                    'если выбрать режим «Показать с отсутствующими»:')
+                                +questions-item('Могу ли я заказать календарные блоки с вашим дизайном, но с нужными мне ' +
+                                    'изменениями – дополнительным праздником или другого цвета?',
+                                    'Можно, но по ценам индивидуальных блоков.')
+                                +question-item-with-img('Я купил 1-спиральные календарные блоки, но потом клиент передумал и решил ' +
+                                    'сделать календарь на 3 спиралях. Оказалось, что 1-сп. блоки 445 мм по высоте, а 3-сп. – 145 мм ' +
+                                    '(3 х 145 = 435!). Как мне их правильно порезать?',
+                                    'Можно, но по ценам индивидуальных блоков.',
+                                    false,
+                                    {title: 'Офсетные календарные блоки', src: 'img/info-questions/questions-offset-calendar.png'},
+                                    {title: 'Мелованные календарные блоки', src: 'img/info-questions/questions-coated-calendar.png'})
+                                +questions-item('Какие шрифты используются в ваших календарных блоках?',
+                                    'Классический, Болд, Европа.')
+                                +questions-item('Отмечаются ли в ваших календарных блоках перенесенные праздники?',
+                                    'Нет')
+                                +questions-item('Мы купили календарные блоки, но клиент от них отказался. Как я могу вернуть этот товар назад?',
+                                    'ответ готовится...')
+                                +question-item-with-img('Я использую готовые календарные блоки 1-й раз. Как мне правильно подобрать календарные блоки из трех стопок?',
+                                    'Схема расположения блоков в пачке:',
+                                    false,
+                                    {title: '', src: 'img/info-questions/questions-scheme-blocks.png'})
+                                +question-item-with-img('У вас в комплекте некоторые календарные блоки перевернуты, что мне с ними делать?',
+                                    'Схема расположения блоков в пачке:',
+                                    false,
+                                    {title: '', src: 'img/info-questions/questions-scheme-blocks.png'})
+                                +questions-item('А почему вы даете 2 календарных блока бесплатно? У вас в блоках может быть брак, ' +
+                                    'и мы должны их сами отсортировать?',
+                                    'Скорее, мы, таким образом, решаем другую задачу: уже в процессе изготовления календаря ' +
+                                    '(перфорации блоков, сборке и т.д.) купивший наши блоки клиент может часть из них испортить. ' +
+                                    'Наш подарок позволит ему не тратить время и деньги на срочную докупку недостающего ' +
+                                    'и выполнить заказ в срок.',
+                                    'Наш многолетний опыт, показывает, что процент производственного брака самой компании ' +
+                                    'ПОЛИМАТ на порядки ниже тех 4%, которые составляют два дополнительных бесплатных блока ' +
+                                    'на пачку (хотя, если такое случится – да, у вас есть возможность заменить бракованный блок ' +
+                                    'из той пары дополнительных).')
+                                +questions-item('Я начал заниматься календарями только в этом году, и хотел бы получить ' +
+                                    'совет – как лучше перфорировать календарные блоки?',
+                                    'ответ готовится...')
+                                +questions-item('Продаете ли вы заранее отперфорированные календарные блоки?',
+                                    'Сейчас в продаже перфорированных боков у нас нет. Возможно, в конце года поступают на склад ' +
+                                    'перфорированные календарные блоки / остатки от нашего производства. ' +
+                                    'Также можно заказать у нас услугу «перфорация».')
+
+                        .questions__content(data-tab=1).visually-hidden
+                            .questions__column.questions__column--first
+                                .questions__sub-caption ПРОВОЛОКА В БОБИНАХ
+                                +questions-item('Чем отличается пружина Springline от Wireline и т.п.?',
+                                'Происхождением исходной проволоки - первая из Германии, вторая - из Китая. ' +
+                                'Отличаются и по цене – китайская дешевле')
+                                +questions-item('Серебряная пружина с нейлоновым покрытием? Матовая или блестящая?',
+                                'Немецкая – матовая, китайская – блестящая.')
+                                +downloadCatalogue
+                                .questions__sub-wrapper
+                                .questions__sub-caption ПРОВОЛОКА В НАРЕЗКЕ
+                                +downloadCatalogue
+                                .questions__sub-caption ПИККОЛО (ЛЮВЕРСЫ)
+                                +questions-item('Чем отличается Китайское пикколо от Немецкого?',
+                                'Формой шляпки и ценой: у китайских – шляпка закругленная, у немецких – плоская. Цена китайских ' +
+                                'пикколо ниже. Закругленные шляпки подходит не к любому оборудованию для установки пикколо.')
+                                +downloadCatalogue
+                                .questions__sub-caption РИГЕЛИ
+                                +downloadCatalogue
+                            .questions__column.questions__column--second
+                                .questions__sub-caption КУРСОРЫ
+                                +questions-item('Какая минимальная партия по курсорам?',
+                                'Минимальная партия равна количеству в одной упаковке: курсоры – ДПС-Полимат, Драйв - упаковка 100 шт.')
+                                +questions-item('Сколько в упаковке курсоров?',
+                                'Упаковка ДПС-Полимат – 100 шт, Драйв – 100+2 бесплатно')
+                                +questions-item('Чем отличаются курсоры «ДПС-Полимат» от «Драйв»?',
+                                'Дизайном окошечка, способом сборки, количеством в упаковке. ДПС-Полимат – квадратное ' +
+                                'окошечко, ленточка проходит между двумя сварными окошками, крючки одеты на резиночку, ' +
+                                'упаковка 100 шт. Драйв – окошко с двумя прорезями, через которые проходит ленточка, ' +
+                                'крючки отдельно, резиночки отдельно, упаковка 100+2 бесплатно')
+                                +questions-item('Курсоры, что такое 260-320 и т.п.?',
+                                'в данном случае - курсор подходит для календаря шириной от 260 до 320 мм.')
+                                +questions-item('Почему в маленьких курсоров (для ангстремов) нет крючков?',
+                                'Ленточка узенькая, технологически невозможно сделать дырочки. Резиночка к ленточке ' +
+                                'крепится степлером или на двусторонний скотч')
+                                +downloadCatalogue
+                                .questions__sub-caption ОПЛАТА
+                                li.questions__block-content-wrapper
+                                    +question-btn('Можно ли оплатить наличными?')
+                                    .filter-module__wrapper.questions__block-content
+                                        .filter-module__inner-wrapper.filter-module__inner--range-slider.filter-module__inner-js
+                                            +question-text-plus-link('Да, можно – оплата в офисе с получением кассового ' +
+                                            'чека. Ссылка на сайт',
+                                            'http://www.polimat.ru/pages/payment/#oplata')
+                                .questions__sub-caption ДОСТАВКА
+                                +questions-item('Бесплатная доставка от какой суммы?',
+                                'Бесплатной доставки нет. ')
+                                .questions__sub-caption ВИЗИТ В ПОЛИМАТ
+                                +questions-item('Нужно ли заказывать пропуск на въезд?',
+                                'Нет, не нужно, на проходной (или охраннику на шлагбауме) сказать «в типографию»')
+                                +questions-item('Есть ли у вас офисы в другом районе? Планируете?',
+                                'Пока нет')
+                        .questions__content(data-tab=2).visually-hidden
+                            .questions__column.questions__column--first
+                                +question-item-with-img('Типы и размеры', '', false,
+                                    {src: 'img/questions/type-calendar.png'})
+                                +questions-item('Пружина для переплёта (брошюровки)','')
+                                +questions-item('Курсоры для календарей','')
+                                +questions-item('80 г/м2 или 70 г/м2: какая бумага лучше для офсетных календарных блоков?', '')
+                                +questions-item('ПРИНЦИПЫ УПАКОВКИ 3-х спиральных КАЛЕНДАРНЫХ БЛОКОВ ПОЛИМАТ', '')
+                                +questions-item('Как найти аналоги интересующего вас товара?', '')
+                                +questions-item('Принципы нумерации недель года', '')
+                                +questions-item('Как работать с конструктором вашего квартального календаря', '')
+                                +questions-item('Как самому собрать ежедневник из комплектующих  ПОЛИМАТ', '')
